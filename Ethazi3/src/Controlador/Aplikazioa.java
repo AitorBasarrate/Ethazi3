@@ -9,7 +9,7 @@ public class Aplikazioa {
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
 		
-		System.out.println("me cago en tu vida!aaaaaaaa");
+	
 	}
 
 }
