@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.w3c.dom.CDATASection;
+
 import com.mysql.jdbc.Connection;
 
 import Modelo.DB;
@@ -17,7 +19,7 @@ public class Aplikazioa {
 		con1.getConexion();
 		
 		
-		  Connection conexion = null;
+		  CDATASection conexion = null;
 		  
 		  
 		  
@@ -32,10 +34,10 @@ public class Aplikazioa {
 	            // Se obtiene una conexion con la base de datos.
 	            // En este caso nos conectamos a la base de datos newdatabase
 	            // con el usuario root y contra null
-	            conexion = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+	            conexion = (CDATASection) DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
 
 	            // Se crea un Statement, para realizar la consulta
-	            Statement s = (Statement) conexion.createStatement();
+	            Statement s = (Statement) ((java.sql.Connection) conexion).createStatement();
 	            
 	            // Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 	            
@@ -52,7 +54,7 @@ public class Aplikazioa {
 	        } finally { // Se cierra la conexion con la base de datos.
 	            try {
 	                if (conexion != null) {
-	                    conexion.close();
+	                    ((ResultSet) conexion).close();
 	                }
 	            } catch (SQLException ex) {
 	                System.out.println(ex.getMessage());
