@@ -12,5 +12,7 @@ public class Cliente {
 	private String Sexo;
 	private String Contraseña;
 	
-	public 
+	public Cliente (String Dni, String Nombre, String Apellido, Date fecha_nac, String Sexo, String Contraseña) {
+		
+	}
 }
