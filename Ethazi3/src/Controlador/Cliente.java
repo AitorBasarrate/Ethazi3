@@ -9,4 +9,8 @@ public class Cliente {
 	private String Nombre;
 	private String Apellido;
 	private Date fecha_nac;
+	private String Sexo;
+	private String Contraseña;
+	
+	public 
 }
