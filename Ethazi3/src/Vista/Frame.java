@@ -19,7 +19,7 @@ public class Frame extends JFrame {
 	
 	static Ventana1 Ventana1 = new Ventana1();
 	static Ventana2 Ventana2 = new Ventana2();
-	//ff
+	
 
 	/**
 	 * Launch the application.
