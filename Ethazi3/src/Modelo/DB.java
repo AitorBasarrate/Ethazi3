@@ -1,23 +1,75 @@
 package Modelo;
  
-	import java.sql.Connection;
-	import java.sql.DriverManager;
-	import java.sql.SQLException;
+	import java.io.BufferedReader;
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 	 
 	public class DB {
-	    private String  maquina     = "localhost/ethazi3";
-	    private String  usuario     = "root";
-	    private String  clave       = "";
-	    private int puerto          = 3306;
+	    private String  maquina    ;
+	    private String  usuario     ;
+	    private String  clave    ;
+	    private int puerto          ;
 	    private String  servidor    = "";
 	    private static Connection conexion  = null;
 	 
+	    
 	    //CONSTRUCTOR
 	    //Recibe el nombre de la base de datos
 	    public DB(String baseDatos){
-	        this.servidor="jdbc:mysql://"+this.maquina+":"+
-	                        this.puerto+"/"+baseDatos;
-	 
+	    	
+	    	
+	    	String fichero = "D:\\ETHAZI\\Ethazi3\\Ethazi3\\src\\Modelo\\Fitxero";
+	    	
+	    	
+    		int kont =0;
+    		String server="jdbc:mysql://";
+	        
+	        //LEER FICHERO LINEA A LINEA
+	        try {
+  		      FileReader fr = new FileReader(fichero);
+  		      BufferedReader br = new BufferedReader(fr);
+  		 
+  		      String linea;
+  		      while((linea = br.readLine()) != null) {
+  		    	  System.out.println(linea);
+  		    	  
+	  		        if(kont==0) {
+	  		        	this.maquina=linea;
+	  		        	}
+	  		      	if (kont==1) {
+	  		      		this.usuario=linea;
+	  		      		}
+	  		      	if (kont==2) {
+	  		      		this.clave=linea;
+	  		      		}
+  		      	
+  		      	kont++;
+  		      	linea="";
+  		      	
+  		      	}
+  		      
+  		      if (kont==3) {
+  		    	  this.servidor=linea;
+  		    	  
+  		      }
+
+  		      fr.close();
+  		    }
+  		    catch(Exception e) {
+  		      System.out.println("Excepcion leyendo fichero "+ fichero + ": " + e);
+  		    }
+  	
+	        // FINAL DE LEER FICHERO LINEA A LINEA
+	        
+	        
+	        
+	        
+  	this.servidor="jdbc:mysql://"+this.maquina+":"+ this.puerto+"/"+baseDatos;
+	        
+	        
+	        
 	        //Registrar el driver
 	        try {
 	            Class.forName("com.mysql.jdbc.Driver");
@@ -40,5 +92,8 @@ package Modelo;
 	    public static Connection getConexion() {
 	        return conexion;
 	    }
+	    
+ 
+
 	 
 	}
