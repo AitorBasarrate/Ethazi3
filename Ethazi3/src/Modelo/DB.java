@@ -1,9 +1,11 @@
 package Modelo;
  
-	import java.io.BufferedReader;
+	import java.beans.Statement;
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.sql.Connection;
-import java.sql.DriverManager;
+	import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 	 
 	public class DB {
@@ -20,7 +22,7 @@ import java.sql.SQLException;
 	    public DB(String baseDatos){
 	    	
 	    	
-	    	String fichero = "D:\\ETHAZI\\Ethazi3\\Ethazi3\\src\\Modelo\\Fitxero";
+	    	String fichero = "../Ethazi3/src/Modelo/Fitxero";
 	    	
 	    	
     		int kont =0;
@@ -58,7 +60,7 @@ import java.sql.SQLException;
   		      fr.close();
   		    }
   		    catch(Exception e) {
-  		      System.out.println("Excepcion leyendo fichero "+ fichero + ": " + e);
+  		      System.out.println("Fitxeroa irakurri "+ fichero + ": " + e);
   		    }
   	
 	        // FINAL DE LEER FICHERO LINEA A LINEA
