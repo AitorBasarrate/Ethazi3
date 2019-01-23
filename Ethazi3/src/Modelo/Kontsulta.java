@@ -36,10 +36,13 @@ public class Kontsulta {
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
-				String Cod_Linea = rs.getString("0");
-				String Nombre = rs.getString("1");
+				String Cod_Linea = rs.getString("Cod_Linea");
+				String Nombre = rs.getString("Nombre");
 				Datuak_Linea LineaDat = new Datuak_Linea(Cod_Linea, Nombre);
 				Datuak.add(0, LineaDat);
+				for (Datuak_Linea n: Datuak) {
+					System.out.println(n);
+				}
 			}
 			
 			
@@ -51,6 +54,7 @@ public class Kontsulta {
 	}
 	
 	public static ArrayList<Datuak_Linea> getDatuakArr(ArrayList <Datuak_Linea> Datuak) {
+		
 		return Datuak;
 	}
 
@@ -82,5 +86,11 @@ public class Kontsulta {
 			System.out.println(e.getMessage());
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return "Kontsulta [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 }
