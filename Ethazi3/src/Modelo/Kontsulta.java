@@ -8,9 +8,6 @@ import java.sql.SQLException;
 
 public class Kontsulta {
 
-	
-	
-    
     public static void muestraDatos(){
 	       Connection conexion = null;
 	       java.sql.Statement s = null; 
@@ -28,11 +25,12 @@ public class Kontsulta {
 	            
 	            // Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 	            
-	            ResultSet rs = ((java.sql.Statement) s).executeQuery("select * from autobus");
+	            ResultSet rs = ((java.sql.Statement) s).executeQuery("select * from linea l,linea_autobus la "
+	            		+ " where  l.Cod_Linea = la.Cod_Linea  ");
 	            
 	            // Se recorre el ResultSet, mostrando por pantalla los resultados.
 	            while (rs.next()) {
-	                System.out.println(rs.getString("Cod_bus") + "\t\t " + rs.getString("N_plazas"));
+	                System.out.println(rs.getString("Cod_Linea") + "\t\t " + rs.getString("Nombre") + "\t\t"+ rs.getString("Cod_bus"));
 	            }
 	        } catch (Exception e) {
 	            System.out.println(e.getMessage());
@@ -40,4 +38,40 @@ public class Kontsulta {
   
 	      
 	}
+    
+    
+    public static void inicioSesion() {
+        Connection conexion = null;
+    	Statement s = null;
+    	String DNI_C = "15236985K";
+    	
+    	try {
+            // Cargar el driver
+            Class.forName("com.mysql.jdbc.Driver");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+        	s =  (Statement) conexion.createStatement();
+            
+            // Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+        	 ResultSet rs = ((java.sql.Statement) s).executeQuery(" select * from cliente");
+    		
+        	 
+        	 while (rs.next()) {
+        		 
+        		 if(rs.getString("DNI")== DNI_C){
+        			 System.out.println("es correcto");
+        		 }else {
+        			 System.out.println("incorrecto");
+        		 }
+	               
+	            }
+    	}catch (Exception e) {
+            System.out.println(e.getMessage());
+        } 
+
+    	
+    	
+    	
+		
+    	
+    }
 }

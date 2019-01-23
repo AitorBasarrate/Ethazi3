@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.DB;
+import Modelo.Kontsulta;
 
 public class Aplikazioa {
 
@@ -9,7 +10,7 @@ public class Aplikazioa {
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
 		
-	
+		Kontsulta.muestraDatos();
 	}
 
 }
