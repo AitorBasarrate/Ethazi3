@@ -25,8 +25,8 @@ public class Aplikazioa {
 		 
 		Kontsulta.muestraDatos();
 		
-		Vista.Frame ejecutar= new Vista.Frame();
-		ejecutar.setVisible(true);
+//		Vista.Frame ejecutar= new Vista.Frame();
+//		ejecutar.setVisible(true);
 	}
 	
 	public static void sartuOrdainketa(JList list) {
@@ -150,6 +150,11 @@ public class Aplikazioa {
 		e.printStackTrace();
 	}
 	}
+//	@Override
+//	public String toString() {
+//		return "Kontsulta [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+//				+ "]";
+//	}
 	
 }
 

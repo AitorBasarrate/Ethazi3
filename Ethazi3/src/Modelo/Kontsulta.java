@@ -12,7 +12,8 @@ import Controlador.Datuak_Linea;
 public class Kontsulta {
 //	static String Col_1 = "";
 //	static String Col_2 = "";
-	static ArrayList <Datuak_Linea> Datuak = new ArrayList();
+	static ArrayList<Datuak_Linea> Datuak = new ArrayList();
+
 	public static void muestraDatos() {
 
 		Connection conexion = null;
@@ -31,8 +32,7 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s)
-					.executeQuery("select * from linea");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("select * from linea");
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
@@ -40,25 +40,20 @@ public class Kontsulta {
 				String Nombre = rs.getString("Nombre");
 				Datuak_Linea LineaDat = new Datuak_Linea(Cod_Linea, Nombre);
 				Datuak.add(0, LineaDat);
-				for (Datuak_Linea LineaDat: Datuak) {
-					System.out.println(LineaDat.getNombre);
-					System.out.println(LineaDat.getCod_Linea);
+				for (Datuak_Linea l1 : Datuak) {
+					System.out.println(toString(Datuak.get(0)));
 				}
 			}
-			
-			
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 
 	}
-	
-	public static ArrayList<Datuak_Linea> getDatuakArr(ArrayList <Datuak_Linea> Datuak) {
-		
+
+	public static ArrayList<Datuak_Linea> getDatuakArr(ArrayList<Datuak_Linea> Datuak) {
+
 		return Datuak;
 	}
-
 
 	public static void inicioSesion() {
 		Connection conexion = null;
@@ -89,9 +84,8 @@ public class Kontsulta {
 
 	}
 
-	@Override
-	public String toString() {
-		return "Kontsulta [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+	public static String toString(Datuak_Linea datuak_Linea) {
+		return "Kontsulta [Cod_Linea: " + Controlador.Linea.getCod_Linea() + " Nombre: " + 
+	Controlador.Linea.getNombre() + "]";
 	}
 }

@@ -7,8 +7,8 @@ import Modelo.Kontsulta;
 
 public class Linea {
 
-	private String Cod_Linea;
-	private String Nombre;
+	private static String Cod_Linea;
+	private static String Nombre;
 
 	public Linea(String Cod_Linea, String Nombre) {
 
@@ -21,7 +21,7 @@ public class Linea {
 		}
 	}
 
-	public String getCod_Linea() {
+	public static String getCod_Linea() {
 		return Cod_Linea;
 	}
 
@@ -29,7 +29,7 @@ public class Linea {
 		Cod_Linea = Cod_Linea;
 	}
 
-	public String getNombre() {
+	public static String getNombre() {
 		return Nombre;
 	}
 
