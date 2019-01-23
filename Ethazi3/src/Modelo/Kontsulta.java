@@ -40,8 +40,9 @@ public class Kontsulta {
 				String Nombre = rs.getString("Nombre");
 				Datuak_Linea LineaDat = new Datuak_Linea(Cod_Linea, Nombre);
 				Datuak.add(0, LineaDat);
-				for (Datuak_Linea n: Datuak) {
-					System.out.println(n);
+				for (Datuak_Linea LineaDat: Datuak) {
+					System.out.println(LineaDat.getNombre);
+					System.out.println(LineaDat.getCod_Linea);
 				}
 			}
 			
