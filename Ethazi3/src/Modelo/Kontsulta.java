@@ -36,13 +36,15 @@ public class Kontsulta {
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
-				String Cod_Linea = rs.getString("Cod_Linea");
-				String Nombre = rs.getString("Nombre");
-				Datuak_Linea LineaDat = new Datuak_Linea(Cod_Linea, Nombre);
-				Datuak.add(0, LineaDat);
-				for (Datuak_Linea l1 : Datuak) {
-					System.out.println(toString(Datuak.get(0)));
-				}
+				String CodLinea = "";
+				String Nombre_ = "";
+				CodLinea = rs.getString("Cod_Linea");
+				Controlador.Linea.setCod_Linea(rs.getString("Cod_Linea"));
+				Nombre_ = rs.getString("Nombre");
+				Controlador.Linea.setNombre(rs.getString("Nombre"));
+				Datuak_Linea LineaDat1 = new Datuak_Linea("L1", "kaka");
+				Datuak.add(0, LineaDat1);
+				System.out.println(toString(Datuak.get(0)));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -85,7 +87,7 @@ public class Kontsulta {
 	}
 
 	public static String toString(Datuak_Linea datuak_Linea) {
-		return "Kontsulta [Cod_Linea: " + Controlador.Linea.getCod_Linea() + " Nombre: " + 
-	Controlador.Linea.getNombre() + "]";
+		return "Kontsulta [Cod_Linea: " + Controlador.Linea.getCod_Linea() + " Nombre: " + Controlador.Linea.getNombre()
+				+ "]";
 	}
 }

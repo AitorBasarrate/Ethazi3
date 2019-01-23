@@ -25,7 +25,7 @@ public class Linea {
 		return Cod_Linea;
 	}
 
-	public void setCod_Linea(String cod_Linea) {
+	public static void setCod_Linea(String Cod_Linea) {
 		Cod_Linea = Cod_Linea;
 	}
 
@@ -33,7 +33,7 @@ public class Linea {
 		return Nombre;
 	}
 
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+	public static void setNombre(String Nombre) {
+		Nombre = Nombre;
 	}
 }
