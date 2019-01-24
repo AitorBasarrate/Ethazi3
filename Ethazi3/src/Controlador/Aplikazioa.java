@@ -22,6 +22,7 @@ public class Aplikazioa {
 		con1.getConexion();
 
 		Kontsulta.muestraDatos();
+		Kontsulta.inicioSesion();
 
 //		Vista.Frame ejecutar= new Vista.Frame();
 //		ejecutar.setVisible(true);

@@ -5,14 +5,14 @@ import java.util.*;
 
 public class Cliente {
 	
-	private String Dni;
-	private String Nombre;
-	private String Apellido;
-	private Date fecha_nac;
-	private String Sexo;
-	private String Contraseña;
+	private static String Dni;
+	private static String Nombre;
+	private static String Apellido;
+	private static String fecha_nac;
+	private static String Sexo;
+	private static String Contraseña;
 	
-	public Cliente (String Dni, String Nombre, String Apellido, Date fecha_nac, String Sexo, String Contraseña) {
+	public Cliente (String Dni, String Nombre, String Apellido, String fecha_nac, String Sexo, String Contraseña) {
 		this.Apellido = Apellido;
 		this.Contraseña = Contraseña;
 		this.Dni = Dni;
@@ -21,7 +21,7 @@ public class Cliente {
 		this.Sexo = Sexo;
 	}
 
-	public String getDni() {
+	public static String getDni() {
 		return Dni;
 	}
 
@@ -29,7 +29,7 @@ public class Cliente {
 		Dni = dni;
 	}
 
-	public String getNombre() {
+	public static String getNombre() {
 		return Nombre;
 	}
 
@@ -37,7 +37,7 @@ public class Cliente {
 		Nombre = nombre;
 	}
 
-	public String getApellido() {
+	public static String getApellido() {
 		return Apellido;
 	}
 
@@ -45,15 +45,15 @@ public class Cliente {
 		Apellido = apellido;
 	}
 
-	public Date getFecha_nac() {
+	public static String getFecha_nac() {
 		return fecha_nac;
 	}
 
-	public void setFecha_nac(Date fecha_nac) {
+	public void setFecha_nac(String fecha_nac) {
 		this.fecha_nac = fecha_nac;
 	}
 
-	public String getSexo() {
+	public static String getSexo() {
 		return Sexo;
 	}
 
@@ -61,7 +61,7 @@ public class Cliente {
 		Sexo = sexo;
 	}
 
-	public String getContraseña() {
+	public static String getContraseña() {
 		return Contraseña;
 	}
 
