@@ -11,13 +11,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JSeparator;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
 import java.util.Date;
 import java.util.Calendar;
 import java.awt.Color;
 
-public class Geltokiak extends JPanel {
+public class Geltokiak extends JFrame {
 	private JTextField txtLinea = new JTextField();
 	private JLabel lblAukeratuDuzunLinea = new JLabel("Aukeratu duzun linea");
 	private JLabel lblGeltokiakAukeratu = new JLabel("Geltokiak aukeratu");
@@ -38,8 +39,12 @@ public class Geltokiak extends JPanel {
 	 * Create the panel.
 	 */
 	public Geltokiak() {
-		setLayout(null);
 		
+		setLayout(null);
+		this.setSize(478,300);  
+		this.setLocationRelativeTo(null);  
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 635, 455);
 		
 		lblAukeratuDuzunLinea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblAukeratuDuzunLinea.setBounds(155, 88, 245, 23);
@@ -83,8 +88,8 @@ public class Geltokiak extends JPanel {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.Geltokiak.setVisible(false);
-				Frame.Ordainketa.setVisible(true);
+//				Frame.Geltokiak.setVisible(false);
+//				Frame.Ordainketa.setVisible(true);
 			}
 		};
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -94,7 +99,7 @@ public class Geltokiak extends JPanel {
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.Geltokiak.setVisible(false);
+//				Frame.Geltokiak.setVisible(false);
 				Frame.Lehena.setVisible(true);
 			}
 		};
@@ -105,8 +110,8 @@ public class Geltokiak extends JPanel {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.Geltokiak.setVisible(false);
-				Frame.Lineak.setVisible(true);
+//				Frame.Geltokiak.setVisible(false);
+//				Frame.Lineak.setVisible(true);
 			}
 		};
 		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));

@@ -2,13 +2,14 @@ package Vista;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AteraBilletea extends JPanel {
+public class AteraBilletea extends JFrame {
 	
 	private JLabel lblEskerrik = new JLabel("ESKERRIK");
 	private JLabel lblAsko = new JLabel("ASKO");
@@ -19,6 +20,10 @@ public class AteraBilletea extends JPanel {
 	 */
 	public AteraBilletea() {
 		setLayout(null);
+		this.setSize(478,300);  
+		this.setLocationRelativeTo(null);  
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 635, 455);
 		
 		
 		lblEskerrik.setFont(new Font("Tahoma", Font.BOLD, 40));
@@ -33,9 +38,9 @@ public class AteraBilletea extends JPanel {
 		
 		ActionListener alBBilletea = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.AteraBilletea.setVisible(false);
-				Frame.Azkena.setVisible(true);
-				
+//				Frame.AteraBilletea.setVisible(false);
+//				Frame.Azkena.setVisible(true);
+//				
 			}
 		};
 		btnAteraBilletea.addActionListener(alBBilletea);

@@ -20,7 +20,7 @@ import javax.swing.AbstractButton;
 import javax.swing.DefaultListModel;
 import java.awt.Color;
 
-public class Ordainketa extends JPanel {
+public class Ordainketa extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textDiruTot = new JTextField(); ;
@@ -73,20 +73,18 @@ public class Ordainketa extends JPanel {
 	 * Create the frame.
 	 */
 	public Ordainketa() {
-//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		setBounds(100, 100, 717, 464);
-//		contentPane = new JPanel();
-//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-//		setContentPane(contentPane);
-//		contentPane.setLayout(null);
 		setLayout(null);
+		this.setSize(478,300);  
+		this.setLocationRelativeTo(null);  
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 635, 455);
 		
 		
 		btnIrten.setIcon(new ImageIcon("C:\\Users\\gorka\\OneDrive\\Escritorio\\SqvpT6Qt_400x400.jpg"));
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frame.Lehena.setVisible(true);
-				Frame.Ordainketa.setVisible(false);
+//				Frame.Ordainketa.setVisible(false);
 				//Controlador.Aplikazioa.restList();
 				//dispose();
 			}
@@ -299,8 +297,8 @@ public class Ordainketa extends JPanel {
 		
 		ActionListener alBAurrera = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				Frame.AteraBilletea.setVisible(true);
-				Frame.Ordainketa.setVisible(false);
+//				Frame.AteraBilletea.setVisible(true);
+//				Frame.Ordainketa.setVisible(false);
 				//dispose();
 			}
 		};
@@ -312,8 +310,8 @@ public class Ordainketa extends JPanel {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.Ordainketa.setVisible(false);
-				Frame.Geltokiak.setVisible(true);
+//				Frame.Ordainketa.setVisible(false);
+//				Frame.Geltokiak.setVisible(true);
 			}
 		};
 		btnAtzera.addActionListener(alBAtzera);

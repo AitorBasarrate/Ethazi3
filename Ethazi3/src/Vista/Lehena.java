@@ -1,38 +1,50 @@
 package Vista;
-
+import Controlador.*;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
-public class Lehena extends JPanel {
-	JButton btnFf = new JButton("SAIOA HASI");
+public class Lehena extends JFrame {
+	
+	private JButton btnSaioaHasi = new JButton("SAIOA HASI");
+	private JLabel lblOngiEtorri = new JLabel("ONGI ETORRI");
 
 	/**
 	 * Create the panel.
 	 */
 	public Lehena() {
 		setLayout(null);
-		btnFf.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		this.setSize(478,300);  
+		this.setLocationRelativeTo(null);  
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 635, 455);
+		
+		btnSaioaHasi.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		
 		
-		btnFf.addActionListener(new ActionListener() {
+		ActionListener alBSaioaHasi = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Frame.Lehena.setVisible(false);
-				Frame.SaioaHasi.setVisible(true);
+				dispose();
+				Aplikazioa.LehenaBigarren(Frame.Lehena, Frame.SaioaHasi);
+				
 			}
-		});
-		btnFf.setBounds(204, 214, 206, 84);
-		add(btnFf);
+		};
+		btnSaioaHasi.addActionListener(alBSaioaHasi);
+		btnSaioaHasi.setBounds(204, 214, 206, 84);
+		add(btnSaioaHasi);
 		
-		JLabel lblOngiEtorri = new JLabel("ONGI ETORRI");
+		
 		lblOngiEtorri.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOngiEtorri.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblOngiEtorri.setBounds(103, 34, 391, 195);
 		add(lblOngiEtorri);
 
 	}
+
 }
