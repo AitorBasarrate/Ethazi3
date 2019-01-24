@@ -24,8 +24,8 @@ public class Aplikazioa {
 		Kontsulta.muestraDatos();
 		Kontsulta.inicioSesion();
 
-//		Vista.Frame ejecutar= new Vista.Frame();
-//		ejecutar.setVisible(true);
+		Vista.Frame ejecutar= new Vista.Frame();
+		ejecutar.setVisible(true);
 	}
 
 	public static void sartuOrdainketa(JList list) {

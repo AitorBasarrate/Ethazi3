@@ -38,11 +38,11 @@ public class Kontsulta {
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
-				String CodLinea = "";
+				String CodLinea_ = "";
 				String Nombre_ = "";
-				CodLinea = rs.getString("Cod_Linea");
+				CodLinea_ = rs.getString("Cod_Linea");
 				Nombre_ = rs.getString("Nombre");
-				Linea LineaDat1 = new Linea(CodLinea, Nombre_);
+				Linea LineaDat1 = new Linea(CodLinea_, Nombre_);
 				DatuakLinea.add(0, LineaDat1);
 				System.out.println(toString1(DatuakLinea.get(0)));
 			}
@@ -60,7 +60,6 @@ public class Kontsulta {
 	public static void inicioSesion() {
 		Connection conexion = null;
 		Statement s = null;
-		String DNI_C = "15236985K";
 		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
 		try {
 			//Cargar el driver
@@ -69,17 +68,22 @@ public class Kontsulta {
 			s = (Statement) conexion.createStatement();
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
-			ResultSet rsDNI = ((java.sql.Statement) s).executeQuery("select * from cliente");
-			String dni = rsDNI.getString("DNI");
-			while (rsDNI.next()) {
-				String dni_ = rsDNI.getString(1);
-				String nombre_ = rsDNI.getString(2);
-				String apellido_ = rsDNI.getString(3);
-				String sexo_ = rsDNI.getString(5);
-				String contraseña_ = rsDNI.getString(6);
-				String fecha_nac_ = rsDNI.getString("Fecha_nac");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("select * from cliente");
+			while (rs.next()) {
+				String dni_;
+				dni_ = rs.getString("DNI");
+				String nombre_;
+				nombre_ = rs.getString("Nombre");
+				String apellido_;
+				apellido_= rs.getString("Apellidos");
+				String sexo_;
+				sexo_ = rs.getString("Sexo");
+				String contraseña_;
+				contraseña_ = rs.getString("Contraseña");
+				String fecha_nac_;
+				fecha_nac_ = rs.getString("Fecha_nac");
 				
-				Cliente c1 = new Cliente(dni_, nombre_, apellido_, fecha_nac_, contraseña_, sexo_);
+				Cliente c1 = new Cliente(dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
 				inicioSes.add(0, c1);
 				System.out.println(toString2(inicioSes.get(0)));
 			}
@@ -94,8 +98,8 @@ public class Kontsulta {
 				+ "]";
 	}
 	public static String toString2(Cliente Cliente) {
-		return "Kontsulta [DNI: " + Controlador.Cliente.getDni() + " Nombre: " + Controlador.Cliente.getNombre() + "Apellido: " +
-				Controlador.Cliente.getApellido() + "Sexo: " + Controlador.Cliente.getSexo() + "Contraseña: " + Controlador.Cliente.getContraseña() + 
-				"Fecha_nac: " + Controlador.Cliente.getFecha_nac() +"]";
+		return "Kontsulta [DNI: " + Controlador.Cliente.getDni() + " Nombre: " + Controlador.Cliente.getNombre() + " Apellido: " +
+				Controlador.Cliente.getApellido() + " Contraseña: " + Controlador.Cliente.getSexo() + " Sexo: " + Controlador.Cliente.getContraseña() + 
+				" Fecha_nac: " + Controlador.Cliente.getFecha_nac() +" ]";
 	}
 }
