@@ -1,13 +1,13 @@
 package Modelo;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.mysql.jdbc.Statement;
 
+import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
 
@@ -56,6 +56,10 @@ public class Kontsulta {
 
 		return Datuak;
 	}
+	
+	public static ArrayList<Cliente> getInicioSes(ArrayList<Cliente> inicioSes){
+		return inicioSes;
+	}
 
 	public static void inicioSesion() {
 		Connection conexion = null;
@@ -85,7 +89,7 @@ public class Kontsulta {
 				
 				Cliente c1 = new Cliente(dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
 				inicioSes.add(0, c1);
-				System.out.println(toString2(inicioSes.get(0)));
+//				System.out.println(toString2(inicioSes.get(0)));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -94,12 +98,21 @@ public class Kontsulta {
 	}
 
 	public static String toString1(Linea Linea) {
-		return "Kontsulta [Cod_Linea: " + Controlador.Linea.getCod_Linea() + " Nombre: " + Controlador.Linea.getNombre()
+		return "Kontsulta [LINEAREN KODEA: " + Controlador.Linea.getCod_Linea() + " IZENA: " + Controlador.Linea.getNombre()
 				+ "]";
 	}
 	public static String toString2(Cliente Cliente) {
-		return "Kontsulta [DNI: " + Controlador.Cliente.getDni() + " Nombre: " + Controlador.Cliente.getNombre() + " Apellido: " +
-				Controlador.Cliente.getApellido() + " Contraseña: " + Controlador.Cliente.getSexo() + " Sexo: " + Controlador.Cliente.getContraseña() + 
-				" Fecha_nac: " + Controlador.Cliente.getFecha_nac() +" ]";
+		return "Kontsulta [NAN: " + Controlador.Cliente.getDni() + " IZENA: " + Controlador.Cliente.getNombre() + " ABIZENA: " +
+				Controlador.Cliente.getApellido() + " PASAHITZA: " + Controlador.Cliente.getSexo() + " SEXUA: " + Controlador.Cliente.getContraseña() + 
+				" JAIOTZE DATA: " + Controlador.Cliente.getFecha_nac() +" ]";
 	}
+	public static String toString3(Autobusa Autobusa) {
+		return "Kontsulta [AUTOBUSAREN KODEA: " + Controlador.Autobusa.getCod_bus() + " JESARLEKUAK: " + Controlador.Autobusa.getN_plazas() + " KONTSUMOA KMko: " +
+				Controlador.Autobusa.getConsumo_km() + " KOLOREA: " + Controlador.Autobusa.getColor() + " SEXUA: " + Controlador.Cliente.getContraseña() + " ]";
+	}
+//	public static String toString4(Cliente Cliente) {
+//		return "Kontsulta [DNI: " + Controlador.Cliente.getDni() + " Nombre: " + Controlador.Cliente.getNombre() + " Apellido: " +
+//				Controlador.Cliente.getApellido() + " Contraseña: " + Controlador.Cliente.getSexo() + " Sexo: " + Controlador.Cliente.getContraseña() + 
+//				" Fecha_nac: " + Controlador.Cliente.getFecha_nac() +" ]";
+//	}
 }

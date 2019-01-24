@@ -16,13 +16,14 @@ public class Aplikazioa {
 	protected static double totBezGabe;
 
 	public static void main(String[] args) {
-
+		
 		String basedatos = "ethazi3";
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
 
 		Kontsulta.muestraDatos();
 		Kontsulta.inicioSesion();
+		Metodoak.nanKomprobaketa();
 
 		Vista.Frame ejecutar= new Vista.Frame();
 		ejecutar.setVisible(true);
