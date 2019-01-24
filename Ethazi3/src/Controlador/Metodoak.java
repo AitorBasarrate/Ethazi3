@@ -14,8 +14,6 @@ public class Metodoak {
 		for(int n = 0; n < inicioSes.size(); n++) {
 			
 			System.out.println(inicioSes.contains(DNI));
-			
-			//if(inicioSes)
 		}
 	}
 }
