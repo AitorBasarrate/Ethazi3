@@ -38,10 +38,8 @@ public class Kontsulta {
 				String CodLinea = "";
 				String Nombre_ = "";
 				CodLinea = rs.getString("Cod_Linea");
-				Controlador.Linea.setCod_Linea(rs.getString("Cod_Linea"));
 				Nombre_ = rs.getString("Nombre");
-				Controlador.Linea.setNombre(rs.getString("Nombre"));
-				Linea LineaDat1 = new Linea("L1", "kaka");
+				Linea LineaDat1 = new Linea(CodLinea, Nombre_);
 				Datuak.add(0, LineaDat1);
 				System.out.println(toString(Datuak.get(0)));
 			}
