@@ -9,9 +9,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JList;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.Color;
 
-public class Lineak extends JPanel {
+public class Lineak extends JFrame {
 	
 	private JTextField textField = new JTextField();
 	private JLabel lblLineak = new JLabel("LINEAK");
@@ -26,6 +28,10 @@ public class Lineak extends JPanel {
 	 */
 	public Lineak() {
 		setLayout(null);
+		this.setSize(478,300);  
+		this.setLocationRelativeTo(null);  
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 635, 455);
 		
 		
 		lblLineak.setFont(new Font("Tahoma", Font.PLAIN, 35));
@@ -50,8 +56,8 @@ public class Lineak extends JPanel {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.Lineak.setVisible(false);
-				Frame.Geltokiak.setVisible(true);
+//				Frame.Lineak.setVisible(false);
+//				Frame.Geltokiak.setVisible(true);
 			}
 		};
 		btnAurrera.addActionListener(alBAurrera);
@@ -61,8 +67,8 @@ public class Lineak extends JPanel {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.Lineak.setVisible(false);
-				Frame.SaioaHasi.setVisible(true);
+//				Frame.Lineak.setVisible(false);
+//				Frame.SaioaHasi.setVisible(true);
 			}
 		};
 		btnAtzera.addActionListener(alBAtzera);
@@ -72,7 +78,7 @@ public class Lineak extends JPanel {
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.Lineak.setVisible(false);
+//				Frame.Lineak.setVisible(false);
 				Frame.Lehena.setVisible(true);
 			}
 		};

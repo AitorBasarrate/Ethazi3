@@ -1,14 +1,16 @@
 package Vista;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SaioaHasi extends JPanel {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class SaioaHasi extends JFrame {
 	
 	private JTextField textField = new JTextField();
 	private JTextField textField_1 = new JTextField();
@@ -24,6 +26,11 @@ public class SaioaHasi extends JPanel {
 	 */
 	public SaioaHasi() {
 		setLayout(null);
+		this.setSize(478,300);  
+		this.setLocationRelativeTo(null);  
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 635, 455);
+		
 		
 		
 		lblK.setFont(new Font("Tahoma", Font.PLAIN, 35));
@@ -48,8 +55,7 @@ public class SaioaHasi extends JPanel {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.SaioaHasi.setVisible(false);
-				Frame.Lineak.setVisible(true);
+				
 			}
 		};
 		btnAurrera.addActionListener(alBAurrera);
@@ -61,8 +67,8 @@ public class SaioaHasi extends JPanel {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.SaioaHasi.setVisible(false);
-				Frame.Lehena.setVisible(true);
+//				Frame.SaioaHasi.setVisible(false);
+//				Frame.Lehena.setVisible(true);
 			}
 		};
 		btnAtzera.addActionListener(alBAtzera);
@@ -73,8 +79,8 @@ public class SaioaHasi extends JPanel {
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frame.SaioaHasi.setVisible(false);
-				Frame.Lehena.setVisible(true);
+//				Frame.SaioaHasi.setVisible(false);
+//				Frame.Lehena.setVisible(true);
 			}
 		};
 		btnIrten.addActionListener(alBIrten);

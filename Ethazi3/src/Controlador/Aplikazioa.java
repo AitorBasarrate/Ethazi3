@@ -8,6 +8,8 @@ import javax.swing.JList;
 
 import Modelo.DB;
 import Modelo.Kontsulta;
+import Vista.Lehena;
+import Vista.SaioaHasi;
 
 public class Aplikazioa {
 
@@ -23,8 +25,18 @@ public class Aplikazioa {
 
 		Kontsulta.muestraDatos();
 
-//		Vista.Frame ejecutar= new Vista.Frame();
-//		ejecutar.setVisible(true);
+		Vista.Lehena ejecutar= new Vista.Lehena();
+		ejecutar.setVisible(true);
+	}
+	
+	public static void LehenaBigarren(Lehena lehena, SaioaHasi saioaHasi ) {
+		Lehena Lehena = new Lehena();
+		Lehena.setVisible(false);
+		saioaHasi.setVisible(true);
+		//Lehena.setBounds(0, 0, 700, 500);
+		//contentPane.add(Lehena);
+		saioaHasi.setBounds(0, 0, 635, 455);
+		
 	}
 
 	public static void sartuOrdainketa(JList list) {

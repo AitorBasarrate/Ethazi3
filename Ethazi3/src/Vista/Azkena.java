@@ -1,12 +1,13 @@
 package Vista;
 
 import javax.swing.JPanel;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class Azkena extends JPanel {
+public class Azkena extends JFrame {
 	private JTextField txtIzena = new JTextField();
 	private JTextField txtDNI = new JTextField();
 	private JTextField txtData = new JTextField();
@@ -27,6 +28,10 @@ public class Azkena extends JPanel {
 	 */
 	public Azkena() {
 		setLayout(null);
+		this.setSize(478,300);  
+		this.setLocationRelativeTo(null);  
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 635, 455);
 		
 		
 		lblIzenabizenak.setFont(new Font("Tahoma", Font.PLAIN, 20));
