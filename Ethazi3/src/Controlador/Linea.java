@@ -11,7 +11,8 @@ public class Linea {
 	private static String Nombre;
 
 	public Linea(String Cod_Linea, String Nombre) {
-
+		this.Cod_Linea = Cod_Linea;
+		this.Nombre = Nombre;
 	}
 
 	public static void rellenar(ArrayList<String> LineaArray, String Cod_Linea, String Nombre) {
