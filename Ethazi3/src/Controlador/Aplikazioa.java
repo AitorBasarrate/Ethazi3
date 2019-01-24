@@ -24,6 +24,8 @@ public class Aplikazioa {
 		con1.getConexion();
 
 		Kontsulta.muestraDatos();
+		Kontsulta.inicioSesion();
+
 
 		Vista.Lehena ejecutar= new Vista.Lehena();
 		ejecutar.setVisible(true);
@@ -36,7 +38,7 @@ public class Aplikazioa {
 		//Lehena.setBounds(0, 0, 700, 500);
 		//contentPane.add(Lehena);
 		saioaHasi.setBounds(0, 0, 635, 455);
-		
+ 
 	}
 
 	public static void sartuOrdainketa(JList list) {
