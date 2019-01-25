@@ -64,7 +64,7 @@ public class Ordainketa extends JFrame {
 	 * Create the frame.
 	 */
 	public Ordainketa() {
-		setLayout(null);
+		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,12 +80,12 @@ public class Ordainketa extends JFrame {
 		});
 		btnIrten.setBounds(514, 0, 109, 30);
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		add(btnIrten);
+		getContentPane().add(btnIrten);
 		
 		
 		lblErositakoa.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblErositakoa.setBounds(22, 45, 149, 30);
-		add(lblErositakoa);
+		getContentPane().add(lblErositakoa);
 		textDiruTot.setBackground(Color.WHITE);
 		textDiruTot.setEditable(false);
 				DefaultListModel ordaintzekoa = new DefaultListModel();
@@ -93,7 +93,7 @@ public class Ordainketa extends JFrame {
 				listBueltak.setModel(ordaintzekoa);
 		
 		textDiruTot.setBounds(22, 69, 270, 38);
-		add(textDiruTot);
+		getContentPane().add(textDiruTot);
 		Metodoak.bezKalkulatu();
 		TextDiruTot = Double.toString(Metodoak.kontTotala);
 		textDiruTot.setColumns(10);
@@ -102,24 +102,24 @@ public class Ordainketa extends JFrame {
 		
 		lblBueltak.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblBueltak.setBounds(22, 118, 149, 21);
-		add(lblBueltak);
+		getContentPane().add(lblBueltak);
 		
 		
 		lblDaramazun.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblDaramazun.setBounds(427, 41, 177, 38);
-		add(lblDaramazun);
+		getContentPane().add(lblDaramazun);
 		textOrdainketa.setBackground(Color.WHITE);
 		textOrdainketa.setEditable(false);
 		
 		
 		textOrdainketa.setBounds(427, 69, 187, 38);
-		add(textOrdainketa);
+		getContentPane().add(textOrdainketa);
 		textOrdainketa.setColumns(10);
 		
 		
 		lblSartuDirua.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSartuDirua.setBounds(427, 118, 111, 22);
-		add(lblSartuDirua);
+		getContentPane().add(lblSartuDirua);
 		
 		
 		button1.addActionListener(new ActionListener() {
@@ -129,7 +129,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button1.setBounds(427, 142, 50, 51);
-		add(button1);
+		getContentPane().add(button1);
 		
 		
 		button2.addActionListener(new ActionListener() {
@@ -139,7 +139,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button2.setBounds(489, 142, 49, 51);
-		add(button2);
+		getContentPane().add(button2);
 		
 		
 		button3.addActionListener(new ActionListener() {
@@ -149,7 +149,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button3.setBounds(548, 142, 50, 51);
-		add(button3);
+		getContentPane().add(button3);
 		
 		
 		button4.addActionListener(new ActionListener() {
@@ -159,7 +159,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button4.setBounds(427, 204, 50, 51);
-		add(button4);
+		getContentPane().add(button4);
 		
 		
 		button5.addActionListener(new ActionListener() {
@@ -169,7 +169,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button5.setBounds(488, 204, 50, 51);
-		add(button5);
+		getContentPane().add(button5);
 		
 		
 		button6.addActionListener(new ActionListener() {
@@ -179,7 +179,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button6.setBounds(548, 204, 50, 51);
-		add(button6);
+		getContentPane().add(button6);
 		
 		
 		button7.addActionListener(new ActionListener() {
@@ -189,7 +189,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button7.setBounds(427, 266, 50, 51);
-		add(button7);
+		getContentPane().add(button7);
 		
 		
 		button8.addActionListener(new ActionListener() {
@@ -199,7 +199,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button8.setBounds(489, 266, 50, 51);
-		add(button8);
+		getContentPane().add(button8);
 		
 		
 		button9.addActionListener(new ActionListener() {
@@ -209,7 +209,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button9.setBounds(548, 266, 50, 51);
-		add(button9);
+		getContentPane().add(button9);
 		
 		
 		button0.addActionListener(new ActionListener() {
@@ -219,7 +219,7 @@ public class Ordainketa extends JFrame {
 			}
 		});
 		button0.setBounds(489, 328, 120, 38);
-		add(button0);
+		getContentPane().add(button0);
 		
 		ActionListener alBPunto = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -229,7 +229,7 @@ public class Ordainketa extends JFrame {
 		};
 		buttonPunto.addActionListener(alBPunto);
 		buttonPunto.setBounds(427, 328, 50, 38);
-		add(buttonPunto);
+		getContentPane().add(buttonPunto);
 		
 		ActionListener ezabatu = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -238,7 +238,7 @@ public class Ordainketa extends JFrame {
 		};
 		btnEzabatu.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnEzabatu.setBounds(427, 373, 91, 38);
-		add(btnEzabatu);
+		getContentPane().add(btnEzabatu);
 		
 		btnEzabatu.addActionListener(ezabatu);
 		
@@ -279,12 +279,12 @@ public class Ordainketa extends JFrame {
 			btnErosi.addActionListener(alBErosi);
 			
 		btnErosi.setBounds(329, 266, 91, 145);
-		add(btnErosi);
+		getContentPane().add(btnErosi);
 		
 		
 		listBueltak.setBounds(22, 150, 270, 261);
 		
-		add(listBueltak);
+		getContentPane().add(listBueltak);
 		
 		ActionListener alBAurrera = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
@@ -296,7 +296,7 @@ public class Ordainketa extends JFrame {
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.addActionListener(alBAurrera);
 		btnAurrera.setBounds(518, 373, 91, 38);
-		add(btnAurrera);
+		getContentPane().add(btnAurrera);
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -306,8 +306,8 @@ public class Ordainketa extends JFrame {
 		};
 		btnAtzera.addActionListener(alBAtzera);
 		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnAtzera.setBounds(0, 0, 89, 23);
-		add(btnAtzera);
+		btnAtzera.setBounds(0, 0, 89, 30);
+		getContentPane().add(btnAtzera);
 		
 		
 		

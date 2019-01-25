@@ -19,13 +19,13 @@ public class Frame extends JFrame {
 ////	
 //	GridBagConstraints config = new GridBagConstraints();
 	
-	static Lehena Lehena = new Lehena();
-	static SaioaHasi SaioaHasi = new SaioaHasi();
-	static Lineak Lineak = new Lineak();
-	static Geltokiak Geltokiak = new Geltokiak();
-	static Ordainketa Ordainketa = new Ordainketa();
-	static AteraBilletea AteraBilletea = new AteraBilletea();
-	static Azkena Azkena = new Azkena();
+//	//static Lehena Lehena = new Lehena();
+//	//static SaioaHasi SaioaHasi = new SaioaHasi();
+//	static Lineak Lineak = new Lineak();
+//	static Geltokiak Geltokiak = new Geltokiak();
+//	static Ordainketa Ordainketa = new Ordainketa();
+//	static AteraBilletea AteraBilletea = new AteraBilletea();
+//	static Azkena Azkena = new Azkena();
 
 	/**
 	 * Launch the application.
