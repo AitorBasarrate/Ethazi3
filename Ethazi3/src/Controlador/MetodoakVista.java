@@ -20,4 +20,8 @@ public class MetodoakVista {
 	
 	
 
+<<<<<<< Upstream, based on branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
 }
+=======
+}
+>>>>>>> 5140dd2 metodoakVista

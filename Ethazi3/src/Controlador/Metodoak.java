@@ -28,10 +28,10 @@ public class Metodoak {
 		ordaintzekoa.addElement(Controlador.Aplikazioa.totBezGabe + "€");
 		list.setModel(ordaintzekoa);
 	}
-	
-	public static void bezKalkulatu() {
-		kontTotala = (totBezGabe * BEZ) + totBezGabe;
-	}
+
+//	public static void bezKalkulatu() {
+//		kontTotala = (totBezGabe * BEZ) + totBezGabe;
+//	}
 	
 	
 	
