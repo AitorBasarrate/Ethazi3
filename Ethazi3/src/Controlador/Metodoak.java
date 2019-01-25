@@ -59,7 +59,7 @@ public class Metodoak {
 				Nombre_ = rs.getString("Nombre");
 				Linea LineaDat1 = new Linea(CodLinea_, Nombre_);
 				DatuakLinea.add(0, LineaDat1);
-				System.out.println(Modelo.Kontsulta.toString1(DatuakLinea.get(0), Cod_linea, Nombre));
+				System.out.println(Modelo.Kontsulta.toString1(DatuakLinea.get(0), ,Nombre));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
