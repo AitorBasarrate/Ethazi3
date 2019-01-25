@@ -21,7 +21,7 @@ public class Aplikazioa {
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
 
-		Kontsulta.muestraDatos();
+//		Metodoak.muestraDatos(Cod_linea, Nombre);
 		Kontsulta.inicioSesion();
 		Metodoak.nanKomprobaketa();
 
