@@ -7,6 +7,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controlador.*;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -56,18 +59,6 @@ public class Ordainketa extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Ordainketa frame = new Ordainketa();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
 	/**
 	 * Create the frame.
@@ -83,10 +74,8 @@ public class Ordainketa extends JFrame {
 		btnIrten.setIcon(new ImageIcon("C:\\Users\\gorka\\OneDrive\\Escritorio\\SqvpT6Qt_400x400.jpg"));
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Frame.Lehena.setVisible(true);
-//				Frame.Ordainketa.setVisible(false);
-				//Controlador.Aplikazioa.restList();
-				//dispose();
+				MetodoakVista.bueltatuLehena();
+				dispose();
 			}
 		});
 		btnIrten.setBounds(514, 0, 109, 30);
@@ -99,14 +88,14 @@ public class Ordainketa extends JFrame {
 		add(lblErositakoa);
 		textDiruTot.setBackground(Color.WHITE);
 		textDiruTot.setEditable(false);
-//				DefaultListModel ordaintzekoa = new DefaultListModel();
-//				ordaintzekoa.addElement(KodeaMain.kontTotala+"€");
-//				listBueltak.setModel(ordaintzekoa);
+				DefaultListModel ordaintzekoa = new DefaultListModel();
+//				ordaintzekoa.addElement(Metodoak.kontTotala+"€");
+				listBueltak.setModel(ordaintzekoa);
 		
 		textDiruTot.setBounds(22, 69, 270, 38);
 		add(textDiruTot);
-		Controlador.Aplikazioa.bezKalkulatu();
-		TextDiruTot = Double.toString(Controlador.Aplikazioa.kontTotala);
+//		Metodoak.bezKalkulatu();
+//		TextDiruTot = Double.toString(Metodoak.kontTotala);
 		textDiruTot.setColumns(10);
 		textDiruTot.setText(TextDiruTot);
 		
@@ -297,9 +286,8 @@ public class Ordainketa extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-//				Frame.AteraBilletea.setVisible(true);
-//				Frame.Ordainketa.setVisible(false);
-				//dispose();
+				MetodoakVista.sehigarrenera();
+				dispose();
 			}
 		};
 		btnAurrera.setEnabled(false);
@@ -310,8 +298,8 @@ public class Ordainketa extends JFrame {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Ordainketa.setVisible(false);
-//				Frame.Geltokiak.setVisible(true);
+				MetodoakVista.laugarrenera();
+				dispose();
 			}
 		};
 		btnAtzera.addActionListener(alBAtzera);

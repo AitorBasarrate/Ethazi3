@@ -31,7 +31,7 @@ public class Lehena extends JFrame {
 		ActionListener alBSaioaHasi = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Aplikazioa.LehenaBigarren(Frame.Lehena, Frame.SaioaHasi);
+				MetodoakVista.bigarrenera();
 				
 			}
 		};

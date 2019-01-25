@@ -8,6 +8,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JList;
 import javax.swing.JTextField;
+
+import Controlador.MetodoakVista;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -56,8 +59,8 @@ public class Lineak extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Lineak.setVisible(false);
-//				Frame.Geltokiak.setVisible(true);
+				MetodoakVista.laugarrenera();
+				dispose();
 			}
 		};
 		btnAurrera.addActionListener(alBAurrera);
@@ -67,8 +70,8 @@ public class Lineak extends JFrame {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Lineak.setVisible(false);
-//				Frame.SaioaHasi.setVisible(true);
+				MetodoakVista.bigarrenera();
+				dispose();
 			}
 		};
 		btnAtzera.addActionListener(alBAtzera);
@@ -78,8 +81,8 @@ public class Lineak extends JFrame {
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Lineak.setVisible(false);
-				Frame.Lehena.setVisible(true);
+				MetodoakVista.bueltatuLehena();
+				dispose();
 			}
 		};
 		btnIrten.addActionListener(alBIrten);

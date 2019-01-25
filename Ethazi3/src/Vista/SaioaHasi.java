@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Controlador.*;
+
 public class SaioaHasi extends JFrame {
 	
 	private JTextField textField = new JTextField();
@@ -55,20 +57,20 @@ public class SaioaHasi extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Aplikazioa.BigarrenaHirugarrena();
+				MetodoakVista.hirugarrenera();
+				dispose();
 			}
 		};
 		btnAurrera.addActionListener(alBAurrera);
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.setBounds(524, 386, 99, 33);
 		add(btnAurrera);
-		
-		
+
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.SaioaHasi.setVisible(false);
-//				Frame.Lehena.setVisible(true);
+				MetodoakVista.bueltatuLehena();
+				dispose();
 			}
 		};
 		btnAtzera.addActionListener(alBAtzera);
@@ -79,8 +81,8 @@ public class SaioaHasi extends JFrame {
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.SaioaHasi.setVisible(false);
-//				Frame.Lehena.setVisible(true);
+				MetodoakVista.bueltatuLehena();
+				dispose();
 			}
 		};
 		btnIrten.addActionListener(alBIrten);

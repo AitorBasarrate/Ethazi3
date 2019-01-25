@@ -5,6 +5,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import Controlador.MetodoakVista;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,14 +39,13 @@ public class AteraBilletea extends JFrame {
 		lblAsko.setBounds(241, 152, 134, 68);
 		add(lblAsko);
 		
-		ActionListener alBBilletea = new ActionListener() {
+		ActionListener alBAzkena = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.AteraBilletea.setVisible(false);
-//				Frame.Azkena.setVisible(true);
-//				
+				MetodoakVista.azkenera();
+				dispose();
 			}
 		};
-		btnAteraBilletea.addActionListener(alBBilletea);
+		btnAteraBilletea.addActionListener(alBAzkena);
 		btnAteraBilletea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		btnAteraBilletea.setBounds(202, 269, 198, 39);
 		add(btnAteraBilletea);

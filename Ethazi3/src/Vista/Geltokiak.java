@@ -14,6 +14,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
+
+import Controlador.MetodoakVista;
+
 import java.util.Date;
 import java.util.Calendar;
 import java.awt.Color;
@@ -88,8 +91,8 @@ public class Geltokiak extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Geltokiak.setVisible(false);
-//				Frame.Ordainketa.setVisible(true);
+				MetodoakVista.bostgarrenera();
+				dispose();
 			}
 		};
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -99,8 +102,8 @@ public class Geltokiak extends JFrame {
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Geltokiak.setVisible(false);
-				Frame.Lehena.setVisible(true);
+				MetodoakVista.bueltatuLehena();
+				dispose();
 			}
 		};
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -110,8 +113,8 @@ public class Geltokiak extends JFrame {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Geltokiak.setVisible(false);
-//				Frame.Lineak.setVisible(true);
+				MetodoakVista.hirugarrenera();
+				dispose();
 			}
 		};
 		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));

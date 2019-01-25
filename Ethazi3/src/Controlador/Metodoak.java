@@ -23,15 +23,15 @@ public class Metodoak {
 		}
 	}
 	
-	public static void sartuOrdainketa(JList list) {
-		DefaultListModel ordaintzekoa = new DefaultListModel();
-		ordaintzekoa.addElement(Controlador.Aplikazioa.totBezGabe + "€");
-		list.setModel(ordaintzekoa);
-	}
+//	public static void sartuOrdainketa(JList list) {
+//		DefaultListModel ordaintzekoa = new DefaultListModel();
+//		ordaintzekoa.addElement(Controlador.Aplikazioa.totBezGabe + "€");
+//		list.setModel(ordaintzekoa);
+//	}
 	
-	public static void bezKalkulatu() {
-		kontTotala = (totBezGabe * BEZ) + totBezGabe;
-	}
+//	public static void bezKalkulatu() {
+//		kontTotala = (totBezGabe * BEZ) + totBezGabe;
+//	}
 	
 	
 	
