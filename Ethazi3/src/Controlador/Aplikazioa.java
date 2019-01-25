@@ -13,9 +13,7 @@ import Vista.SaioaHasi;
 
 public class Aplikazioa {
 
-	public static double kontTotala = 0;
-	static final double BEZ = 0.21;
-	protected static double totBezGabe;
+	
 
 	public static void main(String[] args) {
 		
@@ -32,25 +30,11 @@ public class Aplikazioa {
 		ejecutar.setVisible(true);
 	}
 	
-	public static void LehenaBigarren(Lehena lehena, SaioaHasi saioaHasi ) {
-		Lehena Lehena = new Lehena();
-		Lehena.setVisible(false);
-		saioaHasi.setVisible(true);
-		//Lehena.setBounds(0, 0, 700, 500);
-		//contentPane.add(Lehena);
-		saioaHasi.setBounds(0, 0, 635, 455);
- 
-	}
+	
 
-	public static void sartuOrdainketa(JList list) {
-		DefaultListModel ordaintzekoa = new DefaultListModel();
-		ordaintzekoa.addElement(Controlador.Aplikazioa.totBezGabe + "€");
-		list.setModel(ordaintzekoa);
-	}
+	
 
-	public static void bezKalkulatu() {
-		kontTotala = (totBezGabe * BEZ) + totBezGabe;
-	}
+	
 
 	public static String[] diruarenBueltak(String emaitza, String ordainketa) {// emaitza balioa main-etik hartu
 		double DoubleTextDiruTot = Double.parseDouble(emaitza);

@@ -55,7 +55,7 @@ public class SaioaHasi extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				Aplikazioa.BigarrenaHirugarrena();
 			}
 		};
 		btnAurrera.addActionListener(alBAurrera);
