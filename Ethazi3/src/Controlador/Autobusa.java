@@ -2,10 +2,10 @@ package Controlador;
 
 public class Autobusa {
 	
-	private static String Cod_bus;
-	private static String N_plazas;
-	private static String Consumo_km;
-	private static String Color;
+	private String Cod_bus;
+	private String N_plazas;
+	private String Consumo_km;
+	private String Color;
 	
 	public Autobusa(String Cod_bus, String N_plazas, String Consumo_km, String Color) {
 		this.Cod_bus = Cod_bus;
@@ -14,7 +14,7 @@ public class Autobusa {
 		this.Color = Color;
 	}
 
-	public static String getCod_bus() {
+	public String getCod_bus() {
 		return Cod_bus;
 	}
 
@@ -22,7 +22,7 @@ public class Autobusa {
 		Cod_bus = cod_bus;
 	}
 
-	public static String getN_plazas() {
+	public String getN_plazas() {
 		return N_plazas;
 	}
 
@@ -30,7 +30,7 @@ public class Autobusa {
 		N_plazas = n_plazas;
 	}
 
-	public static String getConsumo_km() {
+	public String getConsumo_km() {
 		return Consumo_km;
 	}
 
@@ -38,7 +38,7 @@ public class Autobusa {
 		Consumo_km = consumo_km;
 	}
 
-	public static String getColor() {
+	public String getColor() {
 		return Color;
 	}
 

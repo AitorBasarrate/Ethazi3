@@ -10,25 +10,32 @@ import Vista.SaioaHasi;
 
 public class Metodoak {
 
-	private static String dNI;
+//	private static String dNI;
 
 	public static void nanKomprobaketa() {
-		String DNI = " 15236985K";
+//		String DNI = " 15236985K";
 		ArrayList<Cliente> inicioSes = new ArrayList();
 		inicioSes = Modelo.Kontsulta.getInicioSes(inicioSes);
 		
 		for(int n = 0; n < inicioSes.size(); n++) {
+			if(inicioSes.contains(Controlador.Cliente.getDni())) {
+				
+			}
 			
-			System.out.println(inicioSes.contains(DNI));
 		}
 	}
-	
+
+
 //	public static void sartuOrdainketa(JList list) {
 //		DefaultListModel ordaintzekoa = new DefaultListModel();
 //		ordaintzekoa.addElement(Controlador.Aplikazioa.totBezGabe + "€");
 //		list.setModel(ordaintzekoa);
 //	}
+
 	
+
+
+
 //	public static void bezKalkulatu() {
 //		kontTotala = (totBezGabe * BEZ) + totBezGabe;
 //	}
@@ -36,3 +43,5 @@ public class Metodoak {
 	
 	
 }
+
+
