@@ -9,17 +9,18 @@ public class Linea {
 
 	private String Cod_Linea;
 	private String Nombre;
-
+	
 	public Linea(String Cod_Linea, String Nombre) {
 		this.Cod_Linea = Cod_Linea;
 		this.Nombre = Nombre;
 	}
 
-	public void rellenar(ArrayList<String> LineaArray, String Cod_Linea, String Nombre) {
+	public void rellenar(ArrayList<String> LineaArray, String Cod_linea, String Nombre) {
 		for (int i = 0; i < LineaArray.size() - 1; i++) {
 			Cod_Linea = LineaArray.get(0);
 			Nombre = LineaArray.get(1);
 		}
+		Metodoak.muestraDatos(Cod_linea, Nombre);
 	}
 
 	public String getCod_Linea() {
