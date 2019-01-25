@@ -78,9 +78,9 @@ public class Metodoak {
 
 
 
-//	public static void bezKalkulatu() {
-//		kontTotala = (totBezGabe * BEZ) + totBezGabe;
-//	}
+	public static void bezKalkulatu() {
+		kontTotala = (totBezGabe * BEZ) + totBezGabe;
+	}
 	
 	
 	

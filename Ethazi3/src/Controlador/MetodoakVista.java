@@ -53,15 +53,4 @@ public class MetodoakVista {
 		azkena.setBounds(0, 0, 635, 455);
 	}
 
-
-	public static void LehenaBigarren(Lehena lehena, SaioaHasi saioaHasi ) {
-		Lehena Lehena = new Lehena();
-		Lehena.setVisible(false);
-		saioaHasi.setVisible(true);
-		//Lehena.setBounds(0, 0, 700, 500);
-		//contentPane.add(Lehena);
-		saioaHasi.setBounds(0, 0, 635, 455);
- 
-	}
-
 }

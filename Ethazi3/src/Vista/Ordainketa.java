@@ -89,13 +89,13 @@ public class Ordainketa extends JFrame {
 		textDiruTot.setBackground(Color.WHITE);
 		textDiruTot.setEditable(false);
 				DefaultListModel ordaintzekoa = new DefaultListModel();
-//				ordaintzekoa.addElement(Metodoak.kontTotala+"€");
+				ordaintzekoa.addElement(Metodoak.kontTotala+"€");
 				listBueltak.setModel(ordaintzekoa);
 		
 		textDiruTot.setBounds(22, 69, 270, 38);
 		add(textDiruTot);
-//		Metodoak.bezKalkulatu();
-//		TextDiruTot = Double.toString(Metodoak.kontTotala);
+		Metodoak.bezKalkulatu();
+		TextDiruTot = Double.toString(Metodoak.kontTotala);
 		textDiruTot.setColumns(10);
 		textDiruTot.setText(TextDiruTot);
 		
@@ -271,6 +271,8 @@ public class Ordainketa extends JFrame {
 				textDiruTot.setText("0");
 			}
 			btnAurrera.setEnabled(true);
+			btnErosi.setEnabled(false);
+			btnEzabatu.setEnabled(false);
 			}
 			};
 			btnErosi.setFont(new Font("Tahoma", Font.PLAIN, 15));
