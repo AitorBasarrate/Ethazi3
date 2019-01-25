@@ -17,11 +17,4 @@ public class MetodoakVista {
 		saioaHasi.setBounds(0, 0, 635, 455);
  
 	}
-	
-	
-
-<<<<<<< Upstream, based on branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
 }
-=======
-}
->>>>>>> 5140dd2 metodoakVista

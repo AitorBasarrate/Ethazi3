@@ -7,34 +7,34 @@ import Modelo.Kontsulta;
 
 public class Linea {
 
-	private static String Cod_Linea;
-	private static String Nombre;
+	private String Cod_Linea;
+	private String Nombre;
 
 	public Linea(String Cod_Linea, String Nombre) {
 		this.Cod_Linea = Cod_Linea;
 		this.Nombre = Nombre;
 	}
 
-	public static void rellenar(ArrayList<String> LineaArray, String Cod_Linea, String Nombre) {
+	public void rellenar(ArrayList<String> LineaArray, String Cod_Linea, String Nombre) {
 		for (int i = 0; i < LineaArray.size() - 1; i++) {
 			Cod_Linea = LineaArray.get(0);
 			Nombre = LineaArray.get(1);
 		}
 	}
 
-	public static String getCod_Linea() {
+	public String getCod_Linea() {
 		return Cod_Linea;
 	}
 
-	public static void setCod_Linea(String Cod_Linea) {
+	public void setCod_Linea(String Cod_Linea) {
 		Cod_Linea = Cod_Linea;
 	}
 
-	public static String getNombre() {
+	public String getNombre() {
 		return Nombre;
 	}
 
-	public static void setNombre(String Nombre) {
+	public void setNombre(String Nombre) {
 		Nombre = Nombre;
 	}
 }
