@@ -31,7 +31,7 @@ public class Metodoak {
 		}
 //	}
 	
-	public static void muestraDatos(String Cod_linea, String Nombre) {
+	public static void muestraDatos(String Cod_linea, String Nombre, toString()) {
 		ArrayList<Linea> DatuakLinea = new ArrayList();
 		Connection conexion = null;
 		java.sql.Statement s = null;

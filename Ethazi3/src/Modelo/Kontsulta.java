@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
+import Controlador.parada;
 
 public class Kontsulta {
 //	static String Col_1 = "";
@@ -82,9 +83,11 @@ public class Kontsulta {
 		+ " KONTSUMOA KMko: " + Consumo_km 
 		+ " KOLOREA: " + Color;
 	}
-	public static String toString4(Cliente Cliente) {
-		return "Kontsulta [DNI: " + Controlador.Cliente.getDni() + " Nombre: " + Controlador.Cliente.getNombre() + " Apellido: " +
-				Controlador.Cliente.getApellido() + " Contraseña: " + Controlador.Cliente.getSexo() + " Sexo: " + Controlador.Cliente.getContraseña() + 
-				" Fecha_nac: " + Controlador.Cliente.getFecha_nac() +" ]";
+	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud, String Longitud) {
+		return "Kontsulta [NAN: " + Cod_Parada 
+				+ " Izena: " + Nombre 
+				+ " Kalea: " + Calle 
+				+ " Latitudea: " + Latitud 
+				+ " Longitudea: " + Longitud + " ]";
 	}
 }
