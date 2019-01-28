@@ -3,13 +3,8 @@ package Controlador;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
-
 import Modelo.DB;
 import Modelo.Kontsulta;
-import Vista.Lehena;
-import Vista.SaioaHasi;
 
 public class Aplikazioa {
 
@@ -21,13 +16,13 @@ public class Aplikazioa {
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
 
-//		Metodoak.muestraDatos(Cod_linea, Nombre);
-		Kontsulta.inicioSesion();
+		Metodoak.inicioSesion();
 		Metodoak.nanKomprobaketa();
+		 ArrayList<Cliente> inicioSes = Metodoak.inicioSesion();
+			Metodoak.nanKomprobaketa(inicioSes );
 
-
-		Vista.Lehena ejecutar= new Vista.Lehena();
-		ejecutar.setVisible(true);
+//		Vista.Lehena ejecutar= new Vista.Lehena();
+//		ejecutar.setVisible(true);
 	}
 	
 	

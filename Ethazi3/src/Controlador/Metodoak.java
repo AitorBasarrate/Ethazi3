@@ -1,21 +1,16 @@
 package Controlador;
 
+import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
-
-import Vista.Lehena;
-import Vista.SaioaHasi;
-import Controlador.Linea;
-
 public class Metodoak {
 	public static double kontTotala = 0;
 	static final double BEZ = 0.21;
 	protected static double totBezGabe;
+	Linea LineaDat1 = new Linea("","");
 //	private static String dNI;
 
 	public static void nanKomprobaketa() {
@@ -31,7 +26,7 @@ public class Metodoak {
 		}
 //	}
 	
-	public static void muestraDatos(String Cod_linea, String Nombre) {
+	public static void muestraDatos(String Cod_linea, String Nombre, Linea LineaDat1) {
 		ArrayList<Linea> DatuakLinea = new ArrayList();
 		Connection conexion = null;
 		java.sql.Statement s = null;
@@ -57,15 +52,15 @@ public class Metodoak {
 				String Nombre_ = "";
 				CodLinea_ = rs.getString("Cod_Linea");
 				Nombre_ = rs.getString("Nombre");
-				Linea LineaDat1 = new Linea(CodLinea_, Nombre_);
 				DatuakLinea.add(0, LineaDat1);
-				System.out.println(Modelo.Kontsulta.toString1(DatuakLinea.get(0), ,Nombre));
+				System.out.println(Modelo.Kontsulta.toString1(LineaDat1.getCod_Linea(), LineaDat1.getNombre()));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 
 	}
+
 	
 //	public static void sartuOrdainketa(JList list) {
 //		DefaultListModel ordaintzekoa = new DefaultListModel();
@@ -77,6 +72,27 @@ public class Metodoak {
 //		kontTotala = (totBezGabe * BEZ) + totBezGabe;
 //	}
 	
-	
+public static void nanKomprobaketa(ArrayList <Cliente> inicioSes) {
+		
+		String DNI = " 15236985K";
+
+		
+		
+		System.out.println("METODO COMPROBAR DNI");
+		
+			if(inicioSes.contains(DNI)) {
+				System.out.println( " DNI INTRODUCIDO " + DNI +" CORRECTO");
+			}else {
+				System.out.println(" DNI INTRODUCIDO " + DNI +" Incorrecto");
+			}
+		
+			
+		
+	}
+
+
+public static ArrayList<Cliente> getInicioSes(ArrayList<Cliente> inicioSes){
+	return inicioSes;
+}
 	
 }

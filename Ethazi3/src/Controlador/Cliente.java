@@ -8,7 +8,7 @@ public class Cliente {
 	private String Dni;
 	private String Nombre;
 	private String Apellido;
-	private String fecha_nac;
+	private String Fecha_Nac;
 	private String Sexo;
 	private String Contraseña;
 	
