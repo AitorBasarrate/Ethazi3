@@ -8,6 +8,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JList;
 import javax.swing.JTextField;
+
+import Controlador.MetodoakVista;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -27,7 +30,7 @@ public class Lineak extends JFrame {
 	 * Create the panel.
 	 */
 	public Lineak() {
-		setLayout(null);
+		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,56 +39,56 @@ public class Lineak extends JFrame {
 		
 		lblLineak.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblLineak.setBounds(58, 58, 132, 32);
-		add(lblLineak);
+		getContentPane().add(lblLineak);
 		
 		
 		list.setBounds(42, 117, 193, 249);
-		add(list);
+		getContentPane().add(list);
 		
 		
 		lblBus.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblBus.setBounds(386, 115, 86, 54);
-		add(lblBus);
+		getContentPane().add(lblBus);
 		textField.setBackground(Color.WHITE);
 		textField.setEditable(false);
 		
 		
 		textField.setBounds(362, 181, 132, 54);
-		add(textField);
+		getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Lineak.setVisible(false);
-//				Frame.Geltokiak.setVisible(true);
+				MetodoakVista.laugarrenera();
+				dispose();
 			}
 		};
 		btnAurrera.addActionListener(alBAurrera);
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.setBounds(524, 387, 99, 32);
-		add(btnAurrera);
+		getContentPane().add(btnAurrera);
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Lineak.setVisible(false);
-//				Frame.SaioaHasi.setVisible(true);
+				MetodoakVista.bigarrenera();
+				dispose();
 			}
 		};
 		btnAtzera.addActionListener(alBAtzera);
 		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnAtzera.setBounds(0, 0, 89, 23);
-		add(btnAtzera);
+		btnAtzera.setBounds(0, 0, 89, 32);
+		getContentPane().add(btnAtzera);
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Lineak.setVisible(false);
-				Frame.Lehena.setVisible(true);
+				MetodoakVista.bueltatuLehena();
+				dispose();
 			}
 		};
 		btnIrten.addActionListener(alBIrten);
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.setBounds(524, 0, 99, 32);
-		add(btnIrten);
+		getContentPane().add(btnIrten);
 
 	}
 }

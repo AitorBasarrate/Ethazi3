@@ -23,7 +23,7 @@ public class Lehena extends JFrame {
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 635, 455);
+		setBounds(300, 100, 635, 455);
 		
 		btnSaioaHasi.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		
@@ -31,7 +31,7 @@ public class Lehena extends JFrame {
 		ActionListener alBSaioaHasi = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Aplikazioa.LehenaBigarren(Frame.Lehena, Frame.SaioaHasi);
+				MetodoakVista.bigarrenera();
 				
 			}
 		};

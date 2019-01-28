@@ -15,12 +15,12 @@ import Controlador.Aplikazioa;
 public class Frame extends JFrame {
 
 	private JPanel contentPane;
-	private static final long serialVersionUID = 1L;
-//	
-	GridBagConstraints config = new GridBagConstraints();
+//	private static final long serialVersionUID = 1L;
+////	
+//	GridBagConstraints config = new GridBagConstraints();
 	
-	static Lehena Lehena = new Lehena();
-	static SaioaHasi SaioaHasi = new SaioaHasi();
+//	//static Lehena Lehena = new Lehena();
+//	//static SaioaHasi SaioaHasi = new SaioaHasi();
 //	static Lineak Lineak = new Lineak();
 //	static Geltokiak Geltokiak = new Geltokiak();
 //	static Ordainketa Ordainketa = new Ordainketa();
@@ -37,15 +37,15 @@ public class Frame extends JFrame {
 	 */
 	public Frame() {
 		
-		this.setSize(478,300);  
-		this.setLocationRelativeTo(null);  
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 635, 455);
+//		this.setSize(478,300);  
+//		this.setLocationRelativeTo(null);  
+//		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setBounds(0, 0, 635, 455);
 		
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+//		contentPane = new JPanel();
+//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+//		setContentPane(contentPane);
+//		contentPane.setLayout(null);
 		
 //		Lehena.setBounds(0, 0, 700, 500);
 //		contentPane.add(Lehena);

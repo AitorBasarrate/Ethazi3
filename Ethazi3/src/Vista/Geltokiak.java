@@ -14,6 +14,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
+
+import Controlador.MetodoakVista;
+
 import java.util.Date;
 import java.util.Calendar;
 import java.awt.Color;
@@ -40,7 +43,7 @@ public class Geltokiak extends JFrame {
 	 */
 	public Geltokiak() {
 		
-		setLayout(null);
+		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,82 +51,82 @@ public class Geltokiak extends JFrame {
 		
 		lblAukeratuDuzunLinea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblAukeratuDuzunLinea.setBounds(155, 88, 245, 23);
-		add(lblAukeratuDuzunLinea);
+		getContentPane().add(lblAukeratuDuzunLinea);
 		txtLinea.setBackground(Color.WHITE);
 		txtLinea.setEditable(false);
 		
 		
 		txtLinea.setBounds(204, 137, 138, 46);
-		add(txtLinea);
+		getContentPane().add(txtLinea);
 		txtLinea.setColumns(10);
 		
 		
 		lblGeltokiakAukeratu.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblGeltokiakAukeratu.setBounds(182, 234, 212, 20);
-		add(lblGeltokiakAukeratu);
+		getContentPane().add(lblGeltokiakAukeratu);
 		
 		
 		lblHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblHasiera.setBounds(64, 300, 111, 33);
-		add(lblHasiera);
+		getContentPane().add(lblHasiera);
 		
 		
 		lblHelmuga.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblHelmuga.setBounds(232, 300, 118, 35);
-		add(lblHelmuga);
+		getContentPane().add(lblHelmuga);
 		
 		
 		lblData.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblData.setBounds(421, 307, 89, 23);
-		add(lblData);
+		getContentPane().add(lblData);
 		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		
 		
 		comboBoxHasiera.setBounds(73, 346, 89, 20);
-		add(comboBoxHasiera);
+		getContentPane().add(comboBoxHasiera);
 		comboBoxHelmuga.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		comboBoxHelmuga.setBounds(242, 346, 94, 20);
 		
-		add(comboBoxHelmuga);
+		getContentPane().add(comboBoxHelmuga);
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Geltokiak.setVisible(false);
-//				Frame.Ordainketa.setVisible(true);
+				MetodoakVista.bostgarrenera();
+				dispose();
 			}
 		};
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.addActionListener(alBAurrera);
 		btnAurrera.setBounds(524, 386, 99, 33);
-		add(btnAurrera);
+		getContentPane().add(btnAurrera);
 		
 		ActionListener alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Geltokiak.setVisible(false);
-				Frame.Lehena.setVisible(true);
+				MetodoakVista.bueltatuLehena();
+				dispose();
 			}
 		};
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.addActionListener(alBIrten);
 		btnIrten.setBounds(524, 0, 99, 33);
-		add(btnIrten);
+		getContentPane().add(btnIrten);
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Frame.Geltokiak.setVisible(false);
-//				Frame.Lineak.setVisible(true);
+				MetodoakVista.hirugarrenera();
+				dispose();
 			}
 		};
 		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAtzera.addActionListener(alBAtzera);
-		btnAtzera.setBounds(0, 0, 89, 23);
-		add(btnAtzera);
+		btnAtzera.setBounds(0, 0, 89, 33);
+		getContentPane().add(btnAtzera);
 		spinner.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
 		spinner.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
 		spinner.setBounds(395, 341, 144, 23);
 		
-		add(spinner);
+		getContentPane().add(spinner);
 
 	}
 }
