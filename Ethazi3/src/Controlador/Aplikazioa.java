@@ -1,15 +1,9 @@
 package Controlador;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
 
 import Modelo.DB;
 import Modelo.Kontsulta;
-import Vista.Lehena;
-import Vista.SaioaHasi;
 
 public class Aplikazioa {
 
@@ -26,8 +20,8 @@ public class Aplikazioa {
 		Metodoak.nanKomprobaketa();
 
 
-		Vista.Lehena ejecutar= new Vista.Lehena();
-		ejecutar.setVisible(true);
+//		Vista.Lehena ejecutar= new Vista.Lehena();
+//		ejecutar.setVisible(true);
 	}
 	
 	

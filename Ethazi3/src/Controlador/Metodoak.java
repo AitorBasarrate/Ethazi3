@@ -22,16 +22,15 @@ public class Metodoak {
 //		String DNI = " 15236985K";
 		ArrayList<Cliente> inicioSes = new ArrayList();
 		inicioSes = Modelo.Kontsulta.getInicioSes(inicioSes);
-		
-		for(int n = 0; n < inicioSes.size(); n++) {
+
+		for (int n = 0; n < inicioSes.size(); n++) {
 //			if(inicioSes.contains(Controlador.Cliente.getDni())) {
-				
-			}
-			
+
 		}
+	}
 //	}
-	
-	public static void muestraDatos(String Cod_linea, String Nombre, toString()) {
+
+	public static void muestraDatos(String Cod_linea, String Nombre) {
 		ArrayList<Linea> DatuakLinea = new ArrayList();
 		Connection conexion = null;
 		java.sql.Statement s = null;
@@ -59,7 +58,7 @@ public class Metodoak {
 				Nombre_ = rs.getString("Nombre");
 				Linea LineaDat1 = new Linea(CodLinea_, Nombre_);
 				DatuakLinea.add(0, LineaDat1);
-				System.out.println(Modelo.Kontsulta.toString1(DatuakLinea.get(0), ,Nombre));
+				System.out.println(Modelo.Kontsulta.toString1(DatuakLinea.get(0), CodLinea_, Nombre_));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -67,23 +66,14 @@ public class Metodoak {
 
 	}
 
-
 //	public static void sartuOrdainketa(JList list) {
 //		DefaultListModel ordaintzekoa = new DefaultListModel();
 //		ordaintzekoa.addElement(Controlador.Aplikazioa.totBezGabe + "€");
 //		list.setModel(ordaintzekoa);
 //	}
 
-	
-
-
-
 	public static void bezKalkulatu() {
 		kontTotala = (totBezGabe * BEZ) + totBezGabe;
 	}
-	
-	
-	
+
 }
-
-
