@@ -1,11 +1,11 @@
 package Modelo;
 
-import java.beans.Statement;
+//import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
-
 import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
@@ -38,7 +38,7 @@ public class Kontsulta {
 			s = (Statement) conexion.createStatement();
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("select * from cliente");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT * FROM CLIENTE");
 			while (rs.next()) {
 				String dni_;
 				dni_ = rs.getString("DNI");
@@ -55,7 +55,7 @@ public class Kontsulta {
 				
 				Cliente c1 = new Cliente(dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
 				inicioSes.add(0, c1);
-//				System.out.println(toString2(inicioSes.get(0)));
+				System.out.println(Kontsulta.toString2(c1, dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -68,12 +68,12 @@ public class Kontsulta {
 		return "Kontsulta [LINEAREN KODEA: " + Cod_linea 
 				+ " IZENA: " + Nombre + "]";
 	}
-	public static String toString2(Cliente Cliente, String Dni, String Nombre, String Apellido, String fecha_nac, String Sexo, String Contraseña) {
+	public static String toString2(Cliente Cliente, String Dni, String Nombre, String Apellido, String Sexo, String Contraseña, String fecha_nac) {
 		String imprimaki =  "Kontsulta [NAN: " + Dni 
 		+ " IZENA: " + Nombre 
 		+ " ABIZENA: " + Apellido 
-		+ " PASAHITZA: " + Sexo 
-		+ " SEXUA: " + Contraseña 
+		+ " PASAHITZA: " + Contraseña 
+		+ " SEXUA: " + Sexo 
 		+ " JAIOTZE DATA: " + fecha_nac +" ]";
 		return imprimaki;
 	}
