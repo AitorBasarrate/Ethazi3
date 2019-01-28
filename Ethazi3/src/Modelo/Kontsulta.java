@@ -76,12 +76,11 @@ public class Kontsulta {
 		+ " JAIOTZE DATA: " + fecha_nac +" ]";
 		return imprimaki;
 	}
-	public static String toString3(Autobusa Autobusa) {
-		return "Kontsulta [AUTOBUSAREN KODEA: " + Controlador.Autobusa.getCod_bus() 
-		+ " JESARLEKUAK: " + Controlador.Autobusa.getN_plazas() 
-		+ " KONTSUMOA KMko: " + Controlador.Autobusa.getConsumo_km() 
-		+ " KOLOREA: " + Controlador.Autobusa.getColor() 
-		+ " SEXUA: " + Controlador.Cliente.getContraseña() + " ]";
+	public static String toString3(Autobusa Autobusa, String Cod_Bus, String N_plazas, String Consumo_km, String Color) {
+		return "Kontsulta [AUTOBUSAREN KODEA: " + Cod_Bus
+		+ " JESARLEKUAK: " + N_plazas 
+		+ " KONTSUMOA KMko: " + Consumo_km 
+		+ " KOLOREA: " + Color;
 	}
 	public static String toString4(Cliente Cliente) {
 		return "Kontsulta [DNI: " + Controlador.Cliente.getDni() + " Nombre: " + Controlador.Cliente.getNombre() + " Apellido: " +
