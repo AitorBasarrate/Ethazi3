@@ -26,7 +26,7 @@ public class Kontsulta {
 	public static ArrayList<Cliente> getInicioSes(ArrayList<Cliente> inicioSes){
 		return inicioSes;
 	}
-	public static void muestraDatos(String Cod_linea, String Nombre) {
+	public static void muestraLinea(String Cod_linea, String Nombre) {
 		ArrayList<Linea> DatuakLinea = new ArrayList();
 		Connection conexion = null;
 		java.sql.Statement s = null;
@@ -61,7 +61,7 @@ public class Kontsulta {
 		}
 
 	}
-	public static void inicioSesion() {
+	public static void muestraCliente() {
 		Connection conexion = null;
 		Statement s = null;
 		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
@@ -86,10 +86,7 @@ public class Kontsulta {
 				contraseña_ = rs.getString("Contraseña");
 				String fecha_nac_;
 				fecha_nac_ = rs.getString("Fecha_nac");
-				
-				Cliente c1 = new Cliente(dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
-				inicioSes.add(0, c1);
-				System.out.println(Kontsulta.toString2(c1, dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
+				System.out.println(Kontsulta.toString2(dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -122,9 +119,9 @@ public class Kontsulta {
 				String fecha_nac_;
 				fecha_nac_ = rs.getString("Fecha_nac");
 				
-				Cliente c1 = new Cliente(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
-				inicioSes.add(0, c1);
-				System.out.println(Kontsulta.toString2(c1, CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
+//				Cliente c1 = new Cliente(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
+//				inicioSes.add(0, c1);
+				System.out.println(Kontsulta.toString2(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -136,7 +133,7 @@ public class Kontsulta {
 		return "Kontsulta [LINEAREN KODEA: " + Cod_linea 
 				+ " IZENA: " + Nombre + "]";
 	}
-	public static String toString2(Cliente Cliente, String Dni, String Nombre, String Apellido, String Sexo, String Contraseña, String fecha_nac) {
+	public static String toString2(String Dni, String Nombre, String Apellido, String Sexo, String Contraseña, String fecha_nac) {
 		String imprimaki =  "Kontsulta [NAN: " + Dni 
 		+ " IZENA: " + Nombre 
 		+ " ABIZENA: " + Apellido 

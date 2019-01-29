@@ -24,7 +24,7 @@ public class Linea {
 			Cod_linea = LineaArray.get(0);
 			Nombre = LineaArray.get(1);
 		}
-		Kontsulta.muestraDatos(Cod_linea, Nombre);
+		Kontsulta.muestraLinea(Cod_linea, Nombre);
 	}
 
 	public String getCod_Linea() {

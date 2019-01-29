@@ -16,7 +16,7 @@ public class Aplikazioa {
 		con1.getConexion();
 
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
-		Kontsulta.inicioSesion();
+		Kontsulta.muestraCliente();
 		Metodoak.nanKomprobaketa();
 
 
