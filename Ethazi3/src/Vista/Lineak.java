@@ -15,12 +15,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import java.awt.Color;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class Lineak extends JFrame {
 	
 	private JTextField textField = new JTextField();
 	private JLabel lblLineak = new JLabel("LINEAK");
-	private JList list = new JList();
 	private JLabel lblBus = new JLabel("BUS");
 	private JButton btnAurrera = new JButton("Aurrera");
 	private JButton btnAtzera = new JButton("Atzera");
@@ -40,10 +41,6 @@ public class Lineak extends JFrame {
 		lblLineak.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblLineak.setBounds(58, 58, 132, 32);
 		getContentPane().add(lblLineak);
-		
-		
-		list.setBounds(42, 117, 193, 249);
-		getContentPane().add(list);
 		
 		
 		lblBus.setFont(new Font("Tahoma", Font.PLAIN, 40));
@@ -89,6 +86,14 @@ public class Lineak extends JFrame {
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.setBounds(524, 0, 99, 32);
 		getContentPane().add(btnIrten);
+		
+		JMenu mnLineak = new JMenu("Lineak");
+		mnLineak.setBounds(39, 115, 123, 32);
+		getContentPane().add(mnLineak);
+		
+		JMenuItem mntmLineak = new JMenuItem("Lineak");
+		mntmLineak.setBounds(26, 245, 99, 24);
+		getContentPane().add(mntmLineak);
 
 	}
 }

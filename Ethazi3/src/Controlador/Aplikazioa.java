@@ -20,8 +20,8 @@ public class Aplikazioa {
 		Metodoak.nanKomprobaketa();
 
 
-//		Vista.Lehena ejecutar= new Vista.Lehena();
-//		ejecutar.setVisible(true);
+		Vista.Lehena ejecutar= new Vista.Lehena();
+		ejecutar.setVisible(true);
 	}
 	
 	
