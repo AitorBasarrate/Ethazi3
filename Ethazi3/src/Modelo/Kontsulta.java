@@ -26,7 +26,41 @@ public class Kontsulta {
 	public static ArrayList<Cliente> getInicioSes(ArrayList<Cliente> inicioSes){
 		return inicioSes;
 	}
+	public static void muestraDatos(String Cod_linea, String Nombre) {
+		ArrayList<Linea> DatuakLinea = new ArrayList();
+		Connection conexion = null;
+		java.sql.Statement s = null;
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
 
+			// Se obtiene una conexion con la base de datos.
+			// En este caso nos conectamos a la base de datos ethazi3
+			// con el usuario root y contra null
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+
+			// Se crea un Statement, para realizar la consulta
+			s = conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("select * from linea");
+
+			// Se recorre el ResultSet, mostrando por pantalla los resultados.
+			while (rs.next()) {
+				String CodLinea_ = "";
+				String Nombre_ = "";
+				CodLinea_ = rs.getString("Cod_Linea");
+				Nombre_ = rs.getString("Nombre");
+				Linea LineaDat1 = new Linea(CodLinea_, Nombre_);
+				DatuakLinea.add(0, LineaDat1);
+				System.out.println(Modelo.Kontsulta.toString1(DatuakLinea.get(0), CodLinea_, Nombre_));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
 	public static void inicioSesion() {
 		Connection conexion = null;
 		Statement s = null;
@@ -61,6 +95,40 @@ public class Kontsulta {
 			System.out.println(e.getMessage());
 		}
 
+	}
+	public static void selectLineas() {
+		Connection conexion = null;
+		Statement s = null;
+		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
+		try {
+			//Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND P.Cod_Parada = lp.Cod_Parada AND l.Nombre LIKE 'Termibus-Balmaseda'");
+			while (rs.next()) {
+				String CodLinea_;
+				CodLinea_ = rs.getString("DNI");
+				String nombre_;
+				nombre_ = rs.getString("Nombre");
+				String apellido_;
+				apellido_= rs.getString("Apellidos");
+				String sexo_;
+				sexo_ = rs.getString("Sexo");
+				String contraseña_;
+				contraseña_ = rs.getString("Contraseña");
+				String fecha_nac_;
+				fecha_nac_ = rs.getString("Fecha_nac");
+				
+				Cliente c1 = new Cliente(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
+				inicioSes.add(0, c1);
+				System.out.println(Kontsulta.toString2(c1, CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
