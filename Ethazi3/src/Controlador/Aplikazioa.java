@@ -16,12 +16,13 @@ public class Aplikazioa {
 		con1.getConexion();
 
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
-		Kontsulta.muestraCliente();
-		Metodoak.nanKomprobaketa();
+//		Kontsulta.guardaCliente();
+//		Metodoak.nanKomprobaketa();
+		Kontsulta.lineaAukeratu();
 
 
-//		Vista.Lehena ejecutar= new Vista.Lehena();
-//		ejecutar.setVisible(true);
+		Vista.Lehena ejecutar= new Vista.Lehena();
+		ejecutar.setVisible(true);
 	}
 	
 	

@@ -61,7 +61,7 @@ public class Kontsulta {
 		}
 
 	}
-	public static void muestraCliente() {
+	public static void guardaCliente() {
 		Connection conexion = null;
 		Statement s = null;
 		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
@@ -86,14 +86,13 @@ public class Kontsulta {
 				contraseña_ = rs.getString("Contraseña");
 				String fecha_nac_;
 				fecha_nac_ = rs.getString("Fecha_nac");
-				System.out.println(Kontsulta.toString2(dni_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 
 	}
-	public static void selectLineas() {
+	public static void lineaAukeratu() {
 		Connection conexion = null;
 		Statement s = null;
 		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
@@ -107,21 +106,15 @@ public class Kontsulta {
 			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND P.Cod_Parada = lp.Cod_Parada AND l.Nombre LIKE 'Termibus-Balmaseda'");
 			while (rs.next()) {
 				String CodLinea_;
-				CodLinea_ = rs.getString("DNI");
+				CodLinea_ = rs.getString("Cod_Linea");
 				String nombre_;
 				nombre_ = rs.getString("Nombre");
-				String apellido_;
-				apellido_= rs.getString("Apellidos");
-				String sexo_;
-				sexo_ = rs.getString("Sexo");
-				String contraseña_;
-				contraseña_ = rs.getString("Contraseña");
-				String fecha_nac_;
-				fecha_nac_ = rs.getString("Fecha_nac");
+				String calle_;
+				calle_= rs.getString("Calle");
 				
 //				Cliente c1 = new Cliente(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
 //				inicioSes.add(0, c1);
-				System.out.println(Kontsulta.toString2(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_));
+				System.out.println(Kontsulta.toStringAuk(CodLinea_, nombre_, calle_));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -133,13 +126,10 @@ public class Kontsulta {
 		return "Kontsulta [LINEAREN KODEA: " + Cod_linea 
 				+ " IZENA: " + Nombre + "]";
 	}
-	public static String toString2(String Dni, String Nombre, String Apellido, String Sexo, String Contraseña, String fecha_nac) {
+	public static String toStringAuk(String Dni, String Nombre, String Calle) {
 		String imprimaki =  "Kontsulta [NAN: " + Dni 
 		+ " IZENA: " + Nombre 
-		+ " ABIZENA: " + Apellido 
-		+ " PASAHITZA: " + Contraseña 
-		+ " SEXUA: " + Sexo 
-		+ " JAIOTZE DATA: " + fecha_nac +" ]";
+		+ " KALEA: " + Calle + " ]";
 		return imprimaki;
 	}
 	public static String toString3(Autobusa Autobusa, String Cod_Bus, String N_plazas, String Consumo_km, String Color) {
