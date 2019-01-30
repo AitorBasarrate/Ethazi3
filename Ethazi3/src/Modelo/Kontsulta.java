@@ -125,7 +125,41 @@ public class Kontsulta {
 		}
 		return imprimaki;
 	}
+	
+	public static String lineaAukeratu() {
+		String autaketa = "kaka";
+		String imprimaki = "";
+		Connection conexion = null;
+		Statement s = null;
+		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
+		try {
+			//Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
 
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE 'L1'");
+			while (rs.next()) {
+				String CodLinea_;
+				CodLinea_ = rs.getString("Cod_Linea");
+				String nombre_;
+				nombre_ = rs.getString("Nombre");
+				String calle_;
+				calle_= rs.getString("Calle");
+				
+//				Cliente c1 = new Cliente(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
+//				inicioSes.add(0, c1);
+				
+				imprimaki = Kontsulta.toStringAuk(CodLinea_, nombre_, calle_);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return imprimaki;
+	}
+	
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
 		
 		return "Kontsulta [LINEAREN KODEA: " + Cod_linea 
