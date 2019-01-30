@@ -52,5 +52,9 @@ public class MetodoakVista {
 		azkena.setVisible(true);
 		azkena.setBounds(300, 100, 642, 467);
 	}
+	
+	public static String aukeratuLinea(String linea) {
+		return linea;
+	}
 
 }

@@ -117,7 +117,7 @@ public class Lineak extends JFrame {
 					rdbtnL3.setSelected(false);
 					rdbtnL4.setSelected(false);
 				}
-				
+				MetodoakVista.aukeratuLinea("L1");
 			}
 		};
 		rdbtnL1.addActionListener(alRdbtn1);
@@ -131,7 +131,7 @@ public class Lineak extends JFrame {
 					rdbtnL3.setSelected(false);
 					rdbtnL4.setSelected(false);
 				}
-				
+				MetodoakVista.aukeratuLinea("L2");
 			}
 		};
 		rdbtnL2.addActionListener(alRdbtn2);
@@ -145,7 +145,7 @@ public class Lineak extends JFrame {
 					rdbtnL1.setSelected(false);
 					rdbtnL4.setSelected(false);
 				}
-				
+				MetodoakVista.aukeratuLinea("L3");
 			}
 		};
 		rdbtnL3.addActionListener(alRdbtn3);
@@ -159,26 +159,14 @@ public class Lineak extends JFrame {
 					rdbtnL3.setSelected(false);
 					rdbtnL1.setSelected(false);
 				}
-				
+				MetodoakVista.aukeratuLinea("L4");
 			}
 		};
 		rdbtnL4.addActionListener(alRdbtn4);
 		
-		btnOnartu.setBounds(68, 273, 89, 23);
-		getContentPane().add(btnOnartu);
 		
-		JMenu mnKkkkkk = new JMenu("kkkkkk");
-		mnKkkkkk.setBounds(216, 270, 142, 120);
-		getContentPane().add(mnKkkkkk);
 		
-		JButton btnL = new JButton("L1");
-		mnKkkkkk.add(btnL);
-		ActionListener lineaOnartu = new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				dispose();
-			}
-		};
-		btnOnartu.addActionListener(lineaOnartu);
+		
+		
 	}
 }
