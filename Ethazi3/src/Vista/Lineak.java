@@ -14,11 +14,11 @@ import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 
 import Controlador.MetodoakVista;
-<<<<<<< HEAD
+
 import Modelo.Kontsulta;
 import javax.swing.JRadioButton;
 import javax.swing.JMenu;
-=======
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,7 +26,7 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
+
 
 public class Lineak extends JFrame {
 	
@@ -63,10 +63,6 @@ public class Lineak extends JFrame {
 		modelo.addElement("L4");
 		
 		
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
 		lblBus.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblBus.setBounds(386, 115, 86, 54);
 		getContentPane().add(lblBus);
@@ -110,33 +106,63 @@ public class Lineak extends JFrame {
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.setBounds(524, 0, 99, 32);
 		getContentPane().add(btnIrten);
-		
-<<<<<<< HEAD
-=======
-		JMenu mnLineak = new JMenu("Lineak");
-		mnLineak.setBounds(39, 115, 123, 32);
-		getContentPane().add(mnLineak);
-		
-		JMenuItem mntmLineak = new JMenuItem("Lineak");
-		mntmLineak.setBounds(26, 245, 99, 24);
-		getContentPane().add(mntmLineak);
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
+
 
 		rdbtnL1.setBounds(58, 113, 176, 23);
 		getContentPane().add(rdbtnL1);
-		
+		ActionListener alRdbtn1 = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(rdbtnL1.isSelected()) {
+					rdbtnL2.setSelected(false);
+					rdbtnL3.setSelected(false);
+					rdbtnL4.setSelected(false);
+				}
+				
+			}
+		};
+		rdbtnL1.addActionListener(alRdbtn1);
 		
 		rdbtnL2.setBounds(58, 155, 156, 23);
 		getContentPane().add(rdbtnL2);
-		
+		ActionListener alRdbtn2 = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(rdbtnL2.isSelected()) {
+					rdbtnL1.setSelected(false);
+					rdbtnL3.setSelected(false);
+					rdbtnL4.setSelected(false);
+				}
+				
+			}
+		};
+		rdbtnL2.addActionListener(alRdbtn2);
 	
 		rdbtnL3.setBounds(58, 197, 156, 23);
 		getContentPane().add(rdbtnL3);
-		
+		ActionListener alRdbtn3 = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(rdbtnL3.isSelected()) {
+					rdbtnL2.setSelected(false);
+					rdbtnL1.setSelected(false);
+					rdbtnL4.setSelected(false);
+				}
+				
+			}
+		};
+		rdbtnL3.addActionListener(alRdbtn3);
 		
 		rdbtnL4.setBounds(58, 235, 176, 23);
 		getContentPane().add(rdbtnL4);
-		
+		ActionListener alRdbtn4 = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(rdbtnL4.isSelected()) {
+					rdbtnL2.setSelected(false);
+					rdbtnL3.setSelected(false);
+					rdbtnL1.setSelected(false);
+				}
+				
+			}
+		};
+		rdbtnL4.addActionListener(alRdbtn4);
 		
 		btnOnartu.setBounds(68, 273, 89, 23);
 		getContentPane().add(btnOnartu);
