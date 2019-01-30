@@ -34,6 +34,7 @@ public class Lineak extends JFrame {
 	private JButton btnAurrera = new JButton("Aurrera");
 	private JButton btnAtzera = new JButton("Atzera");
 	private JButton btnIrten = new JButton("IRTEN");
+	private JButton btnOnartu = new JButton("Onartu\r\n");
 	private JRadioButton rdbtnL1 = new JRadioButton("L1 - Termibus/Plentzia");
 	private JRadioButton rdbtnL2 = new JRadioButton("L2 - Termibus/Muskiz");
 	private JRadioButton rdbtnL3 = new JRadioButton("L3 - Termibus/Balmaseda");
@@ -102,8 +103,15 @@ public class Lineak extends JFrame {
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.setBounds(524, 0, 99, 32);
 		getContentPane().add(btnIrten);
+		
 
-
+		JMenu mnLineak = new JMenu("Lineak");
+		mnLineak.setBounds(39, 115, 123, 32);
+		getContentPane().add(mnLineak);
+		
+		JMenuItem mntmLineak = new JMenuItem("Lineak");
+		mntmLineak.setBounds(26, 245, 99, 24);
+		getContentPane().add(mntmLineak);
 		rdbtnL1.setBounds(58, 113, 176, 23);
 		getContentPane().add(rdbtnL1);
 		
@@ -118,11 +126,23 @@ public class Lineak extends JFrame {
 		
 		rdbtnL4.setBounds(58, 235, 176, 23);
 		getContentPane().add(rdbtnL4);
+		
+		
+		btnOnartu.setBounds(68, 273, 89, 23);
+		getContentPane().add(btnOnartu);
+		
+		JMenu mnKkkkkk = new JMenu("kkkkkk");
+		mnKkkkkk.setBounds(216, 270, 142, 120);
+		getContentPane().add(mnKkkkkk);
+		
+		JButton btnL = new JButton("L1");
+		mnKkkkkk.add(btnL);
 		ActionListener lineaOnartu = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				dispose();
 			}
 		};
+		btnOnartu.addActionListener(lineaOnartu);
 	}
 }
