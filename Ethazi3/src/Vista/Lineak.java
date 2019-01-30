@@ -168,5 +168,6 @@ public class Lineak extends JFrame {
 		
 		
 		
+		
 	}
 }
