@@ -92,7 +92,9 @@ public class Kontsulta {
 		}
 
 	}
-	public static void lineaAukeratu() {
+	public static String lineaAukeratu() {
+		String autaketa = "kaka";
+		String imprimaki = "";
 		Connection conexion = null;
 		Statement s = null;
 		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
@@ -103,7 +105,8 @@ public class Kontsulta {
 			s = (Statement) conexion.createStatement();
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND P.Cod_Parada = lp.Cod_Parada AND l.Nombre LIKE 'Termibus-Balmaseda'");
+			
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE 'L1'");
 			while (rs.next()) {
 				String CodLinea_;
 				CodLinea_ = rs.getString("Cod_Linea");
@@ -114,11 +117,13 @@ public class Kontsulta {
 				
 //				Cliente c1 = new Cliente(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
 //				inicioSes.add(0, c1);
-				System.out.println(Kontsulta.toStringAuk(CodLinea_, nombre_, calle_));
+				
+				imprimaki = Kontsulta.toStringAuk(CodLinea_, nombre_, calle_);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		return imprimaki;
 	}
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
@@ -127,7 +132,7 @@ public class Kontsulta {
 				+ " IZENA: " + Nombre + "]";
 	}
 	public static String toStringAuk(String Dni, String Nombre, String Calle) {
-		String imprimaki =  "Kontsulta [NAN: " + Dni 
+		String imprimaki =  "Kontsulta [Linea Kodea: " + Dni 
 		+ " IZENA: " + Nombre 
 		+ " KALEA: " + Calle + " ]";
 		return imprimaki;

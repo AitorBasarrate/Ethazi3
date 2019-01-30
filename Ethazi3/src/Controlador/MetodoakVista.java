@@ -41,7 +41,7 @@ public class MetodoakVista {
 		ordainketa.setBounds(300, 100, 635, 455);
 	}
 	
-	public static void sehigarrenera() {
+	public static void seigarrenera() {
 		AteraBilletea ateraBilletea = new AteraBilletea();
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(300, 100, 635, 455);

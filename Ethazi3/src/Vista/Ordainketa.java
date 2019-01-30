@@ -288,7 +288,7 @@ public class Ordainketa extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				MetodoakVista.sehigarrenera();
+				MetodoakVista.seigarrenera();
 				dispose();
 			}
 		};

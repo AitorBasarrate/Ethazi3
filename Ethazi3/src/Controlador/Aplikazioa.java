@@ -18,8 +18,8 @@ public class Aplikazioa {
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
 //		Kontsulta.guardaCliente();
 //		Metodoak.nanKomprobaketa();
-		Kontsulta.lineaAukeratu();
-
+		String imprimaki = Kontsulta.lineaAukeratu();
+		System.out.println(imprimaki);
 
 		Vista.Lehena ejecutar= new Vista.Lehena();
 		ejecutar.setVisible(true);

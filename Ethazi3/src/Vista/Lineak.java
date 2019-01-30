@@ -1,30 +1,36 @@
 package Vista;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 
 import Controlador.MetodoakVista;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-
-import java.awt.Color;
+import Modelo.Kontsulta;
+import javax.swing.JRadioButton;
+import javax.swing.JMenu;
 
 public class Lineak extends JFrame {
 	
 	private JTextField textField = new JTextField();
 	private JLabel lblLineak = new JLabel("LINEAK");
-	private JList list = new JList();
 	private JLabel lblBus = new JLabel("BUS");
 	private JButton btnAurrera = new JButton("Aurrera");
 	private JButton btnAtzera = new JButton("Atzera");
 	private JButton btnIrten = new JButton("IRTEN");
+	private JButton btnOnartu = new JButton("Onartu\r\n");
+	private JRadioButton rdbtnL1 = new JRadioButton("L1 - Termibus/Plentzia");
+	private JRadioButton rdbtnL2 = new JRadioButton("L2 - Termibus/Muskiz");
+	private JRadioButton rdbtnL3 = new JRadioButton("L3 - Termibus/Balmaseda");
+	private JRadioButton rdbtnL4 = new JRadioButton("L4 - Termibus/Durango");
 	
 	/**
 	 * Create the panel.
@@ -40,10 +46,12 @@ public class Lineak extends JFrame {
 		lblLineak.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblLineak.setBounds(58, 58, 132, 32);
 		getContentPane().add(lblLineak);
+		DefaultListModel modelo = new DefaultListModel();
+		modelo.addElement("L1");
+		modelo.addElement("L2");
+		modelo.addElement("L3");
+		modelo.addElement("L4");
 		
-		
-		list.setBounds(42, 117, 193, 249);
-		getContentPane().add(list);
 		
 		
 		lblBus.setFont(new Font("Tahoma", Font.PLAIN, 40));
@@ -89,6 +97,39 @@ public class Lineak extends JFrame {
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.setBounds(524, 0, 99, 32);
 		getContentPane().add(btnIrten);
+		
 
+		rdbtnL1.setBounds(58, 113, 176, 23);
+		getContentPane().add(rdbtnL1);
+		
+		
+		rdbtnL2.setBounds(58, 155, 156, 23);
+		getContentPane().add(rdbtnL2);
+		
+	
+		rdbtnL3.setBounds(58, 197, 156, 23);
+		getContentPane().add(rdbtnL3);
+		
+		
+		rdbtnL4.setBounds(58, 235, 176, 23);
+		getContentPane().add(rdbtnL4);
+		
+		
+		btnOnartu.setBounds(68, 273, 89, 23);
+		getContentPane().add(btnOnartu);
+		
+		JMenu mnKkkkkk = new JMenu("kkkkkk");
+		mnKkkkkk.setBounds(216, 270, 142, 120);
+		getContentPane().add(mnKkkkkk);
+		
+		JButton btnL = new JButton("L1");
+		mnKkkkkk.add(btnL);
+		ActionListener lineaOnartu = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				dispose();
+			}
+		};
+		btnOnartu.addActionListener(lineaOnartu);
 	}
 }
