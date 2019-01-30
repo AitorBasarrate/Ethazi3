@@ -14,11 +14,9 @@ import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 
 import Controlador.MetodoakVista;
-<<<<<<< HEAD
 import Modelo.Kontsulta;
 import javax.swing.JRadioButton;
 import javax.swing.JMenu;
-=======
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,7 +24,7 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
+
 
 public class Lineak extends JFrame {
 	
@@ -62,11 +60,6 @@ public class Lineak extends JFrame {
 		modelo.addElement("L3");
 		modelo.addElement("L4");
 		
-		
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
 		lblBus.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblBus.setBounds(386, 115, 86, 54);
 		getContentPane().add(lblBus);
@@ -111,8 +104,7 @@ public class Lineak extends JFrame {
 		btnIrten.setBounds(524, 0, 99, 32);
 		getContentPane().add(btnIrten);
 		
-<<<<<<< HEAD
-=======
+
 		JMenu mnLineak = new JMenu("Lineak");
 		mnLineak.setBounds(39, 115, 123, 32);
 		getContentPane().add(mnLineak);
@@ -120,8 +112,6 @@ public class Lineak extends JFrame {
 		JMenuItem mntmLineak = new JMenuItem("Lineak");
 		mntmLineak.setBounds(26, 245, 99, 24);
 		getContentPane().add(mntmLineak);
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
-
 		rdbtnL1.setBounds(58, 113, 176, 23);
 		getContentPane().add(rdbtnL1);
 		
