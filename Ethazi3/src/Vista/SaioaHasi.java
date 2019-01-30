@@ -28,7 +28,7 @@ public class SaioaHasi extends JFrame {
 	 */
 	public SaioaHasi() {
 		getContentPane().setLayout(null);
-		this.setSize(478,300);  
+		this.setSize(635,465);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 635, 455);
