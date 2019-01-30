@@ -9,6 +9,7 @@ import Vista.Ordainketa;
 import Vista.SaioaHasi;
 
 public class MetodoakVista {
+	static String linea_;
 	
 
 	public static void bueltatuLehena() {
@@ -52,5 +53,14 @@ public class MetodoakVista {
 		azkena.setVisible(true);
 		azkena.setBounds(300, 100, 642, 467);
 	}
-
+	
+	public static void aukeratuLinea(String linea) {
+		linea_=linea;
+	}
+	
+	public static String getLinea() {
+		return linea_;
+	}
+	
+	
 }

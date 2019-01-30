@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
+import Controlador.MetodoakVista;
 import Controlador.parada;
 
 public class Kontsulta {
@@ -106,7 +107,7 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 			
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE 'L1'");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '"+MetodoakVista.getLinea()+"'");
 			while (rs.next()) {
 				String CodLinea_;
 				CodLinea_ = rs.getString("Cod_Linea");
