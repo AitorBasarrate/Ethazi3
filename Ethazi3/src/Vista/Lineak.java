@@ -25,7 +25,6 @@ import java.awt.Color;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-
 public class Lineak extends JFrame {
 	
 	private JTextField textField = new JTextField();
@@ -112,6 +111,7 @@ public class Lineak extends JFrame {
 		JMenuItem mntmLineak = new JMenuItem("Lineak");
 		mntmLineak.setBounds(26, 245, 99, 24);
 		getContentPane().add(mntmLineak);
+
 		rdbtnL1.setBounds(58, 113, 176, 23);
 		getContentPane().add(rdbtnL1);
 		
