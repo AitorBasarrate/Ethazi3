@@ -21,8 +21,8 @@ public class Aplikazioa {
 		String imprimaki = Kontsulta.lineaAukeratu();
 		System.out.println(imprimaki);
 
-//		Vista.Lehena ejecutar= new Vista.Lehena();
-//		ejecutar.setVisible(true);
+		Vista.Lehena ejecutar= new Vista.Lehena();
+		ejecutar.setVisible(true);
 	}
 	
 	
