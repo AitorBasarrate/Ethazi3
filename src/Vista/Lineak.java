@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -33,6 +34,9 @@ public class Lineak extends JFrame {
 	/**
 	 * Create the panel.
 	 */
+	public static ArrayList getGeltoki (ArrayList geltoki) {
+		return geltoki;
+	}
 	public Lineak() {
 
 		getContentPane().setLayout(null);
@@ -155,16 +159,17 @@ public class Lineak extends JFrame {
 		ActionListener aukeraOnartu = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnL1.isSelected()) {
-					MetodoakVista.aukeratuLinea("L1");
+					ArrayList geltoki = MetodoakVista.aukeratuLinea("L1");
 				} else if (rdbtnL2.isSelected()) {
-					MetodoakVista.aukeratuLinea("L2");
+					ArrayList geltoki = MetodoakVista.aukeratuLinea("L2");
 				} else if (rdbtnL3.isSelected()) {
-					MetodoakVista.aukeratuLinea("L3");
+					ArrayList geltoki = MetodoakVista.aukeratuLinea("L3");
 				} else if (rdbtnL4.isSelected()) {
-					MetodoakVista.aukeratuLinea("L4");
+					ArrayList geltoki = MetodoakVista.aukeratuLinea("L4");
 				}
 			}
 		};
 		btnOnartu.addActionListener(aukeraOnartu);
+		
 	}
 }

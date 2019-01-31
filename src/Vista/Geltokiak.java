@@ -1,25 +1,23 @@
 package Vista;
 
-import javax.swing.JPanel;
-
-import javax.swing.JLabel;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
-import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JSeparator;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JSpinner;
+import javax.swing.JTextField;
 import javax.swing.SpinnerDateModel;
 
 import Controlador.MetodoakVista;
-
-import java.util.Date;
-import java.util.Calendar;
-import java.awt.Color;
+import Controlador.parada;
 
 public class Geltokiak extends JFrame {
 	private JTextField txtLinea = new JTextField();
@@ -34,13 +32,22 @@ public class Geltokiak extends JFrame {
 	private JComboBox comboBoxHasiera = new JComboBox();
 	private final JComboBox comboBoxHelmuga = new JComboBox();
 	private final JSpinner spinner = new JSpinner();
+	
+	ArrayList <parada> geltokiak = new ArrayList();
 	/**
 	 * @wbp.nonvisual location=91,269
 	 */
-	
+	//Creamos este metodo aqui para poder usar variables de aqui(el array list de arriba) 
+	//y pasar los datos aqui tambien.
+	//Seguir leyendo en metodoak vista.
+	public static ArrayList getGelt(ArrayList gelt, ArrayList geltokiak) {
+		geltokiak = gelt;
+		return geltokiak;
+	}
 	/**
 	 * Create the panel.
 	 */
+	
 	public Geltokiak() {
 		
 		getContentPane().setLayout(null);

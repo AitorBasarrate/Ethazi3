@@ -128,7 +128,9 @@ public class Kontsulta {
 				geltokiak.add(7, Barakaldo_Sagrado_Corazón);
 				geltokiak.add(8, Ayuntamiento_Trapaga);
 //Hemen sortzen dut arraylist bat, geltoki bakoitzagatik objektu bat sartzen dut arraylistean.
-				
+				for(int n = 0; n < geltokiak.size(); n++) {
+					System.out.println(geltokiak.get(n));
+				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
