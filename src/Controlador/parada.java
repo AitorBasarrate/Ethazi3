@@ -4,10 +4,10 @@ public class parada {
 	private int Cod_parada;
 	private String Nombre;
 	private String Calle;
-	private int Latitud;
-	private int Longitud;
+	private double Latitud;
+	private double Longitud;
 	
-	public parada (int Cod_parada, String Nombre, String Calle, int Latitud, int Longitud) {
+	public parada (int Cod_parada, String Nombre, String Calle, double Latitud, double Longitud) {
 		this.Calle = Calle;
 		this.Cod_parada = Cod_parada;
 		this.Latitud = Latitud;
@@ -39,7 +39,7 @@ public class parada {
 		Calle = calle;
 	}
 
-	public int getLatitud() {
+	public double getLatitud() {
 		return Latitud;
 	}
 
@@ -47,7 +47,7 @@ public class parada {
 		Latitud = latitud;
 	}
 
-	public int getLongitud() {
+	public double getLongitud() {
 		return Longitud;
 	}
 

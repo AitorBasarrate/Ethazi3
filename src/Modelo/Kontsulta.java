@@ -6,10 +6,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import Controlador.Autobusa;
+
 import Controlador.Cliente;
 import Controlador.Linea;
-import Controlador.MetodoakVista;
 import Controlador.parada;
 
 public class Kontsulta {
@@ -93,12 +92,12 @@ public class Kontsulta {
 		}
 
 	}
-	public static String lineaAukeratu() {
-		String autaketa = "kaka";
-		String imprimaki = "";
+	public static ArrayList lineaAukeratu(String linea) {
 		Connection conexion = null;
 		Statement s = null;
-		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
+		Object nombre_ = null;
+		ArrayList <parada> geltokiak = new ArrayList();
+		
 		try {
 			//Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
@@ -107,24 +106,61 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 			
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT l.Cod_Linea, p.Nombre, Calle FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '"+MetodoakVista.getLinea()+"'");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT p.Nombre FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '" + linea + "'");
 			while (rs.next()) {
-				String CodLinea_;
-				CodLinea_ = rs.getString("Cod_Linea");
-				String nombre_;
-				nombre_ = rs.getString("Nombre");
-				String calle_;
-				calle_= rs.getString("Calle");
+				parada Termibus_Bilbao = new parada(1, "Termibus-Bilbao", "Luis Briñas", 43.2614, -2.94974);
+				parada Metro_Leioa = new parada(3, "Metro Leioa", "Otsobarrena", 43.3191, -2.99149);
+				parada Metro_Berango = new parada(4, "Metro Berango", "Sabino Arana", 43.367, -2.99921);
+				parada Metro_Larrabasterra = new parada (5, "Metro Larrabasterra", "BI-634", 43.3759, -2.99183);
+				parada Ayuntamiento_Sopelana = new parada (6, "Ayuntamiento_Sopelana", "Sabino Arana", 43.3814, -2.98109);
+				parada Asilo_Barrika = new parada (7, "Asilo_Barrika", "BI-634", 43.4055, -2.96369);
+				parada Ayuntamiento_Plentzia = new parada (8, "Ayuntamiento Plentzia", "Erribera", 43.4045, -2.94967);
+				parada Barakaldo_Sagrado_Corazón = new parada (9, "Barakaldo - Sagrado Corazón", "N-634", 43.2833, -2.99605);
+				parada Ayuntamiento_Trapaga = new parada (10, "Ayuntamiento Trapaga", "Rufino Olaso", 43.3035, -3.03873);
 				
-//				Cliente c1 = new Cliente(CodLinea_, nombre_, apellido_, sexo_, contraseña_, fecha_nac_);
-//				inicioSes.add(0, c1);
+				geltokiak.add(0, Termibus_Bilbao);
+				geltokiak.add(1, Metro_Leioa);
+				geltokiak.add(2, Metro_Berango);
+				geltokiak.add(3, Metro_Larrabasterra);
+				geltokiak.add(4, Ayuntamiento_Sopelana);
+				geltokiak.add(5, Asilo_Barrika);
+				geltokiak.add(6, Ayuntamiento_Plentzia);
+				geltokiak.add(7, Barakaldo_Sagrado_Corazón);
+				geltokiak.add(8, Ayuntamiento_Trapaga);
+//Hemen sortzen dut arraylist bat, geltoki bakoitzagatik objektu bat sartzen dut arraylistean.
 				
-				imprimaki = Kontsulta.toStringAuk(CodLinea_, nombre_, calle_);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		return imprimaki;
+		return geltokiak;
+	}
+	
+	public static void muestraParada() {
+		Connection conexion = null;
+		Statement s = null;
+		try {
+			//Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT p.Nombre FROM parada p, linea l, linea_parada lp WHERE p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea = lp.Cod_Linea AND l.Cod_Linea LIKE 'L1'");
+			while (rs.next()) {
+//				String CodLinea_;
+//				CodLinea_ = rs.getString("Cod_Linea");
+				String nombre_;
+				nombre_ = rs.getString("Nombre");
+//				String calle_;
+//				calle_= rs.getString("Calle");
+				
+				Kontsulta.toStringPar(nombre_);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
@@ -138,11 +174,8 @@ public class Kontsulta {
 		+ " KALEA: " + Calle + " ]";
 		return imprimaki;
 	}
-	public static String toString3(Autobusa Autobusa, String Cod_Bus, String N_plazas, String Consumo_km, String Color) {
-		return "Kontsulta [AUTOBUSAREN KODEA: " + Cod_Bus
-		+ " JESARLEKUAK: " + N_plazas 
-		+ " KONTSUMOA KMko: " + Consumo_km 
-		+ " KOLOREA: " + Color;
+	public static void toStringPar(String Nombre) {
+		System.out.println("Kontsulta [Geltokiaren izena: " + Nombre);
 	}
 	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud, String Longitud) {
 		return "Kontsulta [NAN: " + Cod_Parada 
