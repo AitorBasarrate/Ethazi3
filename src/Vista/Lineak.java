@@ -65,7 +65,7 @@ public class Lineak extends JFrame {
 
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.laugarrenera();
+				MetodoakVista.laugarrenera(geltoki);
 				dispose();
 			}
 		};
@@ -77,6 +77,7 @@ public class Lineak extends JFrame {
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.bigarrenera();
+				
 				dispose();
 			}
 		};
@@ -165,7 +166,7 @@ public class Lineak extends JFrame {
 				} else if (rdbtnL4.isSelected()) {
 					geltoki = MetodoakVista.aukeratuLinea("L4");
 				}
-				Geltokiak.getGelt(geltoki);
+				//Geltokiak.getGelt(geltoki);
 			}
 		};
 		btnOnartu.addActionListener(aukeraOnartu);

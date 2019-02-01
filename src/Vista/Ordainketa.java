@@ -12,6 +12,7 @@ import Controlador.*;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -63,7 +64,7 @@ public class Ordainketa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ordainketa() {
+	public Ordainketa(ArrayList geltokiak) {
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -300,7 +301,7 @@ public class Ordainketa extends JFrame {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.laugarrenera();
+				MetodoakVista.laugarrenera(geltokiak);
 				dispose();
 			}
 		};
