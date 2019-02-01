@@ -32,22 +32,14 @@ public class Geltokiak extends JFrame {
 	private JComboBox comboBoxHasiera = new JComboBox();
 	private final JComboBox comboBoxHelmuga = new JComboBox();
 	private final JSpinner spinner = new JSpinner();
-	
-	static ArrayList <parada> geltokiak = new ArrayList();
 	/**
 	 * @wbp.nonvisual location=91,269
 	 */
-	//Creamos este metodo aqui para poder usar variables de aqui(el array list de arriba) 
-	//y pasar los datos aqui tambien.
-	//Seguir leyendo en metodoak vista.
-	public static void getGelt(ArrayList gelt) {
-		gelt = geltokiak;
-	}
 	/**
 	 * Create the panel.
 	 */
 	
-	public Geltokiak() {
+	public Geltokiak(ArrayList geltoki) {
 		
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
@@ -87,9 +79,9 @@ public class Geltokiak extends JFrame {
 		getContentPane().add(lblData);
 		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		comboBoxHasiera.setBounds(73, 346, 89, 20);
-		comboBoxHasiera.addItem(geltokiak);
-		for (int n = 0; n < geltokiak.size(); n++) {
-			System.out.println(geltokiak.get(n));
+		comboBoxHasiera.addItem(geltoki);
+		for (int n = 0; n < geltoki.size(); n++) {
+			System.out.println(geltoki.get(n));
 		}
 		
 		
@@ -102,7 +94,7 @@ public class Geltokiak extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bostgarrenera();
+				MetodoakVista.bostgarrenera(geltoki);
 				dispose();
 			}
 		};

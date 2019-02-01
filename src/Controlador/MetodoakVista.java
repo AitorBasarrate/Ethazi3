@@ -12,7 +12,6 @@ import Vista.Ordainketa;
 import Vista.SaioaHasi;
 
 public class MetodoakVista {
-	public static String linea_ = null;
 
 	public static void bueltatuLehena() {
 		Lehena lehena = new Lehena();
@@ -32,14 +31,14 @@ public class MetodoakVista {
 		lineak.setBounds(300, 100, 642, 467);
 	}
 
-	public static void laugarrenera() {
-		Geltokiak geltokiak = new Geltokiak();
+	public static void laugarrenera(ArrayList geltoki) {
+		Geltokiak geltokiak = new Geltokiak(geltoki);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(300, 100, 642, 467);
 	}
 
-	public static void bostgarrenera() {
-		Ordainketa ordainketa = new Ordainketa();
+	public static void bostgarrenera(ArrayList geltoki) {
+		Ordainketa ordainketa = new Ordainketa(geltoki);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(300, 100, 642, 467);
 	}
