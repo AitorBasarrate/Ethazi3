@@ -14,6 +14,10 @@ public class parada {
 		this.Longitud = Longitud;
 		this.Nombre = Nombre;
 	}
+	
+	public parada (String Nombre) {
+		this.Nombre = Nombre;
+	}
 
 	public int getCod_parada() {
 		return Cod_parada;
