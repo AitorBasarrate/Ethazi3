@@ -171,7 +171,7 @@ public class Kontsulta {
 //				String calle_;
 //				calle_= rs.getString("Calle");
 
-				Kontsulta.toStringPar(nombre_);
+//				Kontsulta.toStringPar(nombre_);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -188,7 +188,7 @@ public class Kontsulta {
 		return imprimaki;
 	}
 
-	public static void toStringPar(String Nombre) {
+	public static void toStringPar(ArrayList Nombre) {
 		System.out.println("Kontsulta [Geltokiaren izena: " + Nombre);
 	}
 

@@ -18,6 +18,7 @@ import javax.swing.SpinnerDateModel;
 
 import Controlador.MetodoakVista;
 import Controlador.parada;
+import Modelo.Kontsulta;
 
 public class Geltokiak extends JFrame {
 	private JTextField txtLinea = new JTextField();
@@ -32,6 +33,7 @@ public class Geltokiak extends JFrame {
 	private JComboBox comboBoxHasiera = new JComboBox();
 	private final JComboBox comboBoxHelmuga = new JComboBox();
 	private final JSpinner spinner = new JSpinner();
+	private JTextField textField;
 	/**
 	 * @wbp.nonvisual location=91,269
 	 */
@@ -57,6 +59,7 @@ public class Geltokiak extends JFrame {
 		txtLinea.setBounds(204, 137, 138, 46);
 		getContentPane().add(txtLinea);
 		txtLinea.setColumns(10);
+		txtLinea.toStringPar(geltoki);
 		
 		
 		lblGeltokiakAukeratu.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -130,6 +133,5 @@ public class Geltokiak extends JFrame {
 		spinner.setBounds(395, 341, 144, 23);
 		
 		getContentPane().add(spinner);
-
 	}
 }
