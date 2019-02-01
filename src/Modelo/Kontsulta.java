@@ -108,15 +108,15 @@ public class Kontsulta {
 			
 			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT p.Nombre FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '" + linea + "'");
 			while (rs.next()) {
-				parada Termibus_Bilbao = new parada(rs.getInt("Cod_Parada"), rs.getString("Nombre"), rs.getString("Calle"), rs.getDouble("Latitud"), rs.getDouble("Longitud"));
-				parada Metro_Leioa = new parada(rs.getInt("Cod_Linea"), rs.getString("Nombre"), rs.getString("Calle"), rs.getDouble("Latitud"), rs.getDouble("Longitud"));
-				parada Metro_Berango = new parada(4, "Metro Berango", "Sabino Arana", 43.367, -2.99921);
-				parada Metro_Larrabasterra = new parada (5, "Metro Larrabasterra", "BI-634", 43.3759, -2.99183);
-				parada Ayuntamiento_Sopelana = new parada (6, "Ayuntamiento_Sopelana", "Sabino Arana", 43.3814, -2.98109);
-				parada Asilo_Barrika = new parada (7, "Asilo_Barrika", "BI-634", 43.4055, -2.96369);
-				parada Ayuntamiento_Plentzia = new parada (8, "Ayuntamiento Plentzia", "Erribera", 43.4045, -2.94967);
-				parada Barakaldo_Sagrado_Corazón = new parada (9, "Barakaldo - Sagrado Corazón", "N-634", 43.2833, -2.99605);
-				parada Ayuntamiento_Trapaga = new parada (10, "Ayuntamiento Trapaga", "Rufino Olaso", 43.3035, -3.03873);
+				parada Termibus_Bilbao = new parada(rs.getString("Nombre"));
+				parada Metro_Leioa = new parada(rs.getString("Nombre"));
+				parada Metro_Berango = new parada(rs.getString("Nombre"));
+				parada Metro_Larrabasterra = new parada (rs.getString("Nombre"));
+				parada Ayuntamiento_Sopelana = new parada (rs.getString("Nombre"));
+				parada Asilo_Barrika = new parada (rs.getString("Nombre"));
+				parada Ayuntamiento_Plentzia = new parada (rs.getString("Nombre"));
+				parada Barakaldo_Sagrado_Corazón = new parada (rs.getString("Nombre"));
+				parada Ayuntamiento_Trapaga = new parada (rs.getString("Nombre"));
 				
 				geltokiak.add(0, Termibus_Bilbao);
 				geltokiak.add(1, Metro_Leioa);
