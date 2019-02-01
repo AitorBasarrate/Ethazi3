@@ -108,8 +108,8 @@ public class Kontsulta {
 			
 			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT p.Nombre FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '" + linea + "'");
 			while (rs.next()) {
-				parada Termibus_Bilbao = new parada(1, "Termibus-Bilbao", "Luis Briñas", 43.2614, -2.94974);
-				parada Metro_Leioa = new parada(3, "Metro Leioa", "Otsobarrena", 43.3191, -2.99149);
+				parada Termibus_Bilbao = new parada(rs.getInt("Cod_Parada"), rs.getString("Nombre"), rs.getString("Calle"), rs.getDouble("Latitud"), rs.getDouble("Longitud"));
+				parada Metro_Leioa = new parada(rs.getInt("Cod_Linea"), rs.getString("Nombre"), rs.getString("Calle"), rs.getDouble("Latitud"), rs.getDouble("Longitud"));
 				parada Metro_Berango = new parada(4, "Metro Berango", "Sabino Arana", 43.367, -2.99921);
 				parada Metro_Larrabasterra = new parada (5, "Metro Larrabasterra", "BI-634", 43.3759, -2.99183);
 				parada Ayuntamiento_Sopelana = new parada (6, "Ayuntamiento_Sopelana", "Sabino Arana", 43.3814, -2.98109);

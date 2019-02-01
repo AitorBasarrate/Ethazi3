@@ -61,7 +61,7 @@ public class MetodoakVista {
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
-		Geltokiak.getGelt(gelt, null);
+//		Geltokiak.getGelt(gelt, null);
 		return gelt;
 //			PantailaratuGeltokiak (gelt); 
 	}

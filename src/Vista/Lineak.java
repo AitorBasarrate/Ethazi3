@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+import Vista.Geltokiak;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,7 +14,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Controlador.MetodoakVista;
-import Modelo.Kontsulta;
 
 public class Lineak extends JFrame {
 
@@ -30,13 +29,12 @@ public class Lineak extends JFrame {
 	private JRadioButton rdbtnL3 = new JRadioButton("L3 - Termibus/Balmaseda");
 	private JRadioButton rdbtnL4 = new JRadioButton("L4 - Termibus/Durango");
 	static String linea = null;
+	ArrayList geltoki = new ArrayList();
 
 	/**
 	 * Create the panel.
 	 */
-	public static ArrayList getGeltoki (ArrayList geltoki) {
-		return geltoki;
-	}
+	
 	public Lineak() {
 
 		getContentPane().setLayout(null);
@@ -159,14 +157,15 @@ public class Lineak extends JFrame {
 		ActionListener aukeraOnartu = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnL1.isSelected()) {
-					ArrayList geltoki = MetodoakVista.aukeratuLinea("L1");
+					geltoki = MetodoakVista.aukeratuLinea("L1");
 				} else if (rdbtnL2.isSelected()) {
-					ArrayList geltoki = MetodoakVista.aukeratuLinea("L2");
+					geltoki = MetodoakVista.aukeratuLinea("L2");
 				} else if (rdbtnL3.isSelected()) {
-					ArrayList geltoki = MetodoakVista.aukeratuLinea("L3");
+					geltoki = MetodoakVista.aukeratuLinea("L3");
 				} else if (rdbtnL4.isSelected()) {
-					ArrayList geltoki = MetodoakVista.aukeratuLinea("L4");
+					geltoki = MetodoakVista.aukeratuLinea("L4");
 				}
+				Geltokiak.getGelt(geltoki);
 			}
 		};
 		btnOnartu.addActionListener(aukeraOnartu);
