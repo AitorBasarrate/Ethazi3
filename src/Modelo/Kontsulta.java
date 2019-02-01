@@ -93,10 +93,11 @@ public class Kontsulta {
 	}
 
 	public static ArrayList lineaAukeratu(String linea) {
+		String line_Prueba = null;// paraden izenak gordetzen ditut
 		Connection conexion = null;
 		Statement s = null;
 		Object nombre_ = null;
-		ArrayList<parada> geltokiak = new ArrayList();
+		ArrayList<String> geltokiak = new ArrayList();
 
 		try {
 			// Cargar el driver
@@ -110,35 +111,33 @@ public class Kontsulta {
 					"SELECT p.Nombre FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '"
 							+ linea + "'");
 			while (rs.next()) {
-
+				
 				parada l1 = new parada("");
 				parada l2 = new parada("");
 				parada l3 = new parada("");
 				parada l4 = new parada("");
 
+				//DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
 				if (linea.equals("L1")) {
-					l1.setNombre(rs.getString("Nombre"));
+					line_Prueba = rs.getString("Nombre");
+					//l1.setNombre(rs.getString("Nombre"));
 				} else if (linea.equals("L2")) {
-					l2.setNombre(rs.getString("Nombre"));
+					line_Prueba = rs.getString("Nombre");
+					//l2.setNombre(rs.getString("Nombre"));
 				} else if (linea.equals("L3")) {
-					l3.setNombre(rs.getString("Nombre"));
+					line_Prueba = rs.getString("Nombre");
+					//l3.setNombre(rs.getString("Nombre"));
 				} else if (linea.equals("L4")) {
-					l4.setNombre(rs.getString("Nombre"));
+					line_Prueba = rs.getString("Nombre");
+					//l4.setNombre(rs.getString("Nombre"));
 				}
-//				parada Termibus_Bilbao = new parada(rs.getString("Nombre"));
-//				parada Metro_Leioa = new parada(rs.getString("Nombre"));
-//				parada Metro_Berango = new parada(rs.getString("Nombre"));
-//				parada Metro_Larrabasterra = new parada(rs.getString("Nombre"));
-//				parada Ayuntamiento_Sopelana = new parada(rs.getString("Nombre"));
-//				parada Asilo_Barrika = new parada(rs.getString("Nombre"));
-//				parada Ayuntamiento_Plentzia = new parada(rs.getString("Nombre"));
-//				parada Barakaldo_Sagrado_Corazón = new parada(rs.getString("Nombre"));
-//				parada Ayuntamiento_Trapaga = new parada(rs.getString("Nombre"));
 
-				geltokiak.add(0, l1);
-				geltokiak.add(1, l2);
-				geltokiak.add(2, l3);
-				geltokiak.add(3, l4);
+				geltokiak.add(0,line_Prueba); // ARRAYAN GORDETZEN DUT GELTOKIEN IZENAK GORDETZEN DUEN STRING
+//				geltokiak.add(0, l1);
+//				geltokiak.add(1, l2);
+//				geltokiak.add(2, l3);
+//				geltokiak.add(3, l4);
+				
 //Hemen sortzen dut arraylist bat, geltoki bakoitzagatik objektu bat sartzen dut arraylistean.
 				for (int n = 0; n < geltokiak.size(); n++){
 					System.out.println(geltokiak.get(n));
@@ -189,7 +188,7 @@ public class Kontsulta {
 	}
 
 	public static void toStringPar(ArrayList Nombre) {
-		System.out.println("Kontsulta [Geltokiaren izena: " + Nombre);
+		System.out.println("Kontsulta [Geltokiaren izena:  " + Nombre );
 	}
 
 	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud,
