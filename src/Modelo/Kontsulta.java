@@ -60,7 +60,7 @@ public class Kontsulta {
 
 	}
 
-	public static void guardaCliente() {
+	public static ArrayList<Cliente> guardaCliente() { //arraylist bueltatu behar du
 		Connection conexion = null;
 		Statement s = null;
 		ArrayList<Cliente> inicioSes = new ArrayList<Cliente>();
@@ -72,25 +72,39 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT * FROM CLIENTE");
+			
 			while (rs.next()) {
-				String dni_;
-				dni_ = rs.getString("DNI");
-				String nombre_;
-				nombre_ = rs.getString("Nombre");
-				String apellido_;
-				apellido_ = rs.getString("Apellidos");
-				String sexo_;
-				sexo_ = rs.getString("Sexo");
-				String contraseña_;
-				contraseña_ = rs.getString("Contraseña");
-				String fecha_nac_;
-				fecha_nac_ = rs.getString("Fecha_nac");
+				
+					//SELECTAREN DATUAK GORDE	
+					
+					String dni_;
+						dni_ = rs.getString("DNI");
+						
+					String nombre_;																																					
+						nombre_ = rs.getString("Nombre");
+						
+					String apellido_;
+						apellido_ = rs.getString("Apellidos");
+						
+					String sexo_;
+						sexo_ = rs.getString("Sexo");
+						
+					String contraseña_;
+						contraseña_ = rs.getString("Contraseña");
+						
+					String fecha_nac_;
+						fecha_nac_ = rs.getString("Fecha_nac");
+					
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
+		return inicioSes; //gero erabili ahal izateko array nankomprobaketa metodoan
 	}
+	
+	
+	
+	
 
 	public static ArrayList lineaAukeratu(String linea) {
 		String line_Prueba = null;// paraden izenak gordetzen ditut
@@ -112,11 +126,14 @@ public class Kontsulta {
 							+ linea + "'");
 			while (rs.next()) {
 				
+			/*	
 				parada l1 = new parada("");
-				parada l2 = new parada("");
+				parada l2 = new parada(""); 
+				  								NO SE USA NO HACE FALTA SI LO HACEMOS CON STRINGS
 				parada l3 = new parada("");
 				parada l4 = new parada("");
-
+				
+			 */
 				//DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
 				if (linea.equals("L1")) {
 					line_Prueba = rs.getString("Nombre");
@@ -166,6 +183,7 @@ public class Kontsulta {
 //				String CodLinea_;
 //				CodLinea_ = rs.getString("Cod_Linea");
 				String nombre_;
+					
 				nombre_ = rs.getString("Nombre");
 //				String calle_;
 //				calle_= rs.getString("Calle");
