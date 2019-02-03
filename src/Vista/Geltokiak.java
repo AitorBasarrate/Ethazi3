@@ -59,7 +59,6 @@ public class Geltokiak extends JFrame {
 		txtLinea.setBounds(204, 137, 138, 46);
 		getContentPane().add(txtLinea);
 		txtLinea.setColumns(10);
-		txtLinea.toStringPar(geltoki);
 		
 		
 		lblGeltokiakAukeratu.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -84,7 +83,7 @@ public class Geltokiak extends JFrame {
 		comboBoxHasiera.setBounds(73, 346, 89, 20);
 		comboBoxHasiera.addItem(geltoki);
 		for (int n = 0; n < geltoki.size(); n++) {
-			System.out.println(geltoki.get(n));
+//			System.out.println(getString(geltoki.get(n)));
 		}
 		
 		

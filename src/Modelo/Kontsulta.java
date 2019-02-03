@@ -192,9 +192,7 @@ public class Kontsulta {
 		System.out.println("Kontsulta [Geltokiaren izena: " + Nombre);
 	}
 
-	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud,
-			String Longitud) {
-		return "Kontsulta [NAN: " + Cod_Parada + " Izena: " + Nombre + " Kalea: " + Calle + " Latitudea: " + Latitud
-				+ " Longitudea: " + Longitud + " ]";
+	public static parada toString(parada geltoki) {
+		return geltoki;
 	}
 }
