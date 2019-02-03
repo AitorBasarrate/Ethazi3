@@ -54,9 +54,7 @@ public class MetodoakVista {
 		azkena.setVisible(true);
 		azkena.setBounds(300, 100, 642, 467);
 	}
-	//Mi idea es llamar al metodo desde aqui, 
-	//pero no tengo muy claro que vaya a funcionar, 
-	//aunque creo que no van mal los tiros.
+
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);

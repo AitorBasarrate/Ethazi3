@@ -38,6 +38,11 @@ public class Metodoak {
 		}
 		System.out.println("Fin del metodo");// comprobar el metodo
 	}
+	
+//	public static double litroKilometroko(double distanzia) {
+//		€ = distantzia * 
+//		return distantzia * 2;
+//	}
 
 //	public static void sartuOrdainketa(JList list) {
 //		DefaultListModel ordaintzekoa = new DefaultListModel();
