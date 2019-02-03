@@ -50,24 +50,25 @@ public class Geltokiak extends JFrame {
 		setBounds(0, 0, 635, 455);
 		
 		lblAukeratuDuzunLinea.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblAukeratuDuzunLinea.setBounds(155, 88, 245, 23);
+		lblAukeratuDuzunLinea.setBounds(156, 46, 245, 23);
 		getContentPane().add(lblAukeratuDuzunLinea);
 		txtLinea.setBackground(Color.WHITE);
 		txtLinea.setEditable(false);
 		
 		
-		txtLinea.setBounds(204, 137, 138, 46);
+		txtLinea.setBounds(212, 78, 138, 46);
 		getContentPane().add(txtLinea);
 		txtLinea.setColumns(10);
+
 		
 		
 		lblGeltokiakAukeratu.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblGeltokiakAukeratu.setBounds(182, 234, 212, 20);
+		lblGeltokiakAukeratu.setBounds(175, 138, 212, 20);
 		getContentPane().add(lblGeltokiakAukeratu);
 		
 		
 		lblHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblHasiera.setBounds(64, 300, 111, 33);
+		lblHasiera.setBounds(33, 227, 111, 33);
 		getContentPane().add(lblHasiera);
 		
 		
@@ -79,12 +80,15 @@ public class Geltokiak extends JFrame {
 		lblData.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblData.setBounds(421, 307, 89, 23);
 		getContentPane().add(lblData);
-		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		comboBoxHasiera.setBounds(73, 346, 89, 20);
-		comboBoxHasiera.addItem(geltoki);
+		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		comboBoxHasiera.setBounds(12, 307, 168, 53);
 		for (int n = 0; n < geltoki.size(); n++) {
-//			System.out.println(getString(geltoki.get(n)));
+			comboBoxHasiera.addItem(geltoki.get(n));
 		}
+		
+//		for (int n = 0; n < geltoki.size(); n++) {
+//			System.out.println(getString(geltoki.get(n)));
+//		}
 		
 		
 		getContentPane().add(comboBoxHasiera);
