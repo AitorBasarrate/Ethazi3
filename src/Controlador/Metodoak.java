@@ -29,6 +29,7 @@ public class Metodoak {
 
 			System.out.println("inicio"); // comprobar si entra en el metodo
 
+			
 			if (c.getDni().equals(DNI)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
 				System.out.println("Correcto");
 
@@ -39,6 +40,13 @@ public class Metodoak {
 		System.out.println("Fin del metodo");// comprobar el metodo
 	}
 	
+	public static void generateBus() {
+		int Cod_Bus;
+		do {
+			Cod_Bus = (int) (Math.random() * 1002);
+		}while(Cod_Bus != 1001 || Cod_Bus != 1002);
+		System.out.println(Cod_Bus);
+	}
 //	public static double litroKilometroko(double distanzia) {
 //		€ = distantzia * 
 //		return distantzia * 2;

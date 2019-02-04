@@ -16,10 +16,9 @@ public class Aplikazioa {
 		con1.getConexion();
 
 		System.out.println("Empieza el metodo ");// COMPROBACION PARA EL METODO
-		int rndm = (int) (Math.random()*1001+1002);
-		System.out.println(rndm);
+		
 		Metodoak.nanKomprobaketa();
-
+		Metodoak.generateBus();
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
 //		Kontsulta.guardaCliente();
 

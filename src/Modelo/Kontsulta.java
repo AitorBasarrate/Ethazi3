@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
-import Controlador.parada;
 
 public class Kontsulta {
 //	static String Col_1 = "";
@@ -190,7 +190,7 @@ public class Kontsulta {
 	}
 	
 	public static void muestraKontsumo() {
-		ArrayList<Linea> DatuakLinea = new ArrayList();
+		ArrayList<Autobusa> DatuakBus = new ArrayList();
 		Connection conexion = null;
 		java.sql.Statement s = null;
 		try {
@@ -211,13 +211,11 @@ public class Kontsulta {
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
-				String CodLinea_ = "";
-				String Nombre_ = "";
-				CodLinea_ = rs.getString("Cod_Linea");
-				Nombre_ = rs.getString("Nombre");
-				Linea LineaDat1 = new Linea(CodLinea_, Nombre_);
-				DatuakLinea.add(0, LineaDat1);
-				System.out.println(Modelo.Kontsulta.toString1(DatuakLinea.get(0), CodLinea_, Nombre_));
+				double Kontsumo_;
+				Kontsumo_ = rs.getDouble("Kontsumo_km");
+				Autobusa Kontsumo1 = new Autobusa(Kontsumo_);
+				DatuakBus.add(0, Kontsumo1);
+				System.out.println(Modelo.Kontsulta.toStringKonts(Kontsumo_));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -239,9 +237,7 @@ public class Kontsulta {
 		System.out.println("Kontsulta [Geltokiaren izena:  " + Nombre);
 	}
 
-	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud,
-			String Longitud) {
-		return "Kontsulta [NAN: " + Cod_Parada + " Izena: " + Nombre + " Kalea: " + Calle + " Latitudea: " + Latitud
-				+ " Longitudea: " + Longitud + " ]";
+	public static String toStringKonts(double kontsumo_km) {
+		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
 	}
 }

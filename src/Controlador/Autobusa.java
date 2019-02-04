@@ -4,14 +4,18 @@ public class Autobusa {
 	
 	private String Cod_bus;
 	private String N_plazas;
-	private String Consumo_km;
+	private double Consumo_km;
 	private String Color;
 	
-	public Autobusa(String Cod_bus, String N_plazas, String Consumo_km, String Color) {
+	public Autobusa(String Cod_bus, String N_plazas, double Consumo_km, String Color) {
 		this.Cod_bus = Cod_bus;
 		this.N_plazas = N_plazas;
 		this.Consumo_km = Consumo_km;
 		this.Color = Color;
+	}
+	
+	public Autobusa(double Consumo_km) {
+		this.Consumo_km = Consumo_km;
 	}
 
 	public String getCod_bus() {
@@ -30,11 +34,11 @@ public class Autobusa {
 		N_plazas = n_plazas;
 	}
 
-	public String getConsumo_km() {
+	public double getConsumo_km() {
 		return Consumo_km;
 	}
 
-	public void setConsumo_km(String consumo_km) {
+	public void setConsumo_km(double consumo_km) {
 		Consumo_km = consumo_km;
 	}
 
