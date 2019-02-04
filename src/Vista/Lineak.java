@@ -166,7 +166,7 @@ public class Lineak extends JFrame {
 				} else if (rdbtnL4.isSelected()) {
 					geltoki = MetodoakVista.aukeratuLinea("L4");
 				}
-				//Geltokiak.getGelt(geltoki);
+
 			}
 		};
 		btnOnartu.addActionListener(aukeraOnartu);

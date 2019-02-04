@@ -14,18 +14,16 @@ import Controlador.parada;
 public class Kontsulta {
 //	static String Col_1 = "";
 //	static String Col_2 = "";
-	
-
-
 
 	public static ArrayList<Linea> getDatuakArr(ArrayList<Linea> Datuak) {
 
 		return Datuak;
 	}
-	
-	public static ArrayList<Cliente> getInicioSes(ArrayList<Cliente> inicioSes){
+
+	public static ArrayList<Cliente> getInicioSes(ArrayList<Cliente> inicioSes) {
 		return inicioSes;
 	}
+
 	public static void muestraLinea(String Cod_linea, String Nombre) {
 		ArrayList<Linea> DatuakLinea = new ArrayList();
 		Connection conexion = null;
@@ -61,74 +59,103 @@ public class Kontsulta {
 		}
 
 	}
-	public static void guardaCliente() {
+
+	public static ArrayList<Cliente> guardaCliente() { // arraylist bueltatu behar du
 		Connection conexion = null;
 		Statement s = null;
-		ArrayList <Cliente> inicioSes = new ArrayList<Cliente>();
+		ArrayList<Cliente> inicioSes = new ArrayList<Cliente>();
 		try {
-			//Cargar el driver
+			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
 			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
 			s = (Statement) conexion.createStatement();
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT * FROM CLIENTE");
+
 			while (rs.next()) {
+
+				// SELECTAREN DATUAK GORDE
+
 				String dni_;
 				dni_ = rs.getString("DNI");
+
 				String nombre_;
 				nombre_ = rs.getString("Nombre");
+
 				String apellido_;
-				apellido_= rs.getString("Apellidos");
+				apellido_ = rs.getString("Apellidos");
+
 				String sexo_;
 				sexo_ = rs.getString("Sexo");
+
 				String contraseña_;
 				contraseña_ = rs.getString("Contraseña");
+
 				String fecha_nac_;
 				fecha_nac_ = rs.getString("Fecha_nac");
+				
+				Cliente c1 = new Cliente(dni_, nombre_, apellido_, fecha_nac_, sexo_, contraseña_);
+				inicioSes.add(0,c1);
+				for (int n = 0; n < inicioSes.size(); n++) {
+					System.out.println(inicioSes.get(n));
+				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
+		return inicioSes; // gero erabili ahal izateko array nankomprobaketa metodoan
 	}
+
 	public static ArrayList lineaAukeratu(String linea) {
+		String line_Prueba = null;// paraden izenak gordetzen ditut
 		Connection conexion = null;
 		Statement s = null;
 		Object nombre_ = null;
-		ArrayList <parada> geltokiak = new ArrayList();
-		
+		ArrayList<String> geltokiak = new ArrayList();
+
 		try {
-			//Cargar el driver
+			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
 			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
 			s = (Statement) conexion.createStatement();
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
-			
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT p.Nombre FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '" + linea + "'");
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery(
+					"SELECT p.Nombre FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '"
+							+ linea + "'");
 			while (rs.next()) {
-				parada Termibus_Bilbao = new parada(rs.getString("Nombre"));
-				parada Metro_Leioa = new parada(rs.getString("Nombre"));
-				parada Metro_Berango = new parada(rs.getString("Nombre"));
-				parada Metro_Larrabasterra = new parada (rs.getString("Nombre"));
-				parada Ayuntamiento_Sopelana = new parada (rs.getString("Nombre"));
-				parada Asilo_Barrika = new parada (rs.getString("Nombre"));
-				parada Ayuntamiento_Plentzia = new parada (rs.getString("Nombre"));
-				parada Barakaldo_Sagrado_Corazón = new parada (rs.getString("Nombre"));
-				parada Ayuntamiento_Trapaga = new parada (rs.getString("Nombre"));
-				
-				geltokiak.add(0, Termibus_Bilbao);
-				geltokiak.add(1, Metro_Leioa);
-				geltokiak.add(2, Metro_Berango);
-				geltokiak.add(3, Metro_Larrabasterra);
-				geltokiak.add(4, Ayuntamiento_Sopelana);
-				geltokiak.add(5, Asilo_Barrika);
-				geltokiak.add(6, Ayuntamiento_Plentzia);
-				geltokiak.add(7, Barakaldo_Sagrado_Corazón);
-				geltokiak.add(8, Ayuntamiento_Trapaga);
+
+				/*
+				 * parada l1 = new parada(""); parada l2 = new parada(""); NO SE USA NO HACE
+				 * FALTA SI LO HACEMOS CON STRINGS parada l3 = new parada(""); parada l4 = new
+				 * parada("");
+				 * 
+				 */
+				// DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
+				if (linea.equals("L1")) {
+					line_Prueba = rs.getString("Nombre");
+					// l1.setNombre(rs.getString("Nombre"));
+				} else if (linea.equals("L2")) {
+					line_Prueba = rs.getString("Nombre");
+					// l2.setNombre(rs.getString("Nombre"));
+				} else if (linea.equals("L3")) {
+					line_Prueba = rs.getString("Nombre");
+					// l3.setNombre(rs.getString("Nombre"));
+				} else if (linea.equals("L4")) {
+					line_Prueba = rs.getString("Nombre");
+					// l4.setNombre(rs.getString("Nombre"));
+				}
+
+				geltokiak.add(0, line_Prueba); // ARRAYAN GORDETZEN DUT GELTOKIEN IZENAK GORDETZEN DUEN STRING
+//				geltokiak.add(0, l1);
+//				geltokiak.add(1, l2);
+//				geltokiak.add(2, l3);
+//				geltokiak.add(3, l4);
+
 //Hemen sortzen dut arraylist bat, geltoki bakoitzagatik objektu bat sartzen dut arraylistean.
-				for(int n = 0; n < geltokiak.size(); n++) {
+				for (int n = 0; n < geltokiak.size(); n++) {
 					System.out.println(geltokiak.get(n));
 				}
 			}
@@ -137,28 +164,30 @@ public class Kontsulta {
 		}
 		return geltokiak;
 	}
-	
+
 	public static void muestraParada() {
 		Connection conexion = null;
 		Statement s = null;
 		try {
-			//Cargar el driver
+			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
 			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
 			s = (Statement) conexion.createStatement();
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
-			
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT p.Nombre FROM parada p, linea l, linea_parada lp WHERE p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea = lp.Cod_Linea AND l.Cod_Linea LIKE 'L1'");
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery(
+					"SELECT p.Nombre FROM parada p, linea l, linea_parada lp WHERE p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea = lp.Cod_Linea AND l.Cod_Linea LIKE 'L1'");
 			while (rs.next()) {
 //				String CodLinea_;
 //				CodLinea_ = rs.getString("Cod_Linea");
 				String nombre_;
+
 				nombre_ = rs.getString("Nombre");
 //				String calle_;
 //				calle_= rs.getString("Calle");
-				
-				Kontsulta.toStringPar(nombre_);
+
+//				Kontsulta.toStringPar(nombre_);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -166,24 +195,22 @@ public class Kontsulta {
 	}
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
-		
-		return "Kontsulta [LINEAREN KODEA: " + Cod_linea 
-				+ " IZENA: " + Nombre + "]";
+
+		return "Kontsulta [LINEAREN KODEA: " + Cod_linea + " IZENA: " + Nombre + "]";
 	}
+
 	public static String toStringAuk(String Dni, String Nombre, String Calle) {
-		String imprimaki =  "Kontsulta [Linea Kodea: " + Dni 
-		+ " IZENA: " + Nombre 
-		+ " KALEA: " + Calle + " ]";
+		String imprimaki = "Kontsulta [Linea Kodea: " + Dni + " IZENA: " + Nombre + " KALEA: " + Calle + " ]";
 		return imprimaki;
 	}
-	public static void toStringPar(String Nombre) {
-		System.out.println("Kontsulta [Geltokiaren izena: " + Nombre);
+
+	public static void toStringPar(ArrayList Nombre) {
+		System.out.println("Kontsulta [Geltokiaren izena:  " + Nombre);
 	}
-	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud, String Longitud) {
-		return "Kontsulta [NAN: " + Cod_Parada 
-				+ " Izena: " + Nombre 
-				+ " Kalea: " + Calle 
-				+ " Latitudea: " + Latitud 
+
+	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud,
+			String Longitud) {
+		return "Kontsulta [NAN: " + Cod_Parada + " Izena: " + Nombre + " Kalea: " + Calle + " Latitudea: " + Latitud
 				+ " Longitudea: " + Longitud + " ]";
 	}
 }

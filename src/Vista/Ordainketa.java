@@ -22,7 +22,24 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.AbstractButton;
 import javax.swing.DefaultListModel;
+
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import Controlador.Metodoak;
+import Controlador.MetodoakVista;
 
 public class Ordainketa extends JFrame {
 
@@ -64,7 +81,9 @@ public class Ordainketa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ordainketa(ArrayList geltokiak) {
+
+	public Ordainketa(ArrayList geltoki) {
+
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -301,7 +320,9 @@ public class Ordainketa extends JFrame {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.laugarrenera(geltokiak);
+
+				MetodoakVista.laugarrenera(geltoki);
+
 				dispose();
 			}
 		};

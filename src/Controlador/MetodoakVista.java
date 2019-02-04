@@ -10,6 +10,7 @@ import Vista.Lehena;
 import Vista.Lineak;
 import Vista.Ordainketa;
 import Vista.SaioaHasi;
+import Vista.Error;
 
 public class MetodoakVista {
 
@@ -53,6 +54,12 @@ public class MetodoakVista {
 		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
 		azkena.setBounds(300, 100, 642, 467);
+	}
+	
+	public static void errorea() {
+		Error error = new Error();
+		error.setVisible(true);
+		error.setBounds(300, 100, 321, 233);
 	}
 	//Mi idea es llamar al metodo desde aqui, 
 	//pero no tengo muy claro que vaya a funcionar, 
