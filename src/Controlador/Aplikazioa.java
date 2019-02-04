@@ -12,14 +12,13 @@ public class Aplikazioa {
 //		Vista v = new Vista();
 //		Modelo m = new Modelo();
 //		Controlador c = new Controlador(v, m);
-		
+	
 		String basedatos = "ethazi3";
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
-		
 		System.out.println("Empieza el metodo ");//COMPROBACION PARA EL METODO
-		
 		Metodoak.nanKomprobaketa();
+		Metodoak.haversineMetodo();
 		
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
 //		Kontsulta.guardaCliente();
