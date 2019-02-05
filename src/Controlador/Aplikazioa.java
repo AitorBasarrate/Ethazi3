@@ -17,7 +17,8 @@ public class Aplikazioa {
 
 		System.out.println("Empieza el metodo ");// COMPROBACION PARA EL METODO
 
-		
+		Metodoak.haversineMetodo();
+		Metodoak.pasahitzaKomprobaketa();
 
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
 //		Kontsulta.guardaCliente();

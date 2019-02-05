@@ -97,9 +97,9 @@ public class Kontsulta {
 				
 				Cliente c1 = new Cliente(dni_, nombre_, apellido_, fecha_nac_, sexo_, contraseña_);
 				inicioSes.add(0,c1);
-				for (int n = 0; n < inicioSes.size(); n++) {
-					System.out.println(inicioSes.get(n));
-				}
+//				for (int n = 0; n < inicioSes.size(); n++) {
+//					System.out.println(inicioSes.get(n));
+//				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -192,6 +192,37 @@ public class Kontsulta {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	public static String lineaIzena(String linea) {
+		Connection conexion = null;
+		Statement s = null;
+		String nombre_="";
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery(
+					"SELECT Nombre FROM linea WHERE Cod_Linea LIKE '"+linea+"'");
+			while (rs.next()) {
+//				String CodLinea_;
+//				CodLinea_ = rs.getString("Cod_Linea");
+				
+
+				nombre_ = rs.getString("Nombre");
+//				String calle_;
+//				calle_= rs.getString("Calle");
+
+//				Kontsulta.toStringPar(nombre_);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return nombre_;
 	}
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
