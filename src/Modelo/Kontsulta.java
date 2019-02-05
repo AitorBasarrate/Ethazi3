@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
 import Controlador.parada;
@@ -60,7 +61,7 @@ public class Kontsulta {
 
 	}
 
-	public static ArrayList<Cliente> guardaCliente() { //arraylist bueltatu behar du
+	public static ArrayList<Cliente> guardaCliente() { // arraylist bueltatu behar du
 		Connection conexion = null;
 		Statement s = null;
 		ArrayList<Cliente> inicioSes = new ArrayList<Cliente>();
@@ -72,39 +73,40 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT * FROM CLIENTE");
-			
+
 			while (rs.next()) {
+
+				// SELECTAREN DATUAK GORDE
+
+				String dni_;
+				dni_ = rs.getString("DNI");
+
+				String nombre_;
+				nombre_ = rs.getString("Nombre");
+
+				String apellido_;
+				apellido_ = rs.getString("Apellidos");
+
+				String sexo_;
+				sexo_ = rs.getString("Sexo");
+
+				String contraseña_;
+				contraseña_ = rs.getString("Contraseña");
+
+				String fecha_nac_;
+				fecha_nac_ = rs.getString("Fecha_nac");
 				
-					//SELECTAREN DATUAK GORDE	
-					
-					String dni_;
-						dni_ = rs.getString("DNI");
-						
-					String nombre_;																																					
-						nombre_ = rs.getString("Nombre");
-						
-					String apellido_;
-						apellido_ = rs.getString("Apellidos");
-						
-					String sexo_;
-						sexo_ = rs.getString("Sexo");
-						
-					String contraseña_;
-						contraseña_ = rs.getString("Contraseña");
-						
-					String fecha_nac_;
-						fecha_nac_ = rs.getString("Fecha_nac");
-					
+				Cliente c1 = new Cliente(dni_, nombre_, apellido_, fecha_nac_, sexo_, contraseña_);
+				inicioSes.add(0,c1);
+				for (int n = 0; n < inicioSes.size(); n++) {
+					System.out.println(inicioSes.get(n));
+				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		return inicioSes; //gero erabili ahal izateko array nankomprobaketa metodoan
+		return inicioSes; // gero erabili ahal izateko array nankomprobaketa metodoan
 	}
-	
-	
-	
-	
 
 	public static ArrayList lineaAukeratu(String linea) {
 		String line_Prueba = null;// paraden izenak gordetzen ditut
@@ -125,38 +127,28 @@ public class Kontsulta {
 					"SELECT p.Nombre FROM linea l,parada p,linea_parada lp WHERE l.Cod_Linea = lp.Cod_Linea AND p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea LIKE '"
 							+ linea + "'");
 			while (rs.next()) {
-				
-			/*	
-				parada l1 = new parada("");
-				parada l2 = new parada(""); 
-				  								NO SE USA NO HACE FALTA SI LO HACEMOS CON STRINGS
-				parada l3 = new parada("");
-				parada l4 = new parada("");
-				
-			 */
-				//DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
+
+
+				// DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
 				if (linea.equals("L1")) {
 					line_Prueba = rs.getString("Nombre");
-					//l1.setNombre(rs.getString("Nombre"));
+					// l1.setNombre(rs.getString("Nombre"));
 				} else if (linea.equals("L2")) {
 					line_Prueba = rs.getString("Nombre");
-					//l2.setNombre(rs.getString("Nombre"));
+					// l2.setNombre(rs.getString("Nombre"));
 				} else if (linea.equals("L3")) {
 					line_Prueba = rs.getString("Nombre");
-					//l3.setNombre(rs.getString("Nombre"));
+					// l3.setNombre(rs.getString("Nombre"));
 				} else if (linea.equals("L4")) {
 					line_Prueba = rs.getString("Nombre");
-					//l4.setNombre(rs.getString("Nombre"));
+					// l4.setNombre(rs.getString("Nombre"));
 				}
 
-				geltokiak.add(0,line_Prueba); // ARRAYAN GORDETZEN DUT GELTOKIEN IZENAK GORDETZEN DUEN STRING
-//				geltokiak.add(0, l1);
-//				geltokiak.add(1, l2);
-//				geltokiak.add(2, l3);
-//				geltokiak.add(3, l4);
-				
+				geltokiak.add(0, line_Prueba); // ARRAYAN GORDETZEN DUT GELTOKIEN IZENAK GORDETZEN DUEN STRING
+
+
 //Hemen sortzen dut arraylist bat, geltoki bakoitzagatik objektu bat sartzen dut arraylistean.
-				for (int n = 0; n < geltokiak.size(); n++){
+				for (int n = 0; n < geltokiak.size(); n++) {
 					System.out.println(geltokiak.get(n));
 				}
 			}
@@ -183,7 +175,7 @@ public class Kontsulta {
 //				String CodLinea_;
 //				CodLinea_ = rs.getString("Cod_Linea");
 				String nombre_;
-					
+
 				nombre_ = rs.getString("Nombre");
 //				String calle_;
 //				calle_= rs.getString("Calle");
@@ -194,6 +186,59 @@ public class Kontsulta {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	
+	//AUTOBUSAREN DATUAK GORDE
+	
+	public static  ArrayList autobusa() {
+		
+		ArrayList<Autobusa> autobusdatuak = new ArrayList(); // Arraylist sortu
+		
+		Connection conexion = null;
+		Statement s = null;
+		String Cod_Bus;
+		String n_plazas;
+		String kontsumo;
+		String kolor;
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT * FROM  autobus"); //select atera nahi ditudan datuak
+			
+			while (rs.next()) {
+			
+				Cod_Bus = rs.getString(1);
+				n_plazas = rs.getString(2);
+				kontsumo = rs.getString(3);
+				kolor = rs.getString(4);
+				
+				Autobusa a1 = new Autobusa(Cod_Bus,n_plazas,kontsumo,kolor); 
+			}
+			
+		} catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+		
+		return autobusdatuak;	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
 
@@ -206,7 +251,7 @@ public class Kontsulta {
 	}
 
 	public static void toStringPar(ArrayList Nombre) {
-		System.out.println("Kontsulta [Geltokiaren izena:  " + Nombre );
+		System.out.println("Kontsulta [Geltokiaren izena:  " + Nombre);
 	}
 
 	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud,

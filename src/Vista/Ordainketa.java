@@ -1,5 +1,28 @@
 package Vista;
 
+import java.awt.BorderLayout;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import Controlador.*;
+
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JList;
+import javax.swing.AbstractButton;
+import javax.swing.DefaultListModel;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -58,7 +81,9 @@ public class Ordainketa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+
 	public Ordainketa(ArrayList geltoki) {
+
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -295,7 +320,9 @@ public class Ordainketa extends JFrame {
 		
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				MetodoakVista.laugarrenera(geltoki);
+
 				dispose();
 			}
 		};

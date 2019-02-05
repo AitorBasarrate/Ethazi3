@@ -10,6 +10,7 @@ import Vista.Lehena;
 import Vista.Lineak;
 import Vista.Ordainketa;
 import Vista.SaioaHasi;
+import Vista.Error;
 
 public class MetodoakVista {
 
@@ -54,23 +55,21 @@ public class MetodoakVista {
 		azkena.setVisible(true);
 		azkena.setBounds(300, 100, 642, 467);
 	}
-	//Mi idea es llamar al metodo desde aqui, 
-	//pero no tengo muy claro que vaya a funcionar, 
-	//aunque creo que no van mal los tiros.
+	
+	public static void errorea() {
+		Error error = new Error();
+		error.setVisible(true);
+		error.setBounds(300, 100, 321, 233);
+	}
+	
+	
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
-//		Geltokiak.getGelt(gelt, null);
+
 		return gelt;
-//			PantailaratuGeltokiak (gelt); 
+
 	}
 	
-	public static ArrayList getGelt(ArrayList gelt) {
-		return gelt;
-	}
-
-	public static void PantailaratuGeltokiak(ArrayList gelt) {
-		ArrayList Geltokiak = new ArrayList();
-		
-	}
+	
 }
