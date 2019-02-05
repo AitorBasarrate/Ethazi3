@@ -16,6 +16,7 @@ public class Aplikazioa {
 		con1.getConexion();
 
 		System.out.println("Empieza el metodo ");// COMPROBACION PARA EL METODO
+<<<<<<< HEAD
 
 		
 		Metodoak.nanKomprobaketa(null);
@@ -23,6 +24,12 @@ public class Aplikazioa {
 		int maxi = 1002;
 		int rndm = Metodoak.generaNumeroAleatorio(mini, maxi);
 		System.out.println(rndm);
+=======
+
+		Metodoak.haversineMetodo();
+		Metodoak.pasahitzaKomprobaketa();
+
+>>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
 //		Kontsulta.guardaCliente();
 

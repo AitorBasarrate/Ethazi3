@@ -32,14 +32,14 @@ public class MetodoakVista {
 		lineak.setBounds(300, 100, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki) {
-		Geltokiak geltokiak = new Geltokiak(geltoki);
+	public static void laugarrenera(ArrayList geltoki, String linea) {
+		Geltokiak geltokiak = new Geltokiak(geltoki, linea);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(300, 100, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki) {
-		Ordainketa ordainketa = new Ordainketa(geltoki);
+	public static void bostgarrenera(ArrayList geltoki, String linea) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(300, 100, 642, 467);
 	}
@@ -59,7 +59,7 @@ public class MetodoakVista {
 	public static void errorea() {
 		Error error = new Error();
 		error.setVisible(true);
-		error.setBounds(300, 100, 321, 233);
+		error.setBounds(450, 200, 321, 233);
 	}
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
@@ -90,9 +90,17 @@ public class MetodoakVista {
 	public static ArrayList getGelt(ArrayList gelt) {
 		return gelt;
 	}
-
-	public static void PantailaratuGeltokiak(ArrayList gelt) {
-		ArrayList Geltokiak = new ArrayList();
+	public static String lineaIzenaAukeratu(String linea) {
+		String izena="";
+		izena=Kontsulta.lineaIzena(linea);
+		return izena;
+	}
+	public static void getGelt() {
 		
 	}
+
+//	public static void PantailaratuGeltokiak(ArrayList gelt) {
+//		ArrayList Geltokiak = new ArrayList();
+//		
+//	}
 }

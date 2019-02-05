@@ -33,7 +33,7 @@ public class Geltokiak extends JFrame {
 	private JComboBox comboBoxHasiera = new JComboBox();
 	private final JComboBox comboBoxHelmuga = new JComboBox();
 	private final JSpinner spinner = new JSpinner();
-
+	private String lineaIzena="";
 	
 	
 
@@ -52,7 +52,7 @@ public class Geltokiak extends JFrame {
 		
 
 
-	public Geltokiak(ArrayList geltoki) {
+	public Geltokiak(ArrayList geltoki, String linea) {
 
 
 		getContentPane().setLayout(null);
@@ -64,8 +64,11 @@ public class Geltokiak extends JFrame {
 		lblAukeratuDuzunLinea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblAukeratuDuzunLinea.setBounds(156, 46, 245, 23);
 		getContentPane().add(lblAukeratuDuzunLinea);
+		
 		txtLinea.setBackground(Color.WHITE);
 		txtLinea.setEditable(false);
+		lineaIzena = MetodoakVista.lineaIzenaAukeratu(linea);
+		txtLinea.setText(lineaIzena);
 
 		txtLinea.setBounds(212, 78, 138, 46);
 		getContentPane().add(txtLinea);
@@ -112,7 +115,7 @@ public class Geltokiak extends JFrame {
 
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bostgarrenera(geltoki);
+				MetodoakVista.bostgarrenera(geltoki, linea);
 
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHasiera.getSelectedItem().equals(geltoki.get(n))) {

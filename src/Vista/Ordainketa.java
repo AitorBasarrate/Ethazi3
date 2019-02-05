@@ -82,7 +82,7 @@ public class Ordainketa extends JFrame {
 	 * Create the frame.
 	 */
 
-	public Ordainketa(ArrayList geltoki) {
+	public Ordainketa(ArrayList geltoki, String linea) {
 
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
@@ -321,7 +321,7 @@ public class Ordainketa extends JFrame {
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				MetodoakVista.laugarrenera(geltoki);
+				MetodoakVista.laugarrenera(geltoki, linea);
 
 				dispose();
 			}

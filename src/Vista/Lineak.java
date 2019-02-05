@@ -28,7 +28,7 @@ public class Lineak extends JFrame {
 	private JRadioButton rdbtnL2 = new JRadioButton("L2 - Termibus/Muskiz");
 	private JRadioButton rdbtnL3 = new JRadioButton("L3 - Termibus/Balmaseda");
 	private JRadioButton rdbtnL4 = new JRadioButton("L4 - Termibus/Durango");
-	static String linea = null;
+	private String linea = "";
 	ArrayList geltoki = new ArrayList();
 
 	/**
@@ -65,7 +65,7 @@ public class Lineak extends JFrame {
 
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.laugarrenera(geltoki);
+				MetodoakVista.laugarrenera(geltoki, linea);
 				dispose();
 			}
 		};
@@ -158,13 +158,17 @@ public class Lineak extends JFrame {
 		ActionListener aukeraOnartu = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnL1.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L1");
+					linea="L1";
+					geltoki = MetodoakVista.aukeratuLinea(linea);
 				} else if (rdbtnL2.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L2");
+					linea="L2";
+					geltoki = MetodoakVista.aukeratuLinea(linea);
 				} else if (rdbtnL3.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L3");
+					linea="L3";
+					geltoki = MetodoakVista.aukeratuLinea(linea);
 				} else if (rdbtnL4.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L4");
+					linea="L4";
+					geltoki = MetodoakVista.aukeratuLinea(linea);
 				}
 
 			}
