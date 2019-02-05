@@ -14,13 +14,15 @@ import Controlador.*;
 
 public class SaioaHasi extends JFrame {
 	
-	private JTextField textField = new JTextField();
-	private JTextField textField_1 = new JTextField();
-	private JLabel lblK = new JLabel("DNI:");
+	private JTextField txtDNI = new JTextField();
+	private JTextField txtPasahitza = new JTextField();
+	private JLabel lblDNI = new JLabel("DNI:");
 	private JLabel lblPasahitza = new JLabel("Pasahitza:");
 	private JButton btnAurrera = new JButton("Aurrera");
 	private JButton btnAtzera = new JButton("Atzera");
 	private JButton btnIrten = new JButton("IRTEN");
+	private String DNI;
+	private boolean DNIkonprobatu;
 	
 	
 	/**
@@ -34,15 +36,16 @@ public class SaioaHasi extends JFrame {
 		setBounds(0, 0, 635, 455);
 		
 		
+		lblDNI.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lblDNI.setBounds(139, 106, 108, 87);
+		getContentPane().add(lblDNI);
 		
-		lblK.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblK.setBounds(139, 106, 108, 87);
-		getContentPane().add(lblK);
+		
+		txtDNI.setBounds(240, 127, 193, 43);
+		getContentPane().add(txtDNI);
+		txtDNI.setColumns(10);
 		
 		
-		textField.setBounds(240, 127, 193, 43);
-		getContentPane().add(textField);
-		textField.setColumns(10);
 		
 		
 		lblPasahitza.setFont(new Font("Tahoma", Font.PLAIN, 35));
@@ -50,17 +53,24 @@ public class SaioaHasi extends JFrame {
 		getContentPane().add(lblPasahitza);
 		
 		
-		textField_1.setBounds(292, 275, 186, 43);
-		getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		txtPasahitza.setBounds(292, 275, 186, 43);
+		getContentPane().add(txtPasahitza);
+		txtPasahitza.setColumns(10);
 		
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.hirugarrenera();
-				dispose();
+				DNI = txtDNI.getText();
+				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
+				if(DNIkonprobatu==false) {
+					MetodoakVista.errorea();
+				}else {
+					MetodoakVista.hirugarrenera();
+					dispose();
+				}
 			}
 		};
+		btnAurrera.setEnabled(true);
 		btnAurrera.addActionListener(alBAurrera);
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.setBounds(524, 386, 99, 33);

@@ -17,36 +17,43 @@ public class Metodoak {
 	static final double BEZ = 0.21;
 	protected static double totBezGabe;
 
-	public static void nanKomprobaketa() {
+	public static boolean nanKomprobaketa(String DNI) {
 
-		String DNI = "15236985K"; // sartu behar duute gero eskuz
-
+		
+		int i=0;
 		ArrayList<Cliente> datosCliente = new ArrayList<Cliente>();
 		datosCliente = Modelo.Kontsulta.guardaCliente(); // array bueltatzen duen metodoa deitzen dut eta bere datuak
 															// datosClienten gordetzen ditut
-
+		boolean konprobatu = false;
+		
 		for (Cliente c : datosCliente) { // for each array zeharkatzeko
 
+
 			System.out.println("inicio"); // comprobar si entra en el metodo
+
+		if (konprobatu==false) {
 
 			
 			if (c.getDni().equals(DNI)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
 				System.out.println("Correcto");
+				konprobatu=true;
 
 			} else {
 				System.out.println("falso");
 			}
 		}
+		}
+		
 		System.out.println("Fin del metodo");// comprobar el metodo
+		return konprobatu;
 	}
 	
-	public static void generateBus() {
-		int Cod_Bus;
-		do {
-			Cod_Bus = (int) (Math.random() * 1002);
-		}while(Cod_Bus != 1001 || Cod_Bus != 1002);
-		System.out.println(Cod_Bus);
-	}
+	public static int generaNumeroAleatorio(int minimo,int maximo){
+        
+	       int num=(int)Math.floor(Math.random()*(maximo-minimo+1)+(minimo));
+	       return num;
+	   }
+	
 //	public static double litroKilometroko(double distanzia) {
 //		€ = distantzia * 
 //		return distantzia * 2;

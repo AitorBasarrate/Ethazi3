@@ -33,16 +33,27 @@ public class Geltokiak extends JFrame {
 	private JComboBox comboBoxHasiera = new JComboBox();
 	private final JComboBox comboBoxHelmuga = new JComboBox();
 	private final JSpinner spinner = new JSpinner();
+
+	
+	
+
 	private JTextField textField;
 
 	/**
 	 * @wbp.nonvisual location=91,269
 	 */
+
 	/**
 	 * Create the panel.
 	 */
 
+	
+	
+		
+
+
 	public Geltokiak(ArrayList geltoki) {
+
 
 		getContentPane().setLayout(null);
 		this.setSize(478, 300);
@@ -75,10 +86,20 @@ public class Geltokiak extends JFrame {
 		lblData.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblData.setBounds(421, 307, 89, 23);
 		getContentPane().add(lblData);
+
+		
+		
+//		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
+//		comboBoxHasiera.setBounds(73, 346, 89, 20);
+//		comboBoxHasiera.addItem(geltoki);
+//		for (int n = 0; n < geltoki.size(); n++) {
+//			System.out.println(geltoki.get(n));
+
 		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		comboBoxHasiera.setBounds(10, 271, 149, 53);
 		for (int n = 0; n < geltoki.size(); n++) {
 			comboBoxHasiera.addItem(geltoki.get(n));
+
 		}
 		getContentPane().add(comboBoxHasiera);
 
@@ -92,6 +113,7 @@ public class Geltokiak extends JFrame {
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.bostgarrenera(geltoki);
+
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHasiera.getSelectedItem().equals(geltoki.get(n))) {
 						System.out.println("Pillado Hasiera");
@@ -102,6 +124,7 @@ public class Geltokiak extends JFrame {
 						System.out.println("Pillado Helmuga");
 					}
 				}
+
 				dispose();
 			}
 		};

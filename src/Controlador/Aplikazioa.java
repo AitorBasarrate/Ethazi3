@@ -16,9 +16,13 @@ public class Aplikazioa {
 		con1.getConexion();
 
 		System.out.println("Empieza el metodo ");// COMPROBACION PARA EL METODO
+
 		
-		Metodoak.nanKomprobaketa();
-		Metodoak.generateBus();
+		Metodoak.nanKomprobaketa(null);
+		int mini = 1001;
+		int maxi = 1002;
+		int rndm = Metodoak.generaNumeroAleatorio(mini, maxi);
+		System.out.println(rndm);
 //		Metodoak.muestraDatos(Cod_linea, Nombre);
 //		Kontsulta.guardaCliente();
 

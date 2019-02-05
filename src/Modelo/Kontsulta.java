@@ -94,7 +94,12 @@ public class Kontsulta {
 
 				String fecha_nac_;
 				fecha_nac_ = rs.getString("Fecha_nac");
-
+				
+				Cliente c1 = new Cliente(dni_, nombre_, apellido_, fecha_nac_, sexo_, contraseña_);
+				inicioSes.add(0,c1);
+				for (int n = 0; n < inicioSes.size(); n++) {
+					System.out.println(inicioSes.get(n));
+				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -189,7 +194,7 @@ public class Kontsulta {
 		}
 	}
 	
-	public static void muestraKontsumo() {
+	public static void muestraKontsumo(String linea) {
 		ArrayList<Autobusa> DatuakBus = new ArrayList();
 		Connection conexion = null;
 		java.sql.Statement s = null;
@@ -207,7 +212,7 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Consumo_km FROM autobus WHERE Cod_bus = '';");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Consumo_km FROM autobus WHERE Cod_bus = '" + linea + "';");
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
@@ -222,6 +227,8 @@ public class Kontsulta {
 		}
 
 	}
+	
+
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
 
