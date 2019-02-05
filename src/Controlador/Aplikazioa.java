@@ -27,7 +27,6 @@ public class Aplikazioa {
 		Metodoak.haversineMetodo();
 		Metodoak.pasahitzaKomprobaketa();
 
-//		Metodoak.muestraDatos(Cod_linea, Nombre);
 //		Kontsulta.guardaCliente();
 
 //		Kontsulta.muestraParada();
