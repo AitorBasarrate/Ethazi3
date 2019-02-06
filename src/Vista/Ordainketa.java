@@ -127,13 +127,14 @@ public class Ordainketa extends JFrame {
 		lblDaramazun.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblDaramazun.setBounds(427, 41, 177, 38);
 		getContentPane().add(lblDaramazun);
+		
+		
 		textOrdainketa.setBackground(Color.WHITE);
 		textOrdainketa.setEditable(false);
-		
-		
 		textOrdainketa.setBounds(427, 69, 187, 38);
 		getContentPane().add(textOrdainketa);
 		textOrdainketa.setColumns(10);
+		
 		
 		
 		lblSartuDirua.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -330,7 +331,11 @@ public class Ordainketa extends JFrame {
 		btnAtzera.setBounds(0, 0, 89, 30);
 		getContentPane().add(btnAtzera);
 		
-		
+		if(textOrdainketa.equals("")) {
+			btnErosi.setEnabled(true);
+		}else {
+			btnErosi.setEnabled(false);
+		}
 		
 	}
 }

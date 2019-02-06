@@ -19,6 +19,7 @@ import javax.swing.SpinnerDateModel;
 import Controlador.MetodoakVista;
 import Controlador.parada;
 import Modelo.Kontsulta;
+import javax.swing.SwingConstants;
 
 public class Geltokiak extends JFrame {
 	private JTextField txtLinea = new JTextField();
@@ -62,8 +63,9 @@ public class Geltokiak extends JFrame {
 		setBounds(0, 0, 635, 455);
 
 		lblAukeratuDuzunLinea.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblAukeratuDuzunLinea.setBounds(156, 46, 245, 23);
+		lblAukeratuDuzunLinea.setBounds(162, 46, 245, 23);
 		getContentPane().add(lblAukeratuDuzunLinea);
+		txtLinea.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		txtLinea.setBackground(Color.WHITE);
 		txtLinea.setEditable(false);
@@ -74,20 +76,20 @@ public class Geltokiak extends JFrame {
 		getContentPane().add(txtLinea);
 		txtLinea.setColumns(10);
 
-		lblGeltokiakAukeratu.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblGeltokiakAukeratu.setBounds(175, 138, 212, 20);
+		lblGeltokiakAukeratu.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblGeltokiakAukeratu.setBounds(162, 138, 260, 53);
 		getContentPane().add(lblGeltokiakAukeratu);
 
 		lblHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblHasiera.setBounds(33, 227, 111, 33);
+		lblHasiera.setBounds(47, 227, 111, 33);
 		getContentPane().add(lblHasiera);
 
 		lblHelmuga.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblHelmuga.setBounds(228, 226, 118, 35);
+		lblHelmuga.setBounds(269, 226, 118, 35);
 		getContentPane().add(lblHelmuga);
 
 		lblData.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblData.setBounds(421, 307, 89, 23);
+		lblData.setBounds(482, 232, 89, 23);
 		getContentPane().add(lblData);
 
 		
@@ -99,7 +101,7 @@ public class Geltokiak extends JFrame {
 //			System.out.println(geltoki.get(n));
 
 		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		comboBoxHasiera.setBounds(10, 271, 149, 53);
+		comboBoxHasiera.setBounds(10, 271, 184, 53);
 		for (int n = 0; n < geltoki.size(); n++) {
 			comboBoxHasiera.addItem(geltoki.get(n));
 
@@ -107,7 +109,7 @@ public class Geltokiak extends JFrame {
 		getContentPane().add(comboBoxHasiera);
 
 		comboBoxHelmuga.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		comboBoxHelmuga.setBounds(212, 272, 138, 53);
+		comboBoxHelmuga.setBounds(238, 271, 184, 53);
 		for (int n = 0; n < geltoki.size(); n++) {
 			comboBoxHelmuga.addItem(geltoki.get(n));
 		}
@@ -160,7 +162,7 @@ public class Geltokiak extends JFrame {
 		spinner.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		spinner.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
-		spinner.setBounds(395, 341, 144, 23);
+		spinner.setBounds(450, 284, 144, 23);
 
 		getContentPane().add(spinner);
 	}

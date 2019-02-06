@@ -61,6 +61,7 @@ public class MetodoakVista {
 		error.setVisible(true);
 		error.setBounds(450, 200, 321, 233);
 	}
+	
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
 		ArrayList busCode = new ArrayList();
