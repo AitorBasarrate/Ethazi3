@@ -146,6 +146,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=1;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button1.setBounds(427, 142, 50, 51);
@@ -156,6 +157,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=2;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button2.setBounds(489, 142, 49, 51);
@@ -166,6 +168,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=3;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button3.setBounds(548, 142, 50, 51);
@@ -176,6 +179,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=4;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button4.setBounds(427, 204, 50, 51);
@@ -186,6 +190,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=5;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button5.setBounds(488, 204, 50, 51);
@@ -196,6 +201,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=6;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button6.setBounds(548, 204, 50, 51);
@@ -206,6 +212,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=7;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button7.setBounds(427, 266, 50, 51);
@@ -216,6 +223,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=8;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button8.setBounds(489, 266, 50, 51);
@@ -226,6 +234,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=9;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button9.setBounds(548, 266, 50, 51);
@@ -236,6 +245,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int num=0;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
+				btnErosi.setEnabled(true);
 			}
 		});
 		button0.setBounds(489, 328, 120, 38);
@@ -245,6 +255,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String punto=".";
 				textOrdainketa.setText(textOrdainketa.getText() + punto);
+				
 			}
 		};
 		buttonPunto.addActionListener(alBPunto);
@@ -254,6 +265,7 @@ public class Ordainketa extends JFrame {
 		ActionListener ezabatu = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textOrdainketa.setText("");
+				btnErosi.setEnabled(false);
 			}
 		};
 		btnEzabatu.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -300,6 +312,7 @@ public class Ordainketa extends JFrame {
 			
 		btnErosi.setBounds(329, 266, 91, 145);
 		getContentPane().add(btnErosi);
+		btnErosi.setEnabled(false);
 		
 		
 		listBueltak.setBounds(22, 150, 270, 261);
@@ -331,11 +344,7 @@ public class Ordainketa extends JFrame {
 		btnAtzera.setBounds(0, 0, 89, 30);
 		getContentPane().add(btnAtzera);
 		
-		if(textOrdainketa.equals("")) {
-			btnErosi.setEnabled(true);
-		}else {
-			btnErosi.setEnabled(false);
-		}
+		
 		
 	}
 }

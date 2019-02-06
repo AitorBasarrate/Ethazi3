@@ -42,6 +42,7 @@ public class MetodoakVista {
 		Ordainketa ordainketa = new Ordainketa(geltoki, linea);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(300, 100, 642, 467);
+		
 	}
 
 	public static void seigarrenera() {
