@@ -29,7 +29,11 @@ public class Metodoak {
 		
 		for (Cliente c : datosCliente) { // for each array zeharkatzeko
 
+
+			System.out.println("inicio"); // comprobar si entra en el metodo
+
 		if (konprobatu==false) {
+
 			
 			if (c.getDni().equals(DNI)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
 				//System.out.println("Correcto");
@@ -71,6 +75,17 @@ public static boolean pasahitzaKomprobaketa() {
 		System.out.println("Fin del metodo");// comprobar el metodo
 		return konprobatu;
 	}
+	
+	public static int generaNumeroAleatorio(int minimo,int maximo){
+        
+	       int num=(int)Math.floor(Math.random()*(maximo-minimo+1)+(minimo));
+	       return num;
+	   }
+	
+//	public static double litroKilometroko(double distanzia) {
+//		€ = distantzia * 
+//		return distantzia * 2;
+//	}
 
 public static double haversineMetodo() {
 	

@@ -61,15 +61,31 @@ public class MetodoakVista {
 		error.setVisible(true);
 		error.setBounds(450, 200, 321, 233);
 	}
-	//Mi idea es llamar al metodo desde aqui, 
-	//pero no tengo muy claro que vaya a funcionar, 
-	//aunque creo que no van mal los tiros.
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
+		ArrayList busCode = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
-//		Geltokiak.getGelt(gelt, null);
+		busCode = MetodoakVista.bus_lortu(linea);
 		return gelt;
 //			PantailaratuGeltokiak (gelt); 
+	}
+	
+	public static ArrayList bus_lortu(String linea) {
+		ArrayList rndmNum = new ArrayList();
+		if (linea.equals("L1")) {
+			rndmNum.add(0, Metodoak.generaNumeroAleatorio(1001, 1003));
+			System.out.println(rndmNum);
+		}else if (linea.equals("L2")) {
+			rndmNum.add(0, Metodoak.generaNumeroAleatorio(2001, 2001));
+			System.out.println(rndmNum);
+		}else if (linea.equals("L3")) {
+			rndmNum.add(0, Metodoak.generaNumeroAleatorio(3001, 3002));
+			System.out.println(rndmNum);
+		}else if (linea.equals("L4")) {
+			rndmNum.add(0, Metodoak.generaNumeroAleatorio(4001, 4002));
+			System.out.println(rndmNum);
+		}
+		return rndmNum;
 	}
 	
 	public static String lineaIzenaAukeratu(String linea) {
@@ -77,12 +93,4 @@ public class MetodoakVista {
 		izena=Kontsulta.lineaIzena(linea);
 		return izena;
 	}
-	public static void getGelt() {
-		
-	}
-
-//	public static void PantailaratuGeltokiak(ArrayList gelt) {
-//		ArrayList Geltokiak = new ArrayList();
-//		
-//	}
 }

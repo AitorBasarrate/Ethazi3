@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
-import Controlador.parada;
 
 public class Kontsulta {
 //	static String Col_1 = "";
@@ -194,6 +194,40 @@ public class Kontsulta {
 		}
 	}
 	
+	public static void muestraKontsumo(String linea) {
+		ArrayList<Autobusa> DatuakBus = new ArrayList();
+		Connection conexion = null;
+		java.sql.Statement s = null;
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Se obtiene una conexion con la base de datos.
+			// En este caso nos conectamos a la base de datos ethazi3
+			// con el usuario root y contra null
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+
+			// Se crea un Statement, para realizar la consulta
+			s = conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Consumo_km FROM autobus WHERE Cod_bus = '" + linea + "';");
+
+			// Se recorre el ResultSet, mostrando por pantalla los resultados.
+			while (rs.next()) {
+				double Kontsumo_;
+				Kontsumo_ = rs.getDouble("Kontsumo_km");
+				Autobusa Kontsumo1 = new Autobusa(Kontsumo_);
+				DatuakBus.add(0, Kontsumo1);
+				System.out.println(Modelo.Kontsulta.toStringKonts(Kontsumo_));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+	
 	public static String lineaIzena(String linea) {
 		Connection conexion = null;
 		Statement s = null;
@@ -239,9 +273,7 @@ public class Kontsulta {
 		System.out.println("Kontsulta [Geltokiaren izena:  " + Nombre);
 	}
 
-	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud,
-			String Longitud) {
-		return "Kontsulta [NAN: " + Cod_Parada + " Izena: " + Nombre + " Kalea: " + Calle + " Latitudea: " + Latitud
-				+ " Longitudea: " + Longitud + " ]";
+	public static String toStringKonts(double kontsumo_km) {
+		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
 	}
 }
