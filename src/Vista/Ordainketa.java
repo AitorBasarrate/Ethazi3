@@ -91,7 +91,6 @@ public class Ordainketa extends JFrame {
 		setBounds(0, 0, 635, 455);
 		
 		
-		btnIrten.setIcon(new ImageIcon("C:\\Users\\gorka\\OneDrive\\Escritorio\\SqvpT6Qt_400x400.jpg"));
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MetodoakVista.bueltatuLehena();
@@ -269,7 +268,7 @@ public class Ordainketa extends JFrame {
 				list.clear();
 //				DoubleTextDiruTot = Double.parseDouble(textDiruTot.getText());
 //				DoubleTextOrdainketa = Double.parseDouble(textOrdainketa.getText());
-				bueltak = Controlador.Aplikazioa.diruarenBueltak(textDiruTot.getText(), textOrdainketa.getText());
+				bueltak = Controlador.Metodoak.diruarenBueltak(textDiruTot.getText(), textOrdainketa.getText());
 				
 			for(int i=0;i<bueltak.length;i++) {
 				list.addElement(bueltak[i]);
@@ -280,7 +279,7 @@ public class Ordainketa extends JFrame {
 				lblErositakoa.setText("FALTA DEN DIRUA");
 			}
 			if (bueltak[0]=="") {
-				kenketaMetodo = Controlador.Aplikazioa.kenketa(textDiruTot.getText(), textOrdainketa.getText());
+				kenketaMetodo = Controlador.Metodoak.kenketa(textDiruTot.getText(), textOrdainketa.getText());
 				textOrdainketa.setText("");
 				listMezua = "Dirua falta da";
 				list.addElement(listMezua);

@@ -91,7 +91,7 @@ import java.sql.SQLException;
 	    }
 	 
 	    //Devuelve el objeto Connection que se usará en la clase Controller
-	    public static Connection getConexion() {
+	    public Connection getConexion() {
 	        return conexion;
 	    }
 	    
