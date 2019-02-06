@@ -23,15 +23,21 @@ public class Error extends JFrame {
 	 * Create the frame.
 	 */
 	public Error() {
-		setLayout(null);
+		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 635, 455);
+		setBounds(300, 100, 321, 233);
 		
 		
-		lblEzDaExistitzen.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblEzDaExistitzen.setBounds(12, 37, 183, 37);
+		lblEzDaExistitzen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblEzDaExistitzen.setBounds(20, -15, 366, 137);
 		getContentPane().add(lblEzDaExistitzen);
+		
+		
+		JLabel lblSaiatuBerriro = new JLabel("SAIATU BERRIRO");
+		lblSaiatuBerriro.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblSaiatuBerriro.setBounds(30, 74, 303, 112);
+		getContentPane().add(lblSaiatuBerriro);
 	}
 }

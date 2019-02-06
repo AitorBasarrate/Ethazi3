@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
-import Controlador.parada;
+import Controlador.MetodoakVista;
 
 public class Kontsulta {
 //	static String Col_1 = "";
@@ -98,9 +98,9 @@ public class Kontsulta {
 				
 				Cliente c1 = new Cliente(dni_, nombre_, apellido_, fecha_nac_, sexo_, contraseña_);
 				inicioSes.add(0,c1);
-				for (int n = 0; n < inicioSes.size(); n++) {
-					System.out.println(inicioSes.get(n));
-				}
+//				for (int n = 0; n < inicioSes.size(); n++) {
+//					System.out.println(inicioSes.get(n));
+//				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -186,20 +186,21 @@ public class Kontsulta {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	
 	
 	//AUTOBUSAREN DATUAK GORDE
 	
-	public static  ArrayList autobusa() {
-		
-		ArrayList<Autobusa> autobusdatuak = new ArrayList(); // Arraylist sortu
+	public static  double autobusa(String linea) {
+	
+	
 		
 		Connection conexion = null;
 		Statement s = null;
-		String Cod_Bus;
-		String n_plazas;
-		String kontsumo;
-		String kolor;
+		
+		int Cod_Bus = MetodoakVista.bus_lortu(linea);
+		double kontsumo = 0;
+	;
 		
 		try {
 			// Cargar el driver
@@ -209,16 +210,13 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT * FROM  autobus"); //select atera nahi ditudan datuak
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT kontsumo_km FROM  autobus where Cod_bus like 'Cod_Bus'"); //select atera nahi ditudan datuak
 			
 			while (rs.next()) {
-			
-				Cod_Bus = rs.getString(1);
-				n_plazas = rs.getString(2);
-				kontsumo = rs.getString(3);
-				kolor = rs.getString(4);
+				kontsumo = rs.getDouble(3);
+		
 				
-				Autobusa a1 = new Autobusa(Cod_Bus,n_plazas,kontsumo,kolor); 
+			
 			}
 			
 		} catch (Exception e) {
@@ -226,19 +224,77 @@ public class Kontsulta {
 			System.out.println(e.getMessage());
 		}
 		
-		return autobusdatuak;	
+		return kontsumo;	
+	}
+
+	
+
+	
+	public static void muestraKontsumo(String linea) {
+		ArrayList<Autobusa> DatuakBus = new ArrayList();
+		Connection conexion = null;
+		java.sql.Statement s = null;
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Se obtiene una conexion con la base de datos.
+			// En este caso nos conectamos a la base de datos ethazi3
+			// con el usuario root y contra null
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+
+			// Se crea un Statement, para realizar la consulta
+			s = conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Consumo_km FROM autobus WHERE Cod_bus = '" + linea + "';");
+
+			// Se recorre el ResultSet, mostrando por pantalla los resultados.
+			while (rs.next()) {
+				double Kontsumo_;
+				Kontsumo_ = rs.getDouble("Kontsumo_km");
+				Autobusa Kontsumo1 = new Autobusa(Kontsumo_);
+				DatuakBus.add(0, Kontsumo1);
+				System.out.println(Modelo.Kontsulta.toStringKonts(Kontsumo_));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static String lineaIzena(String linea) {
+		Connection conexion = null;
+		Statement s = null;
+		String nombre_="";
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery(
+					"SELECT Nombre FROM linea WHERE Cod_Linea LIKE '"+linea+"'");
+			while (rs.next()) {
+//				String CodLinea_;
+//				CodLinea_ = rs.getString("Cod_Linea");
+				
+
+				nombre_ = rs.getString("Nombre");
+//				String calle_;
+//				calle_= rs.getString("Calle");
+
+//				Kontsulta.toStringPar(nombre_);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return nombre_;
+	}
+
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
 
@@ -254,9 +310,7 @@ public class Kontsulta {
 		System.out.println("Kontsulta [Geltokiaren izena:  " + Nombre);
 	}
 
-	public static String toString4(parada parada, String Cod_Parada, String Nombre, String Calle, String Latitud,
-			String Longitud) {
-		return "Kontsulta [NAN: " + Cod_Parada + " Izena: " + Nombre + " Kalea: " + Calle + " Latitudea: " + Latitud
-				+ " Longitudea: " + Longitud + " ]";
+	public static String toStringKonts(double kontsumo_km) {
+		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
 	}
 }

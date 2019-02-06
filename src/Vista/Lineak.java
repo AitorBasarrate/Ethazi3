@@ -28,17 +28,18 @@ public class Lineak extends JFrame {
 	private JRadioButton rdbtnL2 = new JRadioButton("L2 - Termibus/Muskiz");
 	private JRadioButton rdbtnL3 = new JRadioButton("L3 - Termibus/Balmaseda");
 	private JRadioButton rdbtnL4 = new JRadioButton("L4 - Termibus/Durango");
-	static String linea = null;
-	ArrayList geltoki = new ArrayList();
+	private String linea = "";
+	ArrayList autobusa = new ArrayList();
+	
 
 	/**
 	 * Create the panel.
 	 */
-	
+
 	public Lineak() {
 
 		getContentPane().setLayout(null);
-		this.setSize(478, 300);
+		this.setSize(650, 466);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 635, 455);
@@ -65,7 +66,8 @@ public class Lineak extends JFrame {
 
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.laugarrenera(geltoki);
+				MetodoakVista.laugarrenera(autobusa, linea);
+			
 				dispose();
 			}
 		};
@@ -73,6 +75,7 @@ public class Lineak extends JFrame {
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.setBounds(524, 387, 99, 32);
 		getContentPane().add(btnAurrera);
+		btnAurrera.setEnabled(false);
 
 		ActionListener alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -157,17 +160,25 @@ public class Lineak extends JFrame {
 		getContentPane().add(btnOnartu);
 		ActionListener aukeraOnartu = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				int codBush = MetodoakVista.bus_lortu(linea);
 				if (rdbtnL1.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L1");
+					linea="L1";
+					autobusa = MetodoakVista.aukeratuLinea(linea);
+					MetodoakVista.getLinea(linea);
 				} else if (rdbtnL2.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L2");
+					linea="L2";
+					autobusa = MetodoakVista.aukeratuLinea(linea);
 				} else if (rdbtnL3.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L3");
+					linea="L3";
+					autobusa = MetodoakVista.aukeratuLinea(linea);
 				} else if (rdbtnL4.isSelected()) {
-					geltoki = MetodoakVista.aukeratuLinea("L4");
+					linea="L4";
+					autobusa = MetodoakVista.aukeratuLinea(linea);
 				}
-
+				System.out.println(autobusa.get(0));
+				btnAurrera.setEnabled(true);
 			}
+			
 		};
 		btnOnartu.addActionListener(aukeraOnartu);
 		

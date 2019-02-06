@@ -11,6 +11,7 @@ import javax.swing.JList;
 import Vista.Lehena;
 import Vista.SaioaHasi;
 import Controlador.Linea;
+import Modelo.Kontsulta;
 
 public class Metodoak {
 	public static double kontTotala = 0;
@@ -27,9 +28,40 @@ public class Metodoak {
 	
 		for (Cliente c: datosCliente) { // for each array zeharkatzeko
 
+
+			System.out.println("inicio"); // comprobar si entra en el metodo
+
 		if (konprobatu==false) {
+
 			
 			if (c.getDni().equals(DNI)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
+				//System.out.println("Correcto");
+				konprobatu=true;
+
+			} else {
+				//System.out.println("falso");
+			}
+		}
+		}
+		
+		System.out.println("Fin del metodo");// comprobar el metodo
+		return konprobatu;
+	}
+	
+public static boolean pasahitzaKomprobaketa() {
+
+		String contraseña="";
+		int i=0;
+		ArrayList<Cliente> datosCliente = new ArrayList<Cliente>();
+		datosCliente = Modelo.Kontsulta.guardaCliente(); // array bueltatzen duen metodoa deitzen dut eta bere datuak
+															// datosClienten gordetzen ditut
+		boolean konprobatu = false;
+		
+		for (Cliente c : datosCliente) { // for each array zeharkatzeko
+
+		if (konprobatu==false) {
+			
+			if (c.getContraseña().equals(contraseña)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
 				System.out.println("Correcto");
 				konprobatu=true;
 
@@ -43,7 +75,19 @@ public class Metodoak {
 		return konprobatu;
 	}
 	
+
+	public static int generaNumeroAleatorio(int minimo,int maximo){
+        
+	       int num=(int)Math.floor(Math.random()*(maximo-minimo+1)+(minimo));
+	       return num;
+	   }
 	
+//	public static double litroKilometroko(double distanzia) {
+//		€ = distantzia * 
+//		return distantzia * 2;
+//	}
+
+
 
 //	public static void sartuOrdainketa(JList list) {
 //		DefaultListModel ordaintzekoa = new DefaultListModel();
@@ -96,10 +140,10 @@ public class Metodoak {
 	
 	//PREZIOA KALKULATZEKO METODOA
 	
-	public static void prezioaKalk() {
+	public static void prezioaKalk(String linea) {
 		
 		double distantzia = haversineMetodo(); //metodoaren balioa artzen du
-		double kontsumoa;  //artu behar dugu datu basetik
+		double kontsumoa = Kontsulta.autobusa(linea);  //artu behar dugu datu basetik
 		double erabilitakoLitroak; //bidaian erabili diren litroak
 		final double gasolinaPrezioa = 0.80; //beti berdina gasolinaren prezioa da
 		double kmPrezioa;// formulatik ateratzen da egindako km guztien prezioa
