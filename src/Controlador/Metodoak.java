@@ -96,32 +96,32 @@ public class Metodoak {
 	
 	//PREZIOA KALKULATZEKO METODOA
 	
-//	public static void prezioaKalk() {
-//		
-//		double distantzia = haversineMetodo(); //metodoaren balioa artzen du
-//		double kontsumoa;  //artu behar dugu datu basetik
-//		double erabilitakoLitroak; //bidaian erabili diren litroak
-//		final double gasolinaPrezioa = 0.80; //beti berdina gasolinaren prezioa da
-//		double kmPrezioa;// formulatik ateratzen da egindako km guztien prezioa
-//		final double onura = 0.20; //beti berdina emprezak ezartzen duen onura
-//		double empresaOnura;//formulatik ateratzen da empresaren onurarekin
-//		double prezioGlobala; // autobus guztiak batera ordaindu behar duena
-//		double pertsonaKantitate;//autobusean dauden pertsuna kant datubasetik ateratzen da
-//		double prezioFinala;//pertsuna bakoitzak ordaindu behar duena
-//		
-//		//FORMULA
-//		
-//		erabilitakoLitroak = distantzia * kontsumoa;
-//		kmPrezioa = erabilitakoLitroak * gasolinaPrezioa;
-//		empresaOnura = kmPrezioa * onura;
-//		prezioGlobala = kmPrezioa + empresaOnura;
-//		prezioFinala = prezioGlobala  / pertsonaKantitate;
-//		
-//		
-//		System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
-//		
-//		
-//	}
+	public static void prezioaKalk() {
+		
+		double distantzia = haversineMetodo(); //metodoaren balioa artzen du
+		double kontsumoa;  //artu behar dugu datu basetik
+		double erabilitakoLitroak; //bidaian erabili diren litroak
+		final double gasolinaPrezioa = 0.80; //beti berdina gasolinaren prezioa da
+		double kmPrezioa;// formulatik ateratzen da egindako km guztien prezioa
+		final double onura = 0.20; //beti berdina emprezak ezartzen duen onura
+		double empresaOnura;//formulatik ateratzen da empresaren onurarekin
+		double prezioGlobala; // autobus guztiak batera ordaindu behar duena
+		double pertsonaKantitate;//autobusean dauden pertsuna kant datubasetik ateratzen da
+		double prezioFinala;//pertsuna bakoitzak ordaindu behar duena
+		
+		//FORMULA
+		
+		erabilitakoLitroak = distantzia * kontsumoa;
+		kmPrezioa = erabilitakoLitroak * gasolinaPrezioa;
+		empresaOnura = kmPrezioa * onura;
+		prezioGlobala = kmPrezioa + empresaOnura;
+		prezioFinala = prezioGlobala  / pertsonaKantitate;
+		
+		
+		System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
+		
+		
+	}
 	
 	
 	
