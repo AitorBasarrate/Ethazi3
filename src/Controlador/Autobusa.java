@@ -7,10 +7,10 @@ public class Autobusa {
 	private double Consumo_km;
 	private String Color;
 	
-	public Autobusa(String Cod_bus, String N_plazas, double Consumo_km, String Color) {
+	public Autobusa(String Cod_bus, String N_plazas, double kontsumo, String Color) {
 		this.Cod_bus = Cod_bus;
 		this.N_plazas = N_plazas;
-		this.Consumo_km = Consumo_km;
+		this.Consumo_km = kontsumo;
 		this.Color = Color;
 	}
 	

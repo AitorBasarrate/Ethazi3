@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import Controlador.Autobusa;
 import Controlador.Cliente;
 import Controlador.Linea;
+import Controlador.MetodoakVista;
 
 public class Kontsulta {
 //	static String Col_1 = "";
@@ -127,12 +128,7 @@ public class Kontsulta {
 							+ linea + "'");
 			while (rs.next()) {
 
-				/*
-				 * parada l1 = new parada(""); parada l2 = new parada(""); NO SE USA NO HACE
-				 * FALTA SI LO HACEMOS CON STRINGS parada l3 = new parada(""); parada l4 = new
-				 * parada("");
-				 * 
-				 */
+
 				// DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
 				if (linea.equals("L1")) {
 					line_Prueba = rs.getString("Nombre");
@@ -149,10 +145,7 @@ public class Kontsulta {
 				}
 
 				geltokiak.add(0, line_Prueba); // ARRAYAN GORDETZEN DUT GELTOKIEN IZENAK GORDETZEN DUEN STRING
-//				geltokiak.add(0, l1);
-//				geltokiak.add(1, l2);
-//				geltokiak.add(2, l3);
-//				geltokiak.add(3, l4);
+
 
 //Hemen sortzen dut arraylist bat, geltoki bakoitzagatik objektu bat sartzen dut arraylistean.
 				for (int n = 0; n < geltokiak.size(); n++) {
@@ -193,6 +186,49 @@ public class Kontsulta {
 			System.out.println(e.getMessage());
 		}
 	}
+
+	
+	
+	//AUTOBUSAREN DATUAK GORDE
+	
+	public static  double autobusa(String linea) {
+	
+	
+		
+		Connection conexion = null;
+		Statement s = null;
+		
+		int Cod_Bus = MetodoakVista.bus_lortu(linea);
+		double kontsumo = 0;
+	;
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT kontsumo_km FROM  autobus where Cod_bus like 'Cod_Bus'"); //select atera nahi ditudan datuak
+			
+			while (rs.next()) {
+				kontsumo = rs.getDouble(3);
+		
+				
+			
+			}
+			
+		} catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+		
+		return kontsumo;	
+	}
+
+	
+
 	
 	public static void muestraKontsumo(String linea) {
 		ArrayList<Autobusa> DatuakBus = new ArrayList();
@@ -258,6 +294,7 @@ public class Kontsulta {
 		}
 		return nombre_;
 	}
+
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
 

@@ -62,37 +62,50 @@ public class MetodoakVista {
 		error.setVisible(true);
 		error.setBounds(450, 200, 321, 233);
 	}
-	
+
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
 		ArrayList busCode = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
-		busCode = MetodoakVista.bus_lortu(linea);
+
+
+
+//		busCode = MetodoakVista.bus_lortu(linea);
+
 		return gelt;
-//			PantailaratuGeltokiak (gelt); 
+
 	}
 	
-	public static ArrayList bus_lortu(String linea) {
-		ArrayList rndmNum = new ArrayList();
+	public static void getLinea(String linea) {
+		Kontsulta.autobusa(linea);
+	}
+
+	
+	public static int bus_lortu(String linea) {
+		int rndmNum = 0;
 		if (linea.equals("L1")) {
-			rndmNum.add(0, Metodoak.generaNumeroAleatorio(1001, 1003));
+			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
 			System.out.println(rndmNum);
 		}else if (linea.equals("L2")) {
-			rndmNum.add(0, Metodoak.generaNumeroAleatorio(2001, 2001));
+			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
 			System.out.println(rndmNum);
 		}else if (linea.equals("L3")) {
-			rndmNum.add(0, Metodoak.generaNumeroAleatorio(3001, 3002));
+			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
 		}else if (linea.equals("L4")) {
-			rndmNum.add(0, Metodoak.generaNumeroAleatorio(4001, 4002));
+			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
 			System.out.println(rndmNum);
 		}
 		return rndmNum;
 	}
 	
+	
+	
+
 	public static String lineaIzenaAukeratu(String linea) {
 		String izena="";
 		izena=Kontsulta.lineaIzena(linea);
 		return izena;
 	}
+
 }
