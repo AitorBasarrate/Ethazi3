@@ -11,11 +11,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Controlador.*;
+import javax.swing.JPasswordField;
 
 public class SaioaHasi extends JFrame {
 	
 	private JTextField txtDNI = new JTextField();
-	private JTextField txtPasahitza = new JTextField();
 	private JLabel lblDNI = new JLabel("DNI:");
 	private JLabel lblPasahitza = new JLabel("Pasahitza:");
 	private JButton btnAurrera = new JButton("Aurrera");
@@ -25,6 +25,10 @@ public class SaioaHasi extends JFrame {
 	private boolean DNIkonprobatu;
 	private String pasahitzaEnkripatatuta;
 	private boolean pasahitzaKonprobatu;
+	private JPasswordField passwordField;
+	private ActionListener alBAurrera;
+	private ActionListener alBAtzera;
+	private ActionListener alBIrten;
 	
 	
 	
@@ -56,22 +60,17 @@ public class SaioaHasi extends JFrame {
 		getContentPane().add(lblPasahitza);
 		
 		
-		txtPasahitza.setBounds(292, 275, 186, 43);
-		getContentPane().add(txtPasahitza);
-		txtPasahitza.setColumns(10);
 		
-		
-		
-		ActionListener alBAurrera = new ActionListener() {
+		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				pasahitzaEnkripatatuta = Metodoak.getMD5(txtPasahitza.getText());
+//				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
 //				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
 //				System.out.println(pasahitzaEnkripatatuta);
 //				DNI = txtDNI.getText();
 //				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
 //				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
-					MetodoakVista.hirugarrenera();
-					dispose();
+//					MetodoakVista.hirugarrenera();
+//					dispose();
 //				}else {
 //					MetodoakVista.errorea();
 //				}
@@ -84,7 +83,7 @@ public class SaioaHasi extends JFrame {
 		getContentPane().add(btnAurrera);
 
 		
-		ActionListener alBAtzera = new ActionListener() {
+		alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.bueltatuLehena();
 				dispose();
@@ -96,7 +95,7 @@ public class SaioaHasi extends JFrame {
 		getContentPane().add(btnAtzera);
 		
 		
-		ActionListener alBIrten = new ActionListener() {
+		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.bueltatuLehena();
 				dispose();
@@ -106,6 +105,11 @@ public class SaioaHasi extends JFrame {
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.setBounds(524, 0, 99, 33);
 		getContentPane().add(btnIrten);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(281, 274, 183, 43);
+		getContentPane().add(passwordField);
+		
 
 	}
 }
