@@ -109,9 +109,9 @@ public class Ordainketa extends JFrame {
 		
 		textDiruTot.setBackground(Color.WHITE);
 		textDiruTot.setEditable(false);
-				DefaultListModel ordaintzekoa = new DefaultListModel();
-				ordaintzekoa.addElement(Metodoak.kontTotala+"€");
-				listBueltak.setModel(ordaintzekoa);
+//				DefaultListModel ordaintzekoa = new DefaultListModel();
+//				ordaintzekoa.addElement(Metodoak.kontTotala+"€");
+//				listBueltak.setModel(ordaintzekoa);
 		
 		textDiruTot.setBounds(22, 69, 270, 38);
 		getContentPane().add(textDiruTot);
