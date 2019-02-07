@@ -107,5 +107,14 @@ public class MetodoakVista {
 		izena=Kontsulta.lineaIzena(linea);
 		return izena;
 	}
+	
+	
+	public static int joanEtorria(boolean joanEtorri){
+		int cont =1;
+		if(joanEtorri == true) {
+			cont = 2;
+		}
+		return cont;
+	}
 
 }

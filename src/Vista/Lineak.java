@@ -17,7 +17,7 @@ import Controlador.MetodoakVista;
 
 public class Lineak extends JFrame {
 
-	private JTextField textField = new JTextField();
+	private JTextField autobusaCod = new JTextField();
 	private JLabel lblLineak = new JLabel("LINEAK");
 	private JLabel lblBus = new JLabel("BUS");
 	private JButton btnAurrera = new JButton("Aurrera");
@@ -30,7 +30,7 @@ public class Lineak extends JFrame {
 	private JRadioButton rdbtnL4 = new JRadioButton("L4 - Termibus/Durango");
 	private String linea = "";
 	ArrayList geltokia = new ArrayList();
-	
+	int codBush;
 
 	/**
 	 * Create the panel.
@@ -54,15 +54,21 @@ public class Lineak extends JFrame {
 		modelo.addElement("L4");
 
 		lblBus.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblBus.setBounds(386, 115, 86, 54);
+		lblBus.setBounds(377, 45, 86, 54);
 		getContentPane().add(lblBus);
-		textField.setBackground(Color.WHITE);
-		textField.setEditable(false);
 
-		textField.setBounds(362, 181, 132, 119);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		autobusaCod.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		autobusaCod.setBackground(Color.WHITE);
+		autobusaCod.setEditable(false);
+		
+		
+		autobusaCod.setBounds(352, 110, 132, 119);
+		getContentPane().add(autobusaCod);
+		autobusaCod.setColumns(10);
+		MetodoakVista.bus_lortu(linea);
+		
 //		textField.setText(Kontsulta.lineaAukeratu());
+
 
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -160,20 +166,28 @@ public class Lineak extends JFrame {
 		getContentPane().add(btnOnartu);
 		ActionListener aukeraOnartu = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int codBush = MetodoakVista.bus_lortu(linea);
+				
 				if (rdbtnL1.isSelected()) {
 					linea="L1";
+					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					MetodoakVista.getLinea(linea);
+					autobusaCod.setText(Integer.toString(codBush));
 				} else if (rdbtnL2.isSelected()) {
 					linea="L2";
+					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
+					autobusaCod.setText(Integer.toString(codBush));
 				} else if (rdbtnL3.isSelected()) {
 					linea="L3";
+					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
+					autobusaCod.setText(Integer.toString(codBush));
 				} else if (rdbtnL4.isSelected()) {
 					linea="L4";
+					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
+					autobusaCod.setText(Integer.toString(codBush));
 				}
 				System.out.println(geltokia.get(0));
 				btnAurrera.setEnabled(true);
