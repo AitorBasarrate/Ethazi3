@@ -1,5 +1,8 @@
 package Controlador;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -49,9 +52,8 @@ public class Metodoak {
 		return konprobatu;
 	}
 	
-public static boolean pasahitzaKomprobaketa() {
+public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
-		String contraseña="";
 		int i=0;
 		ArrayList<Cliente> datosCliente = new ArrayList<Cliente>();
 		datosCliente = Modelo.Kontsulta.guardaCliente(); // array bueltatzen duen metodoa deitzen dut eta bere datuak
@@ -62,7 +64,7 @@ public static boolean pasahitzaKomprobaketa() {
 
 		if (konprobatu==false) {
 			
-			if (c.getContraseña().equals(contraseña)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
+			if (c.getContraseña().equals(pasahitza)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
 				System.out.println("Correcto");
 				konprobatu=true;
 
@@ -90,11 +92,11 @@ public static boolean pasahitzaKomprobaketa() {
 
 
 
-//	public static void sartuOrdainketa(JList list) {
-//		DefaultListModel ordaintzekoa = new DefaultListModel();
-//		ordaintzekoa.addElement(Controlador.Aplikazioa.totBezGabe + "€");
-//		list.setModel(ordaintzekoa);
-//	}
+	public static void sartuOrdainketa(JList list) {
+		DefaultListModel ordaintzekoa = new DefaultListModel();
+		ordaintzekoa.addElement(totBezGabe + "€");
+		list.setModel(ordaintzekoa);
+	}
 
 	public static void bezKalkulatu() {
 		kontTotala = (totBezGabe * BEZ) + totBezGabe;
@@ -244,36 +246,63 @@ public static boolean pasahitzaKomprobaketa() {
 	
 	
 	
-	
+
 	//PREZIOA KALKULATZEKO METODOA
 	
-	/*public static void prezioaKalk(String linea) {
+		public static double prezioaKalk(String linea) {
+
+			double distantzia = haversineMetodo(); //metodoaren balioa artzen du
+			
+			System.out.println(Math.round(distantzia) + " distantzia"); //borobildu distantzias
+			
+			double kontsumoa = Kontsulta.autobusa(linea);  //artu behar dugu datu basetik
+			System.out.println(kontsumoa + " kontsumoa");
+			double erabilitakoLitroak; //bidaian erabili diren litroak
+			final double gasolinaPrezioa = 0.80; //beti berdina gasolinaren prezioa da
+			double kmPrezioa;// formulatik ateratzen da egindako km guztien prezioa
+			final double onura = 0.20; //beti berdina emprezak ezartzen duen onura
+			double empresaOnura;//formulatik ateratzen da empresaren onurarekin
+			double prezioGlobala; // autobus guztiak batera ordaindu behar duena
+			double pertsonaKantitate = Kontsulta.autobusPertsonaKantitatea(linea);//autobusean dauden pertsuna kant datubasetik ateratzen da
+			System.out.println(pertsonaKantitate + " pertsona kant");
+			double prezioFinala;//pertsuna bakoitzak ordaindu behar duena
+			double biribildu;
+			
+			//FORMULA
+			
+			erabilitakoLitroak = distantzia * kontsumoa;
+			kmPrezioa = erabilitakoLitroak * gasolinaPrezioa;
+			empresaOnura = kmPrezioa * onura;
+			prezioGlobala = kmPrezioa + empresaOnura;
+			prezioFinala = prezioGlobala  / pertsonaKantitate;
+			biribildu = Math.round(prezioFinala);
+			prezioFinala = biribildu/100;
+			
 		
-		double distantzia = haversineMetodo(); //metodoaren balioa artzen du
-		double kontsumoa = Kontsulta.autobusa(linea);  //artu behar dugu datu basetik
-		double erabilitakoLitroak; //bidaian erabili diren litroak
-		final double gasolinaPrezioa = 0.80; //beti berdina gasolinaren prezioa da
-		double kmPrezioa;// formulatik ateratzen da egindako km guztien prezioa
-		final double onura = 0.20; //beti berdina emprezak ezartzen duen onura
-		double empresaOnura;//formulatik ateratzen da empresaren onurarekin
-		double prezioGlobala; // autobus guztiak batera ordaindu behar duena
-		double pertsonaKantitate;//autobusean dauden pertsuna kant datubasetik ateratzen da
-		double prezioFinala;//pertsuna bakoitzak ordaindu behar duena
 		
-		//FORMULA
-		
-		erabilitakoLitroak = distantzia * kontsumoa;
-		kmPrezioa = erabilitakoLitroak * gasolinaPrezioa;
-		empresaOnura = kmPrezioa * onura;
-		prezioGlobala = kmPrezioa + empresaOnura;
-		prezioFinala = prezioGlobala  / pertsonaKantitate;
-		
-		
-		System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
-		
-		
-	}*/
+			System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
+			
+			return prezioFinala;
+		}
+
 	
-	
+	/*Metodo encriptar*/
+	public static String getMD5(String input) {
+		 try {
+		 MessageDigest md = MessageDigest.getInstance("MD5");
+		 byte[] messageDigest = md.digest(input.getBytes());
+		 BigInteger number = new BigInteger(1, messageDigest);
+		 String hashtext = number.toString(16);
+
+		 while (hashtext.length() < 32) {
+		 hashtext = "0" + hashtext;
+		 }
+		 
+		 return hashtext;
+		 }
+		 catch (NoSuchAlgorithmException e) {
+		 throw new RuntimeException(e);
+		 }
+		 }
 
 }

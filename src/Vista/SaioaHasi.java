@@ -23,6 +23,9 @@ public class SaioaHasi extends JFrame {
 	private JButton btnIrten = new JButton("IRTEN");
 	private String DNI;
 	private boolean DNIkonprobatu;
+	private String pasahitzaEnkripatatuta;
+	private boolean pasahitzaKonprobatu;
+	
 	
 	
 	/**
@@ -58,16 +61,20 @@ public class SaioaHasi extends JFrame {
 		txtPasahitza.setColumns(10);
 		
 		
+		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				DNI = txtDNI.getText();
-				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
-				if(DNIkonprobatu==false) {
-					MetodoakVista.errorea();
-				}else {
+//				pasahitzaEnkripatatuta = Metodoak.getMD5(txtPasahitza.getText());
+//				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
+//				System.out.println(pasahitzaEnkripatatuta);
+//				DNI = txtDNI.getText();
+//				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
+//				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
 					MetodoakVista.hirugarrenera();
 					dispose();
-				}
+//				}else {
+//					MetodoakVista.errorea();
+//				}
 			}
 		};
 		btnAurrera.setEnabled(true);

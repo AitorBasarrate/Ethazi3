@@ -38,11 +38,11 @@ public class MetodoakVista {
 		geltokiak.setBounds(300, 100, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki, String linea) {
-		Ordainketa ordainketa = new Ordainketa(geltoki, linea);
+	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(300, 100, 642, 467);
-
+		
 	}
 
 	public static void seigarrenera() {
@@ -56,7 +56,7 @@ public class MetodoakVista {
 		azkena.setVisible(true);
 		azkena.setBounds(300, 100, 642, 467);
 	}
-
+	
 	public static void errorea() {
 		Error error = new Error();
 		error.setVisible(true);
@@ -68,37 +68,43 @@ public class MetodoakVista {
 		ArrayList busCode = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
 
-		busCode.add(MetodoakVista.bus_lortu(linea));
+
+
+//		busCode = MetodoakVista.bus_lortu(linea);
 
 		return gelt;
 
 	}
-
+	
 	public static void getLinea(String linea) {
 		Kontsulta.autobusa(linea);
 	}
 
-	public static int bus_lortu(String linea) { // autobusaren codea sortzen du.
+	
+	public static int bus_lortu(String linea) {
 		int rndmNum = 0;
 		if (linea.equals("L1")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
 			System.out.println(rndmNum);
-		} else if (linea.equals("L2")) {
+		}else if (linea.equals("L2")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
 			System.out.println(rndmNum);
-		} else if (linea.equals("L3")) {
+		}else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
-		} else if (linea.equals("L4")) {
+		}else if (linea.equals("L4")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
 			System.out.println(rndmNum);
 		}
 		return rndmNum;
 	}
+	
+	
+	
 
 	public static String lineaIzenaAukeratu(String linea) {
-		String izena = "";
-		izena = Kontsulta.lineaIzena(linea);
+		String izena="";
+		izena=Kontsulta.lineaIzena(linea);
 		return izena;
 	}
 

@@ -210,13 +210,11 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT kontsumo_km FROM  autobus where Cod_bus like 'Cod_Bus'"); //select atera nahi ditudan datuak
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Consumo_km FROM autobus where Cod_bus = "+Cod_Bus); //select atera nahi ditudan datuak
 			
 			while (rs.next()) {
-				kontsumo = rs.getDouble(3);
+				kontsumo = rs.getDouble(1);
 		
-				
-			
 			}
 			
 		} catch (Exception e) {
@@ -253,7 +251,7 @@ public class Kontsulta {
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
 				double Kontsumo_;
-				Kontsumo_ = rs.getDouble("Kontsumo_km");
+				Kontsumo_ = rs.getDouble("Consumo_km");
 				Autobusa Kontsumo1 = new Autobusa(Kontsumo_);
 				DatuakBus.add(0, Kontsumo1);
 				System.out.println(Modelo.Kontsulta.toStringKonts(Kontsumo_));
@@ -294,6 +292,8 @@ public class Kontsulta {
 		}
 		return nombre_;
 	}
+	
+	
 
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
@@ -312,5 +312,36 @@ public class Kontsulta {
 
 	public static String toStringKonts(double kontsumo_km) {
 		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
+	}
+
+	//AUTOBUSAREN PERTSONA KANTITATEA LORTU
+
+	public static  double autobusPertsonaKantitatea(String linea) {
+		Connection conexion = null;
+		Statement s = null;
+		int Cod_Bus = MetodoakVista.bus_lortu(linea);
+		double pertsonaKantitate = 0;
+
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT N_plazas FROM  autobus where Cod_bus = "+Cod_Bus); //select atera nahi ditudan datuak
+			
+			while (rs.next()) {
+				pertsonaKantitate = rs.getDouble(1);
+			
+			}
+			
+		} catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+		
+		return pertsonaKantitate;
 	}
 }
