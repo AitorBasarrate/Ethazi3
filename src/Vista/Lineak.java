@@ -55,12 +55,13 @@ public class Lineak extends JFrame {
 		modelo.addElement("L4");
 
 		lblBus.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblBus.setBounds(386, 115, 86, 54);
+		lblBus.setBounds(377, 45, 86, 54);
 		getContentPane().add(lblBus);
+		autobusaCod.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		autobusaCod.setBackground(Color.WHITE);
 		autobusaCod.setEditable(false);
 
-		autobusaCod.setBounds(362, 181, 132, 119);
+		autobusaCod.setBounds(352, 110, 132, 119);
 		getContentPane().add(autobusaCod);
 		autobusaCod.setColumns(10);
 		MetodoakVista.bus_lortu(linea);
