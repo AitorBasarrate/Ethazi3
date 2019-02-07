@@ -11,3 +11,4 @@ public class FitxategiRW {
 	...
 	String linea = br.readLine();
 }
+//http://chuwiki.chuidiang.org/index.php?title=Lectura_y_Escritura_de_Ficheros_en_Java
