@@ -249,7 +249,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 	//PREZIOA KALKULATZEKO METODOA
 	
-		public static double prezioaKalk(String linea) {
+		public static double prezioaKalk(String linea, int contagailu) {
 
 			double distantzia = haversineMetodo(); //metodoaren balioa artzen du
 			
@@ -268,6 +268,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 			double prezioFinala;//pertsuna bakoitzak ordaindu behar duena
 			double biribildu;
 			
+			
 			//FORMULA
 			
 			erabilitakoLitroak = distantzia * kontsumoa;
@@ -276,7 +277,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 			prezioGlobala = kmPrezioa + empresaOnura;
 			prezioFinala = prezioGlobala  / pertsonaKantitate;
 			biribildu = Math.round(prezioFinala);
-			prezioFinala = biribildu/100;
+			prezioFinala = (biribildu/100) * contagailu;
 			
 		
 		

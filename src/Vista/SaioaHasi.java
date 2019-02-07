@@ -64,17 +64,17 @@ public class SaioaHasi extends JFrame {
 		
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				pasahitzaEnkripatatuta = Metodoak.getMD5(txtPasahitza.getText());
-//				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
-//				System.out.println(pasahitzaEnkripatatuta);
-//				DNI = txtDNI.getText();
-//				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
-//				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
+			pasahitzaEnkripatatuta = Metodoak.getMD5(txtPasahitza.getText());
+			pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
+				System.out.println(pasahitzaEnkripatatuta);
+				DNI = txtDNI.getText();
+			DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
+				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
 					MetodoakVista.hirugarrenera();
 					dispose();
-//				}else {
-//					MetodoakVista.errorea();
-//				}
+			}else {
+				MetodoakVista.errorea();
+			}
 			}
 		};
 		btnAurrera.setEnabled(true);
