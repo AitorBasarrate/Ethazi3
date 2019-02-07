@@ -16,6 +16,7 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerDateModel;
 
+import Controlador.Metodoak;
 import Controlador.MetodoakVista;
 import Controlador.parada;
 import Modelo.Kontsulta;
@@ -35,6 +36,7 @@ public class Geltokiak extends JFrame {
 	private final JComboBox comboBoxHelmuga = new JComboBox();
 	private final JSpinner spinner = new JSpinner();
 	private String lineaIzena="";
+	private double prezioFinala;
 	
 	
 
@@ -117,7 +119,7 @@ public class Geltokiak extends JFrame {
 
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bostgarrenera(geltoki, linea);
+				
 
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHasiera.getSelectedItem().equals(geltoki.get(n))) {
@@ -129,6 +131,10 @@ public class Geltokiak extends JFrame {
 						System.out.println("Pillado Helmuga");
 					}
 				}
+				
+				prezioFinala = Metodoak.prezioaKalk(linea);
+				
+				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala);
 
 				dispose();
 			}

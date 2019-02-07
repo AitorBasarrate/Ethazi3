@@ -82,7 +82,7 @@ public class Ordainketa extends JFrame {
 	 * Create the frame.
 	 */
 
-	public Ordainketa(ArrayList geltoki, String linea) {
+	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala) {
 
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
@@ -105,6 +105,8 @@ public class Ordainketa extends JFrame {
 		lblErositakoa.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblErositakoa.setBounds(22, 45, 149, 30);
 		getContentPane().add(lblErositakoa);
+		
+		
 		textDiruTot.setBackground(Color.WHITE);
 		textDiruTot.setEditable(false);
 				DefaultListModel ordaintzekoa = new DefaultListModel();
@@ -116,7 +118,7 @@ public class Ordainketa extends JFrame {
 		Metodoak.bezKalkulatu();
 		TextDiruTot = Double.toString(Metodoak.kontTotala);
 		textDiruTot.setColumns(10);
-		textDiruTot.setText(TextDiruTot);
+		textDiruTot.setText(Double.toString(prezioFinala));
 		
 		
 		lblBueltak.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -305,10 +307,13 @@ public class Ordainketa extends JFrame {
 			btnAurrera.setEnabled(true);
 			btnErosi.setEnabled(false);
 			btnEzabatu.setEnabled(false);
+			
 			}
+			
 			};
 			btnErosi.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			btnErosi.addActionListener(alBErosi);
+			
 			
 		btnErosi.setBounds(329, 266, 91, 145);
 		getContentPane().add(btnErosi);
