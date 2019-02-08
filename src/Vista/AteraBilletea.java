@@ -23,6 +23,7 @@ public class AteraBilletea extends JFrame {
 	 * Create the panel.
 	 */
 	public AteraBilletea() {
+		
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
