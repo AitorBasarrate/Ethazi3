@@ -264,6 +264,7 @@ public class Kontsulta {
 		Connection conexion = null;
 		Statement s = null;
 		String nombre_="";
+		
 		try {
 			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
