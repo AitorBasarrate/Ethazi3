@@ -192,15 +192,13 @@ public class Kontsulta {
 	//AUTOBUSAREN DATUAK GORDE
 	
 	public static  double autobusa(String linea) {
-	
-	
-		
+
 		Connection conexion = null;
 		Statement s = null;
 		
 		int Cod_Bus = MetodoakVista.bus_lortu(linea);
 		double kontsumo = 0;
-	;
+	
 		
 		try {
 			// Cargar el driver
@@ -274,8 +272,7 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery(
-					"SELECT Nombre FROM linea WHERE Cod_Linea LIKE '"+linea+"'");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Nombre FROM linea WHERE Cod_Linea LIKE '"+linea+"'");
 			while (rs.next()) {
 //				String CodLinea_;
 //				CodLinea_ = rs.getString("Cod_Linea");
@@ -291,6 +288,39 @@ public class Kontsulta {
 			System.out.println(e.getMessage());
 		}
 		return nombre_;
+	}
+	
+	
+	
+	public static String paradaIzenalortu(String linea) {
+		String izena = lineaIzena(linea);
+		String latitud = " ";
+		Connection conexion = null;
+		Statement s = null;
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Se obtiene una conexion con la base de datos.
+			// En este caso nos conectamos a la base de datos ethazi3
+			// con el usuario root y contra null
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			// Se crea un Statement, para realizar la consulta
+			s = conexion.createStatement();
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Latitud  FROM parada WHERE Nombre LIKE '" + izena + "';");
+
+			// Se recorre el ResultSet, mostrando por pantalla los resultados.
+			while (rs.next()) {
+			latitud = rs.getString(1);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		return latitud; // cambiar luego
 	}
 	
 	
@@ -344,4 +374,13 @@ public class Kontsulta {
 		
 		return pertsonaKantitate;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

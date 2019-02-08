@@ -214,7 +214,8 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	public static double haversineMetodo() {
 		
 		   final int R = 6371; // Radious of the earth
-		   double lat1 = 432614;
+		   
+		   double lat1 = 432614;   
 		   double lat2 = 43245;
 		   double lon1 = -294974;
 		   double lon2 =-298991;
@@ -306,4 +307,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 		 }
 		 }
 
+	
+	
+	
 }
