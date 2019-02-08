@@ -3,18 +3,12 @@ package Controlador;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
-import Vista.Lehena;
-import Vista.SaioaHasi;
-import Controlador.Linea;
 import Modelo.Kontsulta;
 
 public class Metodoak {

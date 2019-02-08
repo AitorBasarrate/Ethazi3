@@ -1,10 +1,6 @@
 package Controlador;
 
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.concurrent.TimeUnit;
 import Modelo.DB;
 
 public class Aplikazioa {

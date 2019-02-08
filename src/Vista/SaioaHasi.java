@@ -8,11 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import Controlador.*;
-import javax.swing.JPasswordField;
+import Controlador.Metodoak;
+import Controlador.MetodoakVista;
 
 public class SaioaHasi extends JFrame {
 	
@@ -64,30 +64,18 @@ public class SaioaHasi extends JFrame {
 		
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-//				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
-//				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
-//				System.out.println(pasahitzaEnkripatatuta);
-//				DNI = txtDNI.getText();
-//				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
-//				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
-//					MetodoakVista.hirugarrenera();
-//					dispose();
-//				}else {
-//					MetodoakVista.errorea();
-//				}
-
-			pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
-			pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
+				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
+				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
 				System.out.println(pasahitzaEnkripatatuta);
 				DNI = txtDNI.getText();
-			DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
+				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
+			
 				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
 					MetodoakVista.hirugarrenera();
 					dispose();
-			}else {
-				JOptionPane.showMessageDialog(null, "Ez da existitzen\n Saiatu berriro");
-			}
+				}else {
+					JOptionPane.showMessageDialog(null, "Ez da existitzen\n Saiatu berriro");
+				}
 			}
 			
 		};
