@@ -12,6 +12,7 @@ import Controlador.*;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
@@ -365,7 +366,12 @@ public class Ordainketa extends JFrame {
 		alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				MetodoakVista.laugarrenera(geltoki, linea);
+				try {
+					MetodoakVista.laugarrenera(geltoki, linea);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 				dispose();
 			}

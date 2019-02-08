@@ -1,5 +1,6 @@
 package Controlador;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import Modelo.Kontsulta;
@@ -32,7 +33,7 @@ public class MetodoakVista {
 		lineak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki, String linea) {
+	public static void laugarrenera(ArrayList geltoki, String linea) throws ParseException {
 		Geltokiak geltokiak = new Geltokiak(geltoki, linea);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
@@ -61,8 +62,6 @@ public class MetodoakVista {
 		ArrayList gelt = new ArrayList();
 		ArrayList busCode = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
-
-
 
 //		busCode = MetodoakVista.bus_lortu(linea);
 
