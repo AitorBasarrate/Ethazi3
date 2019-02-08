@@ -44,9 +44,7 @@ public class Geltokiak extends JFrame {
 	private ActionListener alBAtzera;
 	private ActionListener alBIrten;
 	private ActionListener alBAurrera;
-
 	private JTextField textField;
-
 	/**
 	 * @wbp.nonvisual location=91,269
 	 */
