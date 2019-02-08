@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.ArrayList;
 import Vista.Geltokiak;
 import javax.swing.DefaultListModel;
@@ -72,7 +73,12 @@ public class Lineak extends JFrame {
 
 		ActionListener alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.laugarrenera(geltokia, linea);
+				try {
+					MetodoakVista.laugarrenera(geltokia, linea);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			
 				dispose();
 			}

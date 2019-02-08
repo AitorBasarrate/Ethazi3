@@ -35,7 +35,7 @@ public class Geltokiak extends JFrame {
 	private JButton btnAtzera = new JButton("Atzera");
 	private JComboBox comboBoxHasiera = new JComboBox();
 	private final JComboBox comboBoxHelmuga = new JComboBox();
-	private final JSpinner spinner = new JSpinner();
+	private final JSpinner Data = new JSpinner();
 	private String lineaIzena="";
 	private double prezioFinala;
 	private JRadioButton rdbtnJoanEtorri = new JRadioButton("JOAN ETORRI ?");
@@ -135,8 +135,10 @@ public class Geltokiak extends JFrame {
 						System.out.println("Pillado Helmuga");
 					}
 				}
-				
+				Date data = (Date)Data.getModel().getValue();
+				System.out.println(data);
 				prezioFinala = Metodoak.prezioaKalk(linea, contagailu);
+				
 				
 				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala);
 
@@ -169,13 +171,11 @@ public class Geltokiak extends JFrame {
 		btnAtzera.addActionListener(alBAtzera);
 		btnAtzera.setBounds(0, 0, 89, 33);
 		getContentPane().add(btnAtzera);
-		spinner.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		Data.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		spinner.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
-		spinner.setBounds(461, 267, 144, 23);
-
-		getContentPane().add(spinner);
-		
+		Data.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
+		Data.setBounds(461, 267, 144, 23);
+		getContentPane().add(Data);
 		
 		rdbtnJoanEtorri.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		rdbtnJoanEtorri.setBounds(95, 334, 312, 46);
