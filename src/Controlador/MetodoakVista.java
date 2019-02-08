@@ -26,33 +26,33 @@ public class MetodoakVista {
 		saioaHasi.setBounds(550, 200, 642, 467);
 	}
 
-	public static void hirugarrenera() {
-		Lineak lineak = new Lineak();
+	public static void hirugarrenera(String DNI) {
+		Lineak lineak = new Lineak(DNI);
 		lineak.setVisible(true);
 		lineak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki, String linea) throws ParseException {
-		Geltokiak geltokiak = new Geltokiak(geltoki, linea);
+	public static void laugarrenera(ArrayList geltoki, String linea, String DNI) throws ParseException {
+		Geltokiak geltokiak = new Geltokiak(geltoki, linea, DNI);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala) {
-		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala);
+	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, String DNI) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala, DNI);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
 		
 	}
 
-	public static void seigarrenera() {
-		AteraBilletea ateraBilletea = new AteraBilletea();
+	public static void seigarrenera(String DNI) {
+		AteraBilletea ateraBilletea = new AteraBilletea(DNI);
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 
-	public static void azkenera() {
-		Azkena azkena = new Azkena();
+	public static void azkenera(String DNI) {
+		Azkena azkena = new Azkena(DNI);
 		azkena.setVisible(true);
 		azkena.setBounds(550, 200, 642, 467);
 	}
@@ -91,7 +91,11 @@ public class MetodoakVista {
 		return rndmNum;
 	}
 	
-	
+	public static String clienteIzena(String DNI){
+		izena = Kontsulta
+		
+		return izena;
+	}
 	
 
 	public static String lineaIzenaAukeratu(String linea) {

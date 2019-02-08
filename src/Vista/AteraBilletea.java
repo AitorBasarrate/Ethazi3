@@ -21,7 +21,7 @@ public class AteraBilletea extends JFrame {
 	/**
 	 * Create the panel.
 	 */
-	public AteraBilletea() {
+	public AteraBilletea(String DNI) {
 		
 		setLayout(null);
 		this.setSize(478,300);  
@@ -42,7 +42,7 @@ public class AteraBilletea extends JFrame {
 		
 		alBAzkena = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.azkenera();
+				MetodoakVista.azkenera(DNI);
 				dispose();
 			}
 		};

@@ -56,7 +56,7 @@ public class Geltokiak extends JFrame {
 		
 
 
-	public Geltokiak(ArrayList geltoki, String linea) {
+	public Geltokiak(ArrayList geltoki, String linea, String DNI) {
 
 
 		getContentPane().setLayout(null);
@@ -136,7 +136,7 @@ public class Geltokiak extends JFrame {
 				prezioFinala = Metodoak.prezioaKalk(linea, contagailu);
 				
 				
-				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala);
+				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala, DNI);
 
 				dispose();
 			}
@@ -159,7 +159,7 @@ public class Geltokiak extends JFrame {
 
 		alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.hirugarrenera();
+				MetodoakVista.hirugarrenera(DNI);
 				dispose();
 			}
 		};
