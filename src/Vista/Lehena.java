@@ -14,6 +14,7 @@ public class Lehena extends JFrame {
 	
 	private JButton btnSaioaHasi = new JButton("SAIOA HASI");
 	private JLabel lblOngiEtorri = new JLabel("ONGI ETORRI");
+	private ActionListener alBSaioaHasi;
 
 	/**
 	 * Create the panel.
@@ -28,7 +29,7 @@ public class Lehena extends JFrame {
 		btnSaioaHasi.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		
 		
-		ActionListener alBSaioaHasi = new ActionListener() {
+		alBSaioaHasi = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				MetodoakVista.bigarrenera();

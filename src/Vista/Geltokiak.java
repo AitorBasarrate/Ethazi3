@@ -35,17 +35,16 @@ public class Geltokiak extends JFrame {
 	private JButton btnAtzera = new JButton("Atzera");
 	private JComboBox comboBoxHasiera = new JComboBox();
 	private final JComboBox comboBoxHelmuga = new JComboBox();
-	private final JSpinner spinner = new JSpinner();
+	private final JSpinner Data = new JSpinner();
 	private String lineaIzena="";
 	private double prezioFinala;
 	private JRadioButton rdbtnJoanEtorri = new JRadioButton("JOAN ETORRI ?");
 	private boolean joanEtorri = false;
 	private int contagailu = 1;
-	
-
-
+	private ActionListener alBAtzera;
+	private ActionListener alBIrten;
+	private ActionListener alBAurrera;
 	private JTextField textField;
-
 	/**
 	 * @wbp.nonvisual location=91,269
 	 */
@@ -71,13 +70,12 @@ public class Geltokiak extends JFrame {
 		lblAukeratuDuzunLinea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblAukeratuDuzunLinea.setBounds(162, 46, 245, 23);
 		getContentPane().add(lblAukeratuDuzunLinea);
-		txtLinea.setHorizontalAlignment(SwingConstants.CENTER);
 		
+		txtLinea.setHorizontalAlignment(SwingConstants.CENTER);
 		txtLinea.setBackground(Color.WHITE);
 		txtLinea.setEditable(false);
 		lineaIzena = MetodoakVista.lineaIzenaAukeratu(linea);
 		txtLinea.setText(lineaIzena);
-
 		txtLinea.setBounds(212, 78, 138, 46);
 		getContentPane().add(txtLinea);
 		txtLinea.setColumns(10);
@@ -121,7 +119,7 @@ public class Geltokiak extends JFrame {
 		}
 		getContentPane().add(comboBoxHelmuga);
 
-		ActionListener alBAurrera = new ActionListener() {
+		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 
@@ -135,8 +133,10 @@ public class Geltokiak extends JFrame {
 						System.out.println("Pillado Helmuga");
 					}
 				}
-				
+				Date data = (Date)Data.getModel().getValue();
+				System.out.println(data);
 				prezioFinala = Metodoak.prezioaKalk(linea, contagailu);
+				
 				
 				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala);
 
@@ -148,7 +148,7 @@ public class Geltokiak extends JFrame {
 		btnAurrera.setBounds(524, 386, 99, 33);
 		getContentPane().add(btnAurrera);
 
-		ActionListener alBIrten = new ActionListener() {
+		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.bueltatuLehena();
 				dispose();
@@ -159,7 +159,7 @@ public class Geltokiak extends JFrame {
 		btnIrten.setBounds(524, 0, 99, 33);
 		getContentPane().add(btnIrten);
 
-		ActionListener alBAtzera = new ActionListener() {
+		alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.hirugarrenera();
 				dispose();
@@ -169,13 +169,11 @@ public class Geltokiak extends JFrame {
 		btnAtzera.addActionListener(alBAtzera);
 		btnAtzera.setBounds(0, 0, 89, 33);
 		getContentPane().add(btnAtzera);
-		spinner.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		Data.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		spinner.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
-		spinner.setBounds(461, 267, 144, 23);
-
-		getContentPane().add(spinner);
-		
+		Data.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
+		Data.setBounds(461, 267, 144, 23);
+		getContentPane().add(Data);
 		
 		rdbtnJoanEtorri.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		rdbtnJoanEtorri.setBounds(95, 334, 312, 46);

@@ -207,15 +207,19 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 			e.printStackTrace();
 		}
 	}
+	
 
 	
 	//DISTANTZIA KALKULATZEKO METODOA 
 	
-	public static double haversineMetodo() {
+	public static double haversineMetodo(String linea) {
 		
 		   final int R = 6371; // Radious of the earth
 		   
-		   double lat1 = 432614;   
+		   String lati = Modelo.Kontsulta.paradaLatitudlortu(linea);   
+		   System.out.println(lati + " latitudddd");
+		   
+		   double lat1 = 1234;
 		   double lat2 = 43245;
 		   double lon1 = -294974;
 		   double lon2 =-298991;
@@ -252,7 +256,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	
 		public static double prezioaKalk(String linea, int contagailu) {
 
-			double distantzia = haversineMetodo(); //metodoaren balioa artzen du
+			double distantzia = haversineMetodo(linea); //metodoaren balioa artzen du
 			
 			System.out.println(Math.round(distantzia) + " distantzia"); //borobildu distantzias
 			

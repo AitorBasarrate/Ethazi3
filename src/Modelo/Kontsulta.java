@@ -274,15 +274,8 @@ public class Kontsulta {
 
 			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Nombre FROM linea WHERE Cod_Linea LIKE '"+linea+"'");
 			while (rs.next()) {
-//				String CodLinea_;
-//				CodLinea_ = rs.getString("Cod_Linea");
-				
 
 				nombre_ = rs.getString("Nombre");
-//				String calle_;
-//				calle_= rs.getString("Calle");
-
-//				Kontsulta.toStringPar(nombre_);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -292,9 +285,9 @@ public class Kontsulta {
 	
 	
 	
-	public static String paradaIzenalortu(String linea) {
+	public static String paradaLatitudlortu(String linea) {
 		String izena = lineaIzena(linea);
-		String latitud = " ";
+		String latitud = " " ;
 		Connection conexion = null;
 		Statement s = null;
 		
@@ -309,7 +302,7 @@ public class Kontsulta {
 			// Se crea un Statement, para realizar la consulta
 			s = conexion.createStatement();
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Latitud  FROM parada WHERE Nombre LIKE '" + izena + "';");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Latitud  FROM parada WHERE Nombre LIKE'"+ izena +"';");
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
