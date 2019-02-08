@@ -10,57 +10,51 @@ import Vista.Lehena;
 import Vista.Lineak;
 import Vista.Ordainketa;
 import Vista.SaioaHasi;
-import Vista.Error;
+
 
 public class MetodoakVista {
 
 	public static void bueltatuLehena() {
 		Lehena lehena = new Lehena();
 		lehena.setVisible(true);
-		lehena.setBounds(300, 100, 642, 467);
+		lehena.setBounds(550, 200, 642, 467);
 	}
 
 	public static void bigarrenera() {
 		SaioaHasi saioaHasi = new SaioaHasi();
 		saioaHasi.setVisible(true);
-		saioaHasi.setBounds(300, 100, 642, 467);
+		saioaHasi.setBounds(550, 200, 642, 467);
 	}
 
 	public static void hirugarrenera() {
 		Lineak lineak = new Lineak();
 		lineak.setVisible(true);
-		lineak.setBounds(300, 100, 642, 467);
+		lineak.setBounds(550, 200, 642, 467);
 	}
 
 	public static void laugarrenera(ArrayList geltoki, String linea) {
 		Geltokiak geltokiak = new Geltokiak(geltoki, linea);
 		geltokiak.setVisible(true);
-		geltokiak.setBounds(300, 100, 642, 467);
+		geltokiak.setBounds(550, 200, 642, 467);
 	}
 
 	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala) {
 		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala);
 		ordainketa.setVisible(true);
-		ordainketa.setBounds(300, 100, 642, 467);
+		ordainketa.setBounds(550, 200, 642, 467);
 		
 	}
 
 	public static void seigarrenera() {
 		AteraBilletea ateraBilletea = new AteraBilletea();
 		ateraBilletea.setVisible(true);
-		ateraBilletea.setBounds(300, 100, 642, 467);
+		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 
 	public static void azkenera() {
 		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
-		azkena.setBounds(300, 100, 642, 467);
-	}
-	
-	public static void errorea() {
-		Error error = new Error();
-		error.setVisible(true);
-		error.setBounds(450, 200, 321, 233);
+		azkena.setBounds(550, 200, 642, 467);
 	}
 
 	public static ArrayList aukeratuLinea(String linea) {
