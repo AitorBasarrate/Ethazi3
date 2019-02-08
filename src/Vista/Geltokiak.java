@@ -12,16 +12,14 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JRadioButton;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerDateModel;
+import javax.swing.SwingConstants;
 
 import Controlador.Metodoak;
 import Controlador.MetodoakVista;
-import Controlador.parada;
-import Modelo.Kontsulta;
-import javax.swing.SwingConstants;
-import javax.swing.JRadioButton;
 
 public class Geltokiak extends JFrame {
 	private JTextField txtLinea = new JTextField();

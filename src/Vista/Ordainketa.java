@@ -1,37 +1,13 @@
 package Vista;
 
-import java.awt.BorderLayout;
-
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import Controlador.*;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import java.awt.Font;
-import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
-import javax.swing.JList;
-import javax.swing.AbstractButton;
-import javax.swing.DefaultListModel;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
