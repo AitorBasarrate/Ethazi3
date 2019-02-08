@@ -3,16 +3,17 @@ package Controlador;
 import java.io.*;
 
 public class FitxategiRW {
-	File fitxategi = null;
-	FileReader fr = null;
-	BufferedReader br = null;
 
-	{
+	public static void fitxeroIrak() {
+		
+		File fitxategi = null;
+		FileReader fr = null;
+		BufferedReader br = null;
 
 		try {
 			// Apertura del fichero y creacion de BufferedReader para poder
 			// hacer una lectura comoda (disponer del metodo readLine()).
-			fitxategi = new File("../Ethazi3/src/Controlador/ticket");
+			fitxategi = new File("../Ethazi3/src/Controlador/txartela");
 			fr = new FileReader(fitxategi);
 			br = new BufferedReader(fr);
 
@@ -34,7 +35,12 @@ public class FitxategiRW {
 				e2.printStackTrace();
 			}
 		}
-		try (FileWriter fw = new FileWriter("myfile.txt", true);
+
+	}
+	
+	public static void fitxeroIdat() {
+		
+		try (FileWriter fw = new FileWriter("txartela", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw)) {
 			out.println("the text");
