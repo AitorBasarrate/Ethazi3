@@ -338,10 +338,9 @@ public class Ordainketa extends JFrame {
 			}
 			
 			};
-			btnErosi.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			btnErosi.addActionListener(alBErosi);
-			
-			
+		
+		btnErosi.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnErosi.addActionListener(alBErosi);		
 		btnErosi.setBounds(329, 266, 91, 145);
 		getContentPane().add(btnErosi);
 		btnErosi.setEnabled(false);
