@@ -14,7 +14,9 @@ public class Aplikazioa {
 		String basedatos = "ethazi3";
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
-	System.out.println("Hola");
+		
+		System.out.println("Empieza el metodo ");// COMPROBACION PARA EL METODO.
+		
 		Vista.Lehena ejecutar = new Vista.Lehena();
 		ejecutar.setVisible(true);
 	}
