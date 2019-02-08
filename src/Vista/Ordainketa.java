@@ -74,6 +74,23 @@ public class Ordainketa extends JFrame {
 	private String kenketaMetodo;
 	private String TextDiruTot;
 	private JButton btnAtzera = new JButton("Atzera");
+	private ActionListener alBAtzera;
+	private ActionListener alBAurrera;
+	private ActionListener alBErosi;
+	private ActionListener ezabatu;
+	private ActionListener alBPunto;
+	private ActionListener alB0;
+	private ActionListener alB1;
+	private ActionListener alB2;
+	private ActionListener alB3;
+	private ActionListener alB4;
+	private ActionListener alB5;
+	private ActionListener alB6;
+	private ActionListener alB7;
+	private ActionListener alB8;
+	private ActionListener alB9;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -144,116 +161,126 @@ public class Ordainketa extends JFrame {
 		getContentPane().add(lblSartuDirua);
 		
 		
-		button1.addActionListener(new ActionListener() {
+		alB1 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=1;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button1.addActionListener(alB1);
 		button1.setBounds(427, 142, 50, 51);
 		getContentPane().add(button1);
 		
 		
-		button2.addActionListener(new ActionListener() {
+		alB2 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=2;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button2.addActionListener(alB2);
 		button2.setBounds(489, 142, 49, 51);
 		getContentPane().add(button2);
 		
 		
-		button3.addActionListener(new ActionListener() {
+		alB3 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=3;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button3.addActionListener(alB3);
 		button3.setBounds(548, 142, 50, 51);
 		getContentPane().add(button3);
 		
 		
-		button4.addActionListener(new ActionListener() {
+		alB4 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=4;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button4.addActionListener(alB4);
 		button4.setBounds(427, 204, 50, 51);
 		getContentPane().add(button4);
 		
 		
-		button5.addActionListener(new ActionListener() {
+		alB5 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=5;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button5.addActionListener(alB5);
 		button5.setBounds(488, 204, 50, 51);
 		getContentPane().add(button5);
 		
 		
-		button6.addActionListener(new ActionListener() {
+		alB6 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=6;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button6.addActionListener(alB6);
 		button6.setBounds(548, 204, 50, 51);
 		getContentPane().add(button6);
 		
 		
-		button7.addActionListener(new ActionListener() {
+		alB7 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=7;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button7.addActionListener(alB7);
 		button7.setBounds(427, 266, 50, 51);
 		getContentPane().add(button7);
 		
 		
-		button8.addActionListener(new ActionListener() {
+		alB8 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=8;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button8.addActionListener(alB8);
 		button8.setBounds(489, 266, 50, 51);
 		getContentPane().add(button8);
 		
 		
-		button9.addActionListener(new ActionListener() {
+		alB9 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=9;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button9.addActionListener(alB9);
 		button9.setBounds(548, 266, 50, 51);
 		getContentPane().add(button9);
 		
 		
-		button0.addActionListener(new ActionListener() {
+		alB0 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num=0;
 				textOrdainketa.setText(textOrdainketa.getText() + num);
 				btnErosi.setEnabled(true);
 			}
-		});
+		};
+		button0.addActionListener(alB0);
 		button0.setBounds(489, 328, 120, 38);
 		getContentPane().add(button0);
 		
-		ActionListener alBPunto = new ActionListener() {
+		alBPunto = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String punto=".";
 				textOrdainketa.setText(textOrdainketa.getText() + punto);
@@ -264,7 +291,7 @@ public class Ordainketa extends JFrame {
 		buttonPunto.setBounds(427, 328, 50, 38);
 		getContentPane().add(buttonPunto);
 		
-		ActionListener ezabatu = new ActionListener() {
+		ezabatu = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textOrdainketa.setText("");
 				btnErosi.setEnabled(false);
@@ -278,7 +305,7 @@ public class Ordainketa extends JFrame {
 		
 		listBueltak.setModel(list);
 		
-		ActionListener alBErosi = new ActionListener() {
+		alBErosi = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				list.clear();
 //				DoubleTextDiruTot = Double.parseDouble(textDiruTot.getText());
@@ -324,7 +351,7 @@ public class Ordainketa extends JFrame {
 		
 		getContentPane().add(listBueltak);
 		
-		ActionListener alBAurrera = new ActionListener(){
+		alBAurrera = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				MetodoakVista.seigarrenera();
 				dispose();
@@ -336,7 +363,7 @@ public class Ordainketa extends JFrame {
 		btnAurrera.setBounds(518, 373, 91, 38);
 		getContentPane().add(btnAurrera);
 		
-		ActionListener alBAtzera = new ActionListener() {
+		alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 				MetodoakVista.laugarrenera(geltoki, linea);

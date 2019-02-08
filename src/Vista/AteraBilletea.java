@@ -17,6 +17,7 @@ public class AteraBilletea extends JFrame {
 	private JLabel lblEskerrik = new JLabel("ESKERRIK");
 	private JLabel lblAsko = new JLabel("ASKO");
 	private JButton btnAteraBilletea = new JButton("Atera billetea");
+	private ActionListener alBAzkena;
 
 	/**
 	 * Create the panel.
@@ -39,7 +40,7 @@ public class AteraBilletea extends JFrame {
 		lblAsko.setBounds(241, 152, 134, 68);
 		add(lblAsko);
 		
-		ActionListener alBAzkena = new ActionListener() {
+		alBAzkena = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.azkenera();
 				dispose();

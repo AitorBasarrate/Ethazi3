@@ -31,6 +31,14 @@ public class Lineak extends JFrame {
 	private String linea = "";
 	ArrayList geltokia = new ArrayList();
 	int codBush;
+	private ActionListener aukeraOnartu;
+	private ActionListener alRdbtn4;
+	private ActionListener alRdbtn3;
+	private ActionListener alRdbtn2;
+	private ActionListener alRdbtn1;
+	private ActionListener alBIrten;
+	private ActionListener alBAtzera;
+	private ActionListener alBAurrera;
 
 	/**
 	 * Create the panel.
@@ -70,7 +78,7 @@ public class Lineak extends JFrame {
 //		textField.setText(Kontsulta.lineaAukeratu());
 
 
-		ActionListener alBAurrera = new ActionListener() {
+		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.laugarrenera(geltokia, linea);
 			
@@ -83,7 +91,7 @@ public class Lineak extends JFrame {
 		getContentPane().add(btnAurrera);
 		btnAurrera.setEnabled(false);
 
-		ActionListener alBAtzera = new ActionListener() {
+		alBAtzera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.bigarrenera();
 				
@@ -95,7 +103,7 @@ public class Lineak extends JFrame {
 		btnAtzera.setBounds(0, 0, 89, 32);
 		getContentPane().add(btnAtzera);
 
-		ActionListener alBIrten = new ActionListener() {
+		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MetodoakVista.bueltatuLehena();
 				dispose();
@@ -108,7 +116,7 @@ public class Lineak extends JFrame {
 
 		rdbtnL1.setBounds(58, 113, 176, 23);
 		getContentPane().add(rdbtnL1);
-		ActionListener alRdbtn1 = new ActionListener() {
+		alRdbtn1 = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnL1.isSelected()) {
 					rdbtnL2.setSelected(false);
@@ -122,7 +130,7 @@ public class Lineak extends JFrame {
 
 		rdbtnL2.setBounds(58, 146, 156, 23);
 		getContentPane().add(rdbtnL2);
-		ActionListener alRdbtn2 = new ActionListener() {
+		alRdbtn2 = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnL2.isSelected()) {
 					rdbtnL1.setSelected(false);
@@ -136,7 +144,7 @@ public class Lineak extends JFrame {
 
 		rdbtnL3.setBounds(58, 181, 156, 23);
 		getContentPane().add(rdbtnL3);
-		ActionListener alRdbtn3 = new ActionListener() {
+		alRdbtn3 = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnL3.isSelected()) {
 					rdbtnL2.setSelected(false);
@@ -150,7 +158,7 @@ public class Lineak extends JFrame {
 		
 		rdbtnL4.setBounds(58, 216, 156, 23);
 		getContentPane().add(rdbtnL4);
-		ActionListener alRdbtn4 = new ActionListener() {
+		alRdbtn4 = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnL4.isSelected()) {
 					rdbtnL1.setSelected(false);
@@ -164,7 +172,7 @@ public class Lineak extends JFrame {
 		
 		btnOnartu.setBounds(68, 265, 89, 23);
 		getContentPane().add(btnOnartu);
-		ActionListener aukeraOnartu = new ActionListener() {
+		aukeraOnartu = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				if (rdbtnL1.isSelected()) {
