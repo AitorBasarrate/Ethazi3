@@ -12,7 +12,6 @@ import Vista.Lineak;
 import Vista.Ordainketa;
 import Vista.SaioaHasi;
 
-
 public class MetodoakVista {
 
 	public static void bueltatuLehena() {
