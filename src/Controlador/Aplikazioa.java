@@ -11,7 +11,7 @@ public class Aplikazioa {
 		DB con1 = new DB(basedatos);
 		con1.getConexion();
 		
-		System.out.println("Empieza el metodo ");// COMPROBACION PARA EL METODO.
+		System.out.println("Empieza el metodo.");// COMPROBACION PARA EL METODO.
 		
 		Vista.Lehena ejecutar = new Vista.Lehena();
 		ejecutar.setVisible(true);
