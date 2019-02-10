@@ -1,5 +1,12 @@
 package Controlador;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -42,7 +49,7 @@ public class MetodoakVista {
 		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
-		
+
 	}
 
 	public static void seigarrenera() {
@@ -67,43 +74,86 @@ public class MetodoakVista {
 		return gelt;
 
 	}
-	
+
 	public static void getLinea(String linea) {
 		Kontsulta.autobusa(linea);
 	}
 
-	
 	public static int bus_lortu(String linea) {
 		int rndmNum = 0;
 		if (linea.equals("L1")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
 			System.out.println(rndmNum);
-		}else if (linea.equals("L2")) {
+		} else if (linea.equals("L2")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
 			System.out.println(rndmNum);
-		}else if (linea.equals("L3")) {
+		} else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
-		}else if (linea.equals("L4")) {
+		} else if (linea.equals("L4")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
 			System.out.println(rndmNum);
 		}
 		return rndmNum;
 	}
-	
-	
-	
+
+	public static void fitxeroIrak() {
+
+		File fitxategi = null;
+		FileReader fr = null;
+		BufferedReader br = null;
+
+		try {
+			// Apertura del fichero y creacion de BufferedReader para poder
+			// hacer una lectura comoda (disponer del metodo readLine()).
+			fitxategi = new File("../Ethazi3/src/Controlador/txartela");
+			fr = new FileReader(fitxategi);
+			br = new BufferedReader(fr);
+
+			// Lectura del fichero
+			String linea;
+			while ((linea = br.readLine()) != null)
+				System.out.println(linea);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// En el finally cerramos el fichero, para asegurarnos
+			// que se cierra tanto si todo va bien como si salta
+			// una excepcion.
+			try {
+				if (null != fr) {
+					fr.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+	public static void fitxeroIdat() {
+
+		try (FileWriter fw = new FileWriter("txartela", true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter out = new PrintWriter(bw)) {
+			out.println("the text");
+			// more code
+			out.println("more text");
+			// more code
+		} catch (IOException e) {
+			// exception handling left as an exercise for the reader
+		}
+	}
 
 	public static String lineaIzenaAukeratu(String linea) {
-		String izena="";
-		izena=Kontsulta.lineaIzena(linea);
+		String izena = "";
+		izena = Kontsulta.lineaIzena(linea);
 		return izena;
 	}
-	
-	
-	public static int joanEtorria(boolean joanEtorri){
-		int cont =1;
-		if(joanEtorri == true) {
+
+	public static int joanEtorria(boolean joanEtorri) {
+		int cont = 1;
+		if (joanEtorri == true) {
 			cont = 2;
 		}
 		return cont;
