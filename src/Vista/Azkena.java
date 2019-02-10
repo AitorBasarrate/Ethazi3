@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import Controlador.MetodoakVista;
+
 public class Azkena extends JFrame {
 	private JTextField txtIzena = new JTextField();
 	private JTextField txtDNI = new JTextField();
@@ -26,7 +28,7 @@ public class Azkena extends JFrame {
 	/**
 	 * Create the panel.
 	 */
-	public Azkena() {
+	public Azkena(String DNI) {
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -67,52 +69,52 @@ public class Azkena extends JFrame {
 		lblJaitsi.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblJaitsi.setBounds(324, 323, 61, 23);
 		add(lblJaitsi);
-		txtIzena.setBackground(Color.WHITE);
-		txtIzena.setEditable(false);
 		
-		 
+		
+		txtIzena.setBackground(Color.WHITE);
+		txtIzena.setEditable(false);		 
 		txtIzena.setBounds(238, 53, 109, 25);
 		add(txtIzena);
 		txtIzena.setColumns(10);
+		
+		
 		txtDNI.setBackground(Color.WHITE);
-		txtDNI.setEditable(false);
-		
-		
+		txtDNI.setEditable(false);		
 		txtDNI.setBounds(158, 107, 101, 23);
 		add(txtDNI);
 		txtDNI.setColumns(10);
+		
+		
 		txtData.setBackground(Color.WHITE);
 		txtData.setEditable(false);
-		
-		
 		txtData.setBounds(164, 157, 109, 23);
 		add(txtData);
 		txtData.setColumns(10);
+		
+		
 		txtLinea.setBackground(Color.WHITE);
 		txtLinea.setEditable(false);
-		
-		
 		txtLinea.setBounds(283, 204, 115, 25);
 		add(txtLinea);
 		txtLinea.setColumns(10);
+		
+		
 		txtBUS.setBackground(Color.WHITE);
 		txtBUS.setEditable(false);
-		
-		
 		txtBUS.setBounds(157, 260, 102, 23);
 		add(txtBUS);
 		txtBUS.setColumns(10);
+		
+		
 		txtIgo.setBackground(Color.WHITE);
 		txtIgo.setEditable(false);
-		
-		
 		txtIgo.setBounds(144, 322, 101, 26);
 		add(txtIgo);
 		txtIgo.setColumns(10);
+		
+		
 		txtJaitsi.setBackground(Color.WHITE);
 		txtJaitsi.setEditable(false);
-		
-		
 		txtJaitsi.setBounds(395, 322, 101, 26);
 		add(txtJaitsi);
 		txtJaitsi.setColumns(10);

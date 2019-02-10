@@ -45,7 +45,7 @@ public class Lineak extends JFrame {
 	 * Create the panel.
 	 */
 
-	public Lineak() {
+	public Lineak(String DNI) {
 
 		getContentPane().setLayout(null);
 		this.setSize(650, 466);
@@ -82,7 +82,7 @@ public class Lineak extends JFrame {
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					MetodoakVista.laugarrenera(geltokia, linea);
+					MetodoakVista.laugarrenera(geltokia, linea, DNI);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

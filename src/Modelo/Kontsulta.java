@@ -344,4 +344,35 @@ public class Kontsulta {
 		
 		return pertsonaKantitate;
 	}
+	
+	public static String clienteIzena() {
+		Connection conexion = null;
+		Statement s = null;
+		String nombre_="";
+		String apellidos_="";
+		String izena;
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery(
+					"SELECT Nombre, Apellidos FROM `cliente` WHERE DNI LIKE '15236985K' ");
+			while (rs.next()) {
+				
+				nombre_ = rs.getString("Nombre");
+				
+				apellidos_ = rs.getString("Apellidos");
+
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println(nombre_+" "+apellidos_);
+		izena = nombre_+" "+apellidos_;
+		return izena;
+	}
 }
