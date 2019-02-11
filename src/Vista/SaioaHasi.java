@@ -64,18 +64,18 @@ public class SaioaHasi extends JFrame {
 		
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
-				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
-				System.out.println(pasahitzaEnkripatatuta);
-				DNI = txtDNI.getText();
-				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
+//				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
+//				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
+//				System.out.println(pasahitzaEnkripatatuta);
+//				DNI = txtDNI.getText();
+//				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
 			
-				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
+//				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
 					MetodoakVista.hirugarrenera(DNI);
 					dispose();
-				}else {
-					JOptionPane.showMessageDialog(null, "Ez da existitzen\n Saiatu berriro");
-				}
+//				}else {
+//					JOptionPane.showMessageDialog(null, "Ez da existitzen\n Saiatu berriro");
+//				}
 			}
 			
 		};

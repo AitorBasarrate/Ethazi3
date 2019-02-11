@@ -99,7 +99,13 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 	public static String[] diruarenBueltak(String emaitza, String ordainketa) {// emaitza balioa main-etik hartu
 		double DoubleTextDiruTot = Double.parseDouble(emaitza);
+		DoubleTextDiruTot = DoubleTextDiruTot*100;
+		DoubleTextDiruTot = Math.round(DoubleTextDiruTot);
+		
 		double DoubleTextOrdainketa = Double.parseDouble(ordainketa);
+		DoubleTextOrdainketa = DoubleTextOrdainketa*100;
+		DoubleTextOrdainketa = Math.round(DoubleTextOrdainketa);
+		
 
 		double[] array = new double[14];
 		// Dena zentimoetan jarri
@@ -122,6 +128,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 		double buelta;
 		String bueltaString;
 		int j = 0;
+		
 
 		// double ordainketa;
 
@@ -136,6 +143,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 		} while (DoubleTextOrdainketa < 0);
 
 		bueltak = DoubleTextOrdainketa - DoubleTextDiruTot;
+		bueltak = bueltak/100;
 
 		// Begiratu ea diru nahiko sartu duen edo bueltak eman behar diogun
 
@@ -175,12 +183,16 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 						arrayBueltak[j] = bueltaString;
 						System.out.println(arrayBueltak[j]);
 						j++;
+						
 						break;
 					}
 				}
+				if (bueltak<1)
+					bueltak=0;
 			} while (bueltak != 0);// errepikatu prozesu hau bueltak 0 izan harte
 
 		}
+		
 
 		return arrayBueltak;// main-era bidali buelten zerrenda
 	}/* metodo bueltak */
@@ -188,8 +200,15 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	public static String kenketa(String diruTot, String ordainketa) {
 
 		double doubleDiruTot = Double.parseDouble(diruTot);
+		doubleDiruTot = doubleDiruTot*100;
+		doubleDiruTot = Math.round(doubleDiruTot);
+		
 		double doubleOrdainketa = Double.parseDouble(ordainketa);
+		doubleOrdainketa = doubleOrdainketa*100;
+		doubleOrdainketa = Math.round(doubleOrdainketa);
+		
 		double emaitza = doubleDiruTot - doubleOrdainketa;
+		emaitza = emaitza/100;
 		String stringEmaitza = Double.toString(emaitza);
 		return stringEmaitza;
 	}
