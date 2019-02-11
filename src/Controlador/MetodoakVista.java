@@ -112,7 +112,7 @@ public class MetodoakVista {
 
 			// Lectura del fichero
 			String linea;
-			while ((linea = br.readLine()) != null)
+			while (((linea = br.readLine()) != null))
 				System.out.println(linea);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -130,18 +130,83 @@ public class MetodoakVista {
 		}
 
 	}
+	
+	/*public static void fitxeroGarbi() {
 
-	public static void fitxeroIdat() {
-
-		try (FileWriter fw = new FileWriter("txartela", true);
+		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
 				BufferedWriter bw = new BufferedWriter(fw);
-				PrintWriter out = new PrintWriter(bw)) {
-			out.println("the text");
-			// more code
-			out.println("more text");
-			// more code
+				PrintWriter idazteko = new PrintWriter(bw)) {
+			
+			idazteko.print("");//parantesi artean dagoena idazten du fitxeroan.
+			idazteko.println("");//ezer ez dagoenez fitxaroa husten du.
+			idazteko.println("");
+			idazteko.println("");
+			idazteko.println("");
+			idazteko.println("");
+			idazteko.println("");
+			idazteko.println("");
+			
 		} catch (IOException e) {
 			// exception handling left as an exercise for the reader
+		}
+	}*/
+
+	public static void fitxeroIdat() {
+		File fitxategi = null;
+		FileReader fr = null;
+		BufferedReader br = null;
+		String linea = null;
+
+		try {
+			// Apertura del fichero y creacion de BufferedReader para poder
+			// hacer una lectura comoda (disponer del metodo readLine()).
+			fitxategi = new File("../Ethazi3/src/Controlador/txartela");
+			fr = new FileReader(fitxategi);
+			br = new BufferedReader(fr);
+
+			// Lectura del fichero
+			
+			while (((linea = br.readLine()) != null))
+				System.out.println(linea);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// En el finally cerramos el fichero, para asegurarnos
+			// que se cierra tanto si todo va bien como si salta
+			// una excepcion.
+			try {
+				if (null != fr) {
+					fr.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		if(linea.equals("")) {
+		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter idazteko = new PrintWriter(bw)) {
+			
+			idazteko.println("Izena - Abizena: ");//parantesi artean dagoena idazten du fitxeroan.
+			idazteko.println("NANa:");
+			idazteko.println("Data: ");
+			idazteko.println("Aukeratutako Linea: ");
+			idazteko.println("Autobusa: ");
+			idazteko.println("Hasierako Geltokia: ");
+			idazteko.println("Amaierako Geltokia: ");
+			
+		} catch (IOException e) {
+			// exception handling left as an exercise for the reader
+		}
+		}else {
+			try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
+					BufferedWriter bw = new BufferedWriter(fw);
+					PrintWriter idazteko = new PrintWriter(bw)) {
+				bw.write("");
+			} catch (IOException e) {
+				// exception handling left as an exercise for the reader
+			}
+			
 		}
 	}
 

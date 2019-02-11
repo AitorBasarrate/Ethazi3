@@ -74,7 +74,7 @@ public class Lineak extends JFrame {
 		autobusaCod.setBounds(352, 110, 132, 119);
 		getContentPane().add(autobusaCod);
 		autobusaCod.setColumns(10);
-		MetodoakVista.bus_lortu(linea);
+		//MetodoakVista.bus_lortu(linea);
 		
 //		textField.setText(Kontsulta.lineaAukeratu());
 

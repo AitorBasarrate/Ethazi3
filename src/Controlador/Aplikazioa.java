@@ -12,6 +12,10 @@ public class Aplikazioa {
 		con1.getConexion();
 		
 		System.out.println("Empieza el metodo.");// COMPROBACION PARA EL METODO.
+//		MetodoakVista.fitxeroGarbi();
+		MetodoakVista.fitxeroIdat();
+		MetodoakVista.fitxeroIrak();
+		
 		
 		Vista.Lehena ejecutar = new Vista.Lehena();
 		ejecutar.setVisible(true);
