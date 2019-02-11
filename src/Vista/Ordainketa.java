@@ -29,7 +29,7 @@ public class Ordainketa extends JFrame {
 	private JButton btnErosi = new JButton("EROSI");
 	private JLabel lblDaramazun = new JLabel("DARAMAZUN DIRUA");
 	private JLabel lblSartuDirua = new JLabel("SARTU DIRUA");
-	static JList listBueltak = new JList();
+	private JList listBueltak = new JList();
 	private DefaultListModel list = new DefaultListModel();
 	private JButton button1 = new JButton("1");
 	private JButton button2 = new JButton("2");
