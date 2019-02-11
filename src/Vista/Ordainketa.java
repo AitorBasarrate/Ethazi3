@@ -289,7 +289,6 @@ public class Ordainketa extends JFrame {
 //				DoubleTextOrdainketa = Double.parseDouble(textOrdainketa.getText());
 				bueltak = Controlador.Metodoak.diruarenBueltak(textDiruTot.getText(), textOrdainketa.getText());
 				
-				
 			for(int i=0;i<bueltak.length;i++) {
 				list.addElement(bueltak[i]);
 			}

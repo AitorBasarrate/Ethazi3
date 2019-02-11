@@ -183,7 +183,6 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 						arrayBueltak[j] = bueltaString;
 						System.out.println(arrayBueltak[j]);
 						j++;
-						
 						break;
 					}
 				}
