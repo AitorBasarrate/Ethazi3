@@ -82,15 +82,19 @@ public class MetodoakVista {
 	
 	public static int bus_lortu(String linea) {
 		int rndmNum = 0;
+		
 		if (linea.equals("L1")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
 			System.out.println(rndmNum);
+			
 		}else if (linea.equals("L2")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
 			System.out.println(rndmNum);
+			
 		}else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
+			
 		}else if (linea.equals("L4")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
 			System.out.println(rndmNum);
