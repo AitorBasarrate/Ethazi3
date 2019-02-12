@@ -33,33 +33,33 @@ public class MetodoakVista {
 		saioaHasi.setBounds(550, 200, 642, 467);
 	}
 
-	public static void hirugarrenera(String DNI) {
-		Lineak lineak = new Lineak(DNI);
+	public static void hirugarrenera() {
+		Lineak lineak = new Lineak(null);
 		lineak.setVisible(true);
 		lineak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki, String linea, String DNI) throws ParseException {
-		Geltokiak geltokiak = new Geltokiak(geltoki, linea, DNI);
+	public static void laugarrenera(ArrayList geltoki, String linea) throws ParseException {
+		Geltokiak geltokiak = new Geltokiak(geltoki, linea);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, String DNI) {
-		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala, DNI);
+	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
 
 	}
 
-	public static void seigarrenera(String DNI) {
-		AteraBilletea ateraBilletea = new AteraBilletea(DNI);
+	public static void seigarrenera() {
+		AteraBilletea ateraBilletea = new AteraBilletea();
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 
-	public static void azkenera(String DNI) {
-		Azkena azkena = new Azkena(DNI);
+	public static void azkenera() {
+		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
 		azkena.setBounds(550, 200, 642, 467);
 	}
@@ -152,37 +152,6 @@ public class MetodoakVista {
 	}*/
 
 	public static void fitxeroIdat() {
-		File fitxategi = null;
-		FileReader fr = null;
-		BufferedReader br = null;
-		String linea = null;
-
-		try {
-			// Apertura del fichero y creacion de BufferedReader para poder
-			// hacer una lectura comoda (disponer del metodo readLine()).
-			fitxategi = new File("../Ethazi3/src/Controlador/txartela");
-			fr = new FileReader(fitxategi);
-			br = new BufferedReader(fr);
-
-			// Lectura del fichero
-			
-			while (((linea = br.readLine()) != null))
-				System.out.println(linea);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			// En el finally cerramos el fichero, para asegurarnos
-			// que se cierra tanto si todo va bien como si salta
-			// una excepcion.
-			try {
-				if (null != fr) {
-					fr.close();
-				}
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		}
-		if(linea.equals("")) {
 		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter idazteko = new PrintWriter(bw)) {
@@ -198,7 +167,6 @@ public class MetodoakVista {
 		} catch (IOException e) {
 			// exception handling left as an exercise for the reader
 		}
-		}else {
 			try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
 					BufferedWriter bw = new BufferedWriter(fw);
 					PrintWriter idazteko = new PrintWriter(bw)) {
@@ -208,8 +176,6 @@ public class MetodoakVista {
 			}
 			
 		}
-	}
-
 	
 //	public static String clienteIzena(String DNI){
 //		izena = Kontsulta

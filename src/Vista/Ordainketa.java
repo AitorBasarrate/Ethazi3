@@ -76,7 +76,7 @@ public class Ordainketa extends JFrame {
 	 * Create the frame.
 	 */
 
-	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala, String DNI) {
+	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala) {
 
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
@@ -329,7 +329,7 @@ public class Ordainketa extends JFrame {
 		
 		alBAurrera = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				MetodoakVista.seigarrenera(DNI);
+				MetodoakVista.seigarrenera();
 				dispose();
 			}
 		};
@@ -343,7 +343,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				try {
-					MetodoakVista.laugarrenera(geltoki, linea, DNI);
+					MetodoakVista.laugarrenera(geltoki, linea);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
