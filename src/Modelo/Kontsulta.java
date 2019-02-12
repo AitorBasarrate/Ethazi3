@@ -262,7 +262,7 @@ public class Kontsulta {
 
 	}
 	
-	public static String lineaIzena(String linea) {
+	public static String linearenIzena(String linea) {
 		Connection conexion = null;
 		Statement s = null;
 		String nombre_="";

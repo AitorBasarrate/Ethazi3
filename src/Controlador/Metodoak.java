@@ -209,6 +209,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 		double emaitza = doubleDiruTot - doubleOrdainketa;
 		emaitza = emaitza/100;
 		String stringEmaitza = Double.toString(emaitza);
+		
 		return stringEmaitza;
 	}
 

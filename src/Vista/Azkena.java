@@ -28,7 +28,7 @@ public class Azkena extends JFrame {
 	/**
 	 * Create the panel.
 	 */
-	public Azkena(String DNI) {
+	public Azkena() {
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
