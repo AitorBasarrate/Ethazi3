@@ -132,16 +132,16 @@ public class Kontsulta {
 				// DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
 				if (linea.equals("L1")) {
 					line_Prueba = rs.getString("Nombre");
-					// l1.setNombre(rs.getString("Nombre"));
+					
 				} else if (linea.equals("L2")) {
 					line_Prueba = rs.getString("Nombre");
-					// l2.setNombre(rs.getString("Nombre"));
+				
 				} else if (linea.equals("L3")) {
 					line_Prueba = rs.getString("Nombre");
-					// l3.setNombre(rs.getString("Nombre"));
+					
 				} else if (linea.equals("L4")) {
 					line_Prueba = rs.getString("Nombre");
-					// l4.setNombre(rs.getString("Nombre"));
+					
 				}
 
 				geltokiak.add(0, line_Prueba); // ARRAYAN GORDETZEN DUT GELTOKIEN IZENAK GORDETZEN DUEN STRING
@@ -172,15 +172,10 @@ public class Kontsulta {
 			ResultSet rs = ((java.sql.Statement) s).executeQuery(
 					"SELECT p.Nombre FROM parada p, linea l, linea_parada lp WHERE p.Cod_Parada = lp.Cod_Parada AND l.Cod_Linea = lp.Cod_Linea AND l.Cod_Linea LIKE 'L1'");
 			while (rs.next()) {
-//				String CodLinea_;
-//				CodLinea_ = rs.getString("Cod_Linea");
+
 				String nombre_;
-
 				nombre_ = rs.getString("Nombre");
-//				String calle_;
-//				calle_= rs.getString("Calle");
 
-//				Kontsulta.toStringPar(nombre_);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -191,12 +186,11 @@ public class Kontsulta {
 	
 	//AUTOBUSAREN DATUAK GORDE
 	
-	public static  double autobusa(String linea) {
+	public static  double autobusa(String linea,int Cod_Bus) {
 
 		Connection conexion = null;
 		Statement s = null;
 		
-		int Cod_Bus = MetodoakVista.bus_lortu(linea);
 		double kontsumo = 0;
 	
 		
@@ -260,6 +254,7 @@ public class Kontsulta {
 
 	}
 	
+	
 	public static String lineaIzena(String linea) {
 		Connection conexion = null;
 		Statement s = null;
@@ -284,11 +279,11 @@ public class Kontsulta {
 		return nombre_;
 	}
 	
+	//ASKENEKO PARADAREN LATITUDEA LORTU
 	
-	
-	public static String paradaLatitudlortu(String linea) {
+	public static String paradaLatitud2lortu(String linea, String geltokiGordeHelmuga) {
 		String izena = lineaIzena(linea);
-		String latitud = " " ;
+		String latitud2 = " " ;
 		Connection conexion = null;
 		Statement s = null;
 		
@@ -303,21 +298,124 @@ public class Kontsulta {
 			// Se crea un Statement, para realizar la consulta
 			s = conexion.createStatement();
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Latitud  FROM parada WHERE Nombre LIKE'"+ izena +"';");
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Latitud  FROM parada WHERE Nombre LIKE'"+   geltokiGordeHelmuga +"';");
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
-			latitud = rs.getString(1);
+			latitud2 = rs.getString(1);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		
-		
-		return latitud; // cambiar luego
+		return latitud2; // cambiar luego
 	}
 	
 	
+	//LEHENENGO PARADAREN LATITUDEA LORTU
+	public static String paradaLatitud1lortu(String linea, String geltokiGordeHasiera) {
+		String izena = lineaIzena(linea);
+		String latitud1 = " " ;
+		Connection conexion = null;
+		Statement s = null;
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Se obtiene una conexion con la base de datos.
+			// En este caso nos conectamos a la base de datos ethazi3
+			// con el usuario root y contra null
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			// Se crea un Statement, para realizar la consulta
+			s = conexion.createStatement();
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Latitud  FROM parada WHERE Nombre LIKE'"+   geltokiGordeHasiera +"';");
+
+			// Se recorre el ResultSet, mostrando por pantalla los resultados.
+			while (rs.next()) {
+			latitud1 = rs.getString(1);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return latitud1; // cambiar luego
+	}
+	
+	
+	//LEHENENGO PARADAREN LONGITUDEA LORTU
+	public static String paradaLongitud1lortu(String linea, String geltokiGordeHasiera) {
+		String izena = lineaIzena(linea);
+		String longitud1 = " " ;
+		Connection conexion = null;
+		Statement s = null;
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Se obtiene una conexion con la base de datos.
+			// En este caso nos conectamos a la base de datos ethazi3
+			// con el usuario root y contra null
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			// Se crea un Statement, para realizar la consulta
+			s = conexion.createStatement();
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT longitud  FROM parada WHERE Nombre LIKE'"+   geltokiGordeHasiera +"';");
+
+			// Se recorre el ResultSet, mostrando por pantalla los resultados.
+			while (rs.next()) {
+			longitud1 = rs.getString(1);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return longitud1; // cambiar luego
+	}
+	
+	//ASKENEKO PARADAREN LONGITUDEA LORTU
+	
+	
+	public static String paradaLongitud2lortu(String linea, String geltokiGordeHelmuga) {
+		String izena = lineaIzena(linea);
+		String longitud2 = " " ;
+		Connection conexion = null;
+		Statement s = null;
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Se obtiene una conexion con la base de datos.
+			// En este caso nos conectamos a la base de datos ethazi3
+			// con el usuario root y contra null
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			// Se crea un Statement, para realizar la consulta
+			s = conexion.createStatement();
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT longitud  FROM parada WHERE Nombre LIKE'"+   geltokiGordeHelmuga +"';");
+
+			// Se recorre el ResultSet, mostrando por pantalla los resultados.
+			while (rs.next()) {
+			longitud2 = rs.getString(1);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return longitud2; // cambiar luego
+	}
+	
+	
+	
+	public static void comprobarArray(ArrayList geltoki) {
+		for(int i =0; i<geltoki.size();i++) {
+			System.out.println(geltoki.get(i));
+		}
+		
+	}
 
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
@@ -337,6 +435,8 @@ public class Kontsulta {
 	public static String toStringKonts(double kontsumo_km) {
 		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
 	}
+	
+	
 
 	//AUTOBUSAREN PERTSONA KANTITATEA LORTU
 

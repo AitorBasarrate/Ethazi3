@@ -98,9 +98,10 @@ public class Ordainketa extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param codBush 
 	 */
 
-	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala) {
+	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
 
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
@@ -367,7 +368,7 @@ public class Ordainketa extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				try {
-					MetodoakVista.laugarrenera(geltoki, linea);
+					MetodoakVista.laugarrenera(geltoki, linea, codBush);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

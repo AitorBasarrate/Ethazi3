@@ -6,6 +6,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.TimeUnit;
 import Modelo.DB;
+import Modelo.Kontsulta;
 
 public class Aplikazioa {
 
@@ -15,9 +16,9 @@ public class Aplikazioa {
 		DB con1 = new DB(basedatos);
 
 		con1.getConexion();
-		
 		System.out.println("Empieza el metodo ");// COMPROBACION PARA EL METODO.
 		
+
 
 		Vista.Lehena ejecutar = new Vista.Lehena();
 		ejecutar.setVisible(true);

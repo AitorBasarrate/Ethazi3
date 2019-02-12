@@ -74,7 +74,6 @@ public class Lineak extends JFrame {
 		autobusaCod.setBounds(352, 110, 132, 119);
 		getContentPane().add(autobusaCod);
 		autobusaCod.setColumns(10);
-		MetodoakVista.bus_lortu(linea);
 		
 //		textField.setText(Kontsulta.lineaAukeratu());
 
@@ -82,7 +81,7 @@ public class Lineak extends JFrame {
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					MetodoakVista.laugarrenera(geltokia, linea);
+					MetodoakVista.laugarrenera(geltokia, linea, codBush);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -185,18 +184,21 @@ public class Lineak extends JFrame {
 					linea="L1";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
-					MetodoakVista.getLinea(linea);
+					MetodoakVista.getLinea(linea, codBush);
 					autobusaCod.setText(Integer.toString(codBush));
+					
 				} else if (rdbtnL2.isSelected()) {
 					linea="L2";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
+					
 				} else if (rdbtnL3.isSelected()) {
 					linea="L3";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
+					
 				} else if (rdbtnL4.isSelected()) {
 					linea="L4";
 					codBush = MetodoakVista.bus_lortu(linea);

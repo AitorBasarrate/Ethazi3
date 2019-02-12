@@ -45,12 +45,18 @@ public class Geltokiak extends JFrame {
 	private ActionListener alBIrten;
 	private ActionListener alBAurrera;
 	private JTextField textField;
+	
+	String geltokiGordeHasiera;
+	String geltokiGordeHelmuga;
+	
+	
 	/**
 	 * @wbp.nonvisual location=91,269
 	 */
 
 	/**
 	 * Create the panel.
+	 * @param codBush 
 	 */
 
 	
@@ -58,7 +64,7 @@ public class Geltokiak extends JFrame {
 		
 
 
-	public Geltokiak(ArrayList geltoki, String linea) {
+	public Geltokiak(ArrayList geltoki, String linea, int codBush) {
 
 
 		getContentPane().setLayout(null);
@@ -122,23 +128,27 @@ public class Geltokiak extends JFrame {
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-
+//  CONTINUAR AQUI PARA PASAR EL STRING
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHasiera.getSelectedItem().equals(geltoki.get(n))) {
+						geltokiGordeHasiera = (String) comboBoxHasiera.getSelectedItem();// guardo en la variable la parada escojida
 						System.out.println("Pillado Hasiera");
+						System.out.println(geltokiGordeHasiera + " PROBANDO SI SE GUARDA LA POARADA"); // comprobatu ondo gordetzen dituen datuak
 					}
 				}
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHelmuga.getSelectedItem().equals(geltoki.get(n))) {
+						geltokiGordeHelmuga = (String) comboBoxHelmuga.getSelectedItem();// guardo en la variable la parada escojida
 						System.out.println("Pillado Helmuga");
+						System.out.println(geltokiGordeHelmuga + " PROBANDO SI SE GUARDA LA POARADA");// comprobatu ondo gordetzen dituen datuak
 					}
 				}
 				Date data = (Date)Data.getModel().getValue();
 				System.out.println(data);
-				prezioFinala = Metodoak.prezioaKalk(linea, contagailu);
+				prezioFinala = Metodoak.prezioaKalk(linea, contagailu, geltoki,  geltokiGordeHelmuga, geltokiGordeHasiera,  codBush);
 				
 				
-				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala);
+				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala, codBush);
 
 				dispose();
 			}
@@ -180,9 +190,10 @@ public class Geltokiak extends JFrame {
 		getContentPane().add(rdbtnJoanEtorri);
 		if (rdbtnJoanEtorri.isSelected()) {
 			joanEtorri = true;
-			contagailu =MetodoakVista.joanEtorria(joanEtorri);
 			
 		}
+		contagailu =MetodoakVista.joanEtorria(joanEtorri);
+
 		
 		
 	}

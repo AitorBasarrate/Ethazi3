@@ -33,14 +33,14 @@ public class MetodoakVista {
 		lineak.setBounds(300, 100, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki, String linea) throws ParseException {
-		Geltokiak geltokiak = new Geltokiak(geltoki, linea);
+	public static void laugarrenera(ArrayList geltoki, String linea, int codBush) throws ParseException {
+		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(300, 100, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala) {
-		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala);
+	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(300, 100, 642, 467);
 		
@@ -75,8 +75,8 @@ public class MetodoakVista {
 
 	}
 	
-	public static void getLinea(String linea) {
-		Kontsulta.autobusa(linea);
+	public static void getLinea(String linea, int codBush) {
+		Kontsulta.autobusa(linea, codBush);
 	}
 
 	
@@ -97,8 +97,6 @@ public class MetodoakVista {
 		}
 		return rndmNum;
 	}
-	
-	
 	
 
 	public static String lineaIzenaAukeratu(String linea) {
