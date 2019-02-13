@@ -383,6 +383,7 @@ public class Kontsulta {
 		String longitud2 = " " ;
 		Connection conexion = null;
 		Statement s = null;
+	
 		
 		try {
 			// Cargar el driver
