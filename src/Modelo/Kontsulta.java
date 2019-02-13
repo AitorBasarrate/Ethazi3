@@ -617,7 +617,7 @@ public class Kontsulta {
 		Connection conexion = null;
 		Statement s = null;
 		String data = "12/02/22";
-		
+		pasahitza = Controlador.Metodoak.getMD5(pasahitza);
 		try {
 			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");

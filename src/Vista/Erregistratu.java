@@ -11,6 +11,7 @@ import Controlador.Metodoak;
 import Controlador.MetodoakVista;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SpinnerDateModel;
 
@@ -163,17 +164,26 @@ public class Erregistratu extends JFrame {
 		
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MetodoakVista.hirugarrenera();
-				dispose();
+				System.out.println(passwordField.getPassword());
+				
 				if(rdbtnGizona.isSelected()) {
 					sexua = "V";
 				}
 				else {
 					sexua = "M";
 				}
+				
+				if (passwordField.getText().equals(passwordField_1.getText())) {
+					MetodoakVista.hirugarrenera();
+					dispose();
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Pasahitzak ez dira berdinak");
+				}
 //				Date data = (Date)Data.getModel().getValue();
 				
 				Metodoak.insertatu(txtDNI.getText(), txtIzena.getText(), txtAbizenak.getText(), sexua, passwordField.getText());
+				
 				
 			}
 		};
