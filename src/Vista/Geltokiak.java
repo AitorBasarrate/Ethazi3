@@ -100,13 +100,6 @@ public class Geltokiak extends JFrame {
 		lblData.setBounds(477, 207, 89, 23);
 		getContentPane().add(lblData);
 
-		
-		
-//		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 30));
-//		comboBoxHasiera.setBounds(73, 346, 89, 20);
-//		comboBoxHasiera.addItem(geltoki);
-//		for (int n = 0; n < geltoki.size(); n++) {
-//			System.out.println(geltoki.get(n));
 
 		comboBoxHasiera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		comboBoxHasiera.setBounds(12, 254, 184, 53);
@@ -170,8 +163,8 @@ public class Geltokiak extends JFrame {
 				dispose();
 			}
 		};
-		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.addActionListener(alBIrten);
+		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.setBounds(524, 0, 99, 33);
 		getContentPane().add(btnIrten);
 
@@ -186,7 +179,7 @@ public class Geltokiak extends JFrame {
 		getContentPane().add(rdbtnJoanEtorri);
 		
 			
-		//contagailu =MetodoakVista.joanEtorria(joanEtorri);
+		
 
 		
 		

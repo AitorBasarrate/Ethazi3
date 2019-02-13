@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import Modelo.Kontsulta;
 import Vista.AteraBilletea;
 import Vista.Azkena;
+import Vista.Bigarrena;
+import Vista.Erregistratu;
 import Vista.Geltokiak;
 import Vista.Lehena;
 import Vista.Lineak;
@@ -20,71 +22,101 @@ import Vista.Ordainketa;
 import Vista.SaioaHasi;
 
 public class MetodoakVista {
-
+/**
+ * Bueltatzeko lehenengo pantailara
+ */
 	public static void bueltatuLehena() {
 		Lehena lehena = new Lehena();
 		lehena.setVisible(true);
 		lehena.setBounds(550, 200, 642, 467);
 	}
-
+/**
+ * Pasatzeko bigarren pantailara
+ */
 	public static void bigarrenera() {
-		SaioaHasi saioaHasi = new SaioaHasi();
-		saioaHasi.setVisible(true);
-		saioaHasi.setBounds(550, 200, 642, 467);
+		Bigarrena Bigarrena = new Bigarrena();
+		Bigarrena.setVisible(true);
+		Bigarrena.setBounds(550, 200, 642, 467);
 	}
-
+	
+	public static void pasatuSaioHasiera() {
+		SaioaHasi SaioaHasi = new SaioaHasi();
+		SaioaHasi.setVisible(true);
+		SaioaHasi.setBounds(550, 200, 642, 467);
+	}
+	
+	public static void pasatuErregistrora() {
+		Erregistratu Erregistratu = new Erregistratu();
+		Erregistratu.setVisible(true);
+		Erregistratu.setBounds(550, 200, 642, 467);
+	}
+/**
+ * Pasatzeko hirugarren pantailara
+ */
 	public static void hirugarrenera() {
 		Lineak lineak = new Lineak();
 		lineak.setVisible(true);
 		lineak.setBounds(550, 200, 642, 467);
 	}
-
+/**
+ * Pasatzeko laugarren pantailara
+ * @param geltoki
+ * @param linea
+ * @param codBush
+ * @throws ParseException
+ */
 	public static void laugarrenera(ArrayList geltoki, String linea, int codBush) throws ParseException {
 		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
 	}
-
+/**
+ * Pasatzeko bostgarren pantailara
+ * @param geltoki
+ * @param linea
+ * @param prezioFinala
+ * @param codBush
+ */
 	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
 		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
 
 	}
-
+/**
+ * Pasatzeko seigarren pantailara
+ */
 	public static void seigarrenera() {
 		AteraBilletea ateraBilletea = new AteraBilletea();
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
-
+/**
+ * Pasatzeko azkenengo pantailara
+ */
 	public static void azkenera() {
 		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
 		azkena.setBounds(550, 200, 642, 467);
 	}
-
+/**
+ * Linea parametroa hartzen du vistatik eta linearen geltokiak itzultzen ditu
+ * @param linea
+ * @return gelt
+ */
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
 		ArrayList busCode = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
 
-//		busCode = MetodoakVista.bus_lortu(linea);
-
 		return gelt;
 
 	}
-
-	
-//	public static void getLinea(String linea, int codBush) {
-//		Kontsulta.autobusa(codBush);
-//	}
-
-//	public static void getLinea(String linea) {
-//		Kontsulta.autobusa(linea);
-//
-//	}
-
+/**
+ * Linea parametroa hartzen du eta bus kodea itzultzen du
+ * @param linea
+ * @return rndmNum
+ */
 	public static int bus_lortu(String linea) {
 		int rndmNum = 0;
 		
@@ -117,7 +149,9 @@ public class MetodoakVista {
 		}
 		return rndmNum;
 	}
-
+/**
+ * Fitxeroa irakurtzen du
+ */
 	public static void fitxeroIrak() {
 
 		File fitxategi = null;
@@ -151,7 +185,9 @@ public class MetodoakVista {
 		}
 
 	}
-
+/**
+ * Fitxeroa idazten du
+ */
 	public static void fitxeroIdat() {
 
 		try (FileWriter fw = new FileWriter("txartela", true);
@@ -165,18 +201,11 @@ public class MetodoakVista {
 			// exception handling left as an exercise for the reader
 		}
 	}
-
-	
-
-
-//	public static String clienteIzena(String DNI){
-//		izena = Kontsulta
-//		
-//		return izena;
-//	}
-	
-
-
+/**
+ * Linearen izena itzultzen du
+ * @param linea
+ * @return izena
+ */
 	public static String lineaIzenaAukeratu(String linea) {
 		String izena = "";
 		izena = Kontsulta.linearenIzena(linea);

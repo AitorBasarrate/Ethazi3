@@ -47,7 +47,7 @@ public class Metodoak {
 		return konprobatu;
 	}
 	
-public static boolean pasahitzaKomprobaketa(String pasahitza) {
+	public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 		int i=0;
 		ArrayList<Cliente> datosCliente = new ArrayList<Cliente>();
@@ -274,7 +274,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 	//PREZIOA KALKULATZEKO METODOA
 	
-		public static double prezioaKalk(String linea, int contagailu, ArrayList geltoki, String geltokiGordeHelmuga,  String geltokiGordeHasiera, int codBush) {
+	public static double prezioaKalk(String linea, int contagailu, ArrayList geltoki, String geltokiGordeHelmuga,  String geltokiGordeHasiera, int codBush) {
 
 			double distantzia = haversineMetodo(linea,  geltokiGordeHelmuga,   geltokiGordeHasiera); //metodoaren balioa artzen du
 	

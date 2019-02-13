@@ -12,7 +12,7 @@ import Controlador.MetodoakVista;
 
 public class Lehena extends JFrame {
 	
-	private JButton btnSaioaHasi = new JButton("SAIOA HASI");
+	private JButton btnSaioaHasi = new JButton("AURRERA");
 	private JLabel lblOngiEtorri = new JLabel("ONGI ETORRI");
 	private ActionListener alBSaioaHasi;
 
@@ -20,7 +20,7 @@ public class Lehena extends JFrame {
 	 * Create the panel.
 	 */
 	public Lehena() {
-		setLayout(null);
+		getContentPane().setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,13 +38,13 @@ public class Lehena extends JFrame {
 		};
 		btnSaioaHasi.addActionListener(alBSaioaHasi);
 		btnSaioaHasi.setBounds(204, 214, 206, 84);
-		add(btnSaioaHasi);
+		getContentPane().add(btnSaioaHasi);
 		
 		
 		lblOngiEtorri.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOngiEtorri.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblOngiEtorri.setBounds(103, 34, 391, 195);
-		add(lblOngiEtorri);
+		getContentPane().add(lblOngiEtorri);
 
 	}
 
