@@ -19,6 +19,7 @@ public class AteraBilletea extends JFrame {
 	private ActionListener alBAzkena;
 
 	/**
+	 *  @author TALDE4
 	 * Create the panel.
 	 */
 	public AteraBilletea() {

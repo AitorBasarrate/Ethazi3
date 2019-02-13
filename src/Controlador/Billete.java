@@ -14,6 +14,20 @@ public class Billete {
 	private String Dni;
 	private int Precio;
 	
+	/**
+	 * KONSTRUKTOREA
+	 *  @author TALDE4
+	 * @param Cod
+	 * @param NTrayecto
+	 * @param Cod_Linea
+	 * @param Cod_Bus
+	 * @param Cod_Parada_Inicio
+	 * @param Cod_Parada_Fin
+	 * @param fecha
+	 * @param hora
+	 * @param Dni
+	 * @param Precio
+	 */
 	public Billete (String Cod, String NTrayecto, String Cod_Linea, String Cod_Bus, String Cod_Parada_Inicio, String Cod_Parada_Fin, Date fecha, String hora, String Dni, int Precio) {
 		this.Cod_billete = Cod_billete;
 		this.Cod_Bus = Cod_Bus;
@@ -27,6 +41,10 @@ public class Billete {
 		this.Precio = Precio;
 		
 	}
+	
+	
+	
+	//GETTERS AND SETTERS
 
 	public String getCod_billete() {
 		return Cod_billete;

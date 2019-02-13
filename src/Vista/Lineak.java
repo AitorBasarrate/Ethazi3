@@ -18,7 +18,9 @@ import javax.swing.JTextField;
 import Controlador.MetodoakVista;
 
 public class Lineak extends JFrame {
-
+/**
+ *  @author TALDE4
+ */
 	private JTextField autobusaCod = new JTextField();
 	private JLabel lblLineak = new JLabel("LINEAK");
 	private JLabel lblBus = new JLabel("BUS");
@@ -43,6 +45,7 @@ public class Lineak extends JFrame {
 	private ActionListener alBAurrera;
 
 	/**
+	 *  @author TALDE4
 	 * Create the panel.
 	 */
 

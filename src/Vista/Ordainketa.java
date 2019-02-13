@@ -73,8 +73,13 @@ public class Ordainketa extends JFrame {
 
 	/**
 	 * Create the frame.
+<<<<<<< HEAD
 	 * 
 	 * @param codBush
+=======
+	 *  @author TALDE4
+	 * @param codBush 
+>>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
 	 */
 
 	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
@@ -107,8 +112,7 @@ public class Ordainketa extends JFrame {
 
 		textDiruTot.setBounds(22, 69, 270, 38);
 		getContentPane().add(textDiruTot);
-		Metodoak.bezKalkulatu();
-		TextDiruTot = Double.toString(Metodoak.kontTotala);
+		Metodoak.bezKalkulatu(DoubleTextDiruTot, DoubleTextDiruTot, DoubleTextDiruTot);
 		textDiruTot.setColumns(10);
 		textDiruTot.setText(Double.toString(prezioFinala));
 

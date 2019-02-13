@@ -1,6 +1,6 @@
 package Modelo;
 
-//import java.beans.Statement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,18 +13,31 @@ import Controlador.Linea;
 import Controlador.MetodoakVista;
 
 public class Kontsulta {
-//	static String Col_1 = "";
-//	static String Col_2 = "";
 
+/**
+ *  @author TALDE4
+ * @param Datuak
+ * @return DATUAK
+ */
 	public static ArrayList<Linea> getDatuakArr(ArrayList<Linea> Datuak) {
 
 		return Datuak;
 	}
-
+/**
+ *  @author TALDE4
+ * @param inicioSes
+ * @return INICIOSES
+ */
 	public static ArrayList<Cliente> getInicioSes(ArrayList<Cliente> inicioSes) {
 		return inicioSes;
 	}
 
+	/**
+	 * LINEAK ATERATZEN DITU
+	 *  @author TALDE4
+	 * @param Cod_linea
+	 * @param Nombre
+	 */
 	public static void muestraLinea(String Cod_linea, String Nombre) {
 		ArrayList<Linea> DatuakLinea = new ArrayList();
 		Connection conexion = null;
@@ -60,7 +73,11 @@ public class Kontsulta {
 		}
 
 	}
-
+/**
+ * CLIENTEAREN DATUAK GORDETZEN DITU
+ *  @author TALDE4
+ * @return
+ */
 	public static ArrayList<Cliente> guardaCliente() { // arraylist bueltatu behar du
 		Connection conexion = null;
 		Statement s = null;
@@ -136,6 +153,11 @@ public class Kontsulta {
 		}
 	}
 
+/**
+ *  @author TALDE4
+ * @param linea
+ * @return GELTOKIAK
+ */
 	public static ArrayList lineaAukeratu(String linea) {
 		String line_Prueba = null;// paraden izenak gordetzen ditut
 		Connection conexion = null;
@@ -184,6 +206,9 @@ public class Kontsulta {
 		return geltokiak;
 	}
 
+	/**
+	 *  @author TALDE4
+	 */
 	public static void muestraParada() {
 		Connection conexion = null;
 		Statement s = null;
@@ -211,7 +236,11 @@ public class Kontsulta {
 
 
 	
-	
+	/**
+	 *  @author TALDE4
+	 * @param Cod_Bus
+	 * @return KONTSUMOA
+	 */
 	//AUTOBUSAREN DATUAK GORDE
 	
 	public static  double autobusa(int Cod_Bus) {
@@ -245,6 +274,12 @@ public class Kontsulta {
 
 		return kontsumo;
 	}
+	
+
+	/**
+	 *  @author TALDE4
+	 * @param linea
+	 */
 
 	public static void muestraKontsumo(String linea) {
 		ArrayList<Autobusa> DatuakBus = new ArrayList();
@@ -271,7 +306,7 @@ public class Kontsulta {
 			while (rs.next()) {
 				double Kontsumo_;
 				Kontsumo_ = rs.getDouble("Consumo_km");
-				Autobusa Kontsumo1 = new Autobusa(Kontsumo_);
+				Autobusa Kontsumo1 = new Autobusa(linea, linea, Kontsumo_, linea);
 				DatuakBus.add(0, Kontsumo1);
 				System.out.println(Modelo.Kontsulta.toStringKonts(Kontsumo_));
 			}
@@ -283,7 +318,11 @@ public class Kontsulta {
 
 	
 
-	
+	/**
+	 *  @author TALDE4
+	 * @param linea
+	 * @return NOMBRE_
+	 */
 
 	public static String linearenIzena(String linea) {
 
@@ -315,7 +354,12 @@ public class Kontsulta {
 	
 	
 	//ASKENEKO PARADAREN LATITUDEA LORTU
-	
+	/**
+	 *  @author TALDE4
+	 * @param linea
+	 * @param geltokiGordeHelmuga
+	 * @return LATITUDEA
+	 */
 	public static String paradaLatitud2lortu(String linea, String geltokiGordeHelmuga) {
 		String izena = linearenIzena(linea);
 		String latitud2 = " " ;
@@ -346,7 +390,12 @@ public class Kontsulta {
 		return latitud2; // cambiar luego
 	}
 	
-	
+	/**
+	 *  @author TALDE4
+	 * @param linea
+	 * @param geltokiGordeHasiera
+	 * @return LATITUDEA
+	 */
 	//LEHENENGO PARADAREN LATITUDEA LORTU
 	public static String paradaLatitud1lortu(String linea, String geltokiGordeHasiera) {
 		String izena = linearenIzena(linea);
@@ -378,7 +427,12 @@ public class Kontsulta {
 		return latitud1; // cambiar luego
 	}
 	
-	
+	/**
+	 *  @author TALDE4
+	 * @param linea
+	 * @param geltokiGordeHasiera
+	 * @return LONGITUDEA
+	 */
 	//LEHENENGO PARADAREN LONGITUDEA LORTU
 	public static String paradaLongitud1lortu(String linea, String geltokiGordeHasiera) {
 		String izena = linearenIzena(linea);
@@ -411,7 +465,12 @@ public class Kontsulta {
 	}
 	
 	//ASKENEKO PARADAREN LONGITUDEA LORTU
-	
+	/**
+	 *  @author TALDE4
+	 * @param linea
+	 * @param geltokiGordeHelmuga
+	 * @return LONGITUDEA
+	 */
 	
 	public static String paradaLongitud2lortu(String linea, String geltokiGordeHelmuga) {
 		String izena = linearenIzena(linea);
@@ -445,7 +504,10 @@ public class Kontsulta {
 	}
 	
 	
-	
+	/**
+	 *  @author TALDE4
+	 * @param geltoki
+	 */
 	public static void comprobarArray(ArrayList geltoki) {
 		for(int i =0; i<geltoki.size();i++) {
 			System.out.println(geltoki.get(i));
@@ -471,8 +533,14 @@ public class Kontsulta {
 		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
 	}
 	
-
 	// AUTOBUSAREN PERTSONA KANTITATEA LORTU
+
+	//AUTOBUSAREN PERTSONA KANTITATEA LORTU
+/**
+ *  @author TALDE4
+ * @param Cod_Bus
+ * @return PERTSONAKANTITATEA
+ */
 
 	public static  double autobusPertsonaKantitatea(int Cod_Bus) {
 
@@ -506,6 +574,11 @@ public class Kontsulta {
 		return pertsonaKantitate;
 	}
 
+/**
+ *  @author TALDE4
+ * @return IZENA
+ */
+
 	public static String clienteIzena() {
 		Connection conexion = null;
 		Statement s = null;
@@ -535,6 +608,28 @@ public class Kontsulta {
 		System.out.println(nombre_ + " " + apellidos_);
 		izena = nombre_ + " " + apellidos_;
 		return izena;
+	}
+	
+	public static void insertDNI(String DNI) {
+
+		Connection conexion = null;
+		Statement s = null;
+		String nombre_="";
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("INSERT INTO cliente(DNI) VALUES("+DNI+")");
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
 
 }

@@ -1,9 +1,16 @@
 package Controlador;
 
 public class poblacion {
+	//ALDAGAIAK
 	private int Cod_postal;
 	private String Nombre;
 	
+	/**
+	 * KONSTRUKTOREA
+	 * @author TALDE4
+	 * @param Cod_postal
+	 * @param Nombre
+	 */
 	public poblacion (int Cod_postal, String Nombre) {
 		this.Cod_postal = Cod_postal;
 		this.Nombre = Nombre;

@@ -1,12 +1,21 @@
 package Controlador;
 
 public class Autobusa {
-	
+	//ATRIBUTOAK
 	private String Cod_bus;
 	private String N_plazas;
 	private double Consumo_km;
 	private String Color;
 	
+	
+	/**
+	 * KONSTRUKTOREA
+	 *  @author TALDE4
+	 * @param Cod_bus
+	 * @param N_plazas
+	 * @param kontsumo
+	 * @param Color
+	 */
 	public Autobusa(String Cod_bus, String N_plazas, double kontsumo, String Color) {
 		this.Cod_bus = Cod_bus;
 		this.N_plazas = N_plazas;
@@ -14,10 +23,9 @@ public class Autobusa {
 		this.Color = Color;
 	}
 	
-	public Autobusa(double Consumo_km) {
-		this.Consumo_km = Consumo_km;
-	}
 
+	
+	//GETTER AND SETTERS
 	public String getCod_bus() {
 		return Cod_bus;
 	}

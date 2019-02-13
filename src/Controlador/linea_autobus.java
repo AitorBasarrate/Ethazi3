@@ -4,11 +4,18 @@ public class linea_autobus {
 	private String Cod_linea;
 	private int Cod_autobus;
 	
+	/**
+	 *  @author TALDE4
+	 * @param Cod_linea
+	 * @param Cod_autobus
+	 */
 	public linea_autobus (String Cod_linea, int Cod_autobus) {
 		this.Cod_autobus = Cod_autobus;
 		this.Cod_linea = Cod_linea;
 	}
 
+	
+	//GETTERS AND SETTERS
 	public String getCod_linea() {
 		return Cod_linea;
 	}
