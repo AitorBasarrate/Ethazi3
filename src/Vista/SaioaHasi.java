@@ -40,7 +40,7 @@ public class SaioaHasi extends JFrame {
 	/**
 	 * Create the panel.
 	 */
-	public SaioaHasi(File txartela) {
+	public SaioaHasi() {
 		getContentPane().setLayout(null);
 		this.setSize(635,465);  
 		this.setLocationRelativeTo(null);  
@@ -69,7 +69,7 @@ public class SaioaHasi extends JFrame {
 				String dniBezero = txtDNI.getText();
 					MetodoakVista.fitxeroIdat(dniBezero);
 					Kontsulta.bezeroIzenAbizen(dniBezero);
-					MetodoakVista.hirugarrenera(txartela);
+					MetodoakVista.hirugarrenera();
 					dispose();
 //				}else {
 //					JOptionPane.showMessageDialog(null, "Ez da existitzen\n Saiatu berriro");
@@ -86,7 +86,7 @@ public class SaioaHasi extends JFrame {
 		
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bueltatuLehena(txartela);
+				MetodoakVista.bueltatuLehena();
 				dispose();
 			}
 		};

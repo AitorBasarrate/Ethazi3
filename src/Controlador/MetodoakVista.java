@@ -21,46 +21,46 @@ import Vista.SaioaHasi;
 
 public class MetodoakVista {
 
-	public static void bueltatuLehena(File txartela) {
-		Lehena lehena = new Lehena(txartela);
+	public static void bueltatuLehena( ) {
+		Lehena lehena = new Lehena();
 		lehena.setVisible(true);
 		lehena.setBounds(550, 200, 642, 467);
 	}
 
-	public static void bigarrenera(File txartela) {
-		SaioaHasi saioaHasi = new SaioaHasi(txartela);
+	public static void bigarrenera( ) {
+		SaioaHasi saioaHasi = new SaioaHasi();
 		saioaHasi.setVisible(true);
 		saioaHasi.setBounds(550, 200, 642, 467);
 	}
 
-	public static void hirugarrenera(File txartela) {
+	public static void hirugarrenera( ) {
 
-		Lineak lineak = new Lineak(txartela);
+		Lineak lineak = new Lineak();
 		lineak.setVisible(true);
 		lineak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki, String linea, int codBush, File txartela) throws ParseException {
-		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush, txartela);
+	public static void laugarrenera(ArrayList geltoki, String linea, int codBush) throws ParseException {
+		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush, File txartela) {
-		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush, txartela);
+	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
 
 	}
 
-	public static void seigarrenera(File txartela) {
-		AteraBilletea ateraBilletea = new AteraBilletea(txartela);
+	public static void seigarrenera( ) {
+		AteraBilletea ateraBilletea = new AteraBilletea();
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 
-	public static void azkenera(File txartela) {
-		Azkena azkena = new Azkena(txartela);
+	public static void azkenera( ) {
+		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
 		azkena.setBounds(550, 200, 642, 467);
 	}
@@ -117,7 +117,7 @@ public class MetodoakVista {
 		try {
 			// Apertura del fichero y creacion de BufferedReader para poder
 			// hacer una lectura comoda (disponer del metodo readLine()).
-			fitxategi = new File("../Ethazi3/src/Controlador/txartela");
+			fitxategi = new File("../Ethazi3/src/Controlador/");
 			fr = new FileReader(fitxategi);
 			br = new BufferedReader(fr);
 
@@ -148,7 +148,7 @@ public class MetodoakVista {
 	public static void fitxeroIdat(String datua) {
 		int lerroak = MetodoakVista.fitxeroIrak();
 		
-		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
+		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter idazteko = new PrintWriter(bw)) {
 			if (lerroak == 8) {

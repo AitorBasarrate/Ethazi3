@@ -20,7 +20,7 @@ public class Lehena extends JFrame {
 	/**
 	 * Create the panel.
 	 */
-	public Lehena(File txartela) {
+	public Lehena() {
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -34,7 +34,7 @@ public class Lehena extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				MetodoakVista.bigarrenera(txartela);
+				MetodoakVista.bigarrenera();
 				
 			}
 		};

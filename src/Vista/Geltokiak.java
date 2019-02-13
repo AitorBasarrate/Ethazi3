@@ -63,7 +63,7 @@ public class Geltokiak extends JFrame {
 		
 
 
-	public Geltokiak(ArrayList geltoki, String linea, int codBush, File txartela) {
+	public Geltokiak(ArrayList geltoki, String linea, int codBush) {
 
 
 		getContentPane().setLayout(null);
@@ -162,7 +162,7 @@ public class Geltokiak extends JFrame {
 				String gelHelmuga = (String) comboBoxHelmuga.getSelectedItem();
 				MetodoakVista.fitxeroIdat(gelHelmuga);
 				
-				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala, codBush, txartela);
+				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala, codBush);
 
 				dispose();
 			}
@@ -174,7 +174,7 @@ public class Geltokiak extends JFrame {
 
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bueltatuLehena(txartela);
+				MetodoakVista.bueltatuLehena();
 				dispose();
 			}
 		};

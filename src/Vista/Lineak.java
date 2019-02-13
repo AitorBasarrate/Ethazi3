@@ -46,7 +46,7 @@ public class Lineak extends JFrame {
 	 * Create the panel.
 	 */
 
-	public Lineak(File txartela) {
+	public Lineak() {
 
 		getContentPane().setLayout(null);
 		this.setSize(650, 466);
@@ -82,7 +82,7 @@ public class Lineak extends JFrame {
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					MetodoakVista.laugarrenera(geltokia, linea, codBush, txartela);
+					MetodoakVista.laugarrenera(geltokia, linea, codBush);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -100,7 +100,7 @@ public class Lineak extends JFrame {
 
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bueltatuLehena(txartela);
+				MetodoakVista.bueltatuLehena();
 				dispose();
 			}
 		};
