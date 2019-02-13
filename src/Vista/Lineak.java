@@ -45,7 +45,7 @@ public class Lineak extends JFrame {
 	 * Create the panel.
 	 */
 
-	public Lineak(String DNI) {
+	public Lineak() {
 
 		getContentPane().setLayout(null);
 		this.setSize(650, 466);

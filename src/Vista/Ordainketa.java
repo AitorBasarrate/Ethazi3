@@ -21,8 +21,8 @@ import Controlador.MetodoakVista;
 public class Ordainketa extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textDiruTot = new JTextField(); ;
-	private JTextField textOrdainketa = new JTextField();;
+	private JTextField textDiruTot = new JTextField(); 
+	private JTextField textOrdainketa = new JTextField();
 	private JButton btnIrten = new JButton("IRTEN\r\n");
 	private JLabel lblErositakoa = new JLabel("DIRU TOTALA");
 	private JLabel lblBueltak = new JLabel("BUELTAK");
@@ -289,9 +289,7 @@ public class Ordainketa extends JFrame {
 //				DoubleTextOrdainketa = Double.parseDouble(textOrdainketa.getText());
 				bueltak = Controlador.Metodoak.diruarenBueltak(textDiruTot.getText(), textOrdainketa.getText());
 				
-			for(int i=0;i<bueltak.length;i++) {
-				list.addElement(bueltak[i]);
-			}
+			
 			if (bueltak[0]=="0") {
 				listMezua = "Ez daude bueltak";
 				list.addElement(listMezua);
@@ -304,13 +302,22 @@ public class Ordainketa extends JFrame {
 				list.addElement(listMezua);
 				textDiruTot.setText(kenketaMetodo);
 				lblErositakoa.setText("FALTA DEN DIRUA");
+				btnEzabatu.setEnabled(true);
+				btnErosi.setEnabled(false);
+				btnAurrera.setEnabled(false);
 			}
 			if (bueltak[0]!="") {
 				textDiruTot.setText("0");
+				for(int i=0;i<bueltak.length;i++) {
+					list.addElement(bueltak[i]);
+				}
+				btnAurrera.setEnabled(true);
+				btnErosi.setEnabled(false);
+				btnEzabatu.setEnabled(false);
 			}
-			btnAurrera.setEnabled(true);
-			btnErosi.setEnabled(false);
-			btnEzabatu.setEnabled(false);
+			
+				
+			
 			
 			}
 			

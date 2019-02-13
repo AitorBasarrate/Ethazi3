@@ -34,7 +34,8 @@ public class MetodoakVista {
 	}
 
 	public static void hirugarrenera() {
-		Lineak lineak = new Lineak(null);
+
+		Lineak lineak = new Lineak();
 		lineak.setVisible(true);
 		lineak.setBounds(550, 200, 642, 467);
 	}
@@ -168,7 +169,7 @@ public class MetodoakVista {
 
 	public static String lineaIzenaAukeratu(String linea) {
 		String izena = "";
-		izena = Kontsulta.lineaIzena(linea);
+		izena = Kontsulta.linearenIzena(linea);
 		return izena;
 	}
 
