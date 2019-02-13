@@ -1,14 +1,14 @@
 package Vista;
-import Controlador.*;
-import javax.swing.JPanel;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
-import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import Controlador.MetodoakVista;
 
 public class Lehena extends JFrame {
 	
@@ -24,7 +24,7 @@ public class Lehena extends JFrame {
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(300, 100, 635, 455);
+		setBounds(550, 200, 635, 455);
 		
 		btnSaioaHasi.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		

@@ -254,8 +254,11 @@ public class Kontsulta {
 
 	}
 	
+
 	
-	public static String lineaIzena(String linea) {
+
+	public static String linearenIzena(String linea) {
+
 		Connection conexion = null;
 		Statement s = null;
 		String nombre_="";
@@ -279,10 +282,11 @@ public class Kontsulta {
 		return nombre_;
 	}
 	
+	
 	//ASKENEKO PARADAREN LATITUDEA LORTU
 	
 	public static String paradaLatitud2lortu(String linea, String geltokiGordeHelmuga) {
-		String izena = lineaIzena(linea);
+		String izena = linearenIzena(linea);
 		String latitud2 = " " ;
 		Connection conexion = null;
 		Statement s = null;
@@ -314,7 +318,7 @@ public class Kontsulta {
 	
 	//LEHENENGO PARADAREN LATITUDEA LORTU
 	public static String paradaLatitud1lortu(String linea, String geltokiGordeHasiera) {
-		String izena = lineaIzena(linea);
+		String izena = linearenIzena(linea);
 		String latitud1 = " " ;
 		Connection conexion = null;
 		Statement s = null;
@@ -346,7 +350,7 @@ public class Kontsulta {
 	
 	//LEHENENGO PARADAREN LONGITUDEA LORTU
 	public static String paradaLongitud1lortu(String linea, String geltokiGordeHasiera) {
-		String izena = lineaIzena(linea);
+		String izena = linearenIzena(linea);
 		String longitud1 = " " ;
 		Connection conexion = null;
 		Statement s = null;
@@ -379,7 +383,7 @@ public class Kontsulta {
 	
 	
 	public static String paradaLongitud2lortu(String linea, String geltokiGordeHelmuga) {
-		String izena = lineaIzena(linea);
+		String izena = linearenIzena(linea);
 		String longitud2 = " " ;
 		Connection conexion = null;
 		Statement s = null;
@@ -470,12 +474,36 @@ public class Kontsulta {
 		return pertsonaKantitate;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public static String clienteIzena() {
+		Connection conexion = null;
+		Statement s = null;
+		String nombre_="";
+		String apellidos_="";
+		String izena;
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery(
+					"SELECT Nombre, Apellidos FROM `cliente` WHERE DNI LIKE '15236985K' ");
+			while (rs.next()) {
+				
+				nombre_ = rs.getString("Nombre");
+				
+				apellidos_ = rs.getString("Apellidos");
+
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println(nombre_+" "+apellidos_);
+		izena = nombre_+" "+apellidos_;
+		return izena;
+	}
+
 }

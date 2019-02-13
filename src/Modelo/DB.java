@@ -1,11 +1,9 @@
 package Modelo;
  
-	import java.beans.Statement;
-import java.io.BufferedReader;
+	import java.io.BufferedReader;
 import java.io.FileReader;
 import java.sql.Connection;
-	import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 	 
 	public class DB {

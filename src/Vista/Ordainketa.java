@@ -1,37 +1,13 @@
 package Vista;
 
-import java.awt.BorderLayout;
-
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import Controlador.*;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import java.awt.Font;
-import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
-import javax.swing.JList;
-import javax.swing.AbstractButton;
-import javax.swing.DefaultListModel;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -45,15 +21,15 @@ import Controlador.MetodoakVista;
 public class Ordainketa extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textDiruTot = new JTextField(); ;
-	private JTextField textOrdainketa = new JTextField();;
+	private JTextField textDiruTot = new JTextField(); 
+	private JTextField textOrdainketa = new JTextField();
 	private JButton btnIrten = new JButton("IRTEN\r\n");
 	private JLabel lblErositakoa = new JLabel("DIRU TOTALA");
 	private JLabel lblBueltak = new JLabel("BUELTAK");
 	private JButton btnErosi = new JButton("EROSI");
 	private JLabel lblDaramazun = new JLabel("DARAMAZUN DIRUA");
 	private JLabel lblSartuDirua = new JLabel("SARTU DIRUA");
-	static JList listBueltak = new JList();
+	private JList listBueltak = new JList();
 	private DefaultListModel list = new DefaultListModel();
 	private JButton button1 = new JButton("1");
 	private JButton button2 = new JButton("2");
@@ -314,9 +290,7 @@ public class Ordainketa extends JFrame {
 //				DoubleTextOrdainketa = Double.parseDouble(textOrdainketa.getText());
 				bueltak = Controlador.Metodoak.diruarenBueltak(textDiruTot.getText(), textOrdainketa.getText());
 				
-			for(int i=0;i<bueltak.length;i++) {
-				list.addElement(bueltak[i]);
-			}
+			
 			if (bueltak[0]=="0") {
 				listMezua = "Ez daude bueltak";
 				list.addElement(listMezua);
@@ -329,13 +303,22 @@ public class Ordainketa extends JFrame {
 				list.addElement(listMezua);
 				textDiruTot.setText(kenketaMetodo);
 				lblErositakoa.setText("FALTA DEN DIRUA");
+				btnEzabatu.setEnabled(true);
+				btnErosi.setEnabled(false);
+				btnAurrera.setEnabled(false);
 			}
 			if (bueltak[0]!="") {
 				textDiruTot.setText("0");
+				for(int i=0;i<bueltak.length;i++) {
+					list.addElement(bueltak[i]);
+				}
+				btnAurrera.setEnabled(true);
+				btnErosi.setEnabled(false);
+				btnEzabatu.setEnabled(false);
 			}
-			btnAurrera.setEnabled(true);
-			btnErosi.setEnabled(false);
-			btnEzabatu.setEnabled(false);
+			
+				
+			
 			
 			}
 			
