@@ -12,6 +12,7 @@ import javax.swing.JList;
 import Modelo.Kontsulta;
 
 public class Metodoak {
+	
 	public static double kontTotala = 0;
 	static final double BEZ = 0.21;
 	protected static double totBezGabe;
@@ -220,18 +221,32 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 			e.printStackTrace();
 		}
 	}
+	
 
 	
 	//DISTANTZIA KALKULATZEKO METODOA 
 	
-	public static double haversineMetodo() {
+	public static double haversineMetodo(String linea, String geltokiGordeHelmuga,  String geltokiGordeHasiera) {
 		
 		   final int R = 6371; // Radious of the earth
-		   double lat1 = 432614;
-		   double lat2 = 43245;
-		   double lon1 = -294974;
-		   double lon2 =-298991;
 		   
+		   String lati2 = Modelo.Kontsulta.paradaLatitud2lortu(linea,  geltokiGordeHelmuga);   //guarda la latitud
+		   String lati1 = Modelo.Kontsulta.paradaLatitud2lortu(linea,  geltokiGordeHasiera);   //guarda la latitud
+		   String longi1 = Modelo.Kontsulta.paradaLongitud1lortu(linea, geltokiGordeHasiera);//GUARDA LA LONGITUD
+		   String longi2 = Modelo.Kontsulta.paradaLongitud2lortu(linea, geltokiGordeHelmuga); // GUARDA LA LOngitud
+		   
+		   double lat1 ;
+		   lat1 = Double.valueOf(lati1);
+		   System.out.println(lat1+ " comprobacion");
+		   double lat2 ;
+		   lat2 = Double.valueOf(lati2);
+		   System.out.println(lat2 + " comprobacion");
+		   double lon1 ;
+		   lon1 = Double.valueOf(longi1);
+		   System.out.println(lon1 + " comprobacion");
+		   double lon2 ;
+		   lon2 = Double.valueOf(longi2);
+		   System.out.println(lon2 + " comprobacion");
 		
       Double latDistance = toRad(lat2-lat1);
       Double lonDistance = toRad(lon2-lon1);
@@ -256,46 +271,41 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	private static Double toRad(double value) {
 		return value * Math.PI / 180;
 	}
-	
-	
-	
 
 	//PREZIOA KALKULATZEKO METODOA
 	
-		public static double prezioaKalk(String linea, int contagailu) {
+		public static double prezioaKalk(String linea, int contagailu, ArrayList geltoki, String geltokiGordeHelmuga,  String geltokiGordeHasiera, int codBush) {
 
-			double distantzia = haversineMetodo(); //metodoaren balioa artzen du
-			
+			double distantzia = haversineMetodo(linea,  geltokiGordeHelmuga,   geltokiGordeHasiera); //metodoaren balioa artzen du
+	
 			System.out.println(Math.round(distantzia) + " distantzia"); //borobildu distantzias
 			
-			double kontsumoa = Kontsulta.autobusa(linea);  //artu behar dugu datu basetik
+			double kontsumoa = Kontsulta.autobusa(linea,  codBush);  //hartu behar dugu datu basetik
 			System.out.println(kontsumoa + " kontsumoa");
-			double erabilitakoLitroak; //bidaian erabili diren litroak
-			final double gasolinaPrezioa = 0.80; //beti berdina gasolinaren prezioa da
-			double kmPrezioa;// formulatik ateratzen da egindako km guztien prezioa
-			final double onura = 0.20; //beti berdina emprezak ezartzen duen onura
-			double empresaOnura;//formulatik ateratzen da empresaren onurarekin
-			double prezioGlobala; // autobus guztiak batera ordaindu behar duena
-			double pertsonaKantitate = Kontsulta.autobusPertsonaKantitatea(linea);//autobusean dauden pertsuna kant datubasetik ateratzen da
+			final double gasolinaPrezioa = 0.80; 			//beti berdina gasolinaren prezioa da
+			final double onura = 0.20; 						//beti berdina emprezak ezartzen duen onura
+			double empresaOnura;							//formulatik ateratzen da empresaren onurarekin
+			double pertsonaKantitate = Kontsulta.autobusPertsonaKantitatea(linea);	//autobusean dauden pertsona kant datubasetik ateratzen da
 			System.out.println(pertsonaKantitate + " pertsona kant");
-			double prezioFinala;//pertsuna bakoitzak ordaindu behar duena
-			double biribildu;
+			double prezioFinala;								//pertsona bakoitzak ordaindu behar duena
+		
 			
 			
 			//FORMULA
 			
-			erabilitakoLitroak = distantzia * kontsumoa;
-			kmPrezioa = erabilitakoLitroak * gasolinaPrezioa;
-			empresaOnura = kmPrezioa * onura;
-			prezioGlobala = kmPrezioa + empresaOnura;
-			prezioFinala = prezioGlobala  / pertsonaKantitate;
-			biribildu = Math.round(prezioFinala);
-			prezioFinala = (biribildu/100) * contagailu;
+			double autobusgastua = gasolinaPrezioa * kontsumoa; 
+				System.out.println(autobusgastua);
+			double bidaiGastua = distantzia * autobusgastua;
+				System.out.println(bidaiGastua);
+			double irabaziak = bidaiGastua * onura;
 			
+			 empresaOnura =bidaiGastua + irabaziak;
+				System.out.println(empresaOnura);
+			 prezioFinala = empresaOnura / pertsonaKantitate;
+			 	System.out.println(pertsonaKantitate);
+			prezioFinala = (prezioFinala) * contagailu;	
+				System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
 		
-		
-			System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
-			
 			return prezioFinala;
 		}
 

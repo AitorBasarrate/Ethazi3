@@ -40,14 +40,14 @@ public class MetodoakVista {
 		lineak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki, String linea) throws ParseException {
-		Geltokiak geltokiak = new Geltokiak(geltoki, linea);
+	public static void laugarrenera(ArrayList geltoki, String linea, int codBush) throws ParseException {
+		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala) {
-		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala);
+	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
 
@@ -76,22 +76,34 @@ public class MetodoakVista {
 
 	}
 
-	public static void getLinea(String linea) {
-		Kontsulta.autobusa(linea);
+	
+	public static void getLinea(String linea, int codBush) {
+		Kontsulta.autobusa(linea, codBush);
 	}
+
+//	public static void getLinea(String linea) {
+//		Kontsulta.autobusa(linea);
+//
+//	}
 
 	public static int bus_lortu(String linea) {
 		int rndmNum = 0;
+		
 		if (linea.equals("L1")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
 			System.out.println(rndmNum);
+
 		} else if (linea.equals("L2")) {
+
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
-			System.out.println(rndmNum);
+
 		} else if (linea.equals("L3")) {
+
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
+
 		} else if (linea.equals("L4")) {
+
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
 			System.out.println(rndmNum);
 		}
@@ -160,12 +172,15 @@ public class MetodoakVista {
 			
 		}
 	
+
+
 //	public static String clienteIzena(String DNI){
 //		izena = Kontsulta
 //		
 //		return izena;
 //	}
 	
+
 
 	public static String lineaIzenaAukeratu(String linea) {
 		String izena = "";
