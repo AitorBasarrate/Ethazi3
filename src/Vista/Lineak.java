@@ -96,17 +96,6 @@ public class Lineak extends JFrame {
 		getContentPane().add(btnAurrera);
 		btnAurrera.setEnabled(false);
 
-		alBAtzera = new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bigarrenera();
-				
-				dispose();
-			}
-		};
-		btnAtzera.addActionListener(alBAtzera);
-		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnAtzera.setBounds(0, 0, 89, 32);
-		getContentPane().add(btnAtzera);
 
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
