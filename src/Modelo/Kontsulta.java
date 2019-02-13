@@ -95,9 +95,9 @@ public class Kontsulta {
 
 				String fecha_nac_;
 				fecha_nac_ = rs.getString("Fecha_nac");
-				
+
 				Cliente c1 = new Cliente(dni_, nombre_, apellido_, fecha_nac_, sexo_, contraseña_);
-				inicioSes.add(0,c1);
+				inicioSes.add(0, c1);
 //				for (int n = 0; n < inicioSes.size(); n++) {
 //					System.out.println(inicioSes.get(n));
 //				}
@@ -105,6 +105,7 @@ public class Kontsulta {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		MetodoakVista.fitxeroIdat(inicioSes);
 		return inicioSes; // gero erabili ahal izateko array nankomprobaketa metodoan
 	}
 
@@ -128,7 +129,6 @@ public class Kontsulta {
 							+ linea + "'");
 			while (rs.next()) {
 
-
 				// DEPENDITZEN ZER LINEA SARTZEN DUDAN LINE_PRUEBA PARADA BATZUK GORDEKO DITU
 				if (linea.equals("L1")) {
 					line_Prueba = rs.getString("Nombre");
@@ -145,7 +145,6 @@ public class Kontsulta {
 				}
 
 				geltokiak.add(0, line_Prueba); // ARRAYAN GORDETZEN DUT GELTOKIEN IZENAK GORDETZEN DUEN STRING
-
 
 //Hemen sortzen dut arraylist bat, geltoki bakoitzagatik objektu bat sartzen dut arraylistean.
 				for (int n = 0; n < geltokiak.size(); n++) {
@@ -187,21 +186,17 @@ public class Kontsulta {
 		}
 	}
 
-	
-	
-	//AUTOBUSAREN DATUAK GORDE
-	
-	public static  double autobusa(String linea) {
-	
-	
-		
+	// AUTOBUSAREN DATUAK GORDE
+
+	public static double autobusa(String linea) {
+
 		Connection conexion = null;
 		Statement s = null;
-		
+
 		int Cod_Bus = MetodoakVista.bus_lortu(linea);
 		double kontsumo = 0;
-	;
-		
+		;
+
 		try {
 			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
@@ -210,24 +205,23 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Consumo_km FROM autobus where Cod_bus = "+Cod_Bus); //select atera nahi ditudan datuak
-			
+			ResultSet rs = ((java.sql.Statement) s)
+					.executeQuery("SELECT Consumo_km FROM autobus where Cod_bus = " + Cod_Bus); // select atera nahi
+																								// ditudan datuak
+
 			while (rs.next()) {
 				kontsumo = rs.getDouble(1);
-		
+
 			}
-			
+
 		} catch (Exception e) {
-			
+
 			System.out.println(e.getMessage());
 		}
-		
-		return kontsumo;	
+
+		return kontsumo;
 	}
 
-	
-
-	
 	public static void muestraKontsumo(String linea) {
 		ArrayList<Autobusa> DatuakBus = new ArrayList();
 		Connection conexion = null;
@@ -246,7 +240,8 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Consumo_km FROM autobus WHERE Cod_bus = '" + linea + "';");
+			ResultSet rs = ((java.sql.Statement) s)
+					.executeQuery("SELECT Consumo_km FROM autobus WHERE Cod_bus = '" + linea + "';");
 
 			// Se recorre el ResultSet, mostrando por pantalla los resultados.
 			while (rs.next()) {
@@ -261,11 +256,11 @@ public class Kontsulta {
 		}
 
 	}
-	
+
 	public static String lineaIzena(String linea) {
 		Connection conexion = null;
 		Statement s = null;
-		String nombre_="";
+		String nombre_ = "";
 		try {
 			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
@@ -274,12 +269,11 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery(
-					"SELECT Nombre FROM linea WHERE Cod_Linea LIKE '"+linea+"'");
+			ResultSet rs = ((java.sql.Statement) s)
+					.executeQuery("SELECT Nombre FROM linea WHERE Cod_Linea LIKE '" + linea + "'");
 			while (rs.next()) {
 //				String CodLinea_;
 //				CodLinea_ = rs.getString("Cod_Linea");
-				
 
 				nombre_ = rs.getString("Nombre");
 //				String calle_;
@@ -292,9 +286,6 @@ public class Kontsulta {
 		}
 		return nombre_;
 	}
-	
-	
-
 
 	public static String toString1(Linea Linea, String Cod_linea, String Nombre) {
 
@@ -314,9 +305,9 @@ public class Kontsulta {
 		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
 	}
 
-	//AUTOBUSAREN PERTSONA KANTITATEA LORTU
+	// AUTOBUSAREN PERTSONA KANTITATEA LORTU
 
-	public static  double autobusPertsonaKantitatea(String linea) {
+	public static double autobusPertsonaKantitatea(String linea) {
 		Connection conexion = null;
 		Statement s = null;
 		int Cod_Bus = MetodoakVista.bus_lortu(linea);
@@ -330,26 +321,28 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT N_plazas FROM  autobus where Cod_bus = "+Cod_Bus); //select atera nahi ditudan datuak
-			
+			ResultSet rs = ((java.sql.Statement) s)
+					.executeQuery("SELECT N_plazas FROM  autobus where Cod_bus = " + Cod_Bus); // select atera nahi
+																								// ditudan datuak
+
 			while (rs.next()) {
 				pertsonaKantitate = rs.getDouble(1);
-			
+
 			}
-			
+
 		} catch (Exception e) {
-			
+
 			System.out.println(e.getMessage());
 		}
-		
+
 		return pertsonaKantitate;
 	}
-	
+
 	public static String clienteIzena() {
 		Connection conexion = null;
 		Statement s = null;
-		String nombre_="";
-		String apellidos_="";
+		String nombre_ = "";
+		String apellidos_ = "";
 		String izena;
 		try {
 			// Cargar el driver
@@ -359,20 +352,20 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery(
-					"SELECT Nombre, Apellidos FROM `cliente` WHERE DNI LIKE '15236985K' ");
+			ResultSet rs = ((java.sql.Statement) s)
+					.executeQuery("SELECT Nombre, Apellidos FROM `cliente` WHERE DNI LIKE '15236985K' ");
 			while (rs.next()) {
-				
+
 				nombre_ = rs.getString("Nombre");
-				
+
 				apellidos_ = rs.getString("Apellidos");
 
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println(nombre_+" "+apellidos_);
-		izena = nombre_+" "+apellidos_;
+		System.out.println(nombre_ + " " + apellidos_);
+		izena = nombre_ + " " + apellidos_;
 		return izena;
 	}
 }

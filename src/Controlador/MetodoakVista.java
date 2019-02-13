@@ -130,39 +130,21 @@ public class MetodoakVista {
 		}
 
 	}
-	
-	/*public static void fitxeroGarbi() {
 
+	public static void fitxeroIdat(ArrayList inicioSes) {
 		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter idazteko = new PrintWriter(bw)) {
+			for(int n = 0; n < inicioSes.size(); n++) {
+				idazteko.println(inicioSes.get(n));//parantesi artean dagoena idazten du fitxeroan.
+				idazteko.println(inicioSes.get(n));
+				idazteko.println(inicioSes.get(n));
+				idazteko.println(inicioSes.get(n));
+				idazteko.println(inicioSes.get(n));
+				idazteko.println(inicioSes.get(n));
+				idazteko.println(inicioSes.get(n));
+			}
 			
-			idazteko.print("");//parantesi artean dagoena idazten du fitxeroan.
-			idazteko.println("");//ezer ez dagoenez fitxaroa husten du.
-			idazteko.println("");
-			idazteko.println("");
-			idazteko.println("");
-			idazteko.println("");
-			idazteko.println("");
-			idazteko.println("");
-			
-		} catch (IOException e) {
-			// exception handling left as an exercise for the reader
-		}
-	}*/
-
-	public static void fitxeroIdat() {
-		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
-				BufferedWriter bw = new BufferedWriter(fw);
-				PrintWriter idazteko = new PrintWriter(bw)) {
-			
-			idazteko.println("Izena - Abizena: ");//parantesi artean dagoena idazten du fitxeroan.
-			idazteko.println("NANa:");
-			idazteko.println("Data: ");
-			idazteko.println("Aukeratutako Linea: ");
-			idazteko.println("Autobusa: ");
-			idazteko.println("Hasierako Geltokia: ");
-			idazteko.println("Amaierako Geltokia: ");
 			
 		} catch (IOException e) {
 			// exception handling left as an exercise for the reader
