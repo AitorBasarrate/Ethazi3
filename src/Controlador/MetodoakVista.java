@@ -76,9 +76,9 @@ public class MetodoakVista {
 	}
 
 	
-	public static void getLinea(String linea, int codBush) {
-		Kontsulta.autobusa(codBush);
-	}
+//	public static void getLinea(String linea, int codBush) {
+//		Kontsulta.autobusa(codBush);
+//	}
 
 //	public static void getLinea(String linea) {
 //		Kontsulta.autobusa(linea);
@@ -183,12 +183,12 @@ public class MetodoakVista {
 		return izena;
 	}
 
-	public static int joanEtorria(boolean joanEtorri) {
-		int cont = 1;
-		if (joanEtorri == true) {
-			cont = 2;
-		}
-		return cont;
-	}
+//	public static int joanEtorria(boolean joanEtorri) {
+//		int cont = 1;
+//		if (joanEtorri == true) {
+//			cont = 2;
+//		}
+//		return cont;
+//	}
 
 }

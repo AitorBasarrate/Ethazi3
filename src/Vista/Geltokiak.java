@@ -126,6 +126,14 @@ public class Geltokiak extends JFrame {
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				if (rdbtnJoanEtorri.isSelected()) {
+					contagailu = 2;
+					
+				}
+				else {
+					contagailu = 1;
+				}
+				
 //  CONTINUAR AQUI PARA PASAR EL STRING
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHasiera.getSelectedItem().equals(geltoki.get(n))) {
@@ -186,11 +194,9 @@ public class Geltokiak extends JFrame {
 		rdbtnJoanEtorri.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		rdbtnJoanEtorri.setBounds(95, 334, 312, 46);
 		getContentPane().add(rdbtnJoanEtorri);
-		if (rdbtnJoanEtorri.isSelected()) {
-			joanEtorri = true;
+		
 			
-		}
-		contagailu =MetodoakVista.joanEtorria(joanEtorri);
+		//contagailu =MetodoakVista.joanEtorria(joanEtorri);
 
 		
 		

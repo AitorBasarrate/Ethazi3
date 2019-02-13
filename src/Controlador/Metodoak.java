@@ -303,7 +303,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 				System.out.println(empresaOnura);
 			 prezioFinala = empresaOnura / pertsonaKantitate;
 			 	System.out.println(pertsonaKantitate);
-			prezioFinala = (prezioFinala) * contagailu;	
+			prezioFinala = (prezioFinala) * contagailu;
 				System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
 		
 			return prezioFinala;

@@ -184,7 +184,7 @@ public class Lineak extends JFrame {
 					linea="L1";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
-					MetodoakVista.getLinea(linea, codBush);
+//					MetodoakVista.getLinea(linea, codBush);
 					autobusaCod.setText(Integer.toString(codBush));
 					
 				} else if (rdbtnL2.isSelected()) {
