@@ -143,8 +143,18 @@ public class MetodoakVista {
 		}
 
 	}
+	
+	public static void ezabatuFitx(File txartela) {
+		txartela.delete();
+	}
 
 	public static void fitxeroIdat(ArrayList inicioSes) {
+		File txartela = new File ("../Ethazi3/src/Controlador/txartela");
+		if (txartela.exists()) {
+			txartela.delete();
+		}
+		
+		
 		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter idazteko = new PrintWriter(bw)) {
@@ -169,7 +179,7 @@ public class MetodoakVista {
 			} catch (IOException e) {
 				// exception handling left as an exercise for the reader
 			}
-			
+			MetodoakVista.fitxeroIrak();			
 		}
 	
 
