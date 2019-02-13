@@ -570,5 +570,27 @@ public class Kontsulta {
 		izena = nombre_+" "+apellidos_;
 		return izena;
 	}
+	
+	public static void insertDNI(String DNI) {
+
+		Connection conexion = null;
+		Statement s = null;
+		String nombre_="";
+		
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("INSERT INTO cliente(DNI) VALUES("+DNI+")");
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
 
 }

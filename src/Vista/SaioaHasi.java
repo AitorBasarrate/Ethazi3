@@ -26,7 +26,7 @@ public class SaioaHasi extends JFrame {
 	private boolean DNIkonprobatu;
 	private String pasahitzaEnkripatatuta;
 	private boolean pasahitzaKonprobatu;
-	private JPasswordField passwordField;
+	private JPasswordField passwordField = new JPasswordField();
 	private ActionListener alBAurrera;
 	private ActionListener alBAtzera;
 	private ActionListener alBIrten;
@@ -53,8 +53,6 @@ public class SaioaHasi extends JFrame {
 		txtDNI.setBounds(240, 127, 193, 43);
 		getContentPane().add(txtDNI);
 		txtDNI.setColumns(10);
-		
-		
 		
 		
 		lblPasahitza.setFont(new Font("Tahoma", Font.PLAIN, 35));
@@ -100,7 +98,7 @@ public class SaioaHasi extends JFrame {
 		btnIrten.setBounds(524, 0, 99, 33);
 		getContentPane().add(btnIrten);
 		
-		passwordField = new JPasswordField();
+		
 		passwordField.setBounds(281, 274, 183, 43);
 		getContentPane().add(passwordField);
 		
