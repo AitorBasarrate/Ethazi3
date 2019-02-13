@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
@@ -77,7 +77,7 @@ public class Ordainketa extends JFrame {
 	 * @param codBush 
 	 */
 
-	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
+	public Ordainketa(ArrayList geltoki, String linea, Double prezioFinala, int codBush, File txartela) {
 
 		getContentPane().setLayout(null);
 		this.setSize(478,300);  
@@ -88,7 +88,7 @@ public class Ordainketa extends JFrame {
 		
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MetodoakVista.bueltatuLehena();
+				MetodoakVista.bueltatuLehena(txartela);
 				dispose();
 			}
 		});
@@ -337,7 +337,7 @@ public class Ordainketa extends JFrame {
 		
 		alBAurrera = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				MetodoakVista.seigarrenera();
+				MetodoakVista.seigarrenera(txartela);
 				dispose();
 			}
 		};

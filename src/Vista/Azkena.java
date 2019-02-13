@@ -2,12 +2,11 @@ package Vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
-import Controlador.MetodoakVista;
 
 public class Azkena extends JFrame {
 	private JTextField txtIzena = new JTextField();
@@ -28,7 +27,7 @@ public class Azkena extends JFrame {
 	/**
 	 * Create the panel.
 	 */
-	public Azkena() {
+	public Azkena(File txartela) {
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -119,6 +118,6 @@ public class Azkena extends JFrame {
 		add(txtJaitsi);
 		txtJaitsi.setColumns(10);
 		
-		
+		txartela.delete();
 	}
 }

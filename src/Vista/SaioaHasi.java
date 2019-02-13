@@ -3,16 +3,16 @@ package Vista;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import Controlador.Metodoak;
 import Controlador.MetodoakVista;
+import Modelo.Kontsulta;
 
 public class SaioaHasi extends JFrame {
 	
@@ -32,11 +32,15 @@ public class SaioaHasi extends JFrame {
 	private ActionListener alBIrten;
 	
 	
+//	public String getDniBez() {
+//		
+//		return dniBezero;
+//	}
 	
 	/**
 	 * Create the panel.
 	 */
-	public SaioaHasi() {
+	public SaioaHasi(File txartela) {
 		getContentPane().setLayout(null);
 		this.setSize(635,465);  
 		this.setLocationRelativeTo(null);  
@@ -54,8 +58,6 @@ public class SaioaHasi extends JFrame {
 		txtDNI.setColumns(10);
 		
 		
-		
-		
 		lblPasahitza.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblPasahitza.setBounds(112, 246, 193, 103);
 		getContentPane().add(lblPasahitza);
@@ -64,14 +66,10 @@ public class SaioaHasi extends JFrame {
 		
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
-//				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);
-//				System.out.println(pasahitzaEnkripatatuta);
-//				DNI = txtDNI.getText();
-//				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
-			
-//				if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
-					MetodoakVista.hirugarrenera();
+				String dniBezero = txtDNI.getText();
+					MetodoakVista.fitxeroIdat(dniBezero);
+					Kontsulta.bezeroIzenAbizen(dniBezero);
+					MetodoakVista.hirugarrenera(txartela);
 					dispose();
 //				}else {
 //					JOptionPane.showMessageDialog(null, "Ez da existitzen\n Saiatu berriro");
@@ -88,7 +86,7 @@ public class SaioaHasi extends JFrame {
 		
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bueltatuLehena();
+				MetodoakVista.bueltatuLehena(txartela);
 				dispose();
 			}
 		};

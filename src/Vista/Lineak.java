@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -45,7 +46,7 @@ public class Lineak extends JFrame {
 	 * Create the panel.
 	 */
 
-	public Lineak() {
+	public Lineak(File txartela) {
 
 		getContentPane().setLayout(null);
 		this.setSize(650, 466);
@@ -81,7 +82,7 @@ public class Lineak extends JFrame {
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					MetodoakVista.laugarrenera(geltokia, linea, codBush);
+					MetodoakVista.laugarrenera(geltokia, linea, codBush, txartela);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -99,7 +100,7 @@ public class Lineak extends JFrame {
 
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bueltatuLehena();
+				MetodoakVista.bueltatuLehena(txartela);
 				dispose();
 			}
 		};
@@ -175,24 +176,29 @@ public class Lineak extends JFrame {
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 //					MetodoakVista.getLinea(linea, codBush);
 					autobusaCod.setText(Integer.toString(codBush));
-					
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
+					MetodoakVista.fitxeroIdat(linea);
 				} else if (rdbtnL2.isSelected()) {
 					linea="L2";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
-					
+					MetodoakVista.fitxeroIdat(linea);
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
 				} else if (rdbtnL3.isSelected()) {
 					linea="L3";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
-					
+					MetodoakVista.fitxeroIdat(linea);
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
 				} else if (rdbtnL4.isSelected()) {
 					linea="L4";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
+					MetodoakVista.fitxeroIdat(linea);
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
 				}
 				System.out.println(geltokia.get(0));
 				btnAurrera.setEnabled(true);

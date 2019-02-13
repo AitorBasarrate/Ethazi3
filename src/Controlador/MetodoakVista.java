@@ -21,46 +21,46 @@ import Vista.SaioaHasi;
 
 public class MetodoakVista {
 
-	public static void bueltatuLehena() {
-		Lehena lehena = new Lehena();
+	public static void bueltatuLehena(File txartela) {
+		Lehena lehena = new Lehena(txartela);
 		lehena.setVisible(true);
 		lehena.setBounds(550, 200, 642, 467);
 	}
 
-	public static void bigarrenera() {
-		SaioaHasi saioaHasi = new SaioaHasi();
+	public static void bigarrenera(File txartela) {
+		SaioaHasi saioaHasi = new SaioaHasi(txartela);
 		saioaHasi.setVisible(true);
 		saioaHasi.setBounds(550, 200, 642, 467);
 	}
 
-	public static void hirugarrenera() {
+	public static void hirugarrenera(File txartela) {
 
-		Lineak lineak = new Lineak();
+		Lineak lineak = new Lineak(txartela);
 		lineak.setVisible(true);
 		lineak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void laugarrenera(ArrayList geltoki, String linea, int codBush) throws ParseException {
-		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush);
+	public static void laugarrenera(ArrayList geltoki, String linea, int codBush, File txartela) throws ParseException {
+		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush, txartela);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
 	}
 
-	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
-		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush);
+	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush, File txartela) {
+		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush, txartela);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
 
 	}
 
-	public static void seigarrenera() {
-		AteraBilletea ateraBilletea = new AteraBilletea();
+	public static void seigarrenera(File txartela) {
+		AteraBilletea ateraBilletea = new AteraBilletea(txartela);
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 
-	public static void azkenera() {
-		Azkena azkena = new Azkena();
+	public static void azkenera(File txartela) {
+		Azkena azkena = new Azkena(txartela);
 		azkena.setVisible(true);
 		azkena.setBounds(550, 200, 642, 467);
 	}
@@ -107,11 +107,12 @@ public class MetodoakVista {
 		return rndmNum;
 	}
 
-	public static void fitxeroIrak() {
+	public static int fitxeroIrak() {
 
 		File fitxategi = null;
 		FileReader fr = null;
 		BufferedReader br = null;
+		int lerro = 0;
 
 		try {
 			// Apertura del fichero y creacion de BufferedReader para poder
@@ -124,6 +125,7 @@ public class MetodoakVista {
 			String linea;
 			while (((linea = br.readLine()) != null))
 				System.out.println(linea);
+				lerro++;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -138,54 +140,33 @@ public class MetodoakVista {
 				e2.printStackTrace();
 			}
 		}
-
+		return lerro;
 	}
 	
-	public static void ezabatuFitx(File txartela) {
-		txartela.delete();
-	}
+	
 
-	public static void fitxeroIdat(ArrayList inicioSes) {
-		File txartela = new File ("../Ethazi3/src/Controlador/txartela");
-		if (txartela.exists()) {
-			txartela.delete();
-		}
-		
+	public static void fitxeroIdat(String datua) {
+		int lerroak = MetodoakVista.fitxeroIrak();
 		
 		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter idazteko = new PrintWriter(bw)) {
-			for(int n = 0; n < inicioSes.size(); n++) {
-				idazteko.println(inicioSes.get(n));//parantesi artean dagoena idazten du fitxeroan.
-				idazteko.println(inicioSes.get(n));
-				idazteko.println(inicioSes.get(n));
-				idazteko.println(inicioSes.get(n));
-				idazteko.println(inicioSes.get(n));
-				idazteko.println(inicioSes.get(n));
-				idazteko.println(inicioSes.get(n));
-			}
-			
+			if (lerroak == 8) {
+				bw.write("");
+				bw.close();
+			}else {
+				idazteko.println(datua);//parantesi artean dagoena idazten du fitxeroan.
+			}			
 			
 		} catch (IOException e) {
 			// exception handling left as an exercise for the reader
 		}
-			try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
-					BufferedWriter bw = new BufferedWriter(fw);
-					PrintWriter idazteko = new PrintWriter(bw)) {
-				bw.write("");
-			} catch (IOException e) {
-				// exception handling left as an exercise for the reader
-			}
 			MetodoakVista.fitxeroIrak();			
 		}
 	
 
 
-//	public static String clienteIzena(String DNI){
-//		izena = Kontsulta
-//		
-//		return izena;
-//	}
+
 	
 
 

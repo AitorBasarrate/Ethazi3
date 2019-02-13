@@ -2,6 +2,7 @@ package Vista;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,7 +20,7 @@ public class Lehena extends JFrame {
 	/**
 	 * Create the panel.
 	 */
-	public Lehena() {
+	public Lehena(File txartela) {
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -31,8 +32,9 @@ public class Lehena extends JFrame {
 		
 		alBSaioaHasi = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				dispose();
-				MetodoakVista.bigarrenera();
+				MetodoakVista.bigarrenera(txartela);
 				
 			}
 		};

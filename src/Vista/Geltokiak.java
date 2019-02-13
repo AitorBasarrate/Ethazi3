@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -62,7 +63,7 @@ public class Geltokiak extends JFrame {
 		
 
 
-	public Geltokiak(ArrayList geltoki, String linea, int codBush) {
+	public Geltokiak(ArrayList geltoki, String linea, int codBush, File txartela) {
 
 
 		getContentPane().setLayout(null);
@@ -120,8 +121,9 @@ public class Geltokiak extends JFrame {
 		comboBoxHelmuga.setBounds(238, 252, 184, 53);
 		for (int n = 0; n < geltoki.size(); n++) {
 			comboBoxHelmuga.addItem(geltoki.get(n));
-		}
+		}		
 		getContentPane().add(comboBoxHelmuga);
+		
 
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -150,11 +152,17 @@ public class Geltokiak extends JFrame {
 					}
 				}
 				Date data = (Date)Data.getModel().getValue();
-				System.out.println(data);
+				MetodoakVista.fitxeroIdat(data.toString());
+				
 				prezioFinala = Metodoak.prezioaKalk(linea, contagailu, geltoki,  geltokiGordeHelmuga, geltokiGordeHasiera,  codBush);
 				
+				//ComboBoxetik datua hartu eta fitxategian idatzi.
+				String gelHasiera = (String) comboBoxHasiera.getSelectedItem();
+				MetodoakVista.fitxeroIdat(gelHasiera);
+				String gelHelmuga = (String) comboBoxHelmuga.getSelectedItem();
+				MetodoakVista.fitxeroIdat(gelHelmuga);
 				
-				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala, codBush);
+				MetodoakVista.bostgarrenera(geltoki, linea, prezioFinala, codBush, txartela);
 
 				dispose();
 			}
@@ -166,7 +174,7 @@ public class Geltokiak extends JFrame {
 
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bueltatuLehena();
+				MetodoakVista.bueltatuLehena(txartela);
 				dispose();
 			}
 		};
@@ -176,7 +184,6 @@ public class Geltokiak extends JFrame {
 		getContentPane().add(btnIrten);
 
 		
-
 		Data.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
 		Data.setBounds(461, 267, 144, 23);
 		getContentPane().add(Data);

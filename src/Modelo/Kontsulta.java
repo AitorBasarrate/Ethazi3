@@ -105,8 +105,35 @@ public class Kontsulta {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		MetodoakVista.fitxeroIdat(inicioSes);
 		return inicioSes; // gero erabili ahal izateko array nankomprobaketa metodoan
+	}
+	public static void bezeroIzenAbizen(String dni) { // arraylist bueltatu behar du
+		Connection conexion = null;
+		Statement s = null;
+		try {
+			// Cargar el driver
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/ethazi3", "root", "");
+			s = (Statement) conexion.createStatement();
+
+			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
+			ResultSet rs = ((java.sql.Statement) s).executeQuery("SELECT Nombre, Apellidos FROM cliente WHERE DNI LIKE '" + dni + "';");
+
+			while (rs.next()) {
+
+				// SELECTAREN DATUAK GORDE
+
+				String nombre_;
+				nombre_ = rs.getString("Nombre");
+				MetodoakVista.fitxeroIdat(nombre_);
+
+				String apellido_;
+				apellido_ = rs.getString("Apellidos");
+				MetodoakVista.fitxeroIdat(apellido_);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static ArrayList lineaAukeratu(String linea) {
@@ -443,7 +470,6 @@ public class Kontsulta {
 	public static String toStringKonts(double kontsumo_km) {
 		return "Kontsulta [Kontsumoa: " + kontsumo_km + " ]";
 	}
-	
 	
 
 	// AUTOBUSAREN PERTSONA KANTITATEA LORTU
