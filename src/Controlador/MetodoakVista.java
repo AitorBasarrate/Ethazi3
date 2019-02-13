@@ -92,23 +92,13 @@ public class MetodoakVista {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
 			System.out.println(rndmNum);
 
-			
-		}else if (linea.equals("L2")) {
-
 		} else if (linea.equals("L2")) {
-
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
-
-			
-		}else if (linea.equals("L3")) {
-
-		} else if (linea.equals("L3")) {
-
-			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
 
-			
-		}else if (linea.equals("L4")) {
+		} else if (linea.equals("L3")) {
+			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
+			System.out.println(rndmNum);
 
 		} else if (linea.equals("L4")) {
 
