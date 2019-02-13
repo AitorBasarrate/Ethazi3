@@ -187,12 +187,11 @@ public class Kontsulta {
 	
 	//AUTOBUSAREN DATUAK GORDE
 	
-	public static  double autobusa(String linea,int Cod_Bus) {
+	public static  double autobusa(int Cod_Bus) {
 
 		Connection conexion = null;
 		Statement s = null;
 
-		Cod_Bus  = MetodoakVista.bus_lortu(linea);
 		
 		double kontsumo = 0;
 		try {
@@ -449,10 +448,11 @@ public class Kontsulta {
 
 	// AUTOBUSAREN PERTSONA KANTITATEA LORTU
 
-	public static double autobusPertsonaKantitatea(String linea) {
+	public static  double autobusPertsonaKantitatea(int Cod_Bus) {
+
 		Connection conexion = null;
 		Statement s = null;
-		int Cod_Bus = MetodoakVista.bus_lortu(linea);
+		
 		double pertsonaKantitate = 0;
 
 		try {

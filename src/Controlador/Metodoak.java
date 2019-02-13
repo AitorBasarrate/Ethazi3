@@ -280,12 +280,12 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	
 			System.out.println(Math.round(distantzia) + " distantzia"); //borobildu distantzias
 			
-			double kontsumoa = Kontsulta.autobusa(linea,  codBush);  //hartu behar dugu datu basetik
+			double kontsumoa = Kontsulta.autobusa(codBush);  //hartu behar dugu datu basetik
 			System.out.println(kontsumoa + " kontsumoa");
 			final double gasolinaPrezioa = 0.80; 			//beti berdina gasolinaren prezioa da
 			final double onura = 0.20; 						//beti berdina emprezak ezartzen duen onura
 			double empresaOnura;							//formulatik ateratzen da empresaren onurarekin
-			double pertsonaKantitate = Kontsulta.autobusPertsonaKantitatea(linea);	//autobusean dauden pertsona kant datubasetik ateratzen da
+			double pertsonaKantitate = Kontsulta.autobusPertsonaKantitatea(codBush);	//autobusean dauden pertsona kant datubasetik ateratzen da
 			System.out.println(pertsonaKantitate + " pertsona kant");
 			double prezioFinala;								//pertsona bakoitzak ordaindu behar duena
 		
@@ -303,7 +303,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 				System.out.println(empresaOnura);
 			 prezioFinala = empresaOnura / pertsonaKantitate;
 			 	System.out.println(pertsonaKantitate);
-			prezioFinala = (prezioFinala) * contagailu;	
+			prezioFinala = (prezioFinala) * contagailu;
 				System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
 		
 			return prezioFinala;

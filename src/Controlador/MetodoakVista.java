@@ -77,9 +77,9 @@ public class MetodoakVista {
 	}
 
 	
-	public static void getLinea(String linea, int codBush) {
-		Kontsulta.autobusa(linea, codBush);
-	}
+//	public static void getLinea(String linea, int codBush) {
+//		Kontsulta.autobusa(codBush);
+//	}
 
 //	public static void getLinea(String linea) {
 //		Kontsulta.autobusa(linea);
@@ -91,18 +91,15 @@ public class MetodoakVista {
 		
 		if (linea.equals("L1")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
-			System.out.println(rndmNum);
-
-		} else if (linea.equals("L2")) {
-
+			System.out.println(rndmNum);	
+		}else if (linea.equals("L2")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
 
-		} else if (linea.equals("L3")) {
-
+		}else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
 
-		} else if (linea.equals("L4")) {
+		}else if (linea.equals("L4")) {
 
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
 			System.out.println(rndmNum);
@@ -198,12 +195,6 @@ public class MetodoakVista {
 		return izena;
 	}
 
-	public static int joanEtorria(boolean joanEtorri) {
-		int cont = 1;
-		if (joanEtorri == true) {
-			cont = 2;
-		}
-		return cont;
-	}
+
 
 }
