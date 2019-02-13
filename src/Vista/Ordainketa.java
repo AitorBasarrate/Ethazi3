@@ -45,7 +45,6 @@ public class Ordainketa extends JFrame {
 	private JButton btnEzabatu = new JButton("EZABATU");
 	private JButton btnAurrera = new JButton("Aurrera");
 	private String[] bueltak;
-	private double DoubleTextDiruTot;
 	private double DoubleTextOrdainketa;
 	private String listMezua;
 	private String kenketaMetodo;
@@ -105,14 +104,11 @@ public class Ordainketa extends JFrame {
 		
 		textDiruTot.setBackground(Color.WHITE);
 		textDiruTot.setEditable(false);
-//				DefaultListModel ordaintzekoa = new DefaultListModel();
-//				ordaintzekoa.addElement(Metodoak.kontTotala+"€");
-//				listBueltak.setModel(ordaintzekoa);
+
 		
 		textDiruTot.setBounds(22, 69, 270, 38);
 		getContentPane().add(textDiruTot);
-		Metodoak.bezKalkulatu(DoubleTextDiruTot, DoubleTextDiruTot, DoubleTextDiruTot);
-		TextDiruTot = Double.toString(Metodoak.kontTotala);
+		prezioFinala = Metodoak.bezKalkulatu(prezioFinala);
 		textDiruTot.setColumns(10);
 		textDiruTot.setText(Double.toString(prezioFinala));
 		
@@ -287,8 +283,7 @@ public class Ordainketa extends JFrame {
 		alBErosi = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				list.clear();
-//				DoubleTextDiruTot = Double.parseDouble(textDiruTot.getText());
-//				DoubleTextOrdainketa = Double.parseDouble(textOrdainketa.getText());
+
 				bueltak = Controlador.Metodoak.diruarenBueltak(textDiruTot.getText(), textOrdainketa.getText());
 				
 			

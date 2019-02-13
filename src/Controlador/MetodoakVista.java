@@ -139,12 +139,9 @@ public class MetodoakVista {
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 /**
-<<<<<<< HEAD
  *  @author TALDE4
  * pantaila sortzen du
-=======
  * Pasatzeko azkenengo pantailara
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
  */
 	public static void azkenera() {
 		Azkena azkena = new Azkena();
@@ -229,11 +226,10 @@ public class MetodoakVista {
 /**
  * fitxeroaren datuak irakurtzen ditu
  *  @author TALDE4
-=======
-	}
+*/
+	
 /**
  * Fitxeroa irakurtzen du
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
  */
 	public static void fitxeroIrak() {
 
@@ -274,10 +270,10 @@ public class MetodoakVista {
 /**
  * fitxeroan datuak idazten ditu
  *  @author TALDE4
-=======
+
 /**
  * Fitxeroa idazten du
->>>>>>> branch 'Aitor' of https://github.com/AitorBasarrate/Ethazi3.git
+
  */
 	public static void fitxeroIdat() {
 
@@ -315,19 +311,5 @@ public class MetodoakVista {
 	}
 
 
-	
-/**
- * joan estorria bada contagailuari 2 balioa ematen dio
- * @author talde4
- * @param joanEtorri
- * @return cont
- */
-	public static int joanEtorria(boolean joanEtorri) {
-		int cont = 1;
-		if (joanEtorri == true) {
-			cont = 2;
-		}
-		return cont;
-	}
 
 }

@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Controlador.Metodoak;
 import Controlador.MetodoakVista;
 
 import javax.swing.JLabel;
@@ -44,6 +45,9 @@ public class Erregistratu extends JFrame {
 	private JButton btnIrten = new JButton("IRTEN");
 	private ActionListener alBIrten;
 	private ActionListener alBAurrera;
+	private String sexua = "";
+	private ActionListener alRdbtnGizona;
+	private ActionListener alRdbtnEmakumea;
 
 	/**
 	 * Launch the application.
@@ -90,14 +94,37 @@ public class Erregistratu extends JFrame {
 		txtDNI.setColumns(10);
 		
 		
+		alRdbtnGizona = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (rdbtnGizona.isSelected()) {
+					rdbtnEmakumea.setSelected(false);
+					btnAurrera.setEnabled(true);
+				}
+			}
+		};
+		rdbtnGizona.addActionListener(alRdbtnGizona);
 		rdbtnGizona.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		rdbtnGizona.setBounds(435, 103, 127, 25);
 		getContentPane().add(rdbtnGizona);
 		
 		
+		alRdbtnEmakumea = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (rdbtnEmakumea.isSelected()) {
+					rdbtnGizona.setSelected(false);
+					btnAurrera.setEnabled(true);
+				}
+			}
+		};
+		rdbtnEmakumea.addActionListener(alRdbtnEmakumea);
 		rdbtnEmakumea.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		rdbtnEmakumea.setBounds(435, 133, 127, 25);
 		getContentPane().add(rdbtnEmakumea);
+		
+		
+		if(!rdbtnGizona.isSelected() || !rdbtnEmakumea.isSelected()) {
+			btnAurrera.setEnabled(false);
+		}
 		
 		
 		lblSexua.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -138,7 +165,15 @@ public class Erregistratu extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MetodoakVista.hirugarrenera();
 				dispose();
+				if(rdbtnGizona.isSelected()) {
+					sexua = "V";
+				}
+				else {
+					sexua = "M";
+				}
+//				Date data = (Date)Data.getModel().getValue();
 				
+				Metodoak.insertatu(txtDNI.getText(), txtIzena.getText(), txtAbizenak.getText(), sexua, passwordField.getText());
 				
 			}
 		};

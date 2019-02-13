@@ -3,6 +3,7 @@ package Controlador;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +16,7 @@ public class Metodoak {
 	
 	//ALDAGAIAK
 	public  double kontTotala = 0;
-	 final double BEZ = 0.21;
+	final static double BEZ = 0.21;
 	protected  double totBezGabe;
 	
 /**
@@ -121,8 +122,13 @@ public class Metodoak {
 	 * @param BEZ
 	 * @param kontTotala
 	 */
-	public static void bezKalkulatu(double totBezGabe , double BEZ , double kontTotala ) {
+	public static double bezKalkulatu(double totBezGabe) {
+		double kontTotala=0;
+		
 		kontTotala = (totBezGabe * BEZ) + totBezGabe;
+		System.out.println("Prezio totala BEZarekin: "+kontTotala);
+		
+		return kontTotala;
 	}
 	
 /**
@@ -381,5 +387,9 @@ public class Metodoak {
 		 throw new RuntimeException(e);
 		 }
 		 }
+	
+	public static void insertatu(String DNI, String izena, String abizenak, String sexua, String pasahitza) {
+		Kontsulta.insert(DNI, izena, abizenak, sexua, pasahitza);
+	}
 
 }
