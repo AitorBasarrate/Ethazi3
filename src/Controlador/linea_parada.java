@@ -7,6 +7,7 @@ public class linea_parada {
 	
 	/**
 	 * KONSTRUKTORTEA
+	 *  @author TALDE4
 	 * @param Cod_linea
 	 * @param Cod_parada
 	 */

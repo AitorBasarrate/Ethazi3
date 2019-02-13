@@ -18,6 +18,7 @@ public class Lehena extends JFrame {
 
 	/**
 	 * Create the panel.
+	 *  @author TALDE4
 	 */
 	public Lehena() {
 		setLayout(null);

@@ -35,6 +35,7 @@ public class SaioaHasi extends JFrame {
 	
 	/**
 	 * Create the panel.
+	 *  @author TALDE4
 	 */
 	public SaioaHasi() {
 		getContentPane().setLayout(null);
@@ -61,7 +62,9 @@ public class SaioaHasi extends JFrame {
 		getContentPane().add(lblPasahitza);
 		
 		
-		
+		/**
+		 *  @author TALDE4
+		 */
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());

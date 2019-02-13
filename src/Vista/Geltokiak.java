@@ -20,7 +20,11 @@ import javax.swing.SwingConstants;
 
 import Controlador.Metodoak;
 import Controlador.MetodoakVista;
-
+/**
+ * 
+ *  @author TALDE4
+ *
+ */
 public class Geltokiak extends JFrame {
 	private JTextField txtLinea = new JTextField();
 	private JLabel lblAukeratuDuzunLinea = new JLabel("Aukeratu duzun linea");
@@ -49,11 +53,13 @@ public class Geltokiak extends JFrame {
 	
 	
 	/**
+	 *  @author TALDE4
 	 * @wbp.nonvisual location=91,269
 	 */
 
 	/**
 	 * Create the panel.
+	 *  @author TALDE4
 	 * @param codBush 
 	 */
 

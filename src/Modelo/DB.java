@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 	 
 	public class DB {
+		
 	    private String  maquina    ;
 	    private String  usuario     ;
 	    private String  clave    ;
@@ -17,6 +18,10 @@ import java.sql.SQLException;
 	    
 	    //CONSTRUCTOR
 	    //Recibe el nombre de la base de datos
+	    /**
+	     *  @author TALDE4
+	     * @param baseDatos
+	     */
 	    public DB(String baseDatos){
 	    	
 	    	

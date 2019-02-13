@@ -10,6 +10,7 @@ public class parada {
 	
 	/**
 	 * KONSTRUKTOREA
+	 *  @author TALDE4
 	 * @param Cod_parada
 	 * @param Nombre
 	 * @param Calle

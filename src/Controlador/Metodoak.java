@@ -19,7 +19,7 @@ public class Metodoak {
 	protected  double totBezGabe;
 	
 /**
- * 
+ *  @author TALDE4
  * @param DNI
  * @return konprobatu
  */
@@ -54,7 +54,7 @@ public class Metodoak {
 	}
 	
 	/**
-	 * 
+	 *  @author TALDE4
 	 * @param pasahitza
 	 * @return NUM
 	 */
@@ -86,6 +86,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	
 /**
  * ZENBAKI ALEATORIOAK SORTU
+ *  @author TALDE4
  * @param minimo
  * @param maximo
  * @return NUM
@@ -99,7 +100,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 
 /**
- * 
+ *  @author TALDE4
  * @param list
  * @param totBezGabe
  */
@@ -111,6 +112,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 	/**
 	 * BEZA KALKULATZEN DU
+	 *  @author TALDE4
 	 * @param totBezGabe
 	 * @param BEZ
 	 * @param kontTotala
@@ -120,7 +122,8 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	}
 	
 /**
- * ZENBAT BUELTA HEMAN BEHAR DITUEN KALKULATZEN DITU+
+ * ZENBAT BUELTA HEMAN BEHAR DITUEN KALKULATZEN DITU
+ *  @author TALDE4
  * 
  * @param emaitza
  * @param ordainketa
@@ -211,7 +214,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 	
 	/**
-	 * 
+	 *  @author TALDE4
 	 * @param diruTot
 	 * @param ordainketa
 	 * @return stringEmaitza
@@ -245,7 +248,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	
 	//DISTANTZIA KALKULATZEKO METODOA 
 	/**
-	 * 
+	 *  @author TALDE4
 	 * @param linea
 	 * @param geltokiGordeHelmuga
 	 * @param geltokiGordeHasiera
@@ -293,7 +296,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	
 	//RADIANA EGITEKO
 /**
- * 
+ *  @author TALDE4
  * @param value
  * @return VALUE
  */
@@ -304,7 +307,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	
 	//PREZIOA KALKULATZEKO METODOA
 	/**
-	 * 
+	 *  @author TALDE4
 	 * @param linea
 	 * @param contagailu
 	 * @param geltoki
@@ -351,7 +354,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	
 	/*Metodo encriptar*/
 	/**
-	 * 
+	 *  @author TALDE4
 	 * @param input
 	 * @return hashtext
 	 */

@@ -22,6 +22,7 @@ import Vista.SaioaHasi;
 public class MetodoakVista {
 
 	/**
+	 *  @author TALDE4
 	 * pantaila sortzen du
 	 */
 	public static void bueltatuLehena() {
@@ -31,6 +32,7 @@ public class MetodoakVista {
 	}
 	
 	/**
+	 *  @author TALDE4
 	 * pantaila sortzen du
 	 */
 
@@ -41,6 +43,7 @@ public class MetodoakVista {
 	}
 
 	/**
+	 *  @author TALDE4
 	 * pantaila sortzen du
 	 */
 	public static void hirugarrenera() {
@@ -50,6 +53,7 @@ public class MetodoakVista {
 	}
 
 	/**
+	 *  @author TALDE4
 	 * pantaila sortzen du
 	 */
 	public static void laugarrenera(ArrayList geltoki, String linea, int codBush) throws ParseException {
@@ -59,6 +63,7 @@ public class MetodoakVista {
 	}
 
 	/**
+	 *  @author TALDE4
 	 * pantaila sortzen du
 	 */
 	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
@@ -69,6 +74,7 @@ public class MetodoakVista {
 	}
 	
 	/**
+	 *  @author TALDE4
 	 * pantaila sortzen du
 	 */
 	public static void seigarrenera() {
@@ -77,6 +83,7 @@ public class MetodoakVista {
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 /**
+ *  @author TALDE4
  * pantaila sortzen du
  */
 	public static void azkenera() {
@@ -103,6 +110,7 @@ public class MetodoakVista {
 
 	/**
 	 * busaren kodea aleatorioki sortzen du eta bueltatzen du
+	 *  @author TALDE4
 	 * @param linea
 	 * @return rndmNum
 	 */
@@ -145,7 +153,7 @@ public class MetodoakVista {
 	
 /**
  * fitxeroaren datuak irakurtzen ditu
- * 
+ *  @author TALDE4
  */
 	public static void fitxeroIrak() {
 
@@ -184,6 +192,7 @@ public class MetodoakVista {
 	
 /**
  * fitxeroan datuak idazten ditu
+ *  @author TALDE4
  */
 	public static void fitxeroIdat() {
 
@@ -200,13 +209,9 @@ public class MetodoakVista {
 	}
 
 
-/**
- * 
- * @param linea
- * @return
- */
+
 	/**
-	 * 
+	 *  @author TALDE4
 	 * @param linea
 	 * @return izena
 	 */

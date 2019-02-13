@@ -16,6 +16,7 @@ public class Billete {
 	
 	/**
 	 * KONSTRUKTOREA
+	 *  @author TALDE4
 	 * @param Cod
 	 * @param NTrayecto
 	 * @param Cod_Linea

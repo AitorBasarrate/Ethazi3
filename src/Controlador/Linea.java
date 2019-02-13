@@ -10,7 +10,7 @@ public class Linea {
 	private String Cod_linea;
 	private String Nombre;
 /**
- * 
+ *  @author TALDE4
  * @param Cod_linea
  * @param Nombre
  */
@@ -22,6 +22,7 @@ public class Linea {
 
 /**
  * ARRAYLIST BETE LINEAREN DATUEKIN
+ *  @author TALDE4
  * @param LineaArray
  * @param Cod_linea
  * @param Nombre

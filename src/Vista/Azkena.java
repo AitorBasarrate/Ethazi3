@@ -26,6 +26,7 @@ public class Azkena extends JFrame {
 	private JLabel lblJaitsi = new JLabel("Jaitsi:");
 
 	/**
+	 *  @author TALDE4
 	 * Create the panel.
 	 */
 	public Azkena() {

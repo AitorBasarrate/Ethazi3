@@ -5,7 +5,7 @@ public class linea_autobus {
 	private int Cod_autobus;
 	
 	/**
-	 * 
+	 *  @author TALDE4
 	 * @param Cod_linea
 	 * @param Cod_autobus
 	 */

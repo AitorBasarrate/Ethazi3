@@ -4,11 +4,18 @@ public class poblacion_parada {
 	private int Cod_parada;
 	private int Cod_postal;
 	
+	/**
+	 *  @author TALDE4
+	 * @param Cod_parada
+	 * @param Cod_postal
+	 */
 	public poblacion_parada (int Cod_parada, int Cod_postal) {
 		this.Cod_parada = Cod_parada;
 		this.Cod_postal = Cod_postal;
 	}
 
+	//GETTERS AND SETTERS
+	
 	public int getCod_parada() {
 		return Cod_parada;
 	}

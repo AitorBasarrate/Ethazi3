@@ -74,6 +74,7 @@ public class Ordainketa extends JFrame {
 
 	/**
 	 * Create the frame.
+	 *  @author TALDE4
 	 * @param codBush 
 	 */
 
@@ -110,7 +111,7 @@ public class Ordainketa extends JFrame {
 		
 		textDiruTot.setBounds(22, 69, 270, 38);
 		getContentPane().add(textDiruTot);
-		Metodoak.bezKalkulatu();
+		Metodoak.bezKalkulatu(DoubleTextDiruTot, DoubleTextDiruTot, DoubleTextDiruTot);
 		TextDiruTot = Double.toString(Metodoak.kontTotala);
 		textDiruTot.setColumns(10);
 		textDiruTot.setText(Double.toString(prezioFinala));

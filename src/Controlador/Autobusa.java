@@ -10,6 +10,7 @@ public class Autobusa {
 	
 	/**
 	 * KONSTRUKTOREA
+	 *  @author TALDE4
 	 * @param Cod_bus
 	 * @param N_plazas
 	 * @param kontsumo
