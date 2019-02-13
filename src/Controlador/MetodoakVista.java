@@ -22,8 +22,6 @@ import Vista.Ordainketa;
 import Vista.SaioaHasi;
 
 public class MetodoakVista {
-
-
 	/**
 	 *  @author TALDE4
 	 * pantaila sortzen du
@@ -38,7 +36,6 @@ public class MetodoakVista {
 		lehena.setVisible(true);
 		lehena.setBounds(550, 200, 642, 467);
 	}
-
 	
 	/**
 	 *  @author TALDE4
@@ -55,6 +52,8 @@ public class MetodoakVista {
 	}
 
 
+
+		Lineak lineak = new Lineak();
 	/**
 	 *  @author TALDE4
 	 * pantaila sortzen du
@@ -134,9 +133,11 @@ public class MetodoakVista {
  */
 
 	public static void seigarrenera() {
+
 		AteraBilletea ateraBilletea = new AteraBilletea();
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(550, 200, 642, 467);
+
 	}
 /**
  *  @author TALDE4
@@ -144,6 +145,7 @@ public class MetodoakVista {
  * Pasatzeko azkenengo pantailara
  */
 	public static void azkenera() {
+
 		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
 		azkena.setBounds(550, 200, 642, 467);
@@ -190,33 +192,23 @@ public class MetodoakVista {
 		
 		if (linea.equals("L1")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
-			System.out.println(rndmNum);
 
-		} else if (linea.equals("L2")) {
 
-			
 		}
-
 		else if (linea.equals("L2")) {
-			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
-		
-		}
 
+			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
+
+
+		}
 		else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
-			System.out.println(rndmNum);
+			
 
-		} else if (linea.equals("L3")) {
-			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
-			System.out.println(rndmNum);
-	
-		}
-
-
-		else if (linea.equals("L4")) {
+		}else if (linea.equals("L4")) {
 
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
-			System.out.println(rndmNum);
+			
 		}
 		return rndmNum;
 
@@ -226,16 +218,20 @@ public class MetodoakVista {
 /**
  * fitxeroaren datuak irakurtzen ditu
  *  @author TALDE4
+
 */
 	
+
 /**
  * Fitxeroa irakurtzen du
  */
-	public static void fitxeroIrak() {
+	public static int fitxeroIrak() {
+
 
 		File fitxategi = null;
 		FileReader fr = null;
 		BufferedReader br = null;
+		int lerro = 0;
 
 		try {
 			// Apertura del fichero y creacion de BufferedReader para poder
@@ -246,8 +242,9 @@ public class MetodoakVista {
 
 			// Lectura del fichero
 			String linea;
-			while ((linea = br.readLine()) != null)
-				System.out.println(linea);
+			while (((linea = br.readLine()) != null))
+//				System.out.println(linea);
+				lerro++;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -262,9 +259,8 @@ public class MetodoakVista {
 				e2.printStackTrace();
 			}
 		}
-
+		return lerro;
 	}
-
 
 	
 /**
@@ -275,21 +271,25 @@ public class MetodoakVista {
  * Fitxeroa idazten du
 
  */
-	public static void fitxeroIdat() {
+	public static void fitxeroIdat(String datua) {
+		int lerro = MetodoakVista.fitxeroIrak();
+		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
 
-		try (FileWriter fw = new FileWriter("txartela", true);
 				BufferedWriter bw = new BufferedWriter(fw);
-				PrintWriter out = new PrintWriter(bw)) {
-			out.println("the text");
-			// more code
-			out.println("more text");
-			// more code
+				PrintWriter idazteko = new PrintWriter(bw)) {
+			if (lerro == 8) {
+				bw.write("");
+				bw.close();
+			}else {
+				idazteko.println(datua);//parantesi artean dagoena idazten du fitxeroan.
+			}			
+			
 		} catch (IOException e) {
 			// exception handling left as an exercise for the reader
 		}
-	}
 
-
+			MetodoakVista.fitxeroIrak();			
+		}
 
 
 	/**

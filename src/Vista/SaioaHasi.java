@@ -3,6 +3,7 @@ package Vista;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,9 +14,10 @@ import javax.swing.JTextField;
 
 import Controlador.Metodoak;
 import Controlador.MetodoakVista;
+import Modelo.Kontsulta;
 
 public class SaioaHasi extends JFrame {
-	
+
 	private JTextField txtDNI = new JTextField();
 	private JLabel lblDNI = new JLabel("DNI:");
 	private JLabel lblPasahitza = new JLabel("Pasahitza:");
@@ -30,9 +32,7 @@ public class SaioaHasi extends JFrame {
 	private ActionListener alBAurrera;
 	private ActionListener alBAtzera;
 	private ActionListener alBIrten;
-	
 
-	
 	/**
 	 * Create the panel.
 	 *  @author TALDE4
@@ -64,21 +64,25 @@ public class SaioaHasi extends JFrame {
 		 *  @author TALDE4
 		 */
 		alBAurrera = new ActionListener() {
+
 			public void actionPerformed(ActionEvent arg0) {
 //				pasahitzaEnkripatatuta = Metodoak.getMD5(passwordField.getText());
 //				pasahitzaKonprobatu = Metodoak.pasahitzaKomprobaketa(pasahitzaEnkripatatuta);				
 //				System.out.println(pasahitzaEnkripatatuta);
 //				DNI = txtDNI.getText();
 //				DNIkonprobatu = Metodoak.nanKomprobaketa(DNI);
-			
+
 //			if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
+
 					MetodoakVista.hirugarrenera();
 					dispose();
+
 //			}else {
 //					JOptionPane.showMessageDialog(null, "Ez da existitzen\n Saiatu berriro");
 //			}
-			}
 			
+			}
+
 		};
 		btnAurrera.setEnabled(true);
 		btnAurrera.addActionListener(alBAurrera);

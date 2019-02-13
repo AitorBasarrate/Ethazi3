@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -178,26 +179,31 @@ public class Lineak extends JFrame {
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 //					MetodoakVista.getLinea(linea, codBush);
 					autobusaCod.setText(Integer.toString(codBush));
-					
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
+					MetodoakVista.fitxeroIdat(linea);
 				} else if (rdbtnL2.isSelected()) {
 					linea="L2";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
-					
+					MetodoakVista.fitxeroIdat(linea);
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
 				} else if (rdbtnL3.isSelected()) {
 					linea="L3";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
-					
+					MetodoakVista.fitxeroIdat(linea);
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
 				} else if (rdbtnL4.isSelected()) {
 					linea="L4";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
 					autobusaCod.setText(Integer.toString(codBush));
+					MetodoakVista.fitxeroIdat(linea);
+					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
 				}
-				System.out.println(geltokia.get(0));
+//				System.out.println(geltokia.get(0));
 				btnAurrera.setEnabled(true);
 			}
 			
