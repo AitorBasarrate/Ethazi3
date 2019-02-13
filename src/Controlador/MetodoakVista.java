@@ -21,11 +21,18 @@ import Vista.SaioaHasi;
 
 public class MetodoakVista {
 
+	/**
+	 * pantaila sortzen du
+	 */
 	public static void bueltatuLehena() {
 		Lehena lehena = new Lehena();
 		lehena.setVisible(true);
 		lehena.setBounds(550, 200, 642, 467);
 	}
+	
+	/**
+	 * pantaila sortzen du
+	 */
 
 	public static void bigarrenera() {
 		SaioaHasi saioaHasi = new SaioaHasi();
@@ -33,58 +40,72 @@ public class MetodoakVista {
 		saioaHasi.setBounds(550, 200, 642, 467);
 	}
 
+	/**
+	 * pantaila sortzen du
+	 */
 	public static void hirugarrenera() {
 		Lineak lineak = new Lineak();
 		lineak.setVisible(true);
 		lineak.setBounds(550, 200, 642, 467);
 	}
 
+	/**
+	 * pantaila sortzen du
+	 */
 	public static void laugarrenera(ArrayList geltoki, String linea, int codBush) throws ParseException {
 		Geltokiak geltokiak = new Geltokiak(geltoki, linea, codBush);
 		geltokiak.setVisible(true);
 		geltokiak.setBounds(550, 200, 642, 467);
 	}
 
+	/**
+	 * pantaila sortzen du
+	 */
 	public static void bostgarrenera(ArrayList geltoki, String linea, Double prezioFinala, int codBush) {
 		Ordainketa ordainketa = new Ordainketa(geltoki, linea, prezioFinala,codBush);
 		ordainketa.setVisible(true);
 		ordainketa.setBounds(550, 200, 642, 467);
 
 	}
-
+	
+	/**
+	 * pantaila sortzen du
+	 */
 	public static void seigarrenera() {
 		AteraBilletea ateraBilletea = new AteraBilletea();
 		ateraBilletea.setVisible(true);
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
-
+/**
+ * pantaila sortzen du
+ */
 	public static void azkenera() {
 		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
 		azkena.setBounds(550, 200, 642, 467);
 	}
 
+	/**
+	 *  linea aukeratu
+	 *  @author talde4
+	 * @param linea
+	 * @return gelt
+	 */
 	public static ArrayList aukeratuLinea(String linea) {
 		ArrayList gelt = new ArrayList();
 		ArrayList busCode = new ArrayList();
 		gelt = Kontsulta.lineaAukeratu(linea);
 
-//		busCode = MetodoakVista.bus_lortu(linea);
-
 		return gelt;
 
 	}
 
-	
-	public static void getLinea(String linea, int codBush) {
-		Kontsulta.autobusa(codBush);
-	}
 
-//	public static void getLinea(String linea) {
-//		Kontsulta.autobusa(linea);
-//
-//	}
-
+	/**
+	 * busaren kodea aleatorioki sortzen du eta bueltatzen du
+	 * @param linea
+	 * @return rndmNum
+	 */
 	public static int bus_lortu(String linea) {
 		int rndmNum = 0;
 		
@@ -98,19 +119,13 @@ public class MetodoakVista {
 		}
 
 		else if (linea.equals("L2")) {
-
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
-
-
-			
+		
 		}
 
 		else if (linea.equals("L3")) {
-
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
-
 			System.out.println(rndmNum);
-
 
 		} else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
@@ -126,7 +141,12 @@ public class MetodoakVista {
 		}
 		return rndmNum;
 	}
-
+	
+	
+/**
+ * fitxeroaren datuak irakurtzen ditu
+ * 
+ */
 	public static void fitxeroIrak() {
 
 		File fitxategi = null;
@@ -161,6 +181,10 @@ public class MetodoakVista {
 
 	}
 
+	
+/**
+ * fitxeroan datuak idazten ditu
+ */
 	public static void fitxeroIdat() {
 
 		try (FileWriter fw = new FileWriter("txartela", true);
@@ -175,35 +199,30 @@ public class MetodoakVista {
 		}
 	}
 
-	
-
-
-//	public static String clienteIzena(String DNI){
-//		izena = Kontsulta
-//		
-//		return izena;
-//	}
-	
 
 /**
  * 
  * @param linea
  * @return
  */
-
+	/**
+	 * 
+	 * @param linea
+	 * @return izena
+	 */
 	public static String lineaIzenaAukeratu(String linea) {
-
-
 		String izena = "";
 		izena = Kontsulta.linearenIzena(linea);
 		return izena;
 	}
 
+
 	
 /**
- * 
+ * joan estorria bada contagailuari 2 balioa ematen dio
+ * @author talde4
  * @param joanEtorri
- * @return
+ * @return cont
  */
 	public static int joanEtorria(boolean joanEtorri) {
 		int cont = 1;

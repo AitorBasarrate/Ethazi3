@@ -126,6 +126,14 @@ public class Geltokiak extends JFrame {
 		alBAurrera = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				if (rdbtnJoanEtorri.isSelected()) {
+					contagailu = 2;
+					
+				}
+				else {
+					contagailu = 1;
+				}
+				
 //  CONTINUAR AQUI PARA PASAR EL STRING
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHasiera.getSelectedItem().equals(geltoki.get(n))) {
@@ -151,6 +159,8 @@ public class Geltokiak extends JFrame {
 				dispose();
 			}
 		};
+		
+		
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.addActionListener(alBAurrera);
 		btnAurrera.setBounds(524, 386, 99, 33);
@@ -162,22 +172,13 @@ public class Geltokiak extends JFrame {
 				dispose();
 			}
 		};
+		
 		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnIrten.addActionListener(alBIrten);
 		btnIrten.setBounds(524, 0, 99, 33);
 		getContentPane().add(btnIrten);
 
-		alBAtzera = new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.hirugarrenera();
-				dispose();
-			}
-		};
-		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnAtzera.addActionListener(alBAtzera);
-		btnAtzera.setBounds(0, 0, 89, 33);
-		getContentPane().add(btnAtzera);
-		Data.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		
 
 		Data.setModel(new SpinnerDateModel(new Date(1546297200000L), null, null, Calendar.DAY_OF_YEAR));
 		Data.setBounds(461, 267, 144, 23);
@@ -186,12 +187,8 @@ public class Geltokiak extends JFrame {
 		rdbtnJoanEtorri.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		rdbtnJoanEtorri.setBounds(95, 334, 312, 46);
 		getContentPane().add(rdbtnJoanEtorri);
-		if (rdbtnJoanEtorri.isSelected()) {
-			joanEtorri = true;
+		
 			
-		}
-		contagailu =MetodoakVista.joanEtorria(joanEtorri);
-
 		
 		
 	}

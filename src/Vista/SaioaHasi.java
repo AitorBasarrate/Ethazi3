@@ -31,7 +31,7 @@ public class SaioaHasi extends JFrame {
 	private ActionListener alBAtzera;
 	private ActionListener alBIrten;
 	
-	
+
 	
 	/**
 	 * Create the panel.
@@ -84,18 +84,6 @@ public class SaioaHasi extends JFrame {
 		btnAurrera.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAurrera.setBounds(524, 386, 99, 33);
 		getContentPane().add(btnAurrera);
-
-		
-		alBAtzera = new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bueltatuLehena();
-				dispose();
-			}
-		};
-		btnAtzera.addActionListener(alBAtzera);
-		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnAtzera.setBounds(0, 0, 89, 33);
-		getContentPane().add(btnAtzera);
 		
 		
 		alBIrten = new ActionListener() {

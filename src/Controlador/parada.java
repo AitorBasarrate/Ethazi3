@@ -7,6 +7,16 @@ public class parada {
 	private double Latitud;
 	private double Longitud;
 	
+	
+	/**
+	 * KONSTRUKTOREA
+	 * @param Cod_parada
+	 * @param Nombre
+	 * @param Calle
+	 * @param Latitud
+	 * @param Longitud
+	 */
+	
 	public parada (int Cod_parada, String Nombre, String Calle, double Latitud, double Longitud) {
 		this.Calle = Calle;
 		this.Cod_parada = Cod_parada;
@@ -15,9 +25,7 @@ public class parada {
 		this.Nombre = Nombre;
 	}
 	
-	public parada (String Nombre) {
-		this.Nombre = Nombre;
-	}
+//GETTERS AND SETTERS
 
 	public int getCod_parada() {
 		return Cod_parada;

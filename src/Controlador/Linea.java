@@ -9,16 +9,23 @@ public class Linea {
 
 	private String Cod_linea;
 	private String Nombre;
-
+/**
+ * 
+ * @param Cod_linea
+ * @param Nombre
+ */
 	public Linea(String Cod_linea, String Nombre) {
 		this.Cod_linea = Cod_linea;
 		this.Nombre = Nombre;
 	}
 
-	public Linea(String Cod_linea) {
-		this.Cod_linea = Cod_linea;
-	}
 
+/**
+ * ARRAYLIST BETE LINEAREN DATUEKIN
+ * @param LineaArray
+ * @param Cod_linea
+ * @param Nombre
+ */
 	public void rellenar(ArrayList<String> LineaArray, String Cod_linea, String Nombre) {
 		for (int i = 0; i < LineaArray.size() - 1; i++) {
 			Cod_linea = LineaArray.get(0);
@@ -26,6 +33,9 @@ public class Linea {
 		}
 		Kontsulta.muestraLinea(Cod_linea, Nombre);
 	}
+	
+	
+	//GETTERS AND SETTERS
 
 	public String getCod_Linea() {
 		return Cod_linea;

@@ -4,11 +4,19 @@ public class linea_parada {
 	private String Cod_linea;
 	private int Cod_parada;
 	
+	
+	/**
+	 * KONSTRUKTORTEA
+	 * @param Cod_linea
+	 * @param Cod_parada
+	 */
 	public linea_parada (String Cod_linea, int Cod_parada) {
 		this.Cod_linea = Cod_linea;
 		this.Cod_parada = Cod_parada;
 	}
 
+	
+	//GETTERS AND SETTERS
 	public String getCod_linea() {
 		return Cod_linea;
 	}

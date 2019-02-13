@@ -12,6 +12,15 @@ public class Cliente {
 	private String Sexo;
 	private String Contraseña;
 	
+	/**
+	 * KONSTRUKTOREA
+	 * @param Dni
+	 * @param Nombre
+	 * @param Apellido
+	 * @param fecha_nac
+	 * @param Sexo
+	 * @param Contraseña
+	 */
 	public Cliente (String Dni, String Nombre, String Apellido, String fecha_nac, String Sexo, String Contraseña) {
 		this.Apellido = Apellido;
 		this.Contraseña = Contraseña;
@@ -21,6 +30,7 @@ public class Cliente {
 		this.Sexo = Sexo;
 	}
 
+	//GETTERS AND SETTERS
 	public String getDni() {
 		return Dni;
 	}

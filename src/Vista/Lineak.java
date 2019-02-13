@@ -96,17 +96,6 @@ public class Lineak extends JFrame {
 		getContentPane().add(btnAurrera);
 		btnAurrera.setEnabled(false);
 
-		alBAtzera = new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.bigarrenera();
-				
-				dispose();
-			}
-		};
-		btnAtzera.addActionListener(alBAtzera);
-		btnAtzera.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnAtzera.setBounds(0, 0, 89, 32);
-		getContentPane().add(btnAtzera);
 
 		alBIrten = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -184,7 +173,7 @@ public class Lineak extends JFrame {
 					linea="L1";
 					codBush = MetodoakVista.bus_lortu(linea);
 					geltokia = MetodoakVista.aukeratuLinea(linea);
-					MetodoakVista.getLinea(linea, codBush);
+//					MetodoakVista.getLinea(linea, codBush);
 					autobusaCod.setText(Integer.toString(codBush));
 					
 				} else if (rdbtnL2.isSelected()) {

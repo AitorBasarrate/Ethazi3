@@ -13,10 +13,16 @@ import Modelo.Kontsulta;
 
 public class Metodoak {
 	
-	public static double kontTotala = 0;
-	static final double BEZ = 0.21;
-	protected static double totBezGabe;
-
+	//ALDAGAIAK
+	public  double kontTotala = 0;
+	 final double BEZ = 0.21;
+	protected  double totBezGabe;
+	
+/**
+ * 
+ * @param DNI
+ * @return konprobatu
+ */
 	public static boolean nanKomprobaketa(String DNI)  {
 
 		ArrayList<Cliente> datosCliente = new ArrayList <Cliente> ();
@@ -34,11 +40,11 @@ public class Metodoak {
 
 			
 			if (c.getDni().equals(DNI)) { // komparatzen dut sartzen duten DNI datu basean dagoenarekin
-				//System.out.println("Correcto");
+			
 				konprobatu=true;
 
 			} else {
-				//System.out.println("falso");
+				
 			}
 		}
 		}
@@ -47,6 +53,11 @@ public class Metodoak {
 		return konprobatu;
 	}
 	
+	/**
+	 * 
+	 * @param pasahitza
+	 * @return NUM
+	 */
 public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 		int i=0;
@@ -73,31 +84,48 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 		return konprobatu;
 	}
 	
-
+/**
+ * ZENBAKI ALEATORIOAK SORTU
+ * @param minimo
+ * @param maximo
+ * @return NUM
+ */
 	public static int generaNumeroAleatorio(int minimo,int maximo){
         
 	       int num=(int)Math.floor(Math.random()*(maximo-minimo+1)+(minimo));
 	       return num;
 	   }
 	
-//	public static double litroKilometroko(double distanzia) {
-//		€ = distantzia * 
-//		return distantzia * 2;
-//	}
 
 
-
-	public static void sartuOrdainketa(JList list) {
+/**
+ * 
+ * @param list
+ * @param totBezGabe
+ */
+	public static void sartuOrdainketa(JList list, double totBezGabe) {
 		DefaultListModel ordaintzekoa = new DefaultListModel();
 		ordaintzekoa.addElement(totBezGabe + "€");
 		list.setModel(ordaintzekoa);
 	}
 
-	public static void bezKalkulatu() {
+	/**
+	 * BEZA KALKULATZEN DU
+	 * @param totBezGabe
+	 * @param BEZ
+	 * @param kontTotala
+	 */
+	public static void bezKalkulatu(double totBezGabe , double BEZ , double kontTotala ) {
 		kontTotala = (totBezGabe * BEZ) + totBezGabe;
 	}
 	
-
+/**
+ * ZENBAT BUELTA HEMAN BEHAR DITUEN KALKULATZEN DITU+
+ * 
+ * @param emaitza
+ * @param ordainketa
+ * @return ARRAYBUELTAK
+ */
 	public static String[] diruarenBueltak(String emaitza, String ordainketa) {// emaitza balioa main-etik hartu
 		double DoubleTextDiruTot = Double.parseDouble(emaitza);
 		DoubleTextDiruTot = DoubleTextDiruTot*100;
@@ -130,12 +158,6 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 		String bueltaString;
 		int j = 0;
 		
-
-		// double ordainketa;
-
-		// System.out.println("Sartu dirua: ");
-		// ordainketa = sc.nextDouble();
-
 		do {
 			if (DoubleTextOrdainketa < 0) {
 				System.out.println("Sartu zenbaki positibo bat:");
@@ -150,17 +172,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 		if (bueltak < 0) {
 			arrayBueltak[0] = "";
-			/*
-			 * do { bueltak=-bueltak;
-			 * System.out.println("Falta zaizkizu: "+bueltak+" euro");
-			 * System.out.println("Sartu falta den dirua:"); emaitza=bueltak;
-			 * 
-			 * do { if (ordainketa<0) { System.out.println("Sartu zenbaki positibo bat:");
-			 * 
-			 * } }while (ordainketa<0); bueltak=ordainketa-emaitza; }while (bueltak!=0 &&
-			 * bueltak < 0);//errepikatu 0 baino handiagoa edo berdina den zenbaki bat sartu
-			 * harte
-			 */
+		
 		}
 		// galdetu bueltak dauden ala ez
 		if (bueltak == 0) {
@@ -197,6 +209,13 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 		return arrayBueltak;// main-era bidali buelten zerrenda
 	}/* metodo bueltak */
 
+	
+	/**
+	 * 
+	 * @param diruTot
+	 * @param ordainketa
+	 * @return stringEmaitza
+	 */
 	public static String kenketa(String diruTot, String ordainketa) {
 
 		double doubleDiruTot = Double.parseDouble(diruTot);
@@ -225,7 +244,13 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 	
 	//DISTANTZIA KALKULATZEKO METODOA 
-	
+	/**
+	 * 
+	 * @param linea
+	 * @param geltokiGordeHelmuga
+	 * @param geltokiGordeHasiera
+	 * @return distance
+	 */
 	public static double haversineMetodo(String linea, String geltokiGordeHelmuga,  String geltokiGordeHasiera) {
 		
 		   final int R = 6371; // Radious of the earth
@@ -267,14 +292,28 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 	}
 	
 	//RADIANA EGITEKO
-
+/**
+ * 
+ * @param value
+ * @return VALUE
+ */
 	private static Double toRad(double value) {
 		return value * Math.PI / 180;
 	}
 
-	//PREZIOA KALKULATZEKO METODOA
 	
-		public static double prezioaKalk(String linea, int contagailu, ArrayList geltoki, String geltokiGordeHelmuga,  String geltokiGordeHasiera, int codBush) {
+	//PREZIOA KALKULATZEKO METODOA
+	/**
+	 * 
+	 * @param linea
+	 * @param contagailu
+	 * @param geltoki
+	 * @param geltokiGordeHelmuga
+	 * @param geltokiGordeHasiera
+	 * @param codBush
+	 * @return PREZIO FINALA
+	 */
+	public static double prezioaKalk(String linea, int contagailu, ArrayList geltoki, String geltokiGordeHelmuga,  String geltokiGordeHasiera, int codBush) {
 
 			double distantzia = haversineMetodo(linea,  geltokiGordeHelmuga,   geltokiGordeHasiera); //metodoaren balioa artzen du
 	
@@ -303,7 +342,7 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 				System.out.println(empresaOnura);
 			 prezioFinala = empresaOnura / pertsonaKantitate;
 			 	System.out.println(pertsonaKantitate);
-			prezioFinala = (prezioFinala) * contagailu;	
+			prezioFinala = (prezioFinala) * contagailu;
 				System.out.println("zure billetearen prezioa :"+ prezioFinala + " € koa da");
 		
 			return prezioFinala;
@@ -311,6 +350,11 @@ public static boolean pasahitzaKomprobaketa(String pasahitza) {
 
 	
 	/*Metodo encriptar*/
+	/**
+	 * 
+	 * @param input
+	 * @return hashtext
+	 */
 	public static String getMD5(String input) {
 		 try {
 		 MessageDigest md = MessageDigest.getInstance("MD5");
