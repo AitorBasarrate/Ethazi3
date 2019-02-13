@@ -138,6 +138,8 @@ public class Erregistratu extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MetodoakVista.hirugarrenera();
 				dispose();
+				
+				
 			}
 		};
 		btnAurrera.addActionListener(alBAurrera);
