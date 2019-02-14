@@ -139,14 +139,14 @@ public class Geltokiak extends JFrame {
 					if (comboBoxHasiera.getSelectedItem().equals(geltoki.get(n))) {
 						geltokiGordeHasiera = (String) comboBoxHasiera.getSelectedItem();// guardo en la variable la parada escojida
 						System.out.println("Pillado Hasiera");
-						System.out.println(geltokiGordeHasiera + " PROBANDO SI SE GUARDA LA POARADA"); // comprobatu ondo gordetzen dituen datuak
+						System.out.println(geltokiGordeHasiera + " PROBANDO SI SE GUARDA LA PARADA"); // comprobatu ondo gordetzen dituen datuak
 					}
 				}
 				for (int n = 0; n < geltoki.size(); n++) {
 					if (comboBoxHelmuga.getSelectedItem().equals(geltoki.get(n))) {
 						geltokiGordeHelmuga = (String) comboBoxHelmuga.getSelectedItem();// guardo en la variable la parada escojida
 						System.out.println("Pillado Helmuga");
-						System.out.println(geltokiGordeHelmuga + " PROBANDO SI SE GUARDA LA POARADA");// comprobatu ondo gordetzen dituen datuak
+						System.out.println(geltokiGordeHelmuga + " PROBANDO SI SE GUARDA LA PARADA");// comprobatu ondo gordetzen dituen datuak
 					}
 				}
 				Date data = (Date)Data.getModel().getValue();
