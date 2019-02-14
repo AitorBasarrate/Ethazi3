@@ -51,6 +51,5 @@ public class AteraBilletea extends JFrame {
 		btnAteraBilletea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		btnAteraBilletea.setBounds(202, 269, 198, 39);
 		add(btnAteraBilletea);
-
 	}
 }

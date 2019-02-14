@@ -24,12 +24,13 @@ public class Azkena extends JFrame {
 	private JLabel lblBus = new JLabel("BUS:");
 	private JLabel lblIgo = new JLabel("Igo:");
 	private JLabel lblJaitsi = new JLabel("Jaitsi:");
-
+	private String[] kateaArr;
 	/**
 	 *  @author TALDE4
 	 * Create the panel.
 	 */
 	public Azkena() {
+		kateaArr = MetodoakVista.getTxartela();
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
@@ -77,6 +78,7 @@ public class Azkena extends JFrame {
 		txtIzena.setBounds(238, 53, 109, 25);
 		add(txtIzena);
 		txtIzena.setColumns(10);
+		txtIzena.setText(kateaArr[0]);
 		
 		
 		txtDNI.setBackground(Color.WHITE);
@@ -84,6 +86,7 @@ public class Azkena extends JFrame {
 		txtDNI.setBounds(158, 107, 101, 23);
 		add(txtDNI);
 		txtDNI.setColumns(10);
+		txtIzena.setText(kateaArr[2]);
 		
 		
 		txtData.setBackground(Color.WHITE);
