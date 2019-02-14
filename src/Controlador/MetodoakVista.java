@@ -132,13 +132,13 @@ public class MetodoakVista {
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 
-	/**
-	 * <<<<<<< HEAD
-	 * 
-	 * @author TALDE4 pantaila sortzen du ======= Pasatzeko azkenengo pantailara
-	 *         >>>>>>> branch 'Aitor' of
-	 *         https://github.com/AitorBasarrate/Ethazi3.git
-	 */
+
+/**
+ *  @author TALDE4
+ * pantaila sortzen du
+ * Pasatzeko azkenengo pantailara
+ */
+
 	public static void azkenera() {
 		Azkena azkena = new Azkena();
 		azkena.setVisible(true);
@@ -190,31 +190,50 @@ public class MetodoakVista {
 			rndmNum = Metodoak.generaNumeroAleatorio(1001, 1003);
 
 			System.out.println(rndmNum);
-		} else if (linea.equals("L2")) {
+
+
+		}
+		else if (linea.equals("L2")) {
 
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
+
 
 		} else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
 			System.out.println(rndmNum);
 
 		} else if (linea.equals("L4")) {
+
+
+
+		}
+		else if (linea.equals("L3")) {
+			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
+			
+
+		}else if (linea.equals("L4")) {
+
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
-			System.out.println(rndmNum);
+			
 		}
 		return rndmNum;
 	}
 
-	/**
-	 * fitxeroaren datuak irakurtzen ditu
-	 * 
-	 * @author TALDE4 ======= } <<<<<<< HEAD
-	 * 
-	 *         public static int fitxeroIrak() { ======= /** Fitxeroa irakurtzen du
-	 *         >>>>>>> branch 'Aitor' of
-	 *         https://github.com/AitorBasarrate/Ethazi3.git
-	 */
+	
+	
+/**
+ * fitxeroaren datuak irakurtzen ditu
+ *  @author TALDE4
+
+*/
+	
+
+/**
+ * Fitxeroa irakurtzen du
+ */
 	public static int fitxeroIrak() {
+
+
 
 		File fitxategi = null;
 		FileReader fr = null;
@@ -231,9 +250,14 @@ public class MetodoakVista {
 			// Lectura del fichero
 
 			String linea;
+
 			int j = 0;
 			while (((linea = br.readLine()) != null)) {
 				String[] kateaArr = linea.split("../Ethazi3/src/Controlador/txartela");
+
+			while (((linea = br.readLine()) != null))
+//				System.out.println(linea);
+
 				lerro++;
 				for (int n = 0; n < kateaArr.length; n++) {
 					System.out.println(kateaArr[n]);
@@ -256,10 +280,10 @@ public class MetodoakVista {
 		return lerro;
 	}
 
-	public static String[] getTxartela() {
+	public static String[] getTxartela() throws Exception {
 		File fitxategi = new File("../Ethazi3/src/Controlador/txartela");
 		FileReader fr;
-
+		BufferedReader br = null;
 		String[] kateaArr = null;
 		String dni;
 		String izen;
@@ -274,11 +298,7 @@ public class MetodoakVista {
 		int j = 0;
 		try {
 			fr = new FileReader(fitxategi);
-			BufferedReader br = new BufferedReader(fr);
-			do {
-				kateaArr[j] = br.readLine();
-				j++;
-			}while (((br.readLine()) != null));
+			br = new BufferedReader(fr);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -288,7 +308,10 @@ public class MetodoakVista {
 			// una excepcion.
 
 		}
-
+		do {
+			kateaArr[j] = br.readLine();
+			j++;
+		}while (((br.readLine()) != null));
 		return kateaArr;
 	}
 
@@ -298,6 +321,15 @@ public class MetodoakVista {
 	 * @author TALDE4 ======= /** Fitxeroa idazten du >>>>>>> branch 'Aitor' of
 	 *         https://github.com/AitorBasarrate/Ethazi3.git
 	 */
+	
+/**
+ * fitxeroan datuak idazten ditu
+ *  @author TALDE4
+
+/**
+ * Fitxeroa idazten du
+
+ */
 	public static void fitxeroIdat(String datua) {
 		int lerro = MetodoakVista.fitxeroIrak();
 		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
@@ -351,6 +383,8 @@ public class MetodoakVista {
 		}
 		return cont;
 	}
+
+
 
 	public static void fitxerotikAtera() {
 

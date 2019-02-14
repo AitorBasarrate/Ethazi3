@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import Controlador.MetodoakVista;
+import Modelo.Kontsulta;
 
 public class Lehena extends JFrame {
 	

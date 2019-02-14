@@ -28,8 +28,9 @@ public class Azkena extends JFrame {
 	/**
 	 *  @author TALDE4
 	 * Create the panel.
+	 * @throws Exception 
 	 */
-	public Azkena() {
+	public Azkena() throws Exception {
 		kateaArr = MetodoakVista.getTxartela();
 		setLayout(null);
 		this.setSize(478,300);  

@@ -42,7 +42,6 @@ public class Geltokiak extends JFrame {
 	private String lineaIzena="";
 	private double prezioFinala;
 	private JRadioButton rdbtnJoanEtorri = new JRadioButton("JOAN ETORRI ?");
-	private boolean joanEtorri = false;
 	private int contagailu = 1;
 	private ActionListener alBAtzera;
 	private ActionListener alBIrten;

@@ -203,7 +203,7 @@ public class Lineak extends JFrame {
 					MetodoakVista.fitxeroIdat(linea);
 					MetodoakVista.fitxeroIdat(Integer.toString(codBush));
 				}
-				System.out.println(geltokia.get(0));
+//				System.out.println(geltokia.get(0));
 				btnAurrera.setEnabled(true);
 			}
 			

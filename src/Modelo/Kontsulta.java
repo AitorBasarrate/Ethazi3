@@ -2,7 +2,9 @@ package Modelo;
 
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -610,12 +612,12 @@ public class Kontsulta {
 		return izena;
 	}
 	
-	public static void insertDNI(String DNI) {
+	public static void insert(String DNI, String izena, String abizenak, String sexua, String pasahitza) {
 
 		Connection conexion = null;
 		Statement s = null;
-		String nombre_="";
-		
+		String data = "12/02/22";
+		pasahitza = Controlador.Metodoak.getMD5(pasahitza);
 		try {
 			// Cargar el driver
 			Class.forName("com.mysql.jdbc.Driver");
@@ -624,7 +626,17 @@ public class Kontsulta {
 
 			// Se realiza la consulta. Los resultados se guardan en el ResultSet rs
 
-			ResultSet rs = ((java.sql.Statement) s).executeQuery("INSERT INTO cliente(DNI) VALUES("+DNI+")");
+			String query = "INSERT INTO cliente(DNI,Nombre,Apellidos,Fecha_nac,Sexo,Contraseña)"+" VALUES(?,?,?,?,?,?)";
+			
+			PreparedStatement preparedStmt = conexion.prepareStatement(query);
+		      preparedStmt.setString (1, DNI);
+		      preparedStmt.setString (2, izena);
+		      preparedStmt.setString (3, abizenak);
+		      preparedStmt.setString (4, data);
+		      preparedStmt.setString (5, sexua);
+		      preparedStmt.setString (6, pasahitza);
+		     
+		      preparedStmt.execute();
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
