@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import Controlador.MetodoakVista;
+import javax.swing.SwingConstants;
 
 public class Azkena extends JFrame {
 	private JTextField txtIzena = new JTextField();
@@ -29,6 +30,10 @@ public class Azkena extends JFrame {
 	private JLabel lblIgo = new JLabel("Igo:");
 	private JLabel lblJaitsi = new JLabel("Jaitsi:");
 	private String[] kateaArr;
+
+	JLabel lblBilleteaInprimitzenDago = new JLabel("BILLETEA INPRIMITZEN DAGO");
+	JLabel lblEskerrikAskoZure = new JLabel("ESKERRIK ASKO ZURE EROSKETAGATIK");
+
 	/**
 	 *  @author TALDE4
 	 * Create the panel.
@@ -37,17 +42,21 @@ public class Azkena extends JFrame {
 	 */
 
 	public Azkena() {
+
 		MetodoakVista.getTxartela(txtDNI, txtIzena, txtData, txtLinea, txtBUS, txtIgo, txtJaitsi);
 		setLayout(null);
+
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 635, 455);
+		getContentPane().setLayout(null);
 		
 		
-		lblIzenabizenak.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblIzenabizenak.setBounds(84, 52, 131, 25);
-		add(lblIzenabizenak);
+		lblBilleteaInprimitzenDago.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblBilleteaInprimitzenDago.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBilleteaInprimitzenDago.setBounds(96, 92, 418, 99);
+		getContentPane().add(lblBilleteaInprimitzenDago);
 		
 		
 		lblDni.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -129,6 +138,11 @@ public class Azkena extends JFrame {
 		txtJaitsi.setBounds(395, 322, 101, 26);
 		add(txtJaitsi);
 		txtJaitsi.setColumns(10);
+
+		lblEskerrikAskoZure.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblEskerrikAskoZure.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEskerrikAskoZure.setBounds(33, 222, 540, 99);
+		getContentPane().add(lblEskerrikAskoZure);
 		
 		
 	}
