@@ -11,6 +11,8 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+import javax.swing.JTextField;
+
 import Modelo.Kontsulta;
 import Vista.AteraBilletea;
 import Vista.Azkena;
@@ -132,12 +134,10 @@ public class MetodoakVista {
 		ateraBilletea.setBounds(550, 200, 642, 467);
 	}
 
-
-/**
- *  @author TALDE4
- * pantaila sortzen du
- * Pasatzeko azkenengo pantailara
- */
+	/**
+	 * @author TALDE4 pantaila sortzen du Pasatzeko azkenengo pantailara
+	 * @throws IOException
+	 */
 
 	public static void azkenera() {
 		Azkena azkena = new Azkena();
@@ -191,12 +191,9 @@ public class MetodoakVista {
 
 			System.out.println(rndmNum);
 
-
-		}
-		else if (linea.equals("L2")) {
+		} else if (linea.equals("L2")) {
 
 			rndmNum = Metodoak.generaNumeroAleatorio(2001, 2001);
-
 
 		} else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
@@ -204,36 +201,28 @@ public class MetodoakVista {
 
 		} else if (linea.equals("L4")) {
 
-
-
-		}
-		else if (linea.equals("L3")) {
+		} else if (linea.equals("L3")) {
 			rndmNum = Metodoak.generaNumeroAleatorio(3001, 3002);
-			
 
-		}else if (linea.equals("L4")) {
+		} else if (linea.equals("L4")) {
 
 			rndmNum = Metodoak.generaNumeroAleatorio(4001, 4002);
-			
+
 		}
 		return rndmNum;
 	}
 
-	
-	
-/**
- * fitxeroaren datuak irakurtzen ditu
- *  @author TALDE4
+	/**
+	 * fitxeroaren datuak irakurtzen ditu
+	 * 
+	 * @author TALDE4
+	 * 
+	 */
 
-*/
-	
-
-/**
- * Fitxeroa irakurtzen du
- */
+	/**
+	 * Fitxeroa irakurtzen du
+	 */
 	public static int fitxeroIrak() {
-
-
 
 		File fitxategi = null;
 		FileReader fr = null;
@@ -255,10 +244,10 @@ public class MetodoakVista {
 			while (((linea = br.readLine()) != null)) {
 				String[] kateaArr = linea.split("../Ethazi3/src/Controlador/txartela");
 
-			while (((linea = br.readLine()) != null))
+				while (((linea = br.readLine()) != null))
 //				System.out.println(linea);
 
-				lerro++;
+					lerro++;
 				for (int n = 0; n < kateaArr.length; n++) {
 					System.out.println(kateaArr[n]);
 				}
@@ -280,7 +269,14 @@ public class MetodoakVista {
 		return lerro;
 	}
 
-	public static String[] getTxartela() throws Exception {
+	/**
+	 * fitxeroan datuak idazten ditu
+	 * 
+	 * @author TALDE4 ======= /** Fitxeroa idazten du >>>>>>> branch 'Aitor' of
+	 *         https://github.com/AitorBasarrate/Ethazi3.git
+	 */
+	public static void getTxartela(JTextField txtDNI, JTextField txtIzena, JTextField txtData, JTextField txtLinea,
+			JTextField txtBUS, JTextField txtIgo, JTextField txtJaitsi) {
 		File fitxategi = new File("../Ethazi3/src/Controlador/txartela");
 		FileReader fr;
 		BufferedReader br = null;
@@ -294,12 +290,18 @@ public class MetodoakVista {
 		String hasiera;
 		String helmuga;
 
-		String lerroa;
+		String lerroa = "";
 		int j = 0;
 		try {
 			fr = new FileReader(fitxategi);
 			br = new BufferedReader(fr);
-
+			while (((lerroa = br.readLine()) != null)) {
+				kateaArr[j] = lerroa;
+				j++;
+				txtDNI.setText(kateaArr[0]);
+				txtIzena.setText(kateaArr[1] + " " + kateaArr[2]);
+				txtData.setText(kateaArr[6]);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -308,28 +310,16 @@ public class MetodoakVista {
 			// una excepcion.
 
 		}
-		do {
-			kateaArr[j] = br.readLine();
-			j++;
-		}while (((br.readLine()) != null));
-		return kateaArr;
 	}
 
 	/**
 	 * fitxeroan datuak idazten ditu
 	 * 
-	 * @author TALDE4 ======= /** Fitxeroa idazten du >>>>>>> branch 'Aitor' of
-	 *         https://github.com/AitorBasarrate/Ethazi3.git
+	 * @author TALDE4
+	 * 
+	 *         /** Fitxeroa idazten du
+	 * 
 	 */
-	
-/**
- * fitxeroan datuak idazten ditu
- *  @author TALDE4
-
-/**
- * Fitxeroa idazten du
-
- */
 	public static void fitxeroIdat(String datua) {
 		int lerro = MetodoakVista.fitxeroIrak();
 		try (FileWriter fw = new FileWriter("../Ethazi3/src/Controlador/txartela", true);
@@ -383,8 +373,6 @@ public class MetodoakVista {
 		}
 		return cont;
 	}
-
-
 
 	public static void fitxerotikAtera() {
 

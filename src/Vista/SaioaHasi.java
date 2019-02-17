@@ -53,7 +53,7 @@ public class SaioaHasi extends JFrame {
 		txtDNI.setBounds(240, 127, 193, 43);
 		getContentPane().add(txtDNI);
 		txtDNI.setColumns(10);
-		
+		String dni_ = txtDNI.getText();
 		
 		lblPasahitza.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblPasahitza.setBounds(112, 246, 193, 103);
@@ -75,6 +75,8 @@ public class SaioaHasi extends JFrame {
 //			if(DNIkonprobatu==true && pasahitzaKonprobatu==true) {
 
 					MetodoakVista.hirugarrenera();
+					MetodoakVista.fitxeroIdat(dni_);
+					Kontsulta.bezeroIzenAbizen(dni_);
 					dispose();
 
 //			}else {

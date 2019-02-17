@@ -2,6 +2,10 @@ package Vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,10 +32,12 @@ public class Azkena extends JFrame {
 	/**
 	 *  @author TALDE4
 	 * Create the panel.
+	 * @throws IOException 
 	 * @throws Exception 
 	 */
-	public Azkena() throws Exception {
-		kateaArr = MetodoakVista.getTxartela();
+
+	public Azkena() {
+		MetodoakVista.getTxartela(txtDNI, txtIzena, txtData, txtLinea, txtBUS, txtIgo, txtJaitsi);
 		setLayout(null);
 		this.setSize(478,300);  
 		this.setLocationRelativeTo(null);  

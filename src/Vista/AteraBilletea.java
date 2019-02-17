@@ -3,6 +3,7 @@ package Vista;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -43,7 +44,7 @@ public class AteraBilletea extends JFrame {
 		
 		alBAzkena = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MetodoakVista.azkenera();
+					MetodoakVista.azkenera();
 				dispose();
 			}
 		};
